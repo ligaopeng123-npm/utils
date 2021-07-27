@@ -15,14 +15,12 @@
 
 ------
 
-### memoized
+### memoized（缓存函数）
 
-| 函数名        | 参数及返回值                       | demo                                         |
-| ------------- | ---------------------------------- | -------------------------------------------- |
-| memoized      | (...arg: any): Array<any>          | const cacheFn = memoized(()=> {})            |
-| asyncMemoized | (arg: string): Promise<Array<any>> | const asyncCacheFn = memoized(async ()=> {}) |
-
-
+| 函数名        | 参数及返回值                       | demo                                                         |
+| ------------- | ---------------------------------- | ------------------------------------------------------------ |
+| memoized      | (...arg: any): Array<any>          | const fn= (x)=> x * x;<br />const cacheFn = memoized(fn);<br />cacheFn(4); // [4, {4: 16}] |
+| asyncMemoized | (arg: string): Promise<Array<any>> | const asyncCacheFn = memoized(async ()=> {});                |
 
 
 

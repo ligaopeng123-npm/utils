@@ -1,5 +1,5 @@
 {
-    "version": "0.1.5",
+    "version": "0.1.6",
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -10,6 +10,10 @@
     ],
     "engines": {
         "node": ">=10"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ligaopeng123/utils.git"
     },
     "scripts": {
         "start": "tsdx watch",
@@ -47,7 +51,9 @@
     ],
     "devDependencies": {
         "@size-limit/preset-small-lib": "^5.0.1",
+        "@types/qunit": "^2.11.2",
         "husky": "^7.0.0",
+        "qunit": "^2.16.0",
         "size-limit": "^5.0.1",
         "tsdx": "^0.14.1",
         "tslib": "^2.3.0",
