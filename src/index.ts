@@ -16,3 +16,8 @@ export {isUndefined as isUndefined} from './types';
  */
 export {memoized as memoized} from './memoized';
 export {asyncMemoized as asyncMemoized} from './memoized';
+
+/**
+ * 数组操作函数
+ */
+export {convertToTwodimensional as convertToTwodimensional} from './array';

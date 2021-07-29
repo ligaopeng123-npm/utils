@@ -22,7 +22,13 @@
 | memoized      | (...arg: any): Array<any>          | const fn= (x)=> x * x;<br />const cacheFn = memoized(fn);<br />cacheFn(4); // [4, {4: 16}] |
 | asyncMemoized | (arg: string): Promise<Array<any>> | const asyncCacheFn = memoized(async ()=> {});                |
 
+### 数组处理函数
 
+| 函数名                  | 参数                                              | demo                            |
+| ----------------------- | ------------------------------------------------- | ------------------------------- |
+| convertToTwodimensional | (arr: Array<any>, len: number): Array<Array<any>> | convertToTwodimensional([], 1); |
+|                         |                                                   |                                 |
+|                         |                                                   |                                 |
 
 
 
