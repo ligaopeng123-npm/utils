@@ -21,3 +21,8 @@ export {asyncMemoized as asyncMemoized} from './memoized';
  * 数组操作函数
  */
 export {convertToTwodimensional as convertToTwodimensional} from './array';
+
+/**
+ * 随机字符
+ */
+export {uuid as uuid} from './uuid';
