@@ -23,6 +23,7 @@ export {asyncMemoized as asyncMemoized} from './memoized';
 export {convertToTwodimensional as convertToTwodimensional} from './array';
 
 /**
- * 随机字符
+ * 字符串操作
  */
-export {uuid as uuid} from './uuid';
+export {uuid as uuid} from './string';
+export {formatStr as formatStr} from './string';
