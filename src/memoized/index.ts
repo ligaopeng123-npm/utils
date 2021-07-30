@@ -9,22 +9,22 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-/**
- * 缓存函数
- * @param fn
- */
 interface Cache {
 	[propName: string]: any
 }
 
-interface FN {
+export interface MemoizedFn {
 	(...arg: any): Array<any>
 }
 
-export const memoized = (fn: FN) => {
+/**
+ * 同步缓存函数
+ * @param fn
+ */
+export const memoized = (fn: MemoizedFn) => {
 	// 缓存求值 如果有则取缓存 如果没有则赋值
 	const cache: Cache = {};
-	const memoiz: FN = (...arg) => {
+	const memoiz: MemoizedFn = (...arg) => {
 		return [cache[arg[0]] || (cache[arg[0]] = fn(...arg)), cache];
 	};
 	return memoiz;
@@ -35,14 +35,14 @@ export const memoized = (fn: FN) => {
  * 异步缓存求值
  * @param fn
  */
-interface AsyncFN {
+export interface AsyncMemoizedFn {
 	(arg: string): Promise<Array<any>>
 }
 
-export const asyncMemoized = (fn: AsyncFN) => {
+export const asyncMemoized = (fn: AsyncMemoizedFn) => {
 	// 缓存求值 如果有则取缓存 如果没有则赋值
 	const cache: Cache = {};
-	const memoiz: AsyncFN = async (...arg) => {
+	const memoiz: AsyncMemoizedFn = async (...arg) => {
 		cache[arg[0]] || (cache[arg[0]] = await fn(...arg));
 		return [cache[arg[0]], cache];
 	};
