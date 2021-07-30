@@ -13,8 +13,8 @@ interface Cache {
 	[propName: string]: any
 }
 
-export interface MemoizedFn {
-	(...arg: any): Array<any>
+export declare interface MemoizedFn {
+	(...arg: any): Array<any> | any
 }
 
 /**
@@ -35,8 +35,8 @@ export const memoized = (fn: MemoizedFn) => {
  * 异步缓存求值
  * @param fn
  */
-export interface AsyncMemoizedFn {
-	(arg: string): Promise<Array<any>>
+export declare interface AsyncMemoizedFn {
+	(arg: string): Promise<Array<any>> | Promise<any>
 }
 
 export const asyncMemoized = (fn: AsyncMemoizedFn) => {

@@ -39,7 +39,7 @@ export const urlJoinParmas = (parmas?: urlJoinParmasPatams): string => {
  * @param url
  * @param {string} name
  */
-export type downloadParams = {
+export declare type downloadParams = {
 	url?: string, // uri地址
 	fileName?: string, // 文件名
 	blob?: string | Blob, // blob地址
@@ -63,7 +63,7 @@ export const download = ({url, fileName, blob, parmas}: downloadParams): void | 
  * 文档流下载函数 建议使用此方式进行下载 服务端不需要保存冗余文件
  * downloadStream({url:'', options: {body: ''},fileName: ''})
  */
-export type downloadStreamParams = {
+export declare type downloadStreamParams = {
 	url: string; // uri地址
 	options?: any; // fetch参数
 	fileName?: string; // 文件名

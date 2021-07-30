@@ -27,8 +27,6 @@ export {download as download} from './download';
 export {downloadParams as downloadParams} from './download';
 
 export {urlJoinParmas as urlJoinParmas} from './download';
-export {urlJoinParmasPatams as urlJoinParmasPatams} from './download';
-
 /**
  * 数组操作函数
  */
