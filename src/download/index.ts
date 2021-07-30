@@ -16,7 +16,7 @@ import {isObject} from "../types";
  *  拼接url地址参数
  *  urlJoinParmas({name:'zhangsan'})
  */
-interface urlJoinParmasPatams {
+export interface urlJoinParmasPatams {
 	[propName: string]: any
 }
 

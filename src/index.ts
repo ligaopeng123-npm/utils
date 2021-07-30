@@ -12,10 +12,22 @@ export {isString as isString} from './types';
 export {isUndefined as isUndefined} from './types';
 
 /**
- * 缓存函数
+ * 工具函数
  */
 export {memoized as memoized} from './memoized';
+export {MemoizedFn as MemoizedFn} from './memoized';
+
 export {asyncMemoized as asyncMemoized} from './memoized';
+export {AsyncMemoizedFn as AsyncMemoizedFn} from './memoized';
+
+export {downloadStream as downloadStream} from './download';
+export {downloadStreamParams as downloadStreamParams} from './download';
+
+export {download as download} from './download';
+export {downloadParams as downloadParams} from './download';
+
+export {urlJoinParmas as urlJoinParmas} from './download';
+export {urlJoinParmasPatams as urlJoinParmasPatams} from './download';
 
 /**
  * 数组操作函数

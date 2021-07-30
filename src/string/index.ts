@@ -15,7 +15,7 @@
  * @param {number} radix  数据基数你2 10 16等  默认62位全部正常字符
  * @returns {string}
  */
-type uuidFn = (len?: number, radix?: number) => string;
+export type uuidFn = (len?: number, radix?: number) => string;
 export const uuid: uuidFn = (len = 64, radix = 62): string => {
 	const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 	const uuid = [];
@@ -50,7 +50,7 @@ export const uuid: uuidFn = (len = 64, radix = 62): string => {
  * formatStr('hello {o}, I like {1}')('china', 'you');
  * @param str
  */
-type formatStrFn = (...args: any) => string;
+export type formatStrFn = (...args: any) => string;
 export const formatStr = (str: string): formatStrFn => {
 	return (...args: any) => {
 		let result = str;
