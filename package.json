@@ -1,5 +1,5 @@
 {
-    "version": "0.1.12",
+    "version": "0.1.13",
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -19,7 +19,6 @@
         "start": "tsdx watch",
         "build": "tsdx build",
         "test": "tsdx test",
-        "qunit": "tsc --build tsconfig.test.json && qunit",
         "lint": "tsdx lint",
         "prepare": "tsdx build",
         "size": "size-limit",
@@ -53,9 +52,7 @@
     "devDependencies": {
         "@size-limit/preset-small-lib": "^5.0.1",
         "@types/node": "^16.4.6",
-        "@types/qunit": "^2.11.2",
         "husky": "^7.0.0",
-        "qunit": "^2.16.0",
         "size-limit": "^5.0.1",
         "tsdx": "^0.14.1",
         "tslib": "^2.3.0",
