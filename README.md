@@ -7,6 +7,7 @@
 | 函数名        | 作用                                       |
 | ------------- | ------------------------------------------ |
 | isObject      | 判断对象                                   |
+| isArray       | 判断数组                                   |
 | isPromise     | 判断Promise                                |
 | isFunction    | 判断函数                                   |
 | isNumber      | 判断数字                                   |
@@ -16,6 +17,7 @@
 | isEqualByObj  | 判断对象是否相等（包括各个属性）           |
 | isEmptyObject | 判断是否是空对象                           |
 | isEmpty       | 判断是否是空 null undefined '' [] 都为true |
+| isJSON        | 判断是否为合法的可格式化的json字符串       |
 
 
 

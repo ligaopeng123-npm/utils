@@ -1,13 +1,16 @@
 /****************************   基本类型判断    *****************************/
 export {isObject as isObject} from './types';
+export {isArray as isArray} from './types';
+export {isElement as isElement} from './types';
 export {isEmpty as isEmpty} from './types';
+export {isNumber as isNumber} from './types';
 export {isEmptyObject as isEmptyObject} from './types';
 export {isEqualByObj as isEqualByObj} from './types';
 export {isFunction as isFunction} from './types';
-export {isNumber as isNumber} from './types';
 export {isPromise as isPromise} from './types';
 export {isString as isString} from './types';
 export {isUndefined as isUndefined} from './types';
+export {isJSON as isJSON} from './types';
 
 /****************************   文件操作    *****************************/
 export {downloadStream as downloadStream} from './file';

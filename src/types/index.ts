@@ -12,7 +12,7 @@
 const toString = Object.prototype.toString;
 
 interface typeFn {
-	(v: any): boolean
+	(v: unknown): boolean
 }
 
 /**
@@ -89,6 +89,7 @@ export const isFunction: typeFn = function (val) {
  * @param obj
  */
 export const isPromise: typeFn = (obj) => {
+	// @ts-ignore
 	return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 };
 
@@ -104,7 +105,8 @@ export const isPromise: typeFn = (obj) => {
  文档document      9
  */
 export const isElement: typeFn = (val) => {
-	return val ? val.nodeType === 1 : false;
+	// @ts-ignore
+	return val ? val?.nodeType === 1 : false;
 };
 
 /**
@@ -116,7 +118,8 @@ export const isEmpty: typeFn = (val) => {
 		val === undefined ||
 		val === null ||
 		val === '' ||
-		(isArray(val) && val.length === 0)
+		// @ts-ignore
+		(isArray(val) && val?.length === 0)
 	);
 };
 
@@ -136,9 +139,32 @@ export const isEmptyObject: typeFn = (val) => {
 export const isEqualByObj = function (k: object, l: object) {
 	return k === l || JSON.stringify(k) === JSON.stringify(l);
 };
+/**
+ * 判断字符串是否是json格式
+ * @param str
+ */
+export const isJSON: typeFn = (val) => {
+	// 如果是对象或者数组 直接返回true
+	if (isObject(val) || isArray(val)) return true;
+	// 非字符串返回false
+	if (!isString(val)) return false;
+	// @ts-ignore
+	let str: string = val;
+	// 开头结尾不一致 也非合法json
+	if (str.startsWith('{') && !str.endsWith('}')) return false;
+	if (str.startsWith('[') && !str.endsWith(']')) return false;
+	
+	try {
+		JSON.parse(str);
+		return true;
+	} catch (e) {
+		return false;
+	}
+};
 
 export default {
 	isObject,
+	isArray,
 	isEqualByObj,
 	isEmptyObject,
 	isElement,
@@ -148,4 +174,5 @@ export default {
 	isNumber,
 	isUndefined,
 	isString,
+	isJSON
 }
