@@ -20,20 +20,41 @@ export interface urlJoinParmasPatams {
 	[propName: string]: any
 }
 
+/**
+ * 将参数拼接到url中
+ * @param parmas
+ */
 export const urlJoinParmas = (parmas?: urlJoinParmasPatams): string => {
-	let count = 1;
 	if (isObject(parmas)) {
-		let str = `?`;
+		let str = ``;
+		let count = 1;
 		for (let i in parmas) {
 			const concatSymbol = count > 1 ? '&' : '';
 			str += `${concatSymbol}${i}=${parmas[i]}`;
 			count++;
 		}
-		return str;
+		// 防止空对象 传递冗余的'?'
+		return str ? `?${str}` : str;
 	} else {
 		return '';
 	}
 };
+
+/**
+ * 去掉url的参数
+ * @param url
+ * @returns {any}
+ */
+export function removeUrlParames(url: string): string {
+	if (url) {
+		url = url.replace(/#/, '')
+		if (url.indexOf('?') !== -1) {
+			return url.substring(0, url.indexOf('?'));
+		}
+	}
+	return url;
+}
+
 /**
  * 下载函数 文件需在服务端存在
  * @param url

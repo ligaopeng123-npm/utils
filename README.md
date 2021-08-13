@@ -14,6 +14,7 @@
 | isUndefined   | 判断undefined                              |
 | isString      | 判断string                                 |
 | isElement     | 判断element                                |
+| isDate        | 判断是否是Date类型                         |
 | isEqualByObj  | 判断对象是否相等（包括各个属性）           |
 | isEmptyObject | 判断是否是空对象                           |
 | isEmpty       | 判断是否是空 null undefined '' [] 都为true |
@@ -23,7 +24,7 @@
 
 ------
 
-### Object
+### object
 
 #### clone函数
 
@@ -63,7 +64,7 @@ cloneAllItem({});
 
 ------
 
-### Function
+### function
 
 #### 缓存函数
 
@@ -180,6 +181,14 @@ composePromises([p1, p2], 8).then((res) => {
 urlJoinParmas({name:'zhangsan'})
 ```
 
+##### removeUrlParames:(url: string): string
+
+`去掉url中的参数，只保留url地址`
+
+```typescript
+removeUrlParames('https:/www.baidu.com/getBaseInfo?userId=xxx'); // https:/www.baidu.com/getBaseInfo
+```
+
 ##### download: ({url, fileName, blob, parmas}: downloadParams): void \| Error
 
 `文件下载函数`
@@ -226,17 +235,70 @@ uuid()
 formatStr('hello {o}, I like {1}')('china', 'you');
 ```
 
+##### ellipsps: (text: string, width: number = 100, size: number = 12, font: string = 'Arial'): string;
+
+`截取超长字符串...显示`
+
+```typescript
+ellipsps('wwwwwwwwwwwwwwwwwwwwwwwww', 50, 14);
+```
+
 
 
 ------
 
-### 数组
+### number
 
-##### convertToTwodimensional:(arr: Array<any>, len: number): Array<Array<any>>
+##### randomInt: (min?: number, max?: number): number
+
+`获取限定大小的随机整数`
+
+```typescript
+randomInt(5, 100); // 默认min = 0; max = 10;
+```
+
+
+
+------
+
+### array
+
+##### convertToTwodimensional 
+
+``(arr: Array<any>, len: number): Array<Array<any>>``
 
 `将一维数组，转为指定长度的二维数组`
 
 ```typescript
 convertToTwodimensional([], 1);
+```
+
+
+
+------
+
+### date
+
+##### formatTimestamp 
+
+`(timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string`
+
+`时间戳转换成格式化后的日期格式`
+
+```typescript
+type TimestampType = 'yyyy-MM-dd HH:mm:ss' | 'yyyy-MM-dd' | 'HH:mm:ss'
+	| 'MM-dd' | 'MM-dd HH:mm:ss' | 'dd HH:mm:ss'
+	| 'yyyy' | 'MM' | 'dd' | 'HH' | 'mm' | 'ss'
+timestampToDate(Date.now(), 'yyyy-MM-dd')
+timestampToDate(new Date(), 'yyyy-MM-dd')
+timestampToDate((new Date()).toString(), 'yyyy-MM-dd')
+```
+
+##### getWeekCN `(date: Date): string`
+
+`获取中文星期几`
+
+```typescript
+getWeekCN(new Date());// '星期五'
 ```
 

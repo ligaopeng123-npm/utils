@@ -9,6 +9,7 @@ export {isEqualByObj as isEqualByObj} from './types';
 export {isFunction as isFunction} from './types';
 export {isPromise as isPromise} from './types';
 export {isString as isString} from './types';
+export {isDate as isDate} from './types';
 export {isUndefined as isUndefined} from './types';
 export {isJSON as isJSON} from './types';
 
@@ -20,6 +21,7 @@ export {download as download} from './file';
 export {downloadParams as downloadParams} from './file';
 
 export {urlJoinParmas as urlJoinParmas} from './file';
+export {removeUrlParames as removeUrlParames} from './file';
 // 图片操作
 export {imageFromFile as imageFromFile} from './file';
 
@@ -28,10 +30,12 @@ export {imageFromFile as imageFromFile} from './file';
 export {convertToTwodimensional as convertToTwodimensional} from './array';
 
 
-/****************************  字符串操作    *****************************/
+/****************************  字符串 数字操作    *****************************/
 export {uuid as uuid} from './string';
 export {formatStr as formatStr} from './string';
-
+// 字符串截断
+export {ellipsps as ellipsps} from './string';
+export {getTextWidth as getTextWidth} from './string';
 
 /****************************  对象操作    *****************************/
 // clone函数
@@ -49,3 +53,15 @@ export {MemoizedFn as MemoizedFn} from './function';
 
 export {asyncMemoized as asyncMemoized} from './function';
 export {AsyncMemoizedFn as AsyncMemoizedFn} from './function';
+
+/****************************  时间操作    *****************************/
+export {formatTimestamp as formatTimestamp} from './date';
+export {TimestampType as TimestampType} from './date';
+export {getYear as getYear} from './date';
+export {getMonth as getMonth} from './date';
+export {getDay as getDay} from './date';
+export {getHours as getHours} from './date';
+export {getMinutes as getMinutes} from './date';
+export {getSeconds as getSeconds} from './date';
+export {getWeek as getWeek} from './date';
+export {getWeekCN as getWeekCN} from './date';

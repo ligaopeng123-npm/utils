@@ -161,6 +161,13 @@ export const isJSON: typeFn = (val) => {
 		return false;
 	}
 };
+/**
+ * 判断是否是一个日期格式
+ * @param val
+ */
+export const isDate: typeFn = (val) => {
+	return toString.call(val) === '[object Date]';
+};
 
 export default {
 	isObject,
@@ -174,5 +181,6 @@ export default {
 	isNumber,
 	isUndefined,
 	isString,
-	isJSON
+	isJSON,
+	isDate
 }
