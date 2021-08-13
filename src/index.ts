@@ -65,3 +65,6 @@ export {getMinutes as getMinutes} from './date';
 export {getSeconds as getSeconds} from './date';
 export {getWeek as getWeek} from './date';
 export {getWeekCN as getWeekCN} from './date';
+
+/****************************  number操作    *****************************/
+export {randomInt as randomInt} from './number';
