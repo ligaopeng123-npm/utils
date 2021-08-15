@@ -38,7 +38,7 @@ describe('timestampToDate', () => {
 		// 	startTime: new Date('2021-8-1').setHours(0, 0, 0, 0),
 		// 	endTime: new Date('2021-8-31').setHours(23, 59, 59, 999),
 		// });
-		//
+
 		// expect(timeRangeCurrent('quarter')).toStrictEqual({
 		// 	startTime: new Date('2021-7-1').setHours(0, 0, 0, 0),
 		// 	endTime: new Date('2021-9-30').setHours(23, 59, 59, 999),
