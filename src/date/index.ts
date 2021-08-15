@@ -20,3 +20,13 @@ export {getSeconds as getSeconds} from './timestamp';
 export {getWeek as getWeek} from './timestamp';
 export {getWeekCN as getWeekCN} from './timestamp';
 
+export {default as timeRange} from './timeRange';
+export {TimeRange as TimeRange} from './timeRange';
+export {TimeRangeType as TimeRangeType} from './timeRange';
+export {timeRangeCurrent as timeRangeCurrent} from './timeRange';
+export {timeRangePrevious as timeRangePrevious} from './timeRange';
+export {currentQuarterFirstMonth as currentQuarterFirstMonth} from './timeRange';
+export {currentQuarterLastMonth as currentQuarterLastMonth} from './timeRange';
+export {currentQuarterDays as currentQuarterDays} from './timeRange';
+export {currentDayEarliest as currentDayEarliest} from './timeRange';
+export {currentDayLatest as currentDayLatest} from './timeRange';

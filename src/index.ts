@@ -66,5 +66,15 @@ export {getSeconds as getSeconds} from './date';
 export {getWeek as getWeek} from './date';
 export {getWeekCN as getWeekCN} from './date';
 
+export {timeRange as timeRange} from './date';
+export {TimeRange as TimeRange} from './date';
+export {TimeRangeType as TimeRangeType} from './date';
+export {timeRangeCurrent as timeRangeCurrent} from './date';
+export {timeRangePrevious as timeRangePrevious} from './date';
+export {currentQuarterFirstMonth as currentQuarterFirstMonth} from './date';
+export {currentQuarterLastMonth as currentQuarterLastMonth} from './date';
+export {currentQuarterDays as currentQuarterDays} from './date';
+export {currentDayEarliest as currentDayEarliest} from './date';
+export {currentDayLatest as currentDayLatest} from './date';
 /****************************  number操作    *****************************/
 export {randomInt as randomInt} from './number';
