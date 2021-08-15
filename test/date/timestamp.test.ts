@@ -43,7 +43,7 @@ describe('timestampToDate', () => {
 		// 	startTime: new Date('2021-7-1').setHours(0, 0, 0, 0),
 		// 	endTime: new Date('2021-9-30').setHours(23, 59, 59, 999),
 		// });
-		//
+
 		// expect(timeRangeCurrent('year')).toStrictEqual({
 		// 	startTime: new Date('2021-1-1').setHours(0, 0, 0, 0),
 		// 	endTime: new Date('2021-12-31').setHours(23, 59, 59, 999),
