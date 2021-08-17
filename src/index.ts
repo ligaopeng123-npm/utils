@@ -50,10 +50,12 @@ export {ResponseMonad as ResponseMonad} from './function';
 // 缓存函数
 export {memoized as memoized} from './function';
 export {MemoizedFn as MemoizedFn} from './function';
-
+// 异步缓存
 export {asyncMemoized as asyncMemoized} from './function';
 export {AsyncMemoizedFn as AsyncMemoizedFn} from './function';
-
+// 柯理化函数
+export {curry as curry} from './function';
+export {partial as partial} from './function';
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date';
 export {TimestampType as TimestampType} from './date';

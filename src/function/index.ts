@@ -1,7 +1,9 @@
 export {compose as compose} from './compose';
 export {composePromises as composePromises} from './compose';
 export {pipe as pipe} from './compose';
-
+// 柯理化函数
+export {default as curry} from './curry';
+export {default as partial} from './partial';
 
 export {memoized as memoized} from './memoized';
 export {MemoizedFn as MemoizedFn} from './memoized';

@@ -17,15 +17,33 @@ export declare interface MemoizedFn {
 	(...arg: any): Array<any> | any
 }
 
+
+/**
+ * 缓存管理
+ */
+type SetFn = (key: string, value: any) => Cache;
+const cacheManagement = (): [Cache, SetFn] => {
+	const cache: Cache = {};
+	const set: SetFn = (key, value) => {
+		return Object.defineProperty(cache, key, {
+			enumerable: true, // 可枚举
+			writable: false, // 不可修改
+			configurable: false, // 不可删除
+			value: value
+		});
+	};
+	return [cache, set]
+};
 /**
  * 同步缓存函数
  * @param fn
  */
 export const memoized = (fn: MemoizedFn) => {
 	// 缓存求值 如果有则取缓存 如果没有则赋值
-	const cache: Cache = {};
+	const [cache, set] = cacheManagement();
 	const memoiz: MemoizedFn = (...arg) => {
-		return [cache[arg[0]] || (cache[arg[0]] = fn(...arg)), cache];
+		const key = arg[0];
+		return [cache[key] || set(key, fn(...arg))[key], cache];
 	};
 	return memoiz;
 };
@@ -41,10 +59,10 @@ export declare interface AsyncMemoizedFn {
 
 export const asyncMemoized = (fn: AsyncMemoizedFn) => {
 	// 缓存求值 如果有则取缓存 如果没有则赋值
-	const cache: Cache = {};
+	const [cache, set] = cacheManagement();
 	const memoiz: AsyncMemoizedFn = async (...arg) => {
-		cache[arg[0]] || (cache[arg[0]] = await fn(...arg));
-		return [cache[arg[0]], cache];
+		const key = arg[0];
+		return [cache[key] || set(key, await fn(...arg))[key], cache];
 	};
 	return memoiz;
 };

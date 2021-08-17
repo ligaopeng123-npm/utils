@@ -119,6 +119,31 @@ ResponseMonad.of({
 })
 ```
 
+#### curry
+
+##### curry:(fn: Curry)
+
+`将函数转为柯理化函数`
+
+```typescript
+type Curry = (...args: Array<any>) => any;
+curry((args1)=> {return (args2)=> args1 + args2);
+```
+
+##### partial
+
+`将函数转换为偏应用函数`
+
+```typescript
+const afterTenSeconds = partial(setTimeout, undefined, 10);
+
+afterTenSeconds(() => {
+	console.log(`10秒后打印`)
+});
+```
+
+
+
 #### compose
 
 ##### compose
