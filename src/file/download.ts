@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isObject} from "../types";
+import {isElement, isObject, isUndefined} from "../types";
 
 /**
  * @params  需要拼接的参数
@@ -45,9 +45,9 @@ export const urlJoinParmas = (parmas?: urlJoinParmasPatams): string => {
  * @param url
  * @returns {any}
  */
-export function removeUrlParames(url: string): string {
+export function removeUrlParams(url: string): string {
 	if (url) {
-		url = url.replace(/#/, '')
+		url = url.replace(/#/, '');
 		if (url.indexOf('?') !== -1) {
 			return url.substring(0, url.indexOf('?'));
 		}
@@ -91,7 +91,86 @@ export declare type downloadStreamParams = {
 }
 export const downloadStream = ({url, options, fileName}: downloadStreamParams): void => {
 	fetch(url, Object.assign({responseType: 'blob'}, options)).then((res: any) => {
-		const blob = new Blob([res], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8"});
+		const blob = new Blob([res],
+			{type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8"});
 		download({blob: blob, fileName: fileName});
 	});
+};
+
+/**
+ * 解析url，获取参数
+ * @param url
+ */
+export const queryParamsFromUrl = (url: string): Object => {
+	const _url = url === null ? window.location.href : url;
+	const search = _url.substring(_url.lastIndexOf('?') + 1);
+	const obj: any = {};
+	const reg = /([^?&=]+)=([^?&=]*)/g;
+	// [^?&=]+表示：除了？、&、=之外的一到多个字符
+	// [^?&=]*表示：除了？、&、=之外的0到多个字符（任意多个）
+	search.replace(reg, function (rs: any, $1, $2) {
+		const name = decodeURIComponent($1);
+		const val = String(decodeURIComponent($2));
+		obj[name] = val;
+		return rs;
+	});
+	return obj;
+};
+
+type ImageType = 'image/png' | 'image/jpeg' | 'image/webp';
+type CanvasToDataURL = {
+	canvas: HTMLCanvasElement,
+	type: ImageType,
+	encoderOptions?: number,
+}
+/**
+ * 基于canvas进行图片转换成base64
+ * @param canvas
+ * @param type
+ * @param encoderOptions
+ */
+export const toBase64 = ({canvas, type, encoderOptions}: CanvasToDataURL): string => {
+	if (canvas?.toDataURL) return canvas.toDataURL(type || 'image/png',
+		isUndefined(encoderOptions) ? 1 : encoderOptions);
+	return '';
+};
+
+/**
+ * 图片下载
+ */
+type DowmloadPictureOptions = {
+	fileName?: string,
+	type?: ImageType,
+	encoderOptions?: number
+}
+export const dowmloadScreenshotPicture = (dom: HTMLCanvasElement | HTMLVideoElement | string,
+                                          options: DowmloadPictureOptions) => {
+	let videoDom: any;
+	if (isElement(dom)) {
+		videoDom = dom;
+	} else {
+		// @ts-ignore
+		videoDom = document.getElementById(video);
+	}
+	
+	if (videoDom) {
+		let canvas;
+		if (videoDom.tagName === 'VIDEO') {
+			canvas = document.createElement('canvas');
+			canvas.width = videoDom.offsetWidth;
+			canvas.height = videoDom.offsetHeight;
+			canvas.style.height = `${videoDom.offsetWidth}px`;
+			canvas.style.height = `${videoDom.offsetHeight}px`;
+		} else {
+			canvas = videoDom;
+		}
+		download({
+			url: toBase64({
+				canvas: canvas,
+				type: options?.type || 'image/png',
+				encoderOptions: options?.encoderOptions
+			}),
+			fileName: options?.fileName
+		})
+	}
 };

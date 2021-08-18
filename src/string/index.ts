@@ -14,7 +14,7 @@ export {formatStrFn as formatStrFn} from './format';
 export {default as formatStr} from './format';
 
 export {default as ellipsps} from './ellipsps';
-export {getTextWidth as getTextWidth} from './ellipsps';
+export {strWidth as strWidth} from './ellipsps';
 
 
 export {default as uuid} from './uuid';

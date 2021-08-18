@@ -21,9 +21,14 @@ export {download as download} from './file';
 export {downloadParams as downloadParams} from './file';
 
 export {urlJoinParmas as urlJoinParmas} from './file';
-export {removeUrlParames as removeUrlParames} from './file';
+
+export {removeUrlParams as removeUrlParams} from './file';
+
+export {queryParamsFromUrl as queryParamsFromUrl} from './file';
 // 图片操作
 export {imageFromFile as imageFromFile} from './file';
+
+export {dowmloadScreenshotPicture as dowmloadScreenshotPicture} from './file';
 
 
 /****************************  数组操作函数    *****************************/
@@ -32,17 +37,26 @@ export {convertToTwodimensional as convertToTwodimensional} from './array';
 
 /****************************  字符串 数字操作    *****************************/
 export {uuid as uuid} from './string';
+
 export {formatStr as formatStr} from './string';
 // 字符串截断
 export {ellipsps as ellipsps} from './string';
-export {getTextWidth as getTextWidth} from './string';
+
+export {strWidth as strWidth} from './string';
 
 /****************************  对象操作    *****************************/
 // clone函数
 export {clone as clone} from './object';
+
 export {cloneAllItems as cloneAllItems} from './object';
+
 export {cloneAllArray as cloneAllArray} from './object';
+
 export {cloneAllObject as cloneAllObject} from './object';
+
+export {mousePosition as mousePosition} from './object';
+
+export {getStyle as getStyle} from './object';
 
 
 /****************************  函数操作    *****************************/
@@ -55,28 +69,46 @@ export {asyncMemoized as asyncMemoized} from './function';
 export {AsyncMemoizedFn as AsyncMemoizedFn} from './function';
 // 柯理化函数
 export {curry as curry} from './function';
+
 export {partial as partial} from './function';
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date';
 export {TimestampType as TimestampType} from './date';
+
 export {getYear as getYear} from './date';
+
 export {getMonth as getMonth} from './date';
+
 export {getDay as getDay} from './date';
+
 export {getHours as getHours} from './date';
+
 export {getMinutes as getMinutes} from './date';
+
 export {getSeconds as getSeconds} from './date';
+
 export {getWeek as getWeek} from './date';
+
 export {getWeekCN as getWeekCN} from './date';
 
 export {timeRange as timeRange} from './date';
 export {TimeRange as TimeRange} from './date';
+
 export {TimeRangeType as TimeRangeType} from './date';
 export {timeRangeCurrent as timeRangeCurrent} from './date';
+
 export {timeRangePrevious as timeRangePrevious} from './date';
+
 export {currentQuarterFirstMonth as currentQuarterFirstMonth} from './date';
+
 export {currentQuarterLastMonth as currentQuarterLastMonth} from './date';
+
 export {currentQuarterDays as currentQuarterDays} from './date';
+
 export {currentDayEarliest as currentDayEarliest} from './date';
+
 export {currentDayLatest as currentDayLatest} from './date';
 /****************************  number操作    *****************************/
 export {randomInt as randomInt} from './number';
+
+export {toThousands as toThousands} from './number';

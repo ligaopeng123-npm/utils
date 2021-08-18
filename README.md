@@ -26,7 +26,7 @@
 
 ### object
 
-#### clone函数
+#### clone
 
 ##### clone: <T>(val: T): T
 
@@ -58,6 +58,42 @@ cloneAllArray([]);
 
 ```typescript
 cloneAllItem({});
+```
+
+#### assign
+
+##### assignIf:(target: any, source: any): any
+
+`对象属性的浅赋值，如果目标对象的属性非undefined,则不赋值`
+
+```typescript
+assignIf({a: 1}, {a:2, b: 1}); // {a:1,b:1}
+```
+
+#### other
+
+##### length:(val: any): number
+
+`获取对象的length`
+
+```typescript
+length({a:1}); // 1
+```
+
+##### mousePosition:(event: any): {x:number,y:number}
+
+`根据event 获取鼠标位置`
+
+```typescript
+mousePosition(event)
+```
+
+##### getStyle: (el, styleName)
+
+`获取el的某个样式属性`
+
+```typescript
+getStyle(div, 'color');
 ```
 
 
@@ -206,12 +242,20 @@ composePromises([p1, p2], 8).then((res) => {
 urlJoinParmas({name:'zhangsan'})
 ```
 
-##### removeUrlParames:(url: string): string
+##### removeUrlParams:(url: string): string
 
 `去掉url中的参数，只保留url地址`
 
 ```typescript
-removeUrlParames('https:/www.baidu.com/getBaseInfo?userId=xxx'); // https:/www.baidu.com/getBaseInfo
+removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx'); // https:/www.baidu.com/getBaseInfo
+```
+
+##### queryParamsFromUrl:(url: string): object
+
+`解析url中包含的参数`
+
+```typescript
+queryParamsFromUrl('https:/www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'xxx'}
 ```
 
 ##### download: ({url, fileName, blob, parmas}: downloadParams): void \| Error
@@ -228,6 +272,19 @@ download({url: '',fileName: '',parmas: {}});
 
 ```typescript
 downloadStream({url:'', options: {body: ''},fileName: ''})
+```
+
+##### dowmloadScreenshotPicture: (dom, options) 
+
+`下载视频和canvas截图 `
+
+```typescript
+dom: HTMLCanvasElement | HTMLVideoElement | string,
+options: {
+	fileName?: string,
+	type?: ImageType,
+	encoderOptions?: number
+}
 ```
 
 ##### imageFromFile:(file: File): string
@@ -268,6 +325,14 @@ formatStr('hello {o}, I like {1}')('china', 'you');
 ellipsps('wwwwwwwwwwwwwwwwwwwwwwwww', 50, 14);
 ```
 
+##### strWidth:(ctx: any, text: string, fontSize: number = 12, fontFamily: string = 'Arial')
+
+`获取字符串的长度，ctx: canvas的context对象，可传null`
+
+```typescript
+strWidth(null, 'WWWWWWW');
+```
+
 
 
 ------
@@ -281,6 +346,10 @@ ellipsps('wwwwwwwwwwwwwwwwwwwwwwwww', 50, 14);
 ```typescript
 randomInt(5, 100); // 默认min = 0; max = 10;
 ```
+
+##### toThousands:(val: string | number, digit: number = 0): string
+
+`将数字转换为千位制转换，digit小数点精确到几位 `
 
 
 
