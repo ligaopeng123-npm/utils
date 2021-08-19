@@ -27,7 +27,7 @@ const cacheManagement = (): [Cache, SetFn] => {
 	const set: SetFn = (key, value) => {
 		return Object.defineProperty(cache, key, {
 			enumerable: true, // 可枚举
-			writable: false, // 不可修改
+			writable: true, // 可修改
 			configurable: false, // 不可删除
 			value: value
 		});
