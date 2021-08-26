@@ -44,6 +44,12 @@ export {ellipsps as ellipsps} from './string';
 
 export {strWidth as strWidth} from './string';
 
+// 提取被字符包裹住的内容
+export {extractEnclosedContent as extractEnclosedContent} from './string';
+export {extractParenthesesContent as extractParenthesesContent} from './string';
+export {extractMiddleParenthesesContent as extractMiddleParenthesesContent} from './string';
+export {extractBigParenthesesContent as extractBigParenthesesContent} from './string';
+
 /****************************  对象操作    *****************************/
 // clone函数
 export {clone as clone} from './object';
@@ -71,6 +77,13 @@ export {AsyncMemoizedFn as AsyncMemoizedFn} from './function';
 export {curry as curry} from './function';
 
 export {partial as partial} from './function';
+
+// fullscreen函数
+export {isFullscreen as isFullscreen} from './function';
+export {fullscreen as fullscreen} from './function';
+export {exitFullscreen as exitFullscreen} from './function';
+export {autoFullscreen as autoFullscreen} from './function';
+
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date';
 export {TimestampType as TimestampType} from './date';

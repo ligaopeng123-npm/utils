@@ -228,6 +228,43 @@ composePromises([p1, p2], 8).then((res) => {
 })
 ```
 
+#### fullscreen
+
+##### fullscreen: (el: Element,options: FullscreenOptions): Promise<any>
+
+`进入全屏`
+
+```typescript
+fullscreen(document.getElementById(''))
+```
+
+##### exitFullscreen: ():Promise<any>
+
+`退出全屏`
+
+```typescript
+exitFullscreen()
+```
+
+##### autoFullscreen:(el: Element, options: FullscreenOptions, callBack: (args: AutoFullscreenCallBack) => void):Promise<any>
+
+`如果非全屏模式，则进入全屏，如果是全屏状态，则退出全屏`
+
+```typescript
+autoFullscreen(document.getElementById(''), null, ({type})=> {
+    //fullscreen 进入全屏
+	//noFullscreen 退出全屏
+})
+```
+
+##### isFullscreen: ():boolean
+
+`判断是否是全屏状态`
+
+```typescript
+isFullscreen(); // true or false
+```
+
 
 
 ------
@@ -331,6 +368,40 @@ ellipsps('wwwwwwwwwwwwwwwwwwwwwwwww', 50, 14);
 
 ```typescript
 strWidth(null, 'WWWWWWW');
+```
+
+#### extractEnclosedContent
+
+##### extractEnclosedContent: (str: string, startStr: string, endStr: string): Array<string>
+
+`提取被符号包裹住的字符串`
+
+```typescript
+extractEnclosedContent("a (1111),b (4444), d(3333)", '(', ')'); // ['1111', '4444', '3333']
+```
+
+##### extractParenthesesContent:(str:string):Array<string>
+
+`提取小括号里面的内容`
+
+```typescript
+extractParenthesesContent("a (1111),b (4444), d(3333)"); //  ['1111', '4444', '3333']
+```
+
+##### extractMiddleParenthesesContent(str:string):Array<string>
+
+`提取中括号里面的内容`
+
+```typescript
+extractMiddleParenthesesContent("a (1111),b [4444], d(3333)"); //  ['4444']
+```
+
+##### extractBigParenthesesContent(str:string):Array<string>
+
+`提取大括号里面的内容`
+
+```typescript
+extractBigParenthesesContent("a (1111),b [4444], d{3333}"); //  ['3333']
 ```
 
 

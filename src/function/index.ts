@@ -15,3 +15,11 @@ export {AsyncMemoizedFn as AsyncMemoizedFn} from './memoized';
  * monad函数
  */
 export {ResponseMonad as ResponseMonad} from './monad';
+
+/**
+ * fullscreen函数
+ */
+export {isFullscreen as isFullscreen} from './fullscreen';
+export {fullscreen as fullscreen} from './fullscreen';
+export {exitFullscreen as exitFullscreen} from './fullscreen';
+export {default as autoFullscreen} from './fullscreen';

@@ -19,3 +19,11 @@ export {strWidth as strWidth} from './ellipsps';
 
 export {default as uuid} from './uuid';
 export {uuidFn as uuidFn} from './uuid';
+
+/**
+ * 提取被字符包裹中的内容
+ */
+export {default as extractEnclosedContent} from './regexp';
+export {extractParenthesesContent as extractParenthesesContent} from './regexp';
+export {extractMiddleParenthesesContent as extractMiddleParenthesesContent} from './regexp';
+export {extractBigParenthesesContent as extractBigParenthesesContent} from './regexp';
