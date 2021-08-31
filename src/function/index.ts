@@ -23,3 +23,13 @@ export {isFullscreen as isFullscreen} from './fullscreen';
 export {fullscreen as fullscreen} from './fullscreen';
 export {exitFullscreen as exitFullscreen} from './fullscreen';
 export {default as autoFullscreen} from './fullscreen';
+/**
+ * 窗口尺寸
+ */
+export {default as windowSize} from './windowSize';
+
+/**
+ * 去抖
+ */
+export {default as debounce} from "./debounce";
+export {default as throttle} from "./throttle";

@@ -265,9 +265,54 @@ autoFullscreen(document.getElementById(''), null, ({type})=> {
 isFullscreen(); // true or false
 ```
 
+##### windowSize(): WindowSize
+
+`窗口尺寸`
+
+```typescript
+type WindowSize = {
+	availWidth: number; // 可视化宽度
+	availHeight: number; // 可视化高度
+	width: number; // 浏览器宽度
+	height: number; // 浏览器宽度
+	screenWidth: number; // 分辨率宽度
+	screenHeight: number; // 分辨率高度
+}
+windowSize(); //
+```
+
+#### debounce/throttle
+
+##### debounce
+
+`函数防抖`
+
+```typescript
+type DebounceOptions = {
+	leading: boolean; // 第一时间是否立即执行 后续在去抖  默认为false
+	notDebounce?: (...arg: any) => any; // 在去抖过程中 有一些非去抖处理 可以添加此参数
+}
+
+debounce(()=> {
+    // 200ms的防抖
+}, 200, {notDebounce:()=> {
+	// 无防抖
+}});
+```
+
+##### throttle
+
+`函数节流`
+
+```typescript
+type ThrottleOptions = {
+	type: 1 | 2; // 1 时间戳记录 2 setTimeout版本 默认为1
+
+}
+throttle(()=> {}, 200, {type: 1});
+```
 
 
-------
 
 ### file
 
@@ -301,6 +346,10 @@ queryParamsFromUrl('https:/www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'x
 
 ```typescript
 download({url: '',fileName: '',parmas: {}});
+download({
+     url: 'http://xxx.xxx.xxx.xxx/dl/player/xxx_V2.1.exe',
+     fileName: 'xxx_V2.1'
+})
 ```
 
 ##### downloadStream:({url, options, fileName}: downloadStreamParams): void
@@ -404,7 +453,41 @@ extractMiddleParenthesesContent("a (1111),b [4444], d(3333)"); //  ['4444']
 extractBigParenthesesContent("a (1111),b [4444], d{3333}"); //  ['3333']
 ```
 
+#### color
 
+##### addOpacity
+
+`给颜色添加透明度`
+
+```typescript
+addOpacity('#fff', 0.7); // rgba(255,255,255,0.7)
+addOpacity('rgb(0,0,0)', 0.7); // rgba(0,0,0,0.7)
+addOpacity('rgba(0,0,0)', 0.7); // rgba(0,0,0,0.7)
+```
+
+##### hex2Rgb
+
+`将16进制颜色转换为rgb颜色`
+
+```typescript
+hex2Rgb('#000'); // 'rgb(0,0,0)'
+```
+
+##### rgb2hex
+
+`将rgb颜色转换为16进制颜色`
+
+```typescript
+color2Rgb('rgb(0,0,0)'); // '#000'
+```
+
+##### rgba2hex
+
+`将rgba颜色转换为16进制颜色`
+
+##### rgba2rgb
+
+`将rgba颜色转换为rgb颜色`
 
 ------
 

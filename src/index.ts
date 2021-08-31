@@ -50,6 +50,12 @@ export {extractParenthesesContent as extractParenthesesContent} from './string';
 export {extractMiddleParenthesesContent as extractMiddleParenthesesContent} from './string';
 export {extractBigParenthesesContent as extractBigParenthesesContent} from './string';
 
+// 颜色处理
+export {addOpacity as addOpacity} from './string';
+export {hex2Rgb as hex2Rgb} from './string';
+export {rgb2hex as rgb2hex} from './string';
+export {rgba2hex as rgba2hex} from './string';
+export {rgba2rgb as rgba2rgb} from './string';
 /****************************  对象操作    *****************************/
 // clone函数
 export {clone as clone} from './object';
@@ -83,6 +89,9 @@ export {isFullscreen as isFullscreen} from './function';
 export {fullscreen as fullscreen} from './function';
 export {exitFullscreen as exitFullscreen} from './function';
 export {autoFullscreen as autoFullscreen} from './function';
+
+// 窗口尺寸
+export {windowSize as windowSize} from './function';
 
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date';

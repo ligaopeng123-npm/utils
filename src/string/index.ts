@@ -27,3 +27,13 @@ export {default as extractEnclosedContent} from './regexp';
 export {extractParenthesesContent as extractParenthesesContent} from './regexp';
 export {extractMiddleParenthesesContent as extractMiddleParenthesesContent} from './regexp';
 export {extractBigParenthesesContent as extractBigParenthesesContent} from './regexp';
+
+
+/**
+ * 颜色处理
+ */
+export {addOpacity as addOpacity} from './color';
+export {hex2Rgb as hex2Rgb} from './color';
+export {rgb2hex as rgb2hex} from './color';
+export {rgba2hex as rgba2hex} from './color';
+export {rgba2rgb as rgba2rgb} from './color';
