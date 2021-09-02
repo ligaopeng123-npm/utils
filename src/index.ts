@@ -28,6 +28,8 @@ export {queryParamsFromUrl as queryParamsFromUrl} from './file';
 // 图片操作
 export {imageFromFile as imageFromFile} from './file';
 
+export {imageToBase64 as imageToBase64} from './file';
+
 export {dowmloadScreenshotPicture as dowmloadScreenshotPicture} from './file';
 
 
@@ -56,6 +58,8 @@ export {hex2Rgb as hex2Rgb} from './string';
 export {rgb2hex as rgb2hex} from './string';
 export {rgba2hex as rgba2hex} from './string';
 export {rgba2rgb as rgba2rgb} from './string';
+// url路径拼接
+export {pathJoin as pathJoin} from './string';
 /****************************  对象操作    *****************************/
 // clone函数
 export {clone as clone} from './object';
@@ -134,3 +138,6 @@ export {currentDayLatest as currentDayLatest} from './date';
 export {randomInt as randomInt} from './number';
 
 export {toThousands as toThousands} from './number';
+
+export {max as max} from './number';
+export {min as min} from './number';

@@ -37,3 +37,8 @@ export {hex2Rgb as hex2Rgb} from './color';
 export {rgb2hex as rgb2hex} from './color';
 export {rgba2hex as rgba2hex} from './color';
 export {rgba2rgb as rgba2rgb} from './color';
+
+/**
+ * 路径拼接
+ */
+export {pathJoin as pathJoin} from './path';

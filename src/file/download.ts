@@ -134,6 +134,26 @@ export const toBase64 = ({canvas, type, encoderOptions}: CanvasToDataURL): strin
 		isUndefined(encoderOptions) ? 1 : encoderOptions);
 	return '';
 };
+/**
+ * 将image标签转为base64编码
+ */
+export type ImageToBase64Props = {
+	image: HTMLImageElement,
+	width?: number; // 宽度 默认图片宽度
+	height?: number; // 高度 默认图片高度
+	type?: ImageType; // 图片类型 默认'image/png'
+	opacity?: number; // 透明度 默认1
+}
+export const imageToBase64 = ({image, width, height, type, opacity}: ImageToBase64Props) => {
+	const canvas = document.createElement('canvas');
+	canvas.width = width ? width : image.width;
+	canvas.height = height ? height : image.height;
+	return toBase64({
+		canvas,
+		type: type || 'image/png',
+		encoderOptions: opacity
+	})
+};
 
 /**
  * 图片下载

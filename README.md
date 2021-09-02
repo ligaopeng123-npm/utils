@@ -381,6 +381,21 @@ options: {
 imageFromFile(file);
 ```
 
+##### imageToBase64: (opt: ImageToBase64Props): string
+
+`将image转为base64编码`
+
+```typescript
+type ImageToBase64Props = {
+	image: HTMLImageElement,
+	width?: number; // 宽度 默认图片宽度
+	height?: number; // 高度 默认图片高度
+	type?: ImageType; // 图片类型 默认'image/png'
+	opacity?: number; // 透明度 默认1
+}
+imageToBase64({image:imgae})
+```
+
 
 
 ------
@@ -417,6 +432,18 @@ ellipsps('wwwwwwwwwwwwwwwwwwwwwwwww', 50, 14);
 
 ```typescript
 strWidth(null, 'WWWWWWW');
+```
+
+#### path
+
+##### pathJoin:(...args): string
+
+`拼接url路径`
+
+```typescript
+pathJoin('http://10.3.3.3', 'api/test'); // http://10.3.3.3/api/test
+pathJoin('/api', '/test'); // '/api/test'
+pathJoin(); // ''
 ```
 
 #### extractEnclosedContent
@@ -504,6 +531,22 @@ randomInt(5, 100); // 默认min = 0; max = 10;
 ##### toThousands:(val: string | number, digit: number = 0): string
 
 `将数字转换为千位制转换，digit小数点精确到几位 `
+
+##### max: (...args: number[]): number;
+
+`求最大值`
+
+```typescript
+max(3,4,9); // 9
+```
+
+##### min: (...args: number[]): number;
+
+`求最小值`
+
+```typescript
+min(3,4,9); // 3
+```
 
 
 
