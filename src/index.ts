@@ -138,6 +138,9 @@ export {currentDayLatest as currentDayLatest} from './date';
 export {randomInt as randomInt} from './number';
 
 export {toThousands as toThousands} from './number';
+export {unitUpgrade as unitUpgrade} from './number';
+export {bitUpgrade as bitUpgrade} from './number';
+export {bitRateUpgrade as bitRateUpgrade} from './number';
 
 export {max as max} from './number';
 export {min as min} from './number';

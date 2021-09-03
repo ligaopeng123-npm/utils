@@ -532,6 +532,46 @@ randomInt(5, 100); // 默认min = 0; max = 10;
 
 `将数字转换为千位制转换，digit小数点精确到几位 `
 
+```typescript
+toThousands(9999999); // '9,999,999'
+toThousands(9999999.000, 3); // '9,999,999.000'
+```
+
+##### bitUpgrade: (n:number, opt: UpgradeOptions): string
+
+`比特转换`
+
+```typescript
+type UpgradeOptions = {
+	decimal?: number, // 保留几位小数 默认俩位
+	delimiter?: string, // 数字和单位之间的分隔符 默认为 无
+}
+bitUpgrade(1000); // '1.00KB'
+bitUpgrade(1025, {delimiter: ' '}); // '1.00 KB'
+bitUpgrade(999); // '999B'
+```
+
+##### bitRateUpgrade
+
+`比特率转换`
+
+```typescript
+bitRateUpgrade(1000);//'1000bps'
+bitRateUpgrade(1025, {delimiter: ' '}); // '1.00 Kbps'
+```
+
+##### unitUpgrade:(num: number, options?: UnitUpgradeProps): [number, string]
+
+`单位进阶`
+
+```typescript
+UnitUpgradeProps = {
+	type?: 'bit' | 'bitRate',
+	decimal?: number, // 保留几位小数 默认俩位
+}
+unitUpgrade(1000); //(['1.00', 'KB']
+```
+
 ##### max: (...args: number[]): number;
 
 `求最大值`

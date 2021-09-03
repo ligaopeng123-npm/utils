@@ -105,5 +105,31 @@ const formatTimestamp = (timestamp: Date | number | string, type: TimestampType 
 			return `${getYear(date)}-${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
 	}
 };
+/**
+ * 将时间转换为HH mm ss 格式展示
+ * @param s
+ */
+// export const timeToCN = (timmer: number): string => {
+// 	// 最小值
+// 	const min = this._minTime;
+// 	// 当大于最小值时 开始转换进度
+// 	if (timmer >= min) {
+// 		const type = this._timmerType[index];
+// 		// 如果大于 等于当前值 相应位置进行储值后开启递归 否则直接下位递归
+// 		if (timmer >= type) {
+// 			const t = Math.floor(timmer / type);
+// 			strArr[index] = t;
+// 			return this.getTimmer(timmer - type * t, index + 1, strArr);
+// 		} else {
+// 			return this.getTimmer(timmer, index + 1, strArr);
+// 		}
+// 	} else {
+// 		// 个位数补值
+// 		strArr[strArr.length - 1] = Math.round(timmer);
+// 		return this.formateTimeByArr(strArr);
+// 	}
+// 	return ''
+// };
 
 export default formatTimestamp;
+
