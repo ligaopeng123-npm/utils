@@ -2,7 +2,9 @@
 
 ------
 
-### types
+#### types
+
+##### date
 
 | 函数名        | 作用                                       |
 | ------------- | ------------------------------------------ |
@@ -19,6 +21,33 @@
 | isEmptyObject | 判断是否是空对象                           |
 | isEmpty       | 判断是否是空 null undefined '' [] 都为true |
 | isJSON        | 判断是否为合法的可格式化的json字符串       |
+
+##### browser
+
+| 函数名    | 作用              |
+| --------- | ----------------- |
+| isChrome  | chrome浏览器      |
+| isFirefox | 火狐浏览器        |
+| isWebKit  | WebKit内核        |
+| isSafari  | Safari            |
+| isOpera   | Opera             |
+| isGecko   | Gecko             |
+| isWindows | 是否是Windows系统 |
+| isMac     | Mac系统           |
+| isLinux   | Linux系统         |
+| isStrict  | 是否是严格模式    |
+| isSecure  | 是否是https访问   |
+
+##### browser version
+
+| 函数名         | 作用           |
+| -------------- | -------------- |
+| chromeVersion  | 返回值为number |
+| firefoxVersion | 返回值为number |
+| ieVersion      | 返回值为number |
+| operaVersion   | 返回值为number |
+| safariVersion  | 返回值为number |
+| webKitVersion  | 返回值为number |
 
 
 

@@ -13,6 +13,39 @@ export {isDate as isDate} from './types';
 export {isUndefined as isUndefined} from './types';
 export {isJSON as isJSON} from './types';
 
+/**
+ * 浏览器判断
+ */
+export {isChrome as isChrome} from "./types";
+export {isFirefox as isFirefox} from "./types";
+export {isWebKit as isWebKit} from "./types";
+export {isSafari as isSafari} from "./types";
+export {isOpera as isOpera} from "./types";
+export {isEdge as isEdge} from "./types";
+export {isIE as isIE} from "./types";
+export {isGecko as isGecko} from "./types";
+/**
+ * 硬件判断
+ */
+export {isWindows as isWindows} from "./types";
+export {isMac as isMac} from "./types";
+export {isLinux as isLinux} from "./types";
+/**
+ * 版本获取
+ */
+export {chromeVersion as chromeVersion} from "./types";
+export {firefoxVersion as firefoxVersion} from "./types";
+export {ieVersion as ieVersion} from "./types";
+export {operaVersion as operaVersion} from "./types";
+export {safariVersion as safariVersion} from "./types";
+export {webKitVersion as webKitVersion} from "./types";
+
+/**
+ * 安全模式获取
+ */
+export {isStrict as isStrict} from "./types";
+export {isSecure as isSecure} from "./types";
+
 /****************************   文件操作    *****************************/
 export {downloadStream as downloadStream} from './file';
 export {downloadStreamParams as downloadStreamParams} from './file';
