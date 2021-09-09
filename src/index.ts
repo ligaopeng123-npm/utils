@@ -12,6 +12,7 @@ export {isString as isString} from './types';
 export {isDate as isDate} from './types';
 export {isUndefined as isUndefined} from './types';
 export {isJSON as isJSON} from './types';
+export {isBoolean as isBoolean} from "./types";
 
 /**
  * 浏览器判断

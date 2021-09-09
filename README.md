@@ -13,6 +13,7 @@
 | isPromise     | 判断Promise                                |
 | isFunction    | 判断函数                                   |
 | isNumber      | 判断数字                                   |
+| isBoolean     | 判断boolean                                |
 | isUndefined   | 判断undefined                              |
 | isString      | 判断string                                 |
 | isElement     | 判断element                                |

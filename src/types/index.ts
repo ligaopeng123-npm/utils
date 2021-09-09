@@ -3,6 +3,7 @@
  */
 export {isObject as isObject} from "./date";
 export {isArray as isArray} from "./date";
+export {isBoolean as isBoolean} from "./date";
 export {isEqualByObj as isEqualByObj} from "./date";
 export {isEmptyObject as isEmptyObject} from "./date";
 export {isElement as isElement} from "./date";
