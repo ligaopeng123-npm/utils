@@ -108,7 +108,11 @@ export {mousePosition as mousePosition} from './object';
 
 export {getStyle as getStyle} from './object';
 
+export {parentByExpected as parentByExpected} from './object';
 
+export {copyText as copyText} from './object';
+
+export {length as length} from './object';
 /****************************  函数操作    *****************************/
 export {ResponseMonad as ResponseMonad} from './function';
 // 缓存函数

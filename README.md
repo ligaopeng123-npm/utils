@@ -126,6 +126,26 @@ mousePosition(event)
 getStyle(div, 'color');
 ```
 
+##### parentByExpected: (dom, expected): parent
+
+`获取复合逾期的父级dom`
+
+```typescript
+parentByExpected(dom, (currntDom)=> {
+    if(currntDom.classList.contains('loading')) return true;
+})
+```
+
+##### copyText: (dom)
+
+`点击后复制文本`
+
+```typescript
+<div onClick="copyText"></div>
+```
+
+
+
 
 
 ------
