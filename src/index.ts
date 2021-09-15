@@ -134,7 +134,9 @@ export {autoFullscreen as autoFullscreen} from './function';
 
 // 窗口尺寸
 export {windowSize as windowSize} from './function';
-
+// 去抖 节流
+export {debounce as debounce} from "./function";
+export {debounce as throttle} from "./function";
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date';
 export {TimestampType as TimestampType} from './date';
