@@ -26,6 +26,7 @@ export {default as autoFullscreen} from './fullscreen';
 /**
  * 窗口尺寸
  */
+export {WindowSize as WindowSize} from './windowSize';
 export {default as windowSize} from './windowSize';
 
 /**

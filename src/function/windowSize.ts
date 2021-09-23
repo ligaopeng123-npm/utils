@@ -49,8 +49,9 @@ const windowSize = (): WindowSize => {
 	}
 	let windowWidth, windowHeight;
 	if (window.self.innerHeight) {
-		// all except Explorer
+		// @ts-ignore except Explorer
 		if (document.documentElement.clientWidth) {
+			// @ts-ignore
 			windowWidth = document.documentElement.clientWidth;
 		} else {
 			windowWidth = window.self.innerWidth;

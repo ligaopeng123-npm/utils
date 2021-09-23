@@ -133,10 +133,13 @@ export {exitFullscreen as exitFullscreen} from './function';
 export {autoFullscreen as autoFullscreen} from './function';
 
 // 窗口尺寸
+export {WindowSize as WindowSize} from './function';
 export {windowSize as windowSize} from './function';
 // 去抖 节流
-export {debounce as debounce} from "./function";
-export {debounce as throttle} from "./function";
+export {DebounceOptions as DebounceOptions} from "./function";
+export {default as debounce} from "./function";
+export {ThrottleOptions as ThrottleOptions} from "./function";
+export {default as throttle} from "./function";
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date';
 export {TimestampType as TimestampType} from './date';
