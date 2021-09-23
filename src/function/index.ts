@@ -31,5 +31,7 @@ export {default as windowSize} from './windowSize';
 /**
  * 去抖
  */
+export {DebounceOptions as DebounceOptions} from "./debounce";
 export {default as debounce} from "./debounce";
+export {ThrottleOptions as ThrottleOptions} from "./throttle";
 export {default as throttle} from "./throttle";
