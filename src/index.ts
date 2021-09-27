@@ -107,12 +107,25 @@ export {cloneAllObject as cloneAllObject} from './object';
 export {mousePosition as mousePosition} from './object';
 
 export {getStyle as getStyle} from './object';
-
+// 获取父级dom 直到Expected条件为true
 export {parentByExpected as parentByExpected} from './object';
-
+// 复制文本
 export {copyText as copyText} from './object';
-
+// 数组 对象 字符串长度
 export {length as length} from './object';
+
+/**
+ * 对象属性合并 数组默认覆盖
+ */
+export {assignDeep as assignDeep} from './object';
+/**
+ * 对象属性合并（数组是concat合并）
+ */
+export {assignDeepMergeArray as assignDeepMergeArray} from './object';
+/**
+ * 对象属性合并（数组不做处理）
+ */
+export {assignDeepNotIncludedArray as assignDeepNotIncludedArray} from './object';
 /****************************  函数操作    *****************************/
 export {ResponseMonad as ResponseMonad} from './function';
 // 缓存函数
@@ -137,9 +150,9 @@ export {WindowSize as WindowSize} from './function';
 export {windowSize as windowSize} from './function';
 // 去抖 节流
 export {DebounceOptions as DebounceOptions} from "./function";
-export {default as debounce} from "./function";
+export {throttle as debounce} from "./function";
 export {ThrottleOptions as ThrottleOptions} from "./function";
-export {default as throttle} from "./function";
+export {throttle as throttle} from "./function";
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date';
 export {TimestampType as TimestampType} from './date';

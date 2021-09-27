@@ -99,6 +99,29 @@ cloneAllItem({});
 ```typescript
 assignIf({a: 1}, {a:2, b: 1}); // {a:1,b:1}
 ```
+##### assignDeep:(target: any, source: any): any
+
+`对象属性的深度合并（非覆盖），数组默认为直接被source属性覆盖。`
+
+```typescript
+assignDeep({a: 1}, {a: [1], b: 2}); // {a: [1], b: 2}                                               
+```
+
+##### assignDeepMergeArray:(target: any, source: any): any
+
+`对象属性的深度合并（非覆盖），数组通过concat拼接。`
+
+```typescript
+assignDeepMergeArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1}); // {a: [1, 2, 3, 4, 5, 6], b: 1}                                                                                                                       
+```
+
+##### assignDeepNotIncludedArray:(target: any, source: any): any
+
+`对象属性的深度合并（非覆盖），数组通过concat拼接。`
+
+```typescript
+assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1}); // {a: [1, 2, 3], b: 1}                                                                                                                       
+```
 
 #### other
 
