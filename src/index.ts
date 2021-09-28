@@ -150,7 +150,7 @@ export {WindowSize as WindowSize} from './function';
 export {windowSize as windowSize} from './function';
 // 去抖 节流
 export {DebounceOptions as DebounceOptions} from "./function";
-export {throttle as debounce} from "./function";
+export {debounce as debounce} from "./function";
 export {ThrottleOptions as ThrottleOptions} from "./function";
 export {throttle as throttle} from "./function";
 /****************************  时间操作    *****************************/
