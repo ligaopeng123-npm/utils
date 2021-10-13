@@ -2,7 +2,7 @@
 
 ------
 
-#### types
+### types
 
 ##### date
 
@@ -49,6 +49,8 @@
 | operaVersion   | 返回值为number |
 | safariVersion  | 返回值为number |
 | webKitVersion  | 返回值为number |
+
+[https://github.com/ligaopeng123-npm/utils/blob/master/README.md]: https://github.com/ligaopeng123-npm/utils/blob/master/README.md	"https://github.com/ligaopeng123-npm/utils/blob/master/README.md"
 
 
 
