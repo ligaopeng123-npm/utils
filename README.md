@@ -104,23 +104,25 @@ assignIf({a: 1}, {a:2, b: 1}); // {a:1,b:1}
 `对象属性的深度合并（非覆盖），数组默认为直接被source属性覆盖。`
 
 ```typescript
-assignDeep({a: 1}, {a: [1], b: 2}); // {a: [1], b: 2}                                               
+assignDeep({a: 1}, {a: [1], b: 2}); // {a: [1], b: 2}   
 ```
 
 ##### assignDeepMergeArray:(target: any, source: any): any
 
 `对象属性的深度合并（非覆盖），数组通过concat拼接。`
 
-```typescript
-assignDeepMergeArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1}); // {a: [1, 2, 3, 4, 5, 6], b: 1}                                                                                                                       
+```ty
+assignDeepMergeArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1});
+// {a: [1, 2, 3, 4, 5, 6], b: 1}    
 ```
 
 ##### assignDeepNotIncludedArray:(target: any, source: any): any
 
 `对象属性的深度合并（非覆盖），数组通过concat拼接。`
 
-```typescript
-assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1}); // {a: [1, 2, 3], b: 1}                                                                                                                       
+```TY
+assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1}); 
+// {a: [1, 2, 3], b: 1}  
 ```
 
 #### other
@@ -221,9 +223,16 @@ ResponseMonad.of({
 	message: ''
 }).effect((data) => {// 返回 true获false 结果为正确是返回
 	return data.states === 200;
-}).map((v) => v.data).map((v) => v.data).map((v) => v.data).map((v) => v.data).chain((d) => {
+})
+    .map((v) => v.data)
+    .map((v) => v.data)
+    .map((v) => v.data)
+    .map((v) => v.data)
+    .chain((d) => {
 	console.log('d', d);
-}).catch((type, msg) => { // 捕获异常错误type为0时为 effect结果不满足报错  type为1是为map解构出错
+})
+ // 捕获异常错误type为0时为 effect结果不满足报错  type为1是为map解构出错
+    .catch((type, msg) => {
 	console.log('e', e, msg);
 })
 ```
@@ -362,8 +371,10 @@ windowSize(); //
 
 ```typescript
 type DebounceOptions = {
-	leading: boolean; // 第一时间是否立即执行 后续在去抖  默认为false
-	notDebounce?: (...arg: any) => any; // 在去抖过程中 有一些非去抖处理 可以添加此参数
+     // 第一时间是否立即执行 后续在去抖  默认为false
+	leading: boolean;
+    // 在去抖过程中 有一些非去抖处理 可以添加此参数
+	notDebounce?: (...arg: any) => any; 
 }
 
 debounce(()=> {
@@ -402,7 +413,8 @@ urlJoinParmas({name:'zhangsan'})
 `去掉url中的参数，只保留url地址`
 
 ```typescript
-removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx'); // https:/www.baidu.com/getBaseInfo
+removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx'); 
+// https:/www.baidu.com/getBaseInfo
 ```
 
 ##### queryParamsFromUrl:(url: string): object
@@ -526,7 +538,8 @@ pathJoin(); // ''
 `提取被符号包裹住的字符串`
 
 ```typescript
-extractEnclosedContent("a (1111),b (4444), d(3333)", '(', ')'); // ['1111', '4444', '3333']
+extractEnclosedContent("a (1111),b (4444), d(3333)", '(', ')'); 
+// ['1111', '4444', '3333']
 ```
 
 ##### extractParenthesesContent:(str:string):Array<string>
@@ -534,7 +547,8 @@ extractEnclosedContent("a (1111),b (4444), d(3333)", '(', ')'); // ['1111', '444
 `提取小括号里面的内容`
 
 ```typescript
-extractParenthesesContent("a (1111),b (4444), d(3333)"); //  ['1111', '4444', '3333']
+extractParenthesesContent("a (1111),b (4444), d(3333)"); 
+//  ['1111', '4444', '3333']
 ```
 
 ##### extractMiddleParenthesesContent(str:string):Array<string>
@@ -542,7 +556,8 @@ extractParenthesesContent("a (1111),b (4444), d(3333)"); //  ['1111', '4444', '3
 `提取中括号里面的内容`
 
 ```typescript
-extractMiddleParenthesesContent("a (1111),b [4444], d(3333)"); //  ['4444']
+extractMiddleParenthesesContent("a (1111),b [4444], d(3333)");
+//  ['4444']
 ```
 
 ##### extractBigParenthesesContent(str:string):Array<string>
