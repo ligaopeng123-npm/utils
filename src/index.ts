@@ -69,7 +69,6 @@ export {imageToBase64 as imageToBase64} from './file/src';
 
 export {dowmloadScreenshotPicture as dowmloadScreenshotPicture} from './file/src';
 
-
 /****************************  数组操作函数    *****************************/
 export {convertToTwodimensional as convertToTwodimensional} from './array/src';
 // 树的查询
