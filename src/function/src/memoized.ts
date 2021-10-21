@@ -54,7 +54,7 @@ export const memoized = (fn: MemoizedFn) => {
  * @param fn
  */
 export declare interface AsyncMemoizedFn {
-	(arg: string): Promise<Array<any>> | Promise<any>
+	(...arg: any): Promise<Array<any>> | Promise<any>
 }
 
 export const asyncMemoized = (fn: AsyncMemoizedFn) => {

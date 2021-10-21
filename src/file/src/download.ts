@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isElement, isObject, isUndefined} from "../../types";
+import {isElement, isEmpty, isObject, isUndefined} from "../../types";
 
 /**
  * @params  需要拼接的参数
@@ -193,4 +193,19 @@ export const dowmloadScreenshotPicture = (dom: HTMLCanvasElement | HTMLVideoElem
 			fileName: options?.fileName
 		})
 	}
+};
+
+/**
+ * 过滤参数中的冗余字段
+ * undefined  null '' [] 会被删除
+ * @param params
+ */
+export const removeEmptyParams = (params: any) => {
+	const _params = Object.assign({}, params);
+	for (let key in _params) {
+		if (isEmpty(_params[key])) {
+			delete _params[key];
+		}
+	}
+	return _params;
 };

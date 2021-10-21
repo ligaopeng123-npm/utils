@@ -50,7 +50,6 @@
             "limit": "10 KB"
         }
     ],
-
     "devDependencies": {
         "@size-limit/preset-small-lib": "^5.0.1",
         "@types/node": "^16.4.6",

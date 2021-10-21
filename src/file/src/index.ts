@@ -12,6 +12,8 @@ export {dowmloadScreenshotPicture as dowmloadScreenshotPicture} from './download
 
 export {urlJoinParmas as urlJoinParmas} from './download';
 export {removeUrlParams as removeUrlParams} from './download';
+// 删除参数中的空数据
+export {removeEmptyParams as removeEmptyParams} from './download';
 
 export {queryParamsFromUrl as queryParamsFromUrl} from './download';
 

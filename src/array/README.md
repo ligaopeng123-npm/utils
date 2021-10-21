@@ -12,4 +12,23 @@
 convertToTwodimensional([], 1);
 ```
 
+#### tree
+
+##### findTreeOrder
+
+`(tree: Array<any>, rely: RelyFn, options?: TreeOptions): Array<number>`
+
+`根据rely返回的条件，查找树的位置`
+
+```typescript
+
+```
+
+##### findSubtreeByOrder
+
+`(tree: any, order: Array<number>, options?: TreeOptions): TreeNode`
+
+`根据order顺序 查找treeNode`
+
+
 

@@ -1,3 +1,11 @@
+## 常用工具函数
+
+`如果仅使用type类型 可下载 nmp i @gaopeng123/utils.types` 
+
+
+
+[TOC]
+
 ### types
 
 ##### date
@@ -411,6 +419,14 @@ removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx');
 // https:/www.baidu.com/getBaseInfo
 ```
 
+##### removeEmptyParams
+
+`去掉下发参数中的undefined  null '' []`
+
+```typescript
+removeEmptyParams({a: null, b:undefined, c:'',d: [], e: 0}); // {e:0}
+```
+
 ##### queryParamsFromUrl:(url: string): object
 
 `解析url中包含的参数`
@@ -685,6 +701,24 @@ min(3,4,9); // 3
 ```typescript
 convertToTwodimensional([], 1);
 ```
+
+#### tree
+
+##### findTreeOrder
+
+`(tree: Array<any>, rely: RelyFn, options?: TreeOptions): Array<number>`
+
+`根据rely返回的条件，查找树的位置`
+
+```typescript
+
+```
+
+##### findSubtreeByOrder
+
+`(tree: any, order: Array<number>, options?: TreeOptions): TreeNode`
+
+`根据order顺序 查找treeNode`
 
 
 

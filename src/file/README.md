@@ -17,6 +17,14 @@ removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx');
 // https:/www.baidu.com/getBaseInfo
 ```
 
+##### removeEmptyParams
+
+`去掉下发参数中的undefined  null '' []`
+
+```typescript
+removeEmptyParams({a: null, b:undefined, c:'',d: [], e: 0}); // {e:0}
+```
+
 ##### queryParamsFromUrl:(url: string): object
 
 `解析url中包含的参数`
