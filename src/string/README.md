@@ -1,3 +1,28 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [String](#string)
+    - [uuid:(len?: number, radix?: number) => string;](#uuidlen-number-radix-number--string)
+    - [formatStr:(...args: any) => string](#formatstrargs-any--string)
+    - [ellipsps: (text: string, width: number = 100, size: number = 12, font: string = 'Arial'): string;](#ellipsps-text-string-width-number--100-size-number--12-font-string--arial-string)
+    - [strWidth:(ctx: any, text: string, fontSize: number = 12, fontFamily: string = 'Arial')](#strwidthctx-any-text-string-fontsize-number--12-fontfamily-string--arial)
+  - [path](#path)
+    - [pathJoin:(...args): string](#pathjoinargs-string)
+  - [extractEnclosedContent](#extractenclosedcontent)
+    - [extractEnclosedContent: (str: string, startStr: string, endStr: string): Array<string>](#extractenclosedcontent-str-string-startstr-string-endstr-string-arraystring)
+    - [extractParenthesesContent:(str:string):Array<string>](#extractparenthesescontentstrstringarraystring)
+    - [extractMiddleParenthesesContent(str:string):Array<string>](#extractmiddleparenthesescontentstrstringarraystring)
+    - [extractBigParenthesesContent(str:string):Array<string>](#extractbigparenthesescontentstrstringarraystring)
+  - [color](#color)
+    - [addOpacity](#addopacity)
+    - [hex2Rgb](#hex2rgb)
+    - [rgb2hex](#rgb2hex)
+    - [rgba2hex](#rgba2hex)
+    - [rgba2rgb](#rgba2rgb)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### String
 
 ##### uuid:(len?: number, radix?: number) => string;

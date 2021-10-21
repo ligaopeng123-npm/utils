@@ -1,3 +1,27 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [object](#object)
+  - [clone](#clone)
+    - [clone: <T>(val: T): T](#clone-tval-t-t)
+    - [cloneAllObject: <T>(val: T): T](#cloneallobject-tval-t-t)
+    - [cloneAllArray: <T>(val: T): T](#cloneallarray-tval-t-t)
+    - [cloneAllItem: <T>(val: T): T](#cloneallitem-tval-t-t)
+  - [assign](#assign)
+    - [assignIf:(target: any, source: any): any](#assigniftarget-any-source-any-any)
+    - [assignDeep:(target: any, source: any): any](#assigndeeptarget-any-source-any-any)
+    - [assignDeepMergeArray:(target: any, source: any): any](#assigndeepmergearraytarget-any-source-any-any)
+    - [assignDeepNotIncludedArray:(target: any, source: any): any](#assigndeepnotincludedarraytarget-any-source-any-any)
+  - [other](#other)
+    - [length:(val: any): number](#lengthval-any-number)
+    - [mousePosition:(event: any): {x:number,y:number}](#mousepositionevent-any-xnumberynumber)
+    - [getStyle: (el, styleName)](#getstyle-el-stylename)
+    - [parentByExpected: (dom, expected): parent](#parentbyexpected-dom-expected-parent)
+    - [copyText: (dom)](#copytext-dom)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ### object
 
 #### clone
