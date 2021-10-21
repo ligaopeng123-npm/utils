@@ -1,3 +1,5 @@
+[types](./src/types/README.md#sub-section)
+
 ### types
 
 ##### date
