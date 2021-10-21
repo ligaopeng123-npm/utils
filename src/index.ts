@@ -69,6 +69,9 @@ export {dowmloadScreenshotPicture as dowmloadScreenshotPicture} from './file/src
 
 /****************************  数组操作函数    *****************************/
 export {convertToTwodimensional as convertToTwodimensional} from './array/src';
+// 树的查询
+export {findTreeOrder as findTreeOrder} from './array/src';
+export {findSubtreeByOrder as findSubtreeByOrder} from './array/src';
 
 
 /****************************  字符串 数字操作    *****************************/
