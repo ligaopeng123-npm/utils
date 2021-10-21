@@ -58,6 +58,9 @@ export {urlJoinParmas as urlJoinParmas} from './file/src';
 
 export {removeUrlParams as removeUrlParams} from './file/src';
 
+// 删除参数中的空数据
+export {removeEmptyParams as removeEmptyParams} from './file/src';
+
 export {queryParamsFromUrl as queryParamsFromUrl} from './file/src';
 // 图片操作
 export {imageFromFile as imageFromFile} from './file/src';
