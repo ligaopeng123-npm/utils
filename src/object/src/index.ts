@@ -35,3 +35,15 @@ export {assignDeepMergeArray as assignDeepMergeArray} from './assignDeep';
  * 对象属性合并（数组不做处理）
  */
 export {assignDeepNotIncludedArray as assignDeepNotIncludedArray} from './assignDeep';
+/**
+ * 对象的过滤循环
+ */
+export {filterObject as filterObject} from './objectLoop';
+/**
+ * 对象的map循环
+ */
+export {mapObject as mapObject} from './objectLoop';
+/**
+ *
+ */
+export {forEachObject as forEachObject} from './objectLoop';

@@ -61,6 +61,8 @@ export {removeUrlParams as removeUrlParams} from './file/src';
 // 删除参数中的空数据
 export {removeEmptyParams as removeEmptyParams} from './file/src';
 
+
+
 export {queryParamsFromUrl as queryParamsFromUrl} from './file/src';
 // 图片操作
 export {imageFromFile as imageFromFile} from './file/src';
@@ -131,6 +133,19 @@ export {assignDeepMergeArray as assignDeepMergeArray} from './object/src';
  * 对象属性合并（数组不做处理）
  */
 export {assignDeepNotIncludedArray as assignDeepNotIncludedArray} from './object/src';
+
+/**
+ * 对象的过滤循环
+ */
+export {filterObject as filterObject} from './object/src';
+/**
+ * 对象的map循环
+ */
+export {mapObject as mapObject} from './object/src';
+/**
+ * 对象forEach
+ */
+export {forEachObject as forEachObject} from './object/src';
 /****************************  函数操作    *****************************/
 export {ResponseMonad as ResponseMonad} from './function/src';
 // 缓存函数

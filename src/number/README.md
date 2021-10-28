@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [number](#number)
     - [randomInt: (min?: number, max?: number): number](#randomint-min-number-max-number-number)
     - [toThousands:(val: string | number, digit: number = 0): string](#tothousandsval-string--number-digit-number--0-string)

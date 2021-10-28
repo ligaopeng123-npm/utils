@@ -19,6 +19,9 @@
     - [getStyle: (el, styleName)](#getstyle-el-stylename)
     - [parentByExpected: (dom, expected): parent](#parentbyexpected-dom-expected-parent)
     - [copyText: (dom)](#copytext-dom)
+    - [mapObject: (obj, callBack: ObjectCallBack) => any;](#mapobject-obj-callback-objectcallback--any)
+    - [filterObject: (obj, callBack: FilterObjectCallBack) => any;](#filterobject-obj-callback-filterobjectcallback--any)
+    - [forEachObject: (obj, callBack: ObjectCallBack) => any;](#foreachobject-obj-callback-objectcallback--any)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -136,3 +139,68 @@ parentByExpected(dom, (currntDom)=> {
 ```typescript
 <div onClick="copyText"></div>
 ```
+
+##### mapObject: (obj, callBack: ObjectCallBack) => any;
+
+`模拟数组的map操作`
+
+```typescript
+type ObjectCallBack = (currentVal?: any, index?: number, obj?: any) => any;
+const object1 = {
+    a: `a`,
+    b: `b`,
+    c: {
+        a: true,
+        b: 123,
+        c: `hello!`,
+    },
+    d: [1, 2, 3],
+    e: [4, 5, 6],
+};
+mapObject(mapObject.assign({}, object1), (item)=> {
+   return 0;
+}));
+// 返回值
+{
+  a: 0,
+  b: 0,
+  c: 0,
+  d: 0,
+  e: 0
+}
+```
+
+##### filterObject: (obj, callBack: FilterObjectCallBack) => any;
+
+`模拟数组的filter操作`
+
+```typescript
+type FilterObjectCallBack = (currentVal?: any, index?: number, obj?: any) => boolean;
+filterObject(Object.assign({}, object1), (item)=> {
+    return typeof item === 'string'
+}));
+// 返回值
+{
+   a: `a`,
+   b: `b`,
+}
+```
+
+##### forEachObject: (obj, callBack: ObjectCallBack) => any;
+
+`模拟数组的forEach操作`
+
+```typescript
+forEachObject(Object.assign({}, object1), (item)=> {
+    return typeof item === 'string' ? 0 : 1;
+});
+// 返回值
+{
+  a: 0,
+  b: 0,
+  c: 1,
+  d: 1,
+  e: 1
+}
+```
+

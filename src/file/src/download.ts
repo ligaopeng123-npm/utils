@@ -9,7 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isElement, isEmpty, isObject, isUndefined} from "../../types";
+import {isElement, isEmpty, isObject, isString, isUndefined} from "../../types";
+import {mapObject, filterObject} from "../../object";
 
 /**
  * @params  需要拼接的参数
@@ -208,4 +209,15 @@ export const removeEmptyParams = (params: any) => {
 		}
 	}
 	return _params;
+};
+/**
+ * 使参数合适 正确
+ */
+export const makeParamsProper = (params: any) => {
+	if (isObject(params)) {
+		return mapObject(filterObject(params, (item)=> !isEmpty(item)), (item: any) => {
+			return isString(item) ? item?.trimStart()?.trimEnd() : item
+		});
+	}
+	return params;
 };

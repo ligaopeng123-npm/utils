@@ -5,7 +5,8 @@
 - [file](#file)
     - [urlJoinParmas: (parmas?: urlJoinParmasPatams): string](#urljoinparmas-parmas-urljoinparmaspatams-string)
     - [removeUrlParams:(url: string): string](#removeurlparamsurl-string-string)
-    - [removeEmptyParams](#removeemptyparams)
+    - [removeEmptyParams: (params): any;](#removeemptyparams-params-any)
+    - [makeParamsProper:(params): any;](#makeparamsproperparams-any)
     - [queryParamsFromUrl:(url: string): object](#queryparamsfromurlurl-string-object)
     - [download: ({url, fileName, blob, parmas}: downloadParams): void \| Error](#download-url-filename-blob-parmas-downloadparams-void-%5C-error)
     - [downloadStream:({url, options, fileName}: downloadStreamParams): void](#downloadstreamurl-options-filename-downloadstreamparams-void)
@@ -34,12 +35,24 @@ removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx');
 // https:/www.baidu.com/getBaseInfo
 ```
 
-##### removeEmptyParams
+##### removeEmptyParams: (params): any;
 
 `去掉下发参数中的undefined  null '' []`
 
 ```typescript
 removeEmptyParams({a: null, b:undefined, c:'',d: [], e: 0}); // {e:0}
+```
+
+##### makeParamsProper:(params): any;
+
+`处理不合规参数，让参数更符合要求，参数中的 ''、[]、null、undefined会被去掉，字符串前后的空格会被去掉 `
+
+```typescript
+makeParamsProper({a: null, b: undefined, c: '', d: [], e: 0, f: '   b d  f  ',})
+{
+	e: 0,
+    f: 'b d  f'
+}
 ```
 
 ##### queryParamsFromUrl:(url: string): object

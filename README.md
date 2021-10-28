@@ -50,12 +50,16 @@
       - [urlJoinParmas: (parmas?: urlJoinParmasPatams): string](#urljoinparmas-parmas-urljoinparmaspatams-string)
       - [removeUrlParams:(url: string): string](#removeurlparamsurl-string-string)
       - [removeEmptyParams](#removeemptyparams)
+      - [makeParamsProper:(params): any;](#makeparamsproperparams-any)
       - [queryParamsFromUrl:(url: string): object](#queryparamsfromurlurl-string-object)
       - [download: ({url, fileName, blob, parmas}: downloadParams): void \| Error](#download-url-filename-blob-parmas-downloadparams-void-%5C-error)
       - [downloadStream:({url, options, fileName}: downloadStreamParams): void](#downloadstreamurl-options-filename-downloadstreamparams-void)
       - [dowmloadScreenshotPicture: (dom, options)](#dowmloadscreenshotpicture-dom-options)
       - [imageFromFile:(file: File): string](#imagefromfilefile-file-string)
       - [imageToBase64: (opt: ImageToBase64Props): string](#imagetobase64-opt-imagetobase64props-string)
+      - [mapObject: (obj, callBack: ObjectCallBack) => any;](#mapobject-obj-callback-objectcallback--any)
+      - [filterObject: (obj, callBack: FilterObjectCallBack) => any;](#filterobject-obj-callback-filterobjectcallback--any)
+      - [forEachObject: (obj, callBack: ObjectCallBack) => any;](#foreachobject-obj-callback-objectcallback--any)
   - [String](#string)
       - [uuid:(len?: number, radix?: number) => string;](#uuidlen-number-radix-number--string)
       - [formatStr:(...args: any) => string](#formatstrargs-any--string)
@@ -526,6 +530,18 @@ removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx');
 removeEmptyParams({a: null, b:undefined, c:'',d: [], e: 0}); // {e:0}
 ```
 
+##### makeParamsProper:(params): any;
+
+`处理不合规参数，让参数更符合要求，参数中的 ''、[]、null、undefined会被去掉，字符串前后的空格会被去掉 `
+
+```typescript
+makeParamsProper({a: null, b: undefined, c: '', d: [], e: 0, f: '   b d  f  ',})
+{
+	e: 0,
+    f: 'b d  f'
+}
+```
+
 ##### queryParamsFromUrl:(url: string): object
 
 `解析url中包含的参数`
@@ -588,6 +604,70 @@ type ImageToBase64Props = {
 	opacity?: number; // 透明度 默认1
 }
 imageToBase64({image:imgae})
+```
+
+##### mapObject: (obj, callBack: ObjectCallBack) => any;
+
+`模拟数组的map操作`
+
+```typescript
+type ObjectCallBack = (currentVal?: any, index?: number, obj?: any) => any;
+const object1 = {
+    a: `a`,
+    b: `b`,
+    c: {
+        a: true,
+        b: 123,
+        c: `hello!`,
+    },
+    d: [1, 2, 3],
+    e: [4, 5, 6],
+};
+mapObject(mapObject.assign({}, object1), (item)=> {
+   return 0;
+}));
+// 返回值
+{
+  a: 0,
+  b: 0,
+  c: 0,
+  d: 0,
+  e: 0
+}
+```
+
+##### filterObject: (obj, callBack: FilterObjectCallBack) => any;
+
+`模拟数组的filter操作`
+
+```typescript
+type FilterObjectCallBack = (currentVal?: any, index?: number, obj?: any) => boolean;
+filterObject(Object.assign({}, object1), (item)=> {
+    return typeof item === 'string'
+}));
+// 返回值
+{
+   a: `a`,
+   b: `b`,
+}
+```
+
+##### forEachObject: (obj, callBack: ObjectCallBack) => any;
+
+`模拟数组的forEach操作`
+
+```typescript
+forEachObject(Object.assign({}, object1), (item)=> {
+    return typeof item === 'string' ? 0 : 1;
+});
+// 返回值
+{
+  a: 0,
+  b: 0,
+  c: 1,
+  d: 1,
+  e: 1
+}
 ```
 
 
