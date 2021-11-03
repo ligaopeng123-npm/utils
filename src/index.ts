@@ -60,9 +60,9 @@ export {removeUrlParams as removeUrlParams} from './file/src';
 
 // 删除参数中的空数据
 export {removeEmptyParams as removeEmptyParams} from './file/src';
-
-
-
+// 处理不合规参数
+export {makeParamsProper as makeParamsProper} from './file/src';
+// 从url中获取参数
 export {queryParamsFromUrl as queryParamsFromUrl} from './file/src';
 // 图片操作
 export {imageFromFile as imageFromFile} from './file/src';
