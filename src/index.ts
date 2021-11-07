@@ -158,7 +158,10 @@ export {AsyncMemoizedFn as AsyncMemoizedFn} from './function/src';
 export {curry as curry} from './function/src';
 
 export {partial as partial} from './function/src';
-
+// 函数合并
+export {compose as compose} from './function/src';
+export {composePromises as composePromises} from './function/src';
+export {pipe as pipe} from './function/src';
 // fullscreen函数
 export {isFullscreen as isFullscreen} from './function/src';
 export {fullscreen as fullscreen} from './function/src';
@@ -173,6 +176,7 @@ export {DebounceOptions as DebounceOptions} from "./function/src";
 export {debounce as debounce} from "./function/src";
 export {ThrottleOptions as ThrottleOptions} from "./function/src";
 export {throttle as throttle} from "./function/src";
+
 /****************************  时间操作    *****************************/
 export {formatTimestamp as formatTimestamp} from './date/src';
 export {TimestampType as TimestampType} from './date/src';
