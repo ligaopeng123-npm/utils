@@ -41,5 +41,13 @@ export const extractMiddleParenthesesContent = partial(extractEnclosedContent, u
  * 提取大括号内容
  */
 export const extractBigParenthesesContent = partial(extractEnclosedContent, undefined, '{', '}');
+/**
+ * IPV4正则
+ */
+export const IPV4 = /^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$/;
+/**
+ * 手机号校验
+ */
+export const PHONE_NUMBER = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
 
 export default extractEnclosedContent;

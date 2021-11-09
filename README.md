@@ -49,6 +49,7 @@
   - [file](#file)
       - [urlJoinParmas: (parmas?: urlJoinParmasPatams): string](#urljoinparmas-parmas-urljoinparmaspatams-string)
       - [removeUrlParams:(url: string): string](#removeurlparamsurl-string-string)
+      - [routeFromUri:(url: string): string;](#routefromuriurl-string-string)
       - [removeEmptyParams](#removeemptyparams)
       - [makeParamsProper:(params): any;](#makeparamsproperparams-any)
       - [queryParamsFromUrl:(url: string): object](#queryparamsfromurlurl-string-object)
@@ -72,6 +73,9 @@
       - [extractParenthesesContent:(str:string):Array<string>](#extractparenthesescontentstrstringarraystring)
       - [extractMiddleParenthesesContent(str:string):Array<string>](#extractmiddleparenthesescontentstrstringarraystring)
       - [extractBigParenthesesContent(str:string):Array<string>](#extractbigparenthesescontentstrstringarraystring)
+    - [regexp](#regexp)
+      - [IPV4](#ipv4)
+      - [PHONE_NUMBER](#phone_number)
     - [color](#color)
       - [addOpacity](#addopacity)
       - [hex2Rgb](#hex2rgb)
@@ -88,7 +92,6 @@
       - [min: (...args: number[]): number;](#min-args-number-number)
   - [array](#array)
       - [convertToTwodimensional](#converttotwodimensional)
-    - [tree](#tree)
       - [findTreeOrder](#findtreeorder)
       - [findSubtreeByOrder](#findsubtreebyorder)
   - [date](#date-1)
@@ -522,6 +525,15 @@ removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx');
 // https:/www.baidu.com/getBaseInfo
 ```
 
+##### routeFromUri:(url: string): string;
+
+`根据uri获取路由路径`
+
+```typescript
+removeUrlParams('https://www.baidu.com/route/app/test'); // /route/app/test
+routeFromUri(removeUrlParams('https://www.baidu.com/route/app/test?data=3')); // /route/app/test
+```
+
 ##### removeEmptyParams
 
 `去掉下发参数中的undefined  null '' []`
@@ -757,6 +769,24 @@ extractMiddleParenthesesContent("a (1111),b [4444], d(3333)");
 extractBigParenthesesContent("a (1111),b [4444], d{3333}"); //  ['3333']
 ```
 
+#### regexp
+
+##### IPV4
+
+`IPV4正则校验`
+
+```typescript
+/^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$/
+```
+
+##### PHONE_NUMBER
+
+`手机号正则校验`
+
+```typescript
+/^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/
+```
+
 #### color
 
 ##### addOpacity
@@ -881,8 +911,6 @@ min(3,4,9); // 3
 convertToTwodimensional([], 1);
 ```
 
-#### tree
-
 ##### findTreeOrder
 
 `(tree: Array<any>, rely: RelyFn, options?: TreeOptions): Array<number>`
@@ -890,7 +918,49 @@ convertToTwodimensional([], 1);
 `根据rely返回的条件，查找树的位置`
 
 ```typescript
+type TreeOptions = {
+	childrenKey: string;
+}
+const treeData = [{
+	id: 1,
+	children: [{
+		id: 11,
+		children: [{
+			id: 7,
+		}]
+	}, {
+		id: 11
+	}, {
+		id: 7
+	}]
+}, {
+	id: 2,
+	children: [{
+		id: 11,
+	}, {
+		id: 11
+	}, {
+		id: 6
+	}]
+}, {
+	id: 3,
+}, {
+	id: 4,
+}, {
+	id: 5,
+	children: [{
+		id: 6,
+		children: [{
+			id: 7,
+		}, {
+			id: 8,
+		}]
+	}]
+}];
 
+findTreeOrder(treeData, (item) => {
+			return item.id === 7;
+		});  // [0, 0, 0]
 ```
 
 ##### findSubtreeByOrder
@@ -898,6 +968,10 @@ convertToTwodimensional([], 1);
 `(tree: any, order: Array<number>, options?: TreeOptions): TreeNode`
 
 `根据order顺序 查找treeNode`
+
+```typescript
+findSubtreeByOrder(treeData, [1, 2]); // {id: 6}
+```
 
 
 

@@ -215,9 +215,17 @@ export const removeEmptyParams = (params: any) => {
  */
 export const makeParamsProper = (params: any) => {
 	if (isObject(params)) {
-		return mapObject(filterObject(params, (item)=> !isEmpty(item)), (item: any) => {
+		return mapObject(filterObject(params, (item) => !isEmpty(item)), (item: any) => {
 			return isString(item) ? item?.trimStart()?.trimEnd() : item
 		});
 	}
 	return params;
+};
+
+/**
+ * 从uri中过滤出路由地址
+ * @param uri
+ */
+export const routeFromUri = (uri: string): string => {
+	return `/${uri?.split('/')?.splice(3)?.join('/')}`;
 };

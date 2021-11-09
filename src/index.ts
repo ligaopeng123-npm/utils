@@ -58,6 +58,8 @@ export {urlJoinParmas as urlJoinParmas} from './file/src';
 
 export {removeUrlParams as removeUrlParams} from './file/src';
 
+export {routeFromUri as routeFromUri} from './file/src';
+
 // 删除参数中的空数据
 export {removeEmptyParams as removeEmptyParams} from './file/src';
 // 处理不合规参数

@@ -13,6 +13,9 @@
     - [extractParenthesesContent:(str:string):Array<string>](#extractparenthesescontentstrstringarraystring)
     - [extractMiddleParenthesesContent(str:string):Array<string>](#extractmiddleparenthesescontentstrstringarraystring)
     - [extractBigParenthesesContent(str:string):Array<string>](#extractbigparenthesescontentstrstringarraystring)
+  - [regexp](#regexp)
+    - [IPV4](#ipv4)
+    - [PHONE_NUMBER](#phone_number)
   - [color](#color)
     - [addOpacity](#addopacity)
     - [hex2Rgb](#hex2rgb)
@@ -103,6 +106,24 @@ extractMiddleParenthesesContent("a (1111),b [4444], d(3333)");
 
 ```typescript
 extractBigParenthesesContent("a (1111),b [4444], d{3333}"); //  ['3333']
+```
+
+#### regexp
+
+##### IPV4
+
+`IPV4正则校验`
+
+```typescript
+/^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$/
+```
+
+##### PHONE_NUMBER
+
+`手机号正则校验`
+
+```typescript
+/^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/
 ```
 
 #### color
