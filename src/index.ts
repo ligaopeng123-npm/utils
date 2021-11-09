@@ -95,6 +95,10 @@ export {extractParenthesesContent as extractParenthesesContent} from './string/s
 export {extractMiddleParenthesesContent as extractMiddleParenthesesContent} from './string/src';
 export {extractBigParenthesesContent as extractBigParenthesesContent} from './string/src';
 
+// 常用正则校验
+export {IPV4 as IPV4} from './string/src';
+export {PHONE_NUMBER as PHONE_NUMBER} from './string/src';
+
 // 颜色处理
 export {addOpacity as addOpacity} from './string/src';
 export {hex2Rgb as hex2Rgb} from './string/src';
