@@ -34,6 +34,7 @@ export {isGecko as isGecko} from "./browser";
 export {isWindows as isWindows} from "./browser";
 export {isMac as isMac} from "./browser";
 export {isLinux as isLinux} from "./browser";
+export {isMobile as isMobile} from "./browser";
 /**
  * 版本获取
  */

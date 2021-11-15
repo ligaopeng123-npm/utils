@@ -135,19 +135,20 @@
 
 ##### browser
 
-| 函数名    | 作用              |
-| --------- | ----------------- |
-| isChrome  | chrome浏览器      |
-| isFirefox | 火狐浏览器        |
-| isWebKit  | WebKit内核        |
-| isSafari  | Safari            |
-| isOpera   | Opera             |
-| isGecko   | Gecko             |
-| isWindows | 是否是Windows系统 |
-| isMac     | Mac系统           |
-| isLinux   | Linux系统         |
-| isStrict  | 是否是严格模式    |
-| isSecure  | 是否是https访问   |
+| 函数名    | 作用                                                 |
+| --------- | ---------------------------------------------------- |
+| isChrome  | chrome浏览器                                         |
+| isFirefox | 火狐浏览器                                           |
+| isWebKit  | WebKit内核                                           |
+| isSafari  | Safari                                               |
+| isOpera   | Opera                                                |
+| isGecko   | Gecko                                                |
+| isWindows | 是否是Windows系统                                    |
+| isMac     | Mac系统                                              |
+| isLinux   | Linux系统                                            |
+| isMobile  | 移动端设备/Android\|webOS\|iPhone\|iPod\|BlackBerry/ |
+| isStrict  | 是否是严格模式                                       |
+| isSecure  | 是否是https访问                                      |
 
 ##### browser version
 

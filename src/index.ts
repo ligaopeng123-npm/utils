@@ -31,6 +31,7 @@ export {isGecko as isGecko} from "./types/src";
 export {isWindows as isWindows} from "./types/src";
 export {isMac as isMac} from "./types/src";
 export {isLinux as isLinux} from "./types/src";
+export {isMobile as isMobile} from "./types/src";
 /**
  * 版本获取
  */
