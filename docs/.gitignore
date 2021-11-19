@@ -1,9 +1,12 @@
 *.log
 .DS_Store
 .idea
+.vscode
 yarn.lock
 package-lock.json
+yarn.lock
 node_modules
 dist
-*.js
-*.js.map
+_book
+src/*.js
+src/*.js.map
