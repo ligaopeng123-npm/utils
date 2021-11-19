@@ -1,0 +1,397 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>date · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../array/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../types/">
+            
+                <a href="../types/">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../object/">
+            
+                <a href="../object/">
+            
+                    
+                    object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../function/">
+            
+                <a href="../function/">
+            
+                    
+                    function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../file/">
+            
+                <a href="../file/">
+            
+                    
+                    file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../string/">
+            
+                <a href="../string/">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../number/">
+            
+                <a href="../number/">
+            
+                    
+                    number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../array/">
+            
+                <a href="../array/">
+            
+                    
+                    array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >date</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#date">date</a><ul>
+<li><a href="#formattimestamp">formatTimestamp</a></li>
+<li><a href="#getweekcn-date-date-string">getWeekCN <code>(date: Date): string</code></a></li>
+<li><a href="#timerange-days-number-timerange">timeRange: (days: number): TimeRange</a></li>
+<li><a href="#timerangecurrenttype-timerangetype-timerange">timeRangeCurrent:(type: TimeRangeType): TimeRange</a></li>
+<li><a href="#timerangeprevioustype-timerangetype-timerange">timeRangePrevious:(type: TimeRangeType): TimeRange</a></li>
+<li><a href="#currentquarterfirstmonth">currentQuarterFirstMonth</a></li>
+<li><a href="#currentquarterlastmonth">currentQuarterLastMonth</a></li>
+<li><a href="#currentquarterdays">currentQuarterDays</a></li>
+<li><a href="#currentdayearliest">currentDayEarliest</a></li>
+<li><a href="#currentdaylatest">currentDayLatest</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h3 id="date">date</h3>
+<h5 id="formattimestamp">formatTimestamp</h5>
+<p><code>(timestamp: Date | number | string, type: TimestampType = &apos;yyyy-MM-dd HH:mm:ss&apos;): string</code></p>
+<p><code>&#x65F6;&#x95F4;&#x6233;&#x8F6C;&#x6362;&#x6210;&#x683C;&#x5F0F;&#x5316;&#x540E;&#x7684;&#x65E5;&#x671F;&#x683C;&#x5F0F;</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> TimestampType = <span class="hljs-string">&apos;yyyy-MM-dd HH:mm:ss&apos;</span> | <span class="hljs-string">&apos;yyyy-MM-dd&apos;</span> | <span class="hljs-string">&apos;HH:mm:ss&apos;</span>
+    | <span class="hljs-string">&apos;MM-dd&apos;</span> | <span class="hljs-string">&apos;MM-dd HH:mm:ss&apos;</span> | <span class="hljs-string">&apos;dd HH:mm:ss&apos;</span>
+    | <span class="hljs-string">&apos;yyyy&apos;</span> | <span class="hljs-string">&apos;MM&apos;</span> | <span class="hljs-string">&apos;dd&apos;</span> | <span class="hljs-string">&apos;HH&apos;</span> | <span class="hljs-string">&apos;mm&apos;</span> | <span class="hljs-string">&apos;ss&apos;</span>
+timestampToDate(<span class="hljs-built_in">Date</span>.now(), <span class="hljs-string">&apos;yyyy-MM-dd&apos;</span>)
+timestampToDate(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), <span class="hljs-string">&apos;yyyy-MM-dd&apos;</span>)
+timestampToDate((<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()).toString(), <span class="hljs-string">&apos;yyyy-MM-dd&apos;</span>)
+</code></pre>
+<h5 id="getweekcn-date-date-string">getWeekCN <code>(date: Date): string</code></h5>
+<p><code>&#x83B7;&#x53D6;&#x4E2D;&#x6587;&#x661F;&#x671F;&#x51E0;</code></p>
+<pre><code class="lang-typescript">getWeekCN(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>());<span class="hljs-comment">// &apos;&#x661F;&#x671F;&#x4E94;&apos;</span>
+</code></pre>
+<h5 id="timerange-days-number-timerange">timeRange: (days: number): TimeRange</h5>
+<p><code>&#x83B7;&#x53D6;{n}&#x5929;&#x7684;&#x65F6;&#x95F4;&#x6233;range</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> TimeRange = {
+    startTime: <span class="hljs-built_in">number</span>;
+    endTime: <span class="hljs-built_in">number</span>;
+};
+timeRange(<span class="hljs-number">1</span>);
+</code></pre>
+<h5 id="timerangecurrenttype-timerangetype-timerange">timeRangeCurrent:(type: TimeRangeType): TimeRange</h5>
+<p><code>&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x81EA;&#x7136;&#x5929;&#x3001;&#x5468;&#x3001;&#x6708;&#x3001;&#x5B63;&#x5EA6;&#x3001;&#x5E74;&#x65F6;&#x95F4;&#x6233;&#x8303;&#x56F4;</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> TimeRangeType = <span class="hljs-string">&apos;day&apos;</span> | <span class="hljs-string">&apos;threeDays&apos;</span> | <span class="hljs-string">&apos;week&apos;</span> | <span class="hljs-string">&apos;month&apos;</span> | <span class="hljs-string">&apos;quarter&apos;</span> | <span class="hljs-string">&apos;year&apos;</span>;
+timeRangeCurrent(<span class="hljs-string">&apos;week&apos;</span>);
+</code></pre>
+<h5 id="timerangeprevioustype-timerangetype-timerange">timeRangePrevious:(type: TimeRangeType): TimeRange</h5>
+<p><code>&#x83B7;&#x53D6;&#x8FC7;&#x53BB;&#x4E00;&#x5929;&#x3001;&#x4E00;&#x5468;&#x3001;&#x4E00;&#x6708;&#x3001;&#x4E00;&#x5B63;&#x5EA6;&#x3001;&#x4E00;&#x5E74;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x8303;&#x56F4;</code></p>
+<pre><code class="lang-typescript">timeRangePrevious(<span class="hljs-string">&apos;threeDays&apos;</span>);
+</code></pre>
+<h5 id="currentquarterfirstmonth">currentQuarterFirstMonth</h5>
+<p><code>&#x672C;&#x5B63;&#x5EA6;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6708;&#x4EFD;</code></p>
+<pre><code class="lang-typescript">currentQuarterFirstMonth(); <span class="hljs-comment">// number</span>
+</code></pre>
+<h5 id="currentquarterlastmonth">currentQuarterLastMonth</h5>
+<p><code>&#x672C;&#x5B63;&#x5EA6;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6708;&#x4EFD;</code></p>
+<pre><code class="lang-typescript">currentQuarterLastMonth(); <span class="hljs-comment">// number</span>
+</code></pre>
+<h5 id="currentquarterdays">currentQuarterDays</h5>
+<p><code>&#x672C;&#x5B63;&#x5EA6;&#x6709;&#x591A;&#x5C11;&#x5929;</code></p>
+<pre><code class="lang-typescript">currentQuarterDays(); <span class="hljs-comment">// number</span>
+</code></pre>
+<h5 id="currentdayearliest">currentDayEarliest</h5>
+<p><code>&#x5F53;&#x5929;0&#x70B9;&#x65F6;&#x95F4;&#x6233;</code></p>
+<pre><code class="lang-typescript">currentDayEarliest(); <span class="hljs-comment">// number</span>
+</code></pre>
+<h5 id="currentdaylatest">currentDayLatest</h5>
+<p><code>&#x5F53;&#x5929;24&#x70B9;&#x65F6;&#x95F4;&#x6233;</code></p>
+<pre><code class="lang-typescript">currentDayLatest(); <span class="hljs-comment">// number</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../array/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: array">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"date","level":"1.9","depth":1,"previous":{"title":"array","level":"1.8","depth":1,"path":"src/array/README.md","ref":"./src/array/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/date/README.md","mtime":"2021-11-09T01:39:46.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T01:23:44.935Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

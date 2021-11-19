@@ -1,0 +1,478 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>object · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../function/" />
+    
+    
+    <link rel="prev" href="../types/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../types/">
+            
+                <a href="../types/">
+            
+                    
+                    types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../function/">
+            
+                <a href="../function/">
+            
+                    
+                    function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../file/">
+            
+                <a href="../file/">
+            
+                    
+                    file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../string/">
+            
+                <a href="../string/">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../number/">
+            
+                <a href="../number/">
+            
+                    
+                    number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../array/">
+            
+                <a href="../array/">
+            
+                    
+                    array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../date/">
+            
+                <a href="../date/">
+            
+                    
+                    date
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >object</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#object">object</a><ul>
+<li><a href="#clone">clone</a><ul>
+<li><a href="#clone-tval-t-t">clone: <t>(val: T): T</t></a></li>
+<li><a href="#cloneallobject-tval-t-t">cloneAllObject: <t>(val: T): T</t></a></li>
+<li><a href="#cloneallarray-tval-t-t">cloneAllArray: <t>(val: T): T</t></a></li>
+<li><a href="#cloneallitem-tval-t-t">cloneAllItem: <t>(val: T): T</t></a></li>
+</ul>
+</li>
+<li><a href="#assign">assign</a><ul>
+<li><a href="#assigniftarget-any-source-any-any">assignIf:(target: any, source: any): any</a></li>
+<li><a href="#assigndeeptarget-any-source-any-any">assignDeep:(target: any, source: any): any</a></li>
+<li><a href="#assigndeepmergearraytarget-any-source-any-any">assignDeepMergeArray:(target: any, source: any): any</a></li>
+<li><a href="#assigndeepnotincludedarraytarget-any-source-any-any">assignDeepNotIncludedArray:(target: any, source: any): any</a></li>
+</ul>
+</li>
+<li><a href="#other">other</a><ul>
+<li><a href="#lengthval-any-number">length:(val: any): number</a></li>
+<li><a href="#mousepositionevent-any-xnumberynumber">mousePosition:(event: any): {x:number,y:number}</a></li>
+<li><a href="#getstyle-el-stylename">getStyle: (el, styleName)</a></li>
+<li><a href="#parentbyexpected-dom-expected-parent">parentByExpected: (dom, expected): parent</a></li>
+<li><a href="#copytext-dom">copyText: (dom)</a></li>
+<li><a href="#mapobject-obj-callback-objectcallback--any">mapObject: (obj, callBack: ObjectCallBack) =&gt; any;</a></li>
+<li><a href="#filterobject-obj-callback-filterobjectcallback--any">filterObject: (obj, callBack: FilterObjectCallBack) =&gt; any;</a></li>
+<li><a href="#foreachobject-obj-callback-objectcallback--any">forEachObject: (obj, callBack: ObjectCallBack) =&gt; any;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h3 id="object">object</h3>
+<h4 id="clone">clone</h4>
+<h5 id="clone-val-t-t">clone: <t>(val: T): T</t></h5>
+<p><code>&#x5C06;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x6570;&#x7EC4;clone&#x4E00;&#x4EFD;&#xFF0C;&#x89E3;&#x9664;&#x5F15;&#x7528;</code></p>
+<pre><code class="lang-typescript">clone({});
+</code></pre>
+<h5 id="cloneallobject-val-t-t">cloneAllObject: <t>(val: T): T</t></h5>
+<p><code>clone&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;</code></p>
+<pre><code class="lang-typescript">cloneAllObject({});
+</code></pre>
+<h5 id="cloneallarray-val-t-t">cloneAllArray: <t>(val: T): T</t></h5>
+<p><code>clone&#x6240;&#x6709;&#x7684;&#x6570;&#x7EC4;&#x5C5E;&#x6027;</code></p>
+<pre><code class="lang-typescript">cloneAllArray([]);
+</code></pre>
+<h5 id="cloneallitem-val-t-t">cloneAllItem: <t>(val: T): T</t></h5>
+<p><code>clone&#x6240;&#x6709;</code></p>
+<pre><code class="lang-typescript">cloneAllItem({});
+</code></pre>
+<h4 id="assign">assign</h4>
+<h5 id="assigniftarget-any-source-any-any">assignIf:(target: any, source: any): any</h5>
+<p><code>&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x6D45;&#x8D4B;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x975E;undefined,&#x5219;&#x4E0D;&#x8D4B;&#x503C;</code></p>
+<pre><code class="lang-typescript">assignIf({a: <span class="hljs-number">1</span>}, {a:<span class="hljs-number">2</span>, b: <span class="hljs-number">1</span>}); <span class="hljs-comment">// {a:1,b:1}</span>
+</code></pre>
+<h5 id="assigndeeptarget-any-source-any-any">assignDeep:(target: any, source: any): any</h5>
+<p><code>&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x6DF1;&#x5EA6;&#x5408;&#x5E76;&#xFF08;&#x975E;&#x8986;&#x76D6;&#xFF09;&#xFF0C;&#x6570;&#x7EC4;&#x9ED8;&#x8BA4;&#x4E3A;&#x76F4;&#x63A5;&#x88AB;source&#x5C5E;&#x6027;&#x8986;&#x76D6;&#x3002;</code></p>
+<pre><code class="lang-typescript">assignDeep({a: <span class="hljs-number">1</span>}, {a: [<span class="hljs-number">1</span>], b: <span class="hljs-number">2</span>}); <span class="hljs-comment">// {a: [1], b: 2}</span>
+</code></pre>
+<h5 id="assigndeepmergearraytarget-any-source-any-any">assignDeepMergeArray:(target: any, source: any): any</h5>
+<p><code>&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x6DF1;&#x5EA6;&#x5408;&#x5E76;&#xFF08;&#x975E;&#x8986;&#x76D6;&#xFF09;&#xFF0C;&#x6570;&#x7EC4;&#x901A;&#x8FC7;concat&#x62FC;&#x63A5;&#x3002;</code></p>
+<pre><code class="lang-ty">assignDeepMergeArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1});
+// {a: [1, 2, 3, 4, 5, 6], b: 1}
+</code></pre>
+<h5 id="assigndeepnotincludedarraytarget-any-source-any-any">assignDeepNotIncludedArray:(target: any, source: any): any</h5>
+<p><code>&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x6DF1;&#x5EA6;&#x5408;&#x5E76;&#xFF08;&#x975E;&#x8986;&#x76D6;&#xFF09;&#xFF0C;&#x6570;&#x7EC4;&#x901A;&#x8FC7;concat&#x62FC;&#x63A5;&#x3002;</code></p>
+<pre><code class="lang-TY">assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1}); 
+// {a: [1, 2, 3], b: 1}
+</code></pre>
+<h4 id="other">other</h4>
+<h5 id="lengthval-any-number">length:(val: any): number</h5>
+<p><code>&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;length</code></p>
+<pre><code class="lang-typescript">length({a:<span class="hljs-number">1</span>}); <span class="hljs-comment">// 1</span>
+</code></pre>
+<h5 id="mousepositionevent-any-xnumberynumber">mousePosition:(event: any): {x:number,y:number}</h5>
+<p><code>&#x6839;&#x636E;event &#x83B7;&#x53D6;&#x9F20;&#x6807;&#x4F4D;&#x7F6E;</code></p>
+<pre><code class="lang-typescript">mousePosition(event)
+</code></pre>
+<h5 id="getstyle-el-stylename">getStyle: (el, styleName)</h5>
+<p><code>&#x83B7;&#x53D6;el&#x7684;&#x67D0;&#x4E2A;&#x6837;&#x5F0F;&#x5C5E;&#x6027;</code></p>
+<pre><code class="lang-typescript">getStyle(div, <span class="hljs-string">&apos;color&apos;</span>);
+</code></pre>
+<h5 id="parentbyexpected-dom-expected-parent">parentByExpected: (dom, expected): parent</h5>
+<p><code>&#x83B7;&#x53D6;&#x590D;&#x5408;&#x903E;&#x671F;&#x7684;&#x7236;&#x7EA7;dom</code></p>
+<pre><code class="lang-typescript">parentByExpected(dom, (currntDom)=&gt; {
+    <span class="hljs-keyword">if</span>(currntDom.classList.contains(<span class="hljs-string">&apos;loading&apos;</span>)) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+})
+</code></pre>
+<h5 id="copytext-dom">copyText: (dom)</h5>
+<p><code>&#x70B9;&#x51FB;&#x540E;&#x590D;&#x5236;&#x6587;&#x672C;</code></p>
+<pre><code class="lang-typescript">&lt;div onClick=&quot;copyText&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h5 id="mapobject-obj-callback-objectcallback--any">mapObject: (obj, callBack: ObjectCallBack) =&gt; any;</h5>
+<p><code>&#x6A21;&#x62DF;&#x6570;&#x7EC4;&#x7684;map&#x64CD;&#x4F5C;</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> ObjectCallBack = (currentVal?: <span class="hljs-built_in">any</span>, index?: <span class="hljs-built_in">number</span>, obj?: <span class="hljs-built_in">any</span>) =&gt; <span class="hljs-built_in">any</span>;
+<span class="hljs-keyword">const</span> object1 = {
+    a: <span class="hljs-string">`a`</span>,
+    b: <span class="hljs-string">`b`</span>,
+    c: {
+        a: <span class="hljs-literal">true</span>,
+        b: <span class="hljs-number">123</span>,
+        c: <span class="hljs-string">`hello!`</span>,
+    },
+    d: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+    e: [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+};
+mapObject(mapObject.assign({}, object1), (item)=&gt; {
+   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}));
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x503C;</span>
+{
+  a: <span class="hljs-number">0</span>,
+  b: <span class="hljs-number">0</span>,
+  c: <span class="hljs-number">0</span>,
+  d: <span class="hljs-number">0</span>,
+  e: <span class="hljs-number">0</span>
+}
+</code></pre>
+<h5 id="filterobject-obj-callback-filterobjectcallback--any">filterObject: (obj, callBack: FilterObjectCallBack) =&gt; any;</h5>
+<p><code>&#x6A21;&#x62DF;&#x6570;&#x7EC4;&#x7684;filter&#x64CD;&#x4F5C;</code></p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">type</span> FilterObjectCallBack = (currentVal?: <span class="hljs-built_in">any</span>, index?: <span class="hljs-built_in">number</span>, obj?: <span class="hljs-built_in">any</span>) =&gt; <span class="hljs-built_in">boolean</span>;
+filterObject(<span class="hljs-built_in">Object</span>.assign({}, object1), (item)=&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> item === <span class="hljs-string">&apos;string&apos;</span>
+}));
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x503C;</span>
+{
+   a: <span class="hljs-string">`a`</span>,
+   b: <span class="hljs-string">`b`</span>,
+}
+</code></pre>
+<h5 id="foreachobject-obj-callback-objectcallback--any">forEachObject: (obj, callBack: ObjectCallBack) =&gt; any;</h5>
+<p><code>&#x6A21;&#x62DF;&#x6570;&#x7EC4;&#x7684;forEach&#x64CD;&#x4F5C;</code></p>
+<pre><code class="lang-typescript">forEachObject(<span class="hljs-built_in">Object</span>.assign({}, object1), (item)=&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> item === <span class="hljs-string">&apos;string&apos;</span> ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;
+});
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x503C;</span>
+{
+  a: <span class="hljs-number">0</span>,
+  b: <span class="hljs-number">0</span>,
+  c: <span class="hljs-number">1</span>,
+  d: <span class="hljs-number">1</span>,
+  e: <span class="hljs-number">1</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../types/" class="navigation navigation-prev " aria-label="Previous page: types">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../function/" class="navigation navigation-next " aria-label="Next page: function">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"object","level":"1.3","depth":1,"next":{"title":"function","level":"1.4","depth":1,"path":"src/function/README.md","ref":"./src/function/README.md","articles":[]},"previous":{"title":"types","level":"1.2","depth":1,"path":"src/types/README.md","ref":"./src/types/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/object/README.md","mtime":"2021-11-09T01:39:46.520Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-19T01:23:44.935Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
