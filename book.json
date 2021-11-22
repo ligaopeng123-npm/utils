@@ -46,7 +46,7 @@
             "google": false,
             "pocket": false,
             "qq": true,
-            "qzone": true,
+            "qzone": false,
             "twitter": false,
             "weibo": true,
             "all": [
