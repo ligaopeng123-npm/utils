@@ -9,7 +9,7 @@
         }
     },
     "structure": {
-        "readme": "BOOK.md"
+        "readme": "README.md"
     },
     "plugins": [
         "chapter-fold",

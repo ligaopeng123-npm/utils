@@ -1,6 +1,6 @@
 # types
 
-* [简介](BOOK.md)
+* [简介](README.md)
 * [types](./src/types/README.md)
     * [date](./src/types/README.md#date)
     * [browser](./src/types/README.md#browser)
