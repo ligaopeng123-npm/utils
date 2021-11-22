@@ -1,6 +1,6 @@
 <!--定义utils的介绍-->
 
-> @gaopeng123/utils 是一个工具函数库，提供一些常用的函数处理。基本根据数据处理场景分为7个类型。
+> @gaopeng123/utils 是一个工具函数库，提供一些常用的函数处理。
 
 ##### types： 判断数据类型、浏览器类型、终端设备等。
 
@@ -25,8 +25,7 @@ npm i @gaopeng123/utils
 or yarn add @gaopeng123/utils
 ```
 
-
-
+#### [文档地址](https://ligaopeng123-npm.github.io/utils/)
 
 
 
