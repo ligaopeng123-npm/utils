@@ -74,6 +74,7 @@
 
 .app-sub-sidebar li.active {
     box-shadow: inset 8px -4px 0px -4px #52abff;
+    padding: .2em 0rem .2em 1rem !important;
     /*background-color: #fff;*/
 }
 
@@ -95,4 +96,3 @@
     display: block;
     box-shadow: inset -8px -4px 0px -4px #52abff;
 }
-
