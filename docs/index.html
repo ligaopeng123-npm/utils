@@ -15,7 +15,17 @@
 </head>
 <body>
 <div id="app"></div>
+<!--<script src="js/react.production.min.js"></script>-->
+<!--<script src="js/react-dom.production.min.js"></script>-->
+<!--<script src="js/docsify-demo-box-react.min.js"></script>-->
+<!--<script src="js/babel.min.js"></script>-->
 <script>
+	// react组件预览 目前不支持hooks 暂时放弃
+	// var jsResources = '<scr' + 'ipt src="js/react.production.min.js"></scr' + 'ipt>\n' +
+	// 	'<scr' + 'ipt src="js/react-dom.production.min.js"></scr' + 'ipt>';
+	// var cssResources = '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");'
+	// var bootCode = 'var globalVariable = "leon"';
+
 	window.$docsify = {
 		name: '<img width="26" style="border-radius: 16px;margin-bottom: -6px;margin-right: 6px;" src="favicon.ico" />文档中心',
 		repo: 'https://github.com/ligaopeng123-npm/utils',
@@ -63,7 +73,17 @@
 			position: "top",
 			color: "var(--theme-color,#42b983)",
 			height: "3px",
-		}
+		},
+		// docsify-demo-box-react效果预览
+		plugins: [
+			// DemoBoxReact.create(jsResources, cssResources, bootCode)
+		],
+        // 改变位置插件
+		// rtl: {
+		// 	body: "ltr",
+		// 	side: "ltr",
+		// 	bdo: "rtl"
+		// }
 	}
 </script>
 <script src="js/docsify.js"></script>
@@ -73,6 +93,8 @@
 <script src="js/docsify-sidebar-collapse.js"></script>
 <script src="js/docsify-darklight-theme.js"></script>
 <script src="js/docsify-demo.js"></script>
+<script src="js/external-script.min.js"></script>
+<!--<script src="js/docsify-rtl.min.js"></script>-->
 <!--<script src="js/progress.min.js"></script>-->
 </body>
 </html>
