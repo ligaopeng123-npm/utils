@@ -1,35 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# function
 
-
-- [function](#function)
-  - [缓存函数](#%E7%BC%93%E5%AD%98%E5%87%BD%E6%95%B0)
-    - [memoized: (...arg: any): Array<any>](#memoized-arg-any-arrayany)
-    - [asyncMemoized:  (arg: string): Promise<Array<any>>](#asyncmemoized--arg-string-promisearrayany)
-  - [monad](#monad)
-    - [ResponseMonad](#responsemonad)
-  - [curry](#curry)
-    - [curry:(fn: Curry)](#curryfn-curry)
-    - [partial](#partial)
-  - [compose](#compose)
-    - [compose](#compose-1)
-    - [pipe](#pipe)
-    - [composePromises：(promises: Promises, initialValue?: any): Promise<void>](#composepromisespromises-promises-initialvalue-any-promisevoid)
-  - [fullscreen](#fullscreen)
-    - [fullscreen: (el: Element,options: FullscreenOptions): Promise<any>](#fullscreen-el-elementoptions-fullscreenoptions-promiseany)
-    - [exitFullscreen: ():Promise<any>](#exitfullscreen-promiseany)
-    - [autoFullscreen:(el: Element, options: FullscreenOptions, callBack: (args: AutoFullscreenCallBack) => void):Promise<any>](#autofullscreenel-element-options-fullscreenoptions-callback-args-autofullscreencallback--voidpromiseany)
-    - [isFullscreen: ():boolean](#isfullscreen-boolean)
-    - [windowSize(): WindowSize](#windowsize-windowsize)
-  - [debounce/throttle](#debouncethrottle)
-    - [debounce](#debounce)
-    - [throttle](#throttle)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-### function
-
-#### 缓存函数
+## 缓存函数
 
 ##### memoized: (...arg: any): Array<any>  
 
@@ -59,7 +30,7 @@ export const loadLocalJson = asyncMemoized(async (path: string) => {
 export const menuData = loadLocalJson('/json/menus.json');
 ```
 
-#### monad
+## monad
 
 ##### ResponseMonad
 
@@ -89,7 +60,7 @@ ResponseMonad.of({
 })
 ```
 
-#### curry
+## curry
 
 ##### curry:(fn: Curry)
 
@@ -114,7 +85,7 @@ afterTenSeconds(() => {
 
 
 
-#### compose
+## compose
 
 ##### compose
 
@@ -162,7 +133,7 @@ composePromises([p1, p2], 8).then((res) => {
 })
 ```
 
-#### fullscreen
+## fullscreen
 
 ##### fullscreen: (el: Element,options: FullscreenOptions): Promise<any>
 
@@ -215,7 +186,7 @@ type WindowSize = {
 windowSize(); //
 ```
 
-#### debounce/throttle
+## debounce/throttle
 
 ##### debounce
 

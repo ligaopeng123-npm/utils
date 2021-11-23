@@ -1,16 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# types
 
-- [types](#types)
-    - [date](#date)
-    - [browser](#browser)
-    - [browser version](#browser-version)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-### types
-
-##### date
+## date
 
 | 函数名        | 作用                                       |
 | ------------- | ------------------------------------------ |
@@ -29,7 +19,7 @@
 | isEmpty       | 判断是否是空 null undefined '' [] 都为true |
 | isJSON        | 判断是否为合法的可格式化的json字符串       |
 
-##### browser
+## browser
 
 | 函数名    | 作用                                                |
 | --------- | --------------------------------------------------- |
@@ -46,7 +36,7 @@
 | isStrict  | 是否是严格模式                                      |
 | isSecure  | 是否是https访问                                     |
 
-##### browser version
+## browser version
 
 | 函数名         | 作用           |
 | -------------- | -------------- |

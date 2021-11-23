@@ -1,19 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# number
 
-
-- [number](#number)
-    - [randomInt: (min?: number, max?: number): number](#randomint-min-number-max-number-number)
-    - [toThousands:(val: string | number, digit: number = 0): string](#tothousandsval-string--number-digit-number--0-string)
-    - [bitUpgrade: (n:number, opt: UpgradeOptions): string](#bitupgrade-nnumber-opt-upgradeoptions-string)
-    - [bitRateUpgrade](#bitrateupgrade)
-    - [unitUpgrade:(num: number, options?: UnitUpgradeProps): [number, string]](#unitupgradenum-number-options-unitupgradeprops-number-string)
-    - [max: (...args: number[]): number;](#max-args-number-number)
-    - [min: (...args: number[]): number;](#min-args-number-number)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-### number
+## 随机数
 
 ##### randomInt: (min?: number, max?: number): number
 
@@ -22,6 +9,8 @@
 ```typescript
 randomInt(5, 100); // 默认min = 0; max = 10;
 ```
+
+## 量级转换
 
 ##### toThousands:(val: string | number, digit: number = 0): string
 
@@ -66,6 +55,8 @@ UnitUpgradeProps = {
 }
 unitUpgrade(1000); //(['1.00', 'KB']
 ```
+
+## 最值
 
 ##### max: (...args: number[]): number;
 

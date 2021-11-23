@@ -1,33 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# object
 
-
-- [object](#object)
-  - [clone](#clone)
-    - [clone: <T>(val: T): T](#clone-tval-t-t)
-    - [cloneAllObject: <T>(val: T): T](#cloneallobject-tval-t-t)
-    - [cloneAllArray: <T>(val: T): T](#cloneallarray-tval-t-t)
-    - [cloneAllItem: <T>(val: T): T](#cloneallitem-tval-t-t)
-  - [assign](#assign)
-    - [assignIf:(target: any, source: any): any](#assigniftarget-any-source-any-any)
-    - [assignDeep:(target: any, source: any): any](#assigndeeptarget-any-source-any-any)
-    - [assignDeepMergeArray:(target: any, source: any): any](#assigndeepmergearraytarget-any-source-any-any)
-    - [assignDeepNotIncludedArray:(target: any, source: any): any](#assigndeepnotincludedarraytarget-any-source-any-any)
-  - [other](#other)
-    - [length:(val: any): number](#lengthval-any-number)
-    - [mousePosition:(event: any): {x:number,y:number}](#mousepositionevent-any-xnumberynumber)
-    - [getStyle: (el, styleName)](#getstyle-el-stylename)
-    - [parentByExpected: (dom, expected): parent](#parentbyexpected-dom-expected-parent)
-    - [copyText: (dom)](#copytext-dom)
-    - [mapObject: (obj, callBack: ObjectCallBack) => any;](#mapobject-obj-callback-objectcallback--any)
-    - [filterObject: (obj, callBack: FilterObjectCallBack) => any;](#filterobject-obj-callback-filterobjectcallback--any)
-    - [forEachObject: (obj, callBack: ObjectCallBack) => any;](#foreachobject-obj-callback-objectcallback--any)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-### object
-
-#### clone
+## clone
 
 ##### clone: <T>(val: T): T
 
@@ -61,7 +34,7 @@ cloneAllArray([]);
 cloneAllItem({});
 ```
 
-#### assign
+## assign
 
 ##### assignIf:(target: any, source: any): any
 
@@ -96,7 +69,7 @@ assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1});
 // {a: [1, 2, 3], b: 1}  
 ```
 
-#### other
+## other
 
 ##### length:(val: any): number
 
