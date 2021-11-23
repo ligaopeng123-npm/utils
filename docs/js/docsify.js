@@ -2441,16 +2441,7 @@
 		}
 		
 		// 判断是active否包含子节点ul.app-sub-sidebar,
-		if (active) {
-			var isParent = active.getElementsByTagName('ul');
-			if (isParent.length) {
-				active.classList.add('parent-active');
-			} else {
-				if (active.parentNode?.parentNode?.classList?.contains('open')) {
-					active.parentNode?.parentNode?.classList.add('parent-active');
-				}
-			}
-		}
+		parentActive(active);
 		
 		active && active.classList.remove('active');
 		li.classList.add('active');
@@ -2530,6 +2521,23 @@
 		});
 	}
 	
+	/**
+	 * 判断是active否包含子节点ul.app-sub-sidebar,
+	 * @param active
+	 */
+	function parentActive(active) {
+		if (active) {
+			var isParent = active.getElementsByTagName('ul');
+			if (isParent.length) {
+				active.classList.add('parent-active');
+			} else {
+				if (active.parentNode && active.parentNode.parentNode && active.parentNode.parentNode.classList) {
+					active.parentNode.parentNode.classList.add('parent-active');
+				}
+			}
+		}
+	}
+	
 	function scrollIntoView(path, id) {
 		if (!id) {
 			return;
@@ -2543,16 +2551,7 @@
 		var active = find(sidebar, 'li.active');
 		
 		// 判断是active否包含子节点ul.app-sub-sidebar,
-		if (active) {
-			var isParent = active.getElementsByTagName('ul');
-			if (isParent.length) {
-				active.classList.add('parent-active');
-			} else {
-				if (active.parentNode?.parentNode?.classList?.contains('open')) {
-					active.parentNode?.parentNode?.classList.add('parent-active');
-				}
-			}
-		}
+		parentActive(active);
 		
 		active && active.classList.remove('active');
 		li && li.classList.add('active');
