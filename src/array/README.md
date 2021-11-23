@@ -1,18 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# Array
 
-
-- [array](#array)
-    - [convertToTwodimensional](#converttotwodimensional)
-  - [tree](#tree)
-    - [findTreeOrder](#findtreeorder)
-    - [findSubtreeByOrder](#findsubtreebyorder)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
-
-### array
+## array
 
 ##### convertToTwodimensional 
 
@@ -24,7 +12,7 @@
 convertToTwodimensional([], 1);
 ```
 
-#### tree
+## tree
 
 ##### findTreeOrder
 
