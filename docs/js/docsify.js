@@ -2446,7 +2446,7 @@
 			if (isParent.length) {
 				active.classList.add('parent-active');
 			} else {
-				if (active.parentNode?.parentNode?.classList.contains('open')) {
+				if (active.parentNode?.parentNode?.classList?.contains('open')) {
 					active.parentNode?.parentNode?.classList.add('parent-active');
 				}
 			}
@@ -2548,7 +2548,7 @@
 			if (isParent.length) {
 				active.classList.add('parent-active');
 			} else {
-				if (active.parentNode?.parentNode?.classList.contains('open')) {
+				if (active.parentNode?.parentNode?.classList?.contains('open')) {
 					active.parentNode?.parentNode?.classList.add('parent-active');
 				}
 			}
