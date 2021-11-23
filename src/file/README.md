@@ -1,22 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+# file
 
-
-- [file](#file)
-    - [urlJoinParmas: (parmas?: urlJoinParmasPatams): string](#urljoinparmas-parmas-urljoinparmaspatams-string)
-    - [removeUrlParams:(url: string): string](#removeurlparamsurl-string-string)
-    - [removeEmptyParams: (params): any;](#removeemptyparams-params-any)
-    - [makeParamsProper:(params): any;](#makeparamsproperparams-any)
-    - [queryParamsFromUrl:(url: string): object](#queryparamsfromurlurl-string-object)
-    - [download: ({url, fileName, blob, parmas}: downloadParams): void \| Error](#download-url-filename-blob-parmas-downloadparams-void-%5C-error)
-    - [downloadStream:({url, options, fileName}: downloadStreamParams): void](#downloadstreamurl-options-filename-downloadstreamparams-void)
-    - [dowmloadScreenshotPicture: (dom, options)](#dowmloadscreenshotpicture-dom-options)
-    - [imageFromFile:(file: File): string](#imagefromfilefile-file-string)
-    - [imageToBase64: (opt: ImageToBase64Props): string](#imagetobase64-opt-imagetobase64props-string)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-### file
+## URI参数处理
 
 ##### urlJoinParmas: (parmas?: urlJoinParmasPatams): string
 
@@ -62,6 +46,8 @@ makeParamsProper({a: null, b: undefined, c: '', d: [], e: 0, f: '   b d  f  ',})
 ```typescript
 queryParamsFromUrl('https:/www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'xxx'}
 ```
+
+## download
 
 ##### download: ({url, fileName, blob, parmas}: downloadParams): void \| Error
 
