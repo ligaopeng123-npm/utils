@@ -1,22 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [date](#date)
-    - [formatTimestamp](#formattimestamp)
-    - [getWeekCN `(date: Date): string`](#getweekcn-date-date-string)
-    - [timeRange: (days: number): TimeRange](#timerange-days-number-timerange)
-    - [timeRangeCurrent:(type: TimeRangeType): TimeRange](#timerangecurrenttype-timerangetype-timerange)
-    - [timeRangePrevious:(type: TimeRangeType): TimeRange](#timerangeprevioustype-timerangetype-timerange)
-    - [currentQuarterFirstMonth](#currentquarterfirstmonth)
-    - [currentQuarterLastMonth](#currentquarterlastmonth)
-    - [currentQuarterDays](#currentquarterdays)
-    - [currentDayEarliest](#currentdayearliest)
-    - [currentDayLatest](#currentdaylatest)
+# date
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-### date
+## 时间戳处理
 
 ##### formatTimestamp 
 
