@@ -69,7 +69,7 @@
     left: 0;
     width: 100%;
     display: block;
-    margin-left: 15px;
+    /*margin-left: 15px;*/
     content: '本章目录';
     font-weight: bold;
     font-size: 1rem;
