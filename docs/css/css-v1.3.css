@@ -41,10 +41,12 @@
 
 .sidebar ul li {
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .sidebar ul li a {
     font-weight: normal;
+    font-size: 1.2rem !important;
 }
 
 .sidebar-nav > ul > li > ul > li.active {
@@ -70,11 +72,12 @@
     margin-left: 15px;
     content: '本章目录';
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .app-sub-sidebar li.active {
-    box-shadow: inset 8px -4px 0px -4px #52abff;
-    padding: .2em 0rem .2em 1rem !important;
+    box-shadow: inset 0px -2px 0px -2px #52abff;
+    padding: .2em 0rem .2em .2rem !important;
     /*background-color: #fff;*/
 }
 
