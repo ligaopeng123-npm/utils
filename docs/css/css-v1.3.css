@@ -38,7 +38,7 @@
 .sidebar > h1 a {
     font-weight: bold;
 }
-
+/*调整字体大小*/
 .sidebar ul li {
     font-weight: bold;
     font-size: 1.2rem;
