@@ -1,10 +1,12 @@
 ##### 介绍
 
-`@gaopeng123/utils 是一个工具函数库，提供一些常用的函数处理。`
+> [!NOTE]
+> **@gaopeng123/utils 是一个工具函数库，提供一些常用的函数处理。**
+> 
 
 ##### 下载依赖
 
-```typescript
+```shell
 npm i @gaopeng123/utils
 or yarn add @gaopeng123/utils
 ```
@@ -22,5 +24,7 @@ or yarn add @gaopeng123/utils
 
 ##### 文档
 
-[https://ligaopeng123-npm.github.io/utils/](https://ligaopeng123-npm.github.io/utils/)
+> [!TIP]
+> **[https://ligaopeng123-npm.github.io/utils/](https://ligaopeng123-npm.github.io/utils/)**
+> 
 
