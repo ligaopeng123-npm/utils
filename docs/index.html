@@ -78,6 +78,17 @@
 		// docsify-demo-box-react效果预览
 		plugins: [
 			// DemoBoxReact.create(jsResources, cssResources, bootCode)
+			// 此处可将菜单默认收起 且切换是自动隐藏其他目录
+			// (hook) => {
+			// 	hook.doneEach(() => {
+			// 		const openLi = document.querySelector('.sidebar-nav').querySelectorAll('.open');
+			// 		Array.from(openLi).forEach((li, index) => {
+			// 			if (!li.querySelector('.active')) {
+			// 				li.classList.remove('open');
+			// 			}
+			// 		})
+			// 	});
+			// }
 		],
 		// 改变位置插件
 		// rtl: {

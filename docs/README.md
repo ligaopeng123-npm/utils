@@ -1,30 +1,38 @@
-##### 介绍
+## 介绍
 
 > [!NOTE]
-> **@gaopeng123/utils 是一个工具函数库，提供一些常用的函数处理。**
-> 
+> **@gaopeng123/ 。工具包文档整理**
 
-##### 下载依赖
+## 共
 
-```shell
-npm i @gaopeng123/utils
-or yarn add @gaopeng123/utils
-```
+>@gaopeng123/utils
+>
+>工具类函数
 
-##### 功能
+> @gaopeng123/login-module
+>
+> 登录模块
 
-* [types](../src/types/README.md)：判断数据类型、浏览器类型、终端设备等。
-* [object](../src/object/README.md)：处理对象数据类型
-* [function](../src/function/README.md)：处理函数合并、柯理化、缓存等
-* [file](../src/file/README.md)：处理文件、路径、参数拼接等
-* [String](../src/string/README.md)：uuid生成、字符串长度、截取等
-* [number](../src/number/README.md)：数字跳级转换、随机数生成等
-* [array](../src/array/README.md)：数组维度转换等
-* [date](../src/date/README.md)：日期时间处理、常用日期转换、周获取等
+>@gaopeng123/fetch
+>
+>fetch封装
 
-##### 文档
+>@gaopeng123/hooks
+>
+>常用hooks整理
 
-> [!TIP]
-> **[https://ligaopeng123-npm.github.io/utils/](https://ligaopeng123-npm.github.io/utils/)**
-> 
+>@gaopeng123/browser
+>
+>浏览器检测升级插件
 
+>@gaopeng123/hoc
+>
+>常用高阶组件
+
+> @gaopeng123/screen
+>
+> 大屏组件
+
+> @gaopeng123/rtc-cli
+>
+> 项目模板搭建脚手架
