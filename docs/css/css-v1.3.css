@@ -38,11 +38,13 @@
 .sidebar > h1 a {
     font-weight: bold;
 }
+
 /*调整字体大小*/
 .sidebar ul li {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 /*调整字体大小*/
 .sidebar ul li a {
     font-weight: normal;
@@ -98,4 +100,25 @@
     background-color: rgba(230, 247, 255, 0.4);
     display: block;
     box-shadow: inset -8px -4px 0px -4px #52abff;
+}
+
+/*表格样式*/
+.markdown-section table > tbody > tr > td {
+    padding: 12px;
+}
+
+:root {
+    --main-table-td-padding: 12px;
+}
+
+.markdown-section table > thead > tr > th {
+    padding: var(--main-table-td-padding);
+}
+
+.markdown-section table > tbody > tr > td {
+    padding: var(--main-table-td-padding);
+}
+
+.markdown-section td, .markdown-section th {
+    border: 1px solid rgba(221, 221, 221, 0.2);
 }

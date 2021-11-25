@@ -39,9 +39,7 @@
 		// executeScript: true,
 		externalLinkRel: 'noopener', // default: 'noopener'
 		alias: {
-			"/src/_sidebar.md": "/_sidebar.md",
-			"/src/number/_sidebar.md": "/_sidebar.md",
-			"/src/object/_sidebar.md": "/_sidebar.md",
+			'.*?/_sidebar.md': '/_sidebar.md',
 		},
 		// 完整配置参数
 		search: {
@@ -127,6 +125,8 @@
 <script src="js/external-script.min.js"></script>
 <!--告警消息-->
 <script src="js/docsify-plugin-flexible-alerts.min.js"></script>
+<!--代码优化-->
+<!--<script src="js/docsify-code-inline.min.js"></script>-->
 <!--iframe-->
 <!--<script src="//cdn.jsdelivr.net/npm/codeblock-iframe@latest/dist/index.min.js"></script>-->
 <!--<script src="//cdn.jsdelivr.net/npm/docsify-codeblock-iframe@latest/dist/index.min.js"></script>-->
