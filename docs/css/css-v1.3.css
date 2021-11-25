@@ -113,12 +113,10 @@
 
 .markdown-section table > thead > tr > th {
     padding: var(--main-table-td-padding);
+    border: 1px solid rgba(221, 221, 221, 0.2);
 }
 
 .markdown-section table > tbody > tr > td {
     padding: var(--main-table-td-padding);
-}
-
-.markdown-section td, .markdown-section th {
     border: 1px solid rgba(221, 221, 221, 0.2);
 }
