@@ -25,6 +25,6 @@ or yarn add @gaopeng123/utils
 ##### 文档
 
 > [!TIP]
-> **[https://ligaopeng123-npm.github.io/utils/](https://ligaopeng123-npm.github.io/utils/)**
+> **[https://ligaopeng123-npm.github.io/utils/](https://ligaopeng123-npm.github.io/utils/#/md/utils)**
 > 
 
