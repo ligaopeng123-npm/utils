@@ -5,34 +5,64 @@
 
 ## 共
 
->@gaopeng123/utils
+> @gaopeng123/utils
 >
->[工具类函数](https://ligaopeng123-npm.github.io/utils/#/README)
+>[工具类函数](README)
 
-> @gaopeng123/login-module
+> @gaopeng123/fetch
 >
-> 登录模块
+>[fetch封装](md/fetch)
 
->@gaopeng123/fetch
+> @gaopeng123/hooks
 >
->[fetch封装](https://ligaopeng123-npm.github.io/utils/#/md/fetch)
+>[常用hooks整理](md/hooks)
 
->@gaopeng123/hooks
+> @gaopeng123/hoc
 >
->[常用hooks整理](https://ligaopeng123-npm.github.io/utils/#/md/hooks)
+>[常用高阶组件](md/hoc)
 
->@gaopeng123/browser
+> Web Components
 >
->[浏览器检测升级插件](https://ligaopeng123-npm.github.io/utils/#/md/browser)
-
->@gaopeng123/hoc
->
->[常用高阶组件](https://ligaopeng123-npm.github.io/utils/#/md/hoc)
+> [login-module](md/login-module)
 
 > @gaopeng123/screen
 >
-> [大屏组件](https://ligaopeng123-npm.github.io/utils/#/md/screen)
+> [大屏组件](md/screen)
 
 > @gaopeng123/rtc-cli
 >
-> 项目模板搭建脚手架
+> [rtc-cli](md/rtc-cli)
+
+> @gaopeng123/browser
+>
+>[浏览器检测升级插件](md/browser)
+
+<!--
+{
+    html: '<div id="demoA">demoA</div>'
+}
+-->
+
+````js
+document.getElementById('demoA').innerHTML = 'change demoA text'
+````
+
+<!--
+{
+    html: '<div id="utils-uuid">uuid()</div>'
+}
+-->
+
+````js
+import {uuid} from "https://unpkg.com/@gaopeng123/utils/dist/utils.esm.js";
+document.getElementById('utils-uuid').innerText = uuid();
+````
+<!--
+{
+    html: '<div id="utils-uuid2">uuid()</div>'
+}
+-->
+````typescript
+import {uuid} from "https://unpkg.com/@gaopeng123/utils/dist/utils.esm.js";
+document.getElementById('utils-uuid2').innerText = uuid();
+````

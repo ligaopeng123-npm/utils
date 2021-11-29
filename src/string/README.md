@@ -6,9 +6,16 @@
 
 `获取uuid 默认获取64位长度 数据基数为62`
 
-```typescript
-uuid()
-```
+<!--
+{
+    html: '<div id="utils-uuid1"></div><div id="utils-uuid2"></div>'
+}
+-->
+````js
+import {uuid} from "https://unpkg.com/@gaopeng123/utils/dist/utils.esm.js";
+document.getElementById('utils-uuid1').innerText = `64位：` + uuid();
+document.getElementById('utils-uuid2').innerText = `32位：` + uuid(32);
+````
 
 ##### formatStr:(...args: any) => string
 

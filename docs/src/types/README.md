@@ -46,4 +46,3 @@
 | operaVersion   | 返回值为number |
 | safariVersion  | 返回值为number |
 | webKitVersion  | 返回值为number |
-

@@ -1,0 +1,67 @@
+.markrun, .markrun--js {
+    position: relative;
+    border: 1px solid #eaeefb;
+    border-radius: 4px;
+    -webkit-transition: .2s;
+    transition: .2s;
+    padding: 16px;
+    margin: 16px 0px;
+
+}
+
+.markrun > .markrun-html {
+    margin-bottom: 1em;
+}
+
+.markrun > .markrun-html > .div {
+    pointer-events: none !important;
+}
+
+.markrun > .markrun-source > pre {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+    height: 0;
+}
+
+.markrun > .markrun-source > pre > code {
+    margin: 0;
+    padding: 1em 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.markrun > .markrun-html:after {
+    position: absolute;
+    content: '展开';
+    font-size: .5em;
+    cursor: pointer;
+    color: #42b983;
+    top: .5em;
+    right: .5em;
+}
+
+.markrun:after {
+    position: absolute;
+    content: 'jsfiddle';
+    font-size: .5em;
+    cursor: pointer;
+    color: #42b983;
+    top: .5em;
+    right: 5em;
+}
+
+.markrun > .markrun-source-expanded:after {
+    position: absolute;
+    content: '收起';
+    font-size: .5em;
+    cursor: pointer;
+    color: #42b983;
+    top: .5em;
+    right: .5em;
+}
+
+.markrun > .markrun-source-expanded ~ .markrun-source > pre {
+    height: auto;
+    border-top: 1px solid #eaeefb;
+}
+
