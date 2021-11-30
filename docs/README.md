@@ -36,33 +36,3 @@
 > @gaopeng123/browser
 >
 >[浏览器检测升级插件](md/browser)
-
-<!--
-{
-    html: '<div id="demoA">demoA</div>'
-}
--->
-
-````js
-document.getElementById('demoA').innerHTML = 'change demoA text'
-````
-
-<!--
-{
-    html: '<div id="utils-uuid">uuid()</div>'
-}
--->
-
-````js
-import {uuid} from "https://unpkg.com/@gaopeng123/utils/dist/utils.esm.js";
-document.getElementById('utils-uuid').innerText = uuid();
-````
-<!--
-{
-    html: '<div id="utils-uuid2">uuid()</div>'
-}
--->
-````typescript
-import {uuid} from "https://unpkg.com/@gaopeng123/utils/dist/utils.esm.js";
-document.getElementById('utils-uuid2').innerText = uuid();
-````
