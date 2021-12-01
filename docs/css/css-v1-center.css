@@ -1,0 +1,44 @@
+.sidebar {
+    margin-left: 20px;
+    text-align: right;
+    padding-right: 32px !important;
+}
+
+.sidebar-nav ul:not(.app-sub-sidebar) > li:not(.file)::after {
+    top: 9px;
+    left: calc(100% + 12px);
+}
+
+.sidebar > h1 {
+    text-align: right !important;
+    padding-top: 32px;
+}
+
+.sidebar > .search {
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    left: 320px;
+    width: 60%;
+    background-color: var(--background);
+}
+
+.sidebar-nav > ul > li > ul > li.active {
+    position: relative;
+    background-color: rgba(230, 247, 255, 0.4);
+    display: block;
+    box-shadow: 0px 0px #52abff !important;
+}
+
+.parent-active {
+    box-shadow: 0px 0px #52abff !important;
+}
+
+.parent-active:before, .sidebar-nav > ul > li > ul > li.active:before {
+    content: "";
+    width: 4px;
+    height: 40px;
+    background-color: #52abff;
+    position: absolute;
+    right: -18px;
+    top: 0px;
+}

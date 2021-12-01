@@ -97,7 +97,7 @@
 
 .parent-active {
     position: relative;
-    background-color: rgba(230, 247, 255, 0.4);
+    background-color: var(--background);
     display: block;
     box-shadow: inset -8px -4px 0px -4px #52abff;
 }
