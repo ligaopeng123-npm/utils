@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isArray, isNumber} from "../../types";
+import {isArray, isNumber} from "../../types/";
 
 /**
  * 将一维数组转换二维数组

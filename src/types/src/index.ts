@@ -1,20 +1,26 @@
 /**
  * 数据类型
  */
-export {isObject as isObject} from "./date";
-export {isArray as isArray} from "./date";
-export {isBoolean as isBoolean} from "./date";
-export {isEqualByObj as isEqualByObj} from "./date";
-export {isEmptyObject as isEmptyObject} from "./date";
-export {isElement as isElement} from "./date";
-export {isEmpty as isEmpty} from "./date";
-export {isPromise as isPromise} from "./date";
-export {isFunction as isFunction} from "./date";
-export {isNumber as isNumber} from "./date";
-export {isUndefined as isUndefined} from "./date";
-export {isString as isString} from "./date";
-export {isJSON as isJSON} from "./date";
-export {isDate as isDate} from "./date";
+export {isObject as isObject} from "./data";
+export {isArray as isArray} from "./data";
+export {isBoolean as isBoolean} from "./data";
+export {isEqualByObj as isEqualByObj} from "./data";
+export {isEmptyObject as isEmptyObject} from "./data";
+export {isElement as isElement} from "./data";
+export {isEmpty as isEmpty} from "./data";
+export {isPromise as isPromise} from "./data";
+export {isFunction as isFunction} from "./data";
+export {isNumber as isNumber} from "./data";
+export {isUndefined as isUndefined} from "./data";
+export {isString as isString} from "./data";
+export {isJSON as isJSON} from "./data";
+export {isDate as isDate} from "./data";
+export {isBuffer as isBuffer} from "./data";
+export {isFormData as isFormData} from "./data";
+export {isFile as isFile} from "./data";
+export {isBlob as isBlob} from "./data";
+export {isStream as isStream} from "./data";
+export {isURLSearchParams as isURLSearchParams} from "./data";
 
 
 /**
@@ -50,4 +56,3 @@ export {webKitVersion as webKitVersion} from "./browser";
  */
 export {isStrict as isStrict} from "./browser";
 export {isSecure as isSecure} from "./browser";
-

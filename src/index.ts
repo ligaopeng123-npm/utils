@@ -13,6 +13,12 @@ export {isDate as isDate} from './types/src';
 export {isUndefined as isUndefined} from './types/src';
 export {isJSON as isJSON} from './types/src';
 export {isBoolean as isBoolean} from "./types/src";
+export {isBuffer as isBuffer} from "./types/src";
+export {isFormData as isFormData} from "./types/src";
+export {isFile as isFile} from "./types/src";
+export {isBlob as isBlob} from "./types/src";
+export {isStream as isStream} from "./types/src";
+export {isURLSearchParams as isURLSearchParams} from "./types/src";
 
 /**
  * 浏览器判断
