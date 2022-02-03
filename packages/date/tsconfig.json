@@ -3,5 +3,9 @@
     "extends": "../../tsconfig",
     "includes": [
         "./src"
-    ]
+    ],
+    "compilerOptions": {
+        "rootDir": ".",
+        "baseUrl": "src"
+    }
 }

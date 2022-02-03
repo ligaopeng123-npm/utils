@@ -2,6 +2,10 @@
     // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
     "extends": "../../tsconfig",
     "includes": [
-        "./src"
-    ]
+        "src"
+    ],
+    "compilerOptions": {
+        "rootDir": ".",
+        "baseUrl": "src"
+    }
 }
