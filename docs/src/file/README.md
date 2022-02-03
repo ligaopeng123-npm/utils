@@ -105,4 +105,36 @@ type ImageToBase64Props = {
 imageToBase64({image:imgae})
 ```
 
+##### openToPreviewBase64:(url: string):viod
 
+`chrome浏览器，预览base64图片，图片安全限制`
+
+```typescript
+openToPreviewBase64('base64...');
+```
+
+## convert文件类型转换
+
+##### file2Blob(file:File):Blob;
+
+`将file类型数据转换成blob类型`
+
+##### file2Url(file:File):string;
+
+`将图片file数据转换成file:http,直接通过src展示`
+
+##### blob2File(blob:Blob):File;
+
+`将blob类型转换成file类型用于服务端上传`
+
+##### base642Blob(base64:string):Blob;
+
+`将base64图片，转成blob数据`
+
+##### base642File(base64:string):File;
+
+`将base64图片类型转换成file类型，可直接上传`
+
+##### blob2Base64(blob:Blob):string;
+
+`将图片blob数据类型转换成base64`
