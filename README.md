@@ -17,7 +17,7 @@ or yarn add @gaopeng123/utils
 * [object](../src/object/README.md)：处理对象数据类型
 * [function](../src/function/README.md)：处理函数合并、柯理化、缓存等
 * [file](../src/file/README.md)：处理文件、路径、参数拼接等
-* [String](../src/string/README.md)：uuid生成、字符串长度、截取等
+* [string](../src/string/README.md)：uuid生成、字符串长度、截取等
 * [number](../src/number/README.md)：数字跳级转换、随机数生成等
 * [array](../src/array/README.md)：数组维度转换等
 * [date](../src/date/README.md)：日期时间处理、常用日期转换、周获取等

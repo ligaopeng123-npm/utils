@@ -1,12 +1,13 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
-    entry: '.',
+    // 避免
+    entry: './docs.js',
     plugins: [
         new CopyPlugin({
             patterns: [
                 {
-                    from: path.join(__dirname, 'src'),
+                    from: path.join(__dirname, 'packages'),
                     to: path.join(__dirname, 'docs/src'),
                     toType: 'dir',
                     filter: (resourcePath) => {
