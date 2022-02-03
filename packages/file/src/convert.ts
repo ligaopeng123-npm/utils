@@ -2,7 +2,7 @@
  *
  * @模块名称: convert
  *
- * @模块用途: convert  数据类型转换
+ * @模块用途: convert  图片类型转换
  *
  * @date: 2022/1/27 11:53
  *
@@ -10,16 +10,20 @@
  *
  **********************************************************************/
 /**
+ * 将file类型转blob类型
+ * @param file
+ */
+export const file2Blob = (file: File): Blob => {
+    return new Blob([file]); // 文件转化成二进制文件
+}
+/**
  *
  * file累着转blob 然后转url直接显示
  * @param file
  */
 export const file2Url = (file: File) => {
-    const blob = new Blob([file]); // 文件转化成二进制文件
-    const url = URL.createObjectURL(blob); //转化
-    return url;
+    return URL.createObjectURL(file2Blob(file)); //转化
 };
-
 /**
  * base64 转blob
  * @param dataurl
@@ -41,7 +45,7 @@ export const base642Blob = (dataurl: string) => {
  * @param theBlob
  * @param fileName
  */
-export const blobToFile = (theBlob: any, fileName: any) => {
+export const blob2File = (theBlob: any, fileName: any) => {
     theBlob.lastModifiedDate = new Date();
     theBlob.name = fileName;
     return theBlob;
@@ -52,5 +56,22 @@ export const blobToFile = (theBlob: any, fileName: any) => {
  * @param dataurl
  */
 export const base642File = (base64: string): File => {
-    return blobToFile(base642Blob(base64), Date.now())
+    return blob2File(base642Blob(base64), Date.now())
 };
+/**
+ * 文件转base64
+ * @param blob
+ */
+export const blob2Base64 = (blob: Blob): Promise<any> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        //将文件读取为 DataURL
+        reader.readAsDataURL(blob);
+        //文件读取完成时触发
+        reader.onload = (event) => {
+            //获取base64流
+            const base64_str = event.target.result;
+            resolve(base64_str);
+        }
+    });
+}

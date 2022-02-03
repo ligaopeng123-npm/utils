@@ -24,3 +24,11 @@ export {imageFromFile as imageFromFile} from './image';
 // 预览base64图片
 export {openToPreviewBase64 as openToPreviewBase64} from './image';
 
+// 文件类型转换
+export {file2Blob as file2Blob} from './convert';
+export {file2Url as file2Url} from './convert';
+export {base642Blob as base642Blob} from './convert';
+export {blob2File as blob2File} from './convert';
+export {base642File as base642File} from './convert';
+export {blob2Base64 as blob2Base64} from './convert';
+

@@ -83,6 +83,14 @@ export {imageToBase64 as imageToBase64} from '@gaopeng123/utils.file';
 
 export {dowmloadScreenshotPicture as dowmloadScreenshotPicture} from '@gaopeng123/utils.file';
 
+// 图片类型数据转换
+export {file2Blob as file2Blob} from '@gaopeng123/utils.file';
+export {file2Url as file2Url} from '@gaopeng123/utils.file';
+export {base642Blob as base642Blob} from '@gaopeng123/utils.file';
+export {blob2File as blob2File} from '@gaopeng123/utils.file';
+export {base642File as base642File} from '@gaopeng123/utils.file';
+export {blob2Base64 as blob2Base64} from '@gaopeng123/utils.file';
+
 /****************************  数组操作函数    *****************************/
 export {convertToTwodimensional as convertToTwodimensional} from '@gaopeng123/utils.array';
 // 树的查询
