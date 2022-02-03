@@ -76,6 +76,8 @@ export {queryParamsFromUrl as queryParamsFromUrl} from './file/src';
 // 图片操作
 export {imageFromFile as imageFromFile} from './file/src';
 
+export {openToPreviewBase64 as openToPreviewBase64} from './file/src';
+
 export {imageToBase64 as imageToBase64} from './file/src';
 
 export {dowmloadScreenshotPicture as dowmloadScreenshotPicture} from './file/src';

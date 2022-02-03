@@ -105,4 +105,11 @@ type ImageToBase64Props = {
 imageToBase64({image:imgae})
 ```
 
+##### openToPreviewBase64:(url: string):viod
+
+`chrome浏览器，预览base64图片，图片安全限制`
+
+```typescript
+openToPreviewBase64('base64...');
+```
 

@@ -21,4 +21,6 @@ export {makeParamsProper as makeParamsProper} from './download';
 export {queryParamsFromUrl as queryParamsFromUrl} from './download';
 // 从file中获取imgage
 export {imageFromFile as imageFromFile} from './image';
+// 预览base64图片
+export {openToPreviewBase64 as openToPreviewBase64} from './image';
 
