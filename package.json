@@ -1,6 +1,6 @@
 {
     "name": "@gaopeng123/utils",
-    "version": "0.2.7",
+    "version": "0.3.1",
     "private": true,
     "workspaces": [
         "packages/*"
@@ -15,7 +15,7 @@
         "start": "tsdx watch",
         "build": "lerna exec --ignore=@gaopeng123/utils -- npm run build",
         "test": "lerna exec --ignore=@gaopeng123/utils -- npm run test",
-        "push": "npm publish --access public",
+        "push": "lerna publish",
         "mark": "doctoc .",
         "lint": "tsdx lint",
         "prepare": "tsdx build",
@@ -25,7 +25,6 @@
         "start:md": "docsify serve docs"
     },
     "files": [
-
     ],
     "engines": {
         "node": ">=10"
