@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils",
     "author": "ligaopeng123",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "utils公共包",
     "license": "MIT",
     "main": "dist/index.js",
@@ -65,7 +65,7 @@
     "dependencies": {
         "@gaopeng123/utils.array": "^0.3.2",
         "@gaopeng123/utils.date": "^0.3.2",
-        "@gaopeng123/utils.file": "^0.3.2",
+        "@gaopeng123/utils.file": "^0.3.3",
         "@gaopeng123/utils.function": "^0.3.2",
         "@gaopeng123/utils.number": "^0.3.2",
         "@gaopeng123/utils.object": "^0.3.2",
