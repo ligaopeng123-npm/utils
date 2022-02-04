@@ -18,6 +18,10 @@
     - [screen](md/screen.md)
 - Web Components
     - [login-module](md/login-module.md)
+    - [message](md/message.md)
+    - [image-upload](md/image-upload.md)
+    - [rc-image-upload](md/rc-image-upload.md)
+    - [vue-image-upload](md/vue-image-upload.md)
 - cli
     - [rtc-cli](md/rtc-cli.md)
     - [browser](md/browser.md)
