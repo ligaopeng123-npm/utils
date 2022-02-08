@@ -138,3 +138,47 @@ openToPreviewBase64('base64...');
 ##### blob2Base64(blob:Blob):string;
 
 `将图片blob数据类型转换成base64`
+
+## css-obj React style 转换
+
+##### obj2css
+
+`将obj类型的样式转换成css类型`
+
+```typescript
+const testData = {
+    backgroundColor: "red",
+    borderBottomColor: "#000000",
+    borderBottomStyle: "solid",
+    borderBottomWidth: "1px",
+    color: "#ffffff",
+    fontSize: "16px",
+    height: "100px",
+    marginBottom: "10px",
+    paddingTop: "10px",
+    width: "100px",
+}
+
+const cssData = "background-color: red;" +
+    "border-bottom-color: #000000;" +
+    "border-bottom-style: solid;" +
+    "border-bottom-width: 1px;" +
+    "color: #ffffff;" +
+    "font-size: 16px;" +
+    "height: 100px;" +
+    "margin-bottom: 10px;" +
+    "padding-top: 10px;" +
+    "width: 100px;" +
+    ""
+
+obj2css(testData); // cssData
+```
+
+##### css2obj
+
+`将css样式转换成react用的驼峰样式`
+
+```typescript
+css2obj(cssData); // testData
+```
+

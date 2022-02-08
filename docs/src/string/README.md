@@ -11,8 +11,9 @@
     html: '<div id="utils-uuid1"></div><div id="utils-uuid2"></div>'
 }
 -->
+
 ````js
-import {uuid} from "https://unpkg.com/@gaopeng123/utils/dist/utils.esm.js";
+import {uuid} from "https://unpkg.com/@gaopeng123/utils.string/dist/utils.string.esm.js";
 document.getElementById('utils-uuid1').innerText = `64位：` + uuid();
 document.getElementById('utils-uuid2').innerText = `32位：` + uuid(32);
 ````
@@ -144,3 +145,44 @@ color2Rgb('rgb(0,0,0)'); // '#000'
 
 `将rgba颜色转换为rgb颜色`
 
+## hump
+
+##### hump2hyphen
+
+`驼峰命名转连字符命名`
+
+<!--
+{
+    html: '<div id="utils-hump2hyphen"></div><div id="utils-hump2hyphen2"></div><div id="utils-hump2hyphen3"></div>'
+}
+-->
+
+```javascript
+import {hump2hyphen} from "https://unpkg.com/@gaopeng123/utils.string/dist/utils.string.esm.js";
+const width = 'width';
+const backgroundColor = 'backgroundColor';
+const borderBottomStyle = 'borderBottomStyle';
+document.getElementById('utils-hump2hyphen').innerText = hump2hyphen(width); // width
+document.getElementById('utils-hump2hyphen2').innerText = hump2hyphen(backgroundColor //background-color
+document.getElementById('utils-hump2hyphen3').innerText = hump2hyphen(borderBottomStyle);//border-bottom-style
+```
+
+##### hyphen2hump
+
+`连字符命名转驼峰命名`
+
+<!--
+{
+    html: '<div id="utils-hyphen2hump"></div><div id="utils-hyphen2hump2"></div><div id="utils-hyphen2hump3"></div>'
+}
+-->
+
+```javascript
+import {hyphen2hump} from "https://unpkg.com/@gaopeng123/utils.string/dist/utils.string.esm.js";
+const width = 'width';
+const backgroundColor = 'background-color';
+const borderBottomStyle = 'border-bottom-style';
+document.getElementById('utils-hump2hyphen').innerText = hyphen2hump(width); //width
+document.getElementById('utils-hump2hyphen2').innerText = hyphen2hump(backgroundColor) //backgroundColor
+document.getElementById('utils-hump2hyphen3').innerText = hyphen2hump(borderBottomStyle);//borderBottomStyle
+```
