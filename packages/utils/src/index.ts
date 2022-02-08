@@ -91,6 +91,10 @@ export {blob2File as blob2File} from '@gaopeng123/utils.file';
 export {base642File as base642File} from '@gaopeng123/utils.file';
 export {blob2Base64 as blob2Base64} from '@gaopeng123/utils.file';
 
+// css 和 react style 相互转换
+export {obj2css as obj2css} from "@gaopeng123/utils.file";
+export {css2obj as css2obj} from "@gaopeng123/utils.file";
+
 /****************************  数组操作函数    *****************************/
 export {convertToTwodimensional as convertToTwodimensional} from '@gaopeng123/utils.array';
 // 树的查询

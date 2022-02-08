@@ -10,7 +10,7 @@
     },
     "changelog": {
         "labels": {
-            "feat": ":rocket: 添加驼峰转换",
+            "feat": ":rocket: css-obj and hump",
             "bug": ":bug: Bug Fix",
             "doc": ":memo: Documentation",
             "internal": ":house: Internal",
