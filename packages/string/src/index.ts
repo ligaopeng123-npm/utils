@@ -42,3 +42,9 @@ export {rgba2rgb as rgba2rgb} from './color';
  * 路径拼接
  */
 export {pathJoin as pathJoin} from './path';
+
+/**
+ * 驼峰转换
+ */
+export {hump2hyphen as hump2hyphen} from './hump';
+export {hyphen2hump as hyphen2hump} from './hump';

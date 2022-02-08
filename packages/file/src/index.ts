@@ -32,3 +32,8 @@ export {blob2File as blob2File} from './convert';
 export {base642File as base642File} from './convert';
 export {blob2Base64 as blob2Base64} from './convert';
 
+// css 和 react style 相互转换
+
+export {obj2css as obj2css} from "./css-obj";
+export {css2obj as css2obj} from "./css-obj";
+
