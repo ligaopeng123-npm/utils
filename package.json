@@ -10,7 +10,7 @@
     },
     "changelog": {
         "labels": {
-            "feat": ":rocket: add css-obj and hump",
+            "feat": ":rocket: add css-obj and hump functions",
             "bug": ":bug: Bug Fix",
             "doc": ":memo: Documentation",
             "internal": ":house: Internal",
