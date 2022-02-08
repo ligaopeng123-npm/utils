@@ -21,6 +21,7 @@
         "type": "git",
         "url": "https://github.com/ligaopeng123-npm/utils.git"
     },
+    "homepage": "https://ligaopeng123-npm.github.io/utils/",
     "scripts": {
         "start": "tsdx watch",
         "build": "tsdx build",
