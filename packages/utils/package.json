@@ -64,13 +64,13 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@gaopeng123/utils.array": "^0.3.4",
-        "@gaopeng123/utils.date": "^0.3.4",
-        "@gaopeng123/utils.file": "^0.3.5",
-        "@gaopeng123/utils.function": "^0.3.4",
-        "@gaopeng123/utils.number": "^0.3.4",
-        "@gaopeng123/utils.object": "^0.3.4",
-        "@gaopeng123/utils.string": "^0.3.5",
-        "@gaopeng123/utils.types": "^0.3.4"
+        "@gaopeng123/utils.array": "latest",
+        "@gaopeng123/utils.date": "latest",
+        "@gaopeng123/utils.file": "latest",
+        "@gaopeng123/utils.function": "latest",
+        "@gaopeng123/utils.number": "latest",
+        "@gaopeng123/utils.object": "latest",
+        "@gaopeng123/utils.string": "latest",
+        "@gaopeng123/utils.types": "latest"
     }
 }

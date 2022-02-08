@@ -26,7 +26,6 @@ const cssData = "background-color: red;" +
     ""
 describe('obj2css', () => {
     it('works', () => {
-        console.log(obj2css(testData))
         expect(obj2css(testData))
             .toEqual(cssData);
     });
