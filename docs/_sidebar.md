@@ -9,7 +9,7 @@
     - [array](./src/array/README.md)
     - [date](./src/date/README.md)
 - hooks
-    - [介绍](md/hooks/hooks.md)
+    - [介绍](md/hooks/index.md)
     - [useScale](md/hooks/useScale.md)
     - [useResize](md/hooks/useResize.md)
     - [useMergeValue](md/hooks/useMergeValue.md)

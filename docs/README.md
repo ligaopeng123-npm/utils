@@ -31,19 +31,19 @@
 
 > @gaopeng123/hooks
 >
->[常用hooks整理](md/hooks)
+>[常用hooks整理](md/hooks/index.md)
 > 
->[useScale](md/hooks/useScale)：监听窗口变化，动态缩放当前dom。
+>[useScale](md/hooks/useScale.md)：监听窗口变化，动态缩放当前dom。
 > 
->[useResize](md/hooks/useResize)：监听窗口变化，返回窗口尺寸。
+>[useResize](md/hooks/useResize.md)：监听窗口变化，返回窗口尺寸。
 > 
->[useMergeValue](md/hooks/useMergeValue)：解决npm因peerDependencies导致安装失败问题。
+>[useMergeValue](md/hooks/useMergeValue.md)：解决npm因peerDependencies导致安装失败问题。
 > 
->[useEasing](md/hooks/useEasing)：缓动函数。
+>[useEasing](md/hooks/useEasing.md)：缓动函数。
 > 
->[useClock](md/hooks/useClock)：时钟器。
+>[useClock](md/hooks/useClock.md)：时钟器。
 > 
-> [usePoller](md/hooks/usePoller)：轮询器,包括同步轮询，异步轮询。
+> [usePoller](md/hooks/usePoller.md)：轮询器,包括同步轮询，异步轮询。
 
 > @gaopeng123/hoc
 >
