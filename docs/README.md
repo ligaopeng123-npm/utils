@@ -3,11 +3,27 @@
 > [!NOTE]
 > **@gaopeng123/\* 。文档整理**
 
-## 共
+## 目录
 
 > @gaopeng123/utils
 >
 >[工具类函数](README)
+> 
+>[types](src/types/README.md)
+> 
+>[object](src/object/README.md)
+> 
+>[function](src/function/README.md)
+> 
+>[file](src/file/README.md)
+> 
+>[string](src/string/README.md)
+> 
+>[number](src/number/README.md)
+> 
+>[array](src/array/README.md)
+> 
+>[date](src/date/README.md)
 
 > @gaopeng123/fetch
 >
@@ -16,6 +32,18 @@
 > @gaopeng123/hooks
 >
 >[常用hooks整理](md/hooks)
+> 
+>[useScale](md/hooks/useScale)：监听窗口变化，动态缩放当前dom。
+> 
+>[useResize](md/hooks/useResize)：监听窗口变化，返回窗口尺寸。
+> 
+>[useMergeValue](md/hooks/useMergeValue)：解决npm因peerDependencies导致安装失败问题。
+> 
+>[useEasing](md/hooks/useEasing)：缓动函数。
+> 
+>[useClock](md/hooks/useClock)：时钟器。
+> 
+> [usePoller](md/hooks/usePoller)：轮询器,包括同步轮询，异步轮询。
 
 > @gaopeng123/hoc
 >
