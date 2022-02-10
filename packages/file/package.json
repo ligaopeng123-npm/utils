@@ -64,6 +64,7 @@
     },
     "dependencies": {
         "@gaopeng123/utils.object": "latest",
-        "@gaopeng123/utils.types": "latest"
+        "@gaopeng123/utils.types": "latest",
+        "@gaopeng123/utils.string": "latest"
     }
 }
