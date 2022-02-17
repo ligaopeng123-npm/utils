@@ -6,7 +6,9 @@
     ],
     "compilerOptions": {
         "module": "esnext",
-        "sourceMap": true,
+        "declaration": true,
+        "sourceMap": false,
+        "rootDir": "./",
         "noImplicitAny": true,
         "target": "es6",
         "allowJs": true,
