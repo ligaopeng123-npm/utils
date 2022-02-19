@@ -16,6 +16,7 @@
     - [useEasing](md/hooks/useEasing.md)
     - [useClock](md/hooks/useClock.md)
     - [usePoller](md/hooks/usePoller.md)
+    - [useFetch](md/hooks/useFetch.md)
 - Web Components
     - [login-module](md/login-module.md)
     - [rc-login-module](md/login-module.md)
