@@ -43,7 +43,9 @@
 >
 >[useClock](md/hooks/useClock.md)：时钟器。
 >
-> [usePoller](md/hooks/usePoller.md)：轮询器,包括同步轮询，异步轮询。
+>[usePoller](md/hooks/usePoller.md)：轮询器,包括同步轮询，异步轮询。
+> 
+>[usePoller](md/hooks/useFetch.md)：请求函数。
 
 > @gaopeng123/hoc
 >
