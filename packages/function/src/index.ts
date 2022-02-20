@@ -5,13 +5,16 @@ export {pipe as pipe} from './compose';
 export {default as curry} from './curry';
 export {default as partial} from './partial';
 // 函数缓存
-export {memoized, MemoizedFn} from './memoized';
+export {memoized} from './memoized';
+export type {MemoizedFn} from './memoized';
 
-export {asyncMemoized, AsyncMemoizedFn} from './memoized';
+export {asyncMemoized} from './memoized';
+export type {AsyncMemoizedFn} from "./memoized";
 /**
  * monad函数
  */
-export {ResponseMonad as ResponseMonad} from './monad';
+export {default as ResponseMonad} from './monad/ResponseMonad';
+export {default as monad} from './monad/monad';
 /**
  * fullscreen函数
  */
@@ -24,5 +27,7 @@ export {default as windowSize, WindowSize} from './windowSize';
 /**
  * 去抖
  */
-export {default as debounce, DebounceOptions} from "./debounce";
-export {default as throttle, ThrottleOptions} from "./throttle";
+export {default as debounce} from "./debounce";
+export type {DebounceOptions} from "./debounce";
+export {default as throttle} from "./throttle";
+export type {ThrottleOptions} from "./throttle";

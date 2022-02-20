@@ -61,14 +61,14 @@ export function removeUrlParams(url: string): string {
  * @param url
  * @param {string} name
  */
-export declare type downloadParams = {
+export declare type DownloadParams = {
     url?: string, // uri地址
     fileName?: string, // 文件名
     blob?: string | Blob, // blob地址
     parmas?: any, // 请求参数
 }
 
-export const download = ({url, fileName, blob, parmas}: downloadParams): void | Error => {
+export const download = ({url, fileName, blob, parmas}: DownloadParams): void | Error => {
     if (!url && !blob) return new Error('url or blob is undefined');
     const href = blob ? URL.createObjectURL(blob as Blob) : url + urlJoinParmas(parmas);
     const elt = document.createElement('a');
@@ -85,12 +85,12 @@ export const download = ({url, fileName, blob, parmas}: downloadParams): void | 
  * 文档流下载函数 建议使用此方式进行下载 服务端不需要保存冗余文件
  * downloadStream({url:'', options: {body: ''},fileName: ''})
  */
-export declare type downloadStreamParams = {
+export declare type DownloadStreamParams = {
     url: string; // uri地址
     options?: any; // fetch参数
     fileName?: string; // 文件名
 }
-export const downloadStream = ({url, options, fileName}: downloadStreamParams): void => {
+export const downloadStream = ({url, options, fileName}: DownloadStreamParams): void => {
     fetch(url, Object.assign({responseType: 'blob'}, options)).then((res: any) => {
         const blob = new Blob([res],
             {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8"});

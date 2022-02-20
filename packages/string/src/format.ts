@@ -15,8 +15,8 @@
  * formatStr('hello {o}, I like {1}')('china', 'you');
  * @param str
  */
-export type formatStrFn = (...args: any) => string;
-const formatStr = (str: string): formatStrFn => {
+export type FormatStrFn = (...args: any) => string;
+const formatStr = (str: string): FormatStrFn => {
 	return (...args: any) => {
 		let result = str;
 		for (let i = 0; i < args.length; i++) {

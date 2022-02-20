@@ -10,19 +10,19 @@
  *
  **********************************************************************/
 export {default as formatTimestamp} from './timestamp';
-export {TimestampType as TimestampType} from './timestamp';
-export {getYear as getYear} from './timestamp';
-export {getMonth as getMonth} from './timestamp';
-export {getDay as getDay} from './timestamp';
-export {getHours as getHours} from './timestamp';
-export {getMinutes as getMinutes} from './timestamp';
-export {getSeconds as getSeconds} from './timestamp';
-export {getWeek as getWeek} from './timestamp';
-export {getWeekCN as getWeekCN} from './timestamp';
+export type {TimestampType} from './timestamp';
+export {getYear} from './timestamp';
+export {getMonth} from './timestamp';
+export {getDay} from './timestamp';
+export {getHours} from './timestamp';
+export {getMinutes} from './timestamp';
+export {getSeconds} from './timestamp';
+export {getWeek} from './timestamp';
+export {getWeekCN} from './timestamp';
 
 export {default as timeRange} from './timeRange';
-export {TimeRange as TimeRange} from './timeRange';
-export {TimeRangeType as TimeRangeType} from './timeRange';
+export type {TimeRange} from './timeRange';
+export type {TimeRangeType} from './timeRange';
 export {timeRangeCurrent as timeRangeCurrent} from './timeRange';
 export {timeRangePrevious as timeRangePrevious} from './timeRange';
 export {currentQuarterFirstMonth as currentQuarterFirstMonth} from './timeRange';

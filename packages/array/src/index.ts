@@ -9,6 +9,6 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-export {convertToTwodimensional as convertToTwodimensional} from './conversion';
-export {findTreeOrder as findTreeOrder} from './tree';
-export {findSubtreeByOrder as findSubtreeByOrder} from './tree';
+export {convertToTwodimensional} from './conversion';
+export {findTreeOrder} from './tree';
+export {findSubtreeByOrder} from './tree';
