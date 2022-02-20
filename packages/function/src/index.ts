@@ -4,35 +4,25 @@ export {pipe as pipe} from './compose';
 // 柯理化函数
 export {default as curry} from './curry';
 export {default as partial} from './partial';
+// 函数缓存
+export {memoized, MemoizedFn} from './memoized';
 
-export {memoized as memoized} from './memoized';
-export {MemoizedFn as MemoizedFn} from './memoized';
-
-export {asyncMemoized as asyncMemoized} from './memoized';
-export {AsyncMemoizedFn as AsyncMemoizedFn} from './memoized';
-
+export {asyncMemoized, AsyncMemoizedFn} from './memoized';
 /**
  * monad函数
  */
 export {ResponseMonad as ResponseMonad} from './monad';
-
 /**
  * fullscreen函数
  */
-export {isFullscreen as isFullscreen} from './fullscreen';
-export {fullscreen as fullscreen} from './fullscreen';
-export {exitFullscreen as exitFullscreen} from './fullscreen';
-export {default as autoFullscreen} from './fullscreen';
+export {default as autoFullscreen, isFullscreen, fullscreen, exitFullscreen} from './fullscreen';
 /**
  * 窗口尺寸
  */
-export {WindowSize as WindowSize} from './windowSize';
-export {default as windowSize} from './windowSize';
+export {default as windowSize, WindowSize} from './windowSize';
 
 /**
  * 去抖
  */
-export {DebounceOptions as DebounceOptions} from "./debounce";
-export {default as debounce} from "./debounce";
-export {ThrottleOptions as ThrottleOptions} from "./throttle";
-export {default as throttle} from "./throttle";
+export {default as debounce, DebounceOptions} from "./debounce";
+export {default as throttle, ThrottleOptions} from "./throttle";

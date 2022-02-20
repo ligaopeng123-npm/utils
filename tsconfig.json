@@ -1,14 +1,20 @@
 {
+    "include": [
+        "packages",
+        "types"
+    ],
     "exclude": [
         "**/*.spec.ts",
         "**/*.test.ts",
         "node_modules"
     ],
     "compilerOptions": {
+        "outDir": "/dist",
+        "rootDir": "./",
+        "baseUrl": "./packages",
         "module": "esnext",
         "declaration": true,
         "sourceMap": false,
-        "rootDir": "./",
         "noImplicitAny": true,
         "target": "es6",
         "allowJs": true,
