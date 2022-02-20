@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.number",
     "author": "ligaopeng123",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "数字处理",
     "license": "MIT",
     "main": "dist/index.js",
