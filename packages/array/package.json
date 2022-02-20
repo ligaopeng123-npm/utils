@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.array",
     "author": "ligaopeng123",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "description": "函数处理",
     "license": "MIT",
     "main": "dist/index.js",
