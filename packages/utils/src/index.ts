@@ -1,256 +1,204 @@
+import {
+    // 数据类型判断
+    isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject,
+    isEqualByObj, isFunction, isPromise, isString, isDate, isUndefined,
+    isJSON, isBoolean, isBuffer, isFormData, isFile, isBlob, isStream, isURLSearchParams,
+    // 浏览器判断
+    isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko,
+    // 硬件判断
+    isWindows, isMac, isLinux, isMobile,
+    // 版本获取
+    chromeVersion, firefoxVersion, ieVersion, operaVersion, safariVersion, webKitVersion,
+    // 安全模式获取
+    isStrict, isSecure
+} from '@gaopeng123/utils.types';
+
+import {
+    downloadStream, download,
+    // 删除参数中的空数据 处理不合规参数 从url中获取参数
+    urlJoinParmas, removeUrlParams, routeFromUri, removeEmptyParams,
+    makeParamsProper, queryParamsFromUrl,
+    // 图片操作
+    imageFromFile, openToPreviewBase64, imageToBase64, dowmloadScreenshotPicture,
+    // 图片类型数据转换
+    file2Blob, file2Url, base642Blob, blob2File, base642File, blob2Base64,
+    // css 和 react style 相互转换
+    obj2css, css2obj
+} from "@gaopeng123/utils.file";
+
+import type {DownloadStreamParams, DownloadParams} from "@gaopeng123/utils.file";
+
+import {
+    // 数组截断转二维数组
+    convertToTwodimensional,
+    // 树的查询
+    findTreeOrder, findSubtreeByOrder
+} from "@gaopeng123/utils.array";
+
+
+import {
+    uuid, formatStr,
+    // 字符串截断
+    ellipsps, strWidth,
+    // 提取被字符包裹住的内容
+    extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
+    // 常用正则校验
+    IPV4, PHONE_NUMBER,
+    // 颜色处理
+    addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb,
+    // url路径拼接
+    pathJoin,
+    // 驼峰转换
+    hump2hyphen, hyphen2hump,
+} from "@gaopeng123/utils.string";
+
+
+import {
+    // clone函数
+    clone, cloneAllItems, cloneAllArray, cloneAllObject,
+    // 鼠标样式获取 样式获取 获取父级dom 直到Expected条件为true
+    mousePosition, getStyle, parentByExpected,
+    // 复制文本 数组 对象 字符串长度
+    copyText, length,
+    // 1、对象属性合并 数组默认覆盖 2、对象属性合并（数组是concat合并） 3、对象属性合并（数组不做处理）
+    assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray,
+    // 对象的过滤循环  对象的map循环 对象forEach
+    filterObject, mapObject, forEachObject
+} from "@gaopeng123/utils.object";
+
+import {
+    // Monad函数  柯理化函数 函数合并
+    ResponseMonad, curry, partial, compose, composePromises, pipe,
+    // 缓存函数
+    memoized, asyncMemoized,
+    // fullscreen函数
+    isFullscreen, fullscreen, exitFullscreen, autoFullscreen,
+    // 窗口尺寸
+    windowSize,
+    // 去抖 节流
+    debounce, throttle
+} from "@gaopeng123/utils.function";
+
+import {MemoizedFn, AsyncMemoizedFn, WindowSize, DebounceOptions, ThrottleOptions,} from "@gaopeng123/utils.function";
+
+import {
+    formatTimestamp,
+    getYear, getMonth, getDay, getHours, getMinutes, getSeconds, getWeek, getWeekCN,
+    timeRange, timeRangeCurrent, timeRangePrevious,
+    currentQuarterFirstMonth, currentQuarterLastMonth, currentQuarterDays,
+    currentDayEarliest, currentDayLatest,
+} from "@gaopeng123/utils.date";
+
+import type {TimestampType, TimeRange, TimeRangeType,} from "@gaopeng123/utils.date";
+
+import {
+    randomInt, toThousands, unitUpgrade, bitUpgrade, bitRateUpgrade,
+    max, min
+} from "@gaopeng123/utils.number";
+
 /****************************   基本类型判断    *****************************/
-export {isObject} from "@gaopeng123/utils.types";
-export {isArray} from "@gaopeng123/utils.types";
-export {isElement} from "@gaopeng123/utils.types";
-export {isEmpty} from "@gaopeng123/utils.types";
-export {isNumber} from "@gaopeng123/utils.types";
-export {isEmptyObject} from "@gaopeng123/utils.types";
-export {isEqualByObj} from "@gaopeng123/utils.types";
-export {isFunction} from "@gaopeng123/utils.types";
-export {isPromise} from "@gaopeng123/utils.types";
-export {isString} from "@gaopeng123/utils.types";
-export {isDate} from "@gaopeng123/utils.types";
-export {isUndefined} from "@gaopeng123/utils.types";
-export {isJSON} from "@gaopeng123/utils.types";
-export {isBoolean} from "@gaopeng123/utils.types";
-export {isBuffer} from "@gaopeng123/utils.types";
-export {isFormData} from "@gaopeng123/utils.types";
-export {isFile} from "@gaopeng123/utils.types";
-export {isBlob} from "@gaopeng123/utils.types";
-export {isStream} from "@gaopeng123/utils.types";
-export {isURLSearchParams} from "@gaopeng123/utils.types";
-
-/**
- * 浏览器判断
- */
-export {isChrome} from "@gaopeng123/utils.types";
-export {isFirefox} from "@gaopeng123/utils.types";
-export {isWebKit} from "@gaopeng123/utils.types";
-export {isSafari} from "@gaopeng123/utils.types";
-export {isOpera} from "@gaopeng123/utils.types";
-export {isEdge} from "@gaopeng123/utils.types";
-export {isIE} from "@gaopeng123/utils.types";
-export {isGecko} from "@gaopeng123/utils.types";
-/**
- * 硬件判断
- */
-export {isWindows} from "@gaopeng123/utils.types";
-export {isMac} from "@gaopeng123/utils.types";
-export {isLinux} from "@gaopeng123/utils.types";
-export {isMobile} from "@gaopeng123/utils.types";
-/**
- * 版本获取
- */
-export {chromeVersion} from "@gaopeng123/utils.types";
-export {firefoxVersion} from "@gaopeng123/utils.types";
-export {ieVersion} from "@gaopeng123/utils.types";
-export {operaVersion} from "@gaopeng123/utils.types";
-export {safariVersion} from "@gaopeng123/utils.types";
-export {webKitVersion} from "@gaopeng123/utils.types";
-
-/**
- * 安全模式获取
- */
-export {isStrict} from "@gaopeng123/utils.types";
-export {isSecure} from "@gaopeng123/utils.types";
-
+export {
+    // 数据类型判断
+    isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject,
+    isEqualByObj, isFunction, isPromise, isString, isDate, isUndefined,
+    isJSON, isBoolean, isBuffer, isFormData, isFile, isBlob, isStream, isURLSearchParams,
+    // 浏览器判断
+    isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko,
+    // 硬件判断
+    isWindows, isMac, isLinux, isMobile,
+    // 版本获取
+    chromeVersion, firefoxVersion, ieVersion, operaVersion, safariVersion, webKitVersion,
+    // 安全模式获取
+    isStrict, isSecure
+}
 /****************************   文件操作    *****************************/
-export {downloadStream} from "@gaopeng123/utils.file";
-export type {DownloadStreamParams} from "@gaopeng123/utils.file";
+export {
+    downloadStream, download,
+    // 删除参数中的空数据 处理不合规参数 从url中获取参数
+    urlJoinParmas, removeUrlParams, routeFromUri, removeEmptyParams,
+    makeParamsProper, queryParamsFromUrl,
+    // 图片操作
+    imageFromFile, openToPreviewBase64, imageToBase64, dowmloadScreenshotPicture,
+    // 图片类型数据转换
+    file2Blob, file2Url, base642Blob, blob2File, base642File, blob2Base64,
+    // css 和 react style 相互转换
+    obj2css, css2obj
+}
 
-export {download} from "@gaopeng123/utils.file";
-export type {DownloadParams} from "@gaopeng123/utils.file";
+export type {DownloadStreamParams, DownloadParams};
 
-export {urlJoinParmas} from "@gaopeng123/utils.file";
-
-export {removeUrlParams} from "@gaopeng123/utils.file";
-
-export {routeFromUri} from "@gaopeng123/utils.file";
-
-// 删除参数中的空数据
-export {removeEmptyParams} from "@gaopeng123/utils.file";
-// 处理不合规参数
-export {makeParamsProper} from "@gaopeng123/utils.file";
-// 从url中获取参数
-export {queryParamsFromUrl} from "@gaopeng123/utils.file";
-// 图片操作
-export {imageFromFile} from "@gaopeng123/utils.file";
-
-export {openToPreviewBase64} from "@gaopeng123/utils.file";
-
-export {imageToBase64} from "@gaopeng123/utils.file";
-
-export {dowmloadScreenshotPicture} from "@gaopeng123/utils.file";
-
-// 图片类型数据转换
-export {file2Blob} from "@gaopeng123/utils.file";
-export {file2Url} from "@gaopeng123/utils.file";
-export {base642Blob} from "@gaopeng123/utils.file";
-export {blob2File} from "@gaopeng123/utils.file";
-export {base642File} from "@gaopeng123/utils.file";
-export {blob2Base64} from "@gaopeng123/utils.file";
-
-// css 和 react style 相互转换
-export {obj2css} from "@gaopeng123/utils.file";
-export {css2obj} from "@gaopeng123/utils.file";
 
 /****************************  数组操作函数    *****************************/
-export {convertToTwodimensional} from "@gaopeng123/utils.array";
-// 树的查询
-export {findTreeOrder} from "@gaopeng123/utils.array";
-export {findSubtreeByOrder} from "@gaopeng123/utils.array";
 
+export {
+    // 数组截断转二维数组
+    convertToTwodimensional,
+    // 树的查询
+    findTreeOrder, findSubtreeByOrder
+}
 
 /****************************  字符串 数字操作    *****************************/
-export {uuid} from "@gaopeng123/utils.string";
-
-export {formatStr} from "@gaopeng123/utils.string";
-// 字符串截断
-export {ellipsps} from "@gaopeng123/utils.string";
-
-export {strWidth} from "@gaopeng123/utils.string";
-
-// 提取被字符包裹住的内容
-export {extractEnclosedContent} from "@gaopeng123/utils.string";
-export {extractParenthesesContent} from "@gaopeng123/utils.string";
-export {extractMiddleParenthesesContent} from "@gaopeng123/utils.string";
-export {extractBigParenthesesContent} from "@gaopeng123/utils.string";
-
-// 常用正则校验
-export {IPV4} from "@gaopeng123/utils.string";
-export {PHONE_NUMBER} from "@gaopeng123/utils.string";
-
-// 颜色处理
-export {addOpacity} from "@gaopeng123/utils.string";
-export {hex2Rgb} from "@gaopeng123/utils.string";
-export {rgb2hex} from "@gaopeng123/utils.string";
-export {rgba2hex} from "@gaopeng123/utils.string";
-export {rgba2rgb} from "@gaopeng123/utils.string";
-// url路径拼接
-export {pathJoin} from "@gaopeng123/utils.string";
-// 驼峰转换
-export {hump2hyphen} from "@gaopeng123/utils.string";
-export {hyphen2hump} from "@gaopeng123/utils.string";
+export {
+    uuid, formatStr,
+    // 字符串截断
+    ellipsps, strWidth,
+    // 提取被字符包裹住的内容
+    extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
+    // 常用正则校验
+    IPV4, PHONE_NUMBER,
+    // 颜色处理
+    addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb,
+    // url路径拼接
+    pathJoin,
+    // 驼峰转换
+    hump2hyphen, hyphen2hump,
+}
 /****************************  对象操作    *****************************/
-// clone函数
-export {clone} from "@gaopeng123/utils.object";
-
-export {cloneAllItems} from "@gaopeng123/utils.object";
-
-export {cloneAllArray} from "@gaopeng123/utils.object";
-
-export {cloneAllObject} from "@gaopeng123/utils.object";
-
-export {mousePosition} from "@gaopeng123/utils.object";
-
-export {getStyle} from "@gaopeng123/utils.object";
-// 获取父级dom 直到Expected条件为true
-export {parentByExpected} from "@gaopeng123/utils.object";
-// 复制文本
-export {copyText} from "@gaopeng123/utils.object";
-// 数组 对象 字符串长度
-export {length} from "@gaopeng123/utils.object";
-
-/**
- * 对象属性合并 数组默认覆盖
- */
-export {assignDeep} from "@gaopeng123/utils.object";
-/**
- * 对象属性合并（数组是concat合并）
- */
-export {assignDeepMergeArray} from "@gaopeng123/utils.object";
-/**
- * 对象属性合并（数组不做处理）
- */
-export {assignDeepNotIncludedArray} from "@gaopeng123/utils.object";
-
-/**
- * 对象的过滤循环
- */
-export {filterObject} from "@gaopeng123/utils.object";
-/**
- * 对象的map循环
- */
-export {mapObject} from "@gaopeng123/utils.object";
-/**
- * 对象forEach
- */
-export {forEachObject} from "@gaopeng123/utils.object";
+export {
+    // clone函数
+    clone, cloneAllItems, cloneAllArray, cloneAllObject,
+    // 鼠标样式获取 样式获取 获取父级dom 直到Expected条件为true
+    mousePosition, getStyle, parentByExpected,
+    // 复制文本 数组 对象 字符串长度
+    copyText, length,
+    // 1、对象属性合并 数组默认覆盖 2、对象属性合并（数组是concat合并） 3、对象属性合并（数组不做处理）
+    assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray,
+    // 对象的过滤循环  对象的map循环 对象forEach
+    filterObject, mapObject, forEachObject
+}
 /****************************  函数操作    *****************************/
-export {ResponseMonad} from "@gaopeng123/utils.function";
-// 缓存函数
-export {memoized} from "@gaopeng123/utils.function";
-export type {MemoizedFn} from "@gaopeng123/utils.function";
-// 异步缓存
-export {asyncMemoized} from "@gaopeng123/utils.function";
-export type {AsyncMemoizedFn} from "@gaopeng123/utils.function";
-// 柯理化函数
-export {curry} from "@gaopeng123/utils.function";
+export {
+    // Monad函数  柯理化函数 函数合并
+    ResponseMonad, curry, partial, compose, composePromises, pipe,
+    // 缓存函数
+    memoized, asyncMemoized,
+    // fullscreen函数
+    isFullscreen, fullscreen, exitFullscreen, autoFullscreen,
+    // 窗口尺寸
+    windowSize,
+    // 去抖 节流
+    debounce, throttle
+}
 
-export {partial} from "@gaopeng123/utils.function";
-// 函数合并
-export {compose} from "@gaopeng123/utils.function";
-export {composePromises} from "@gaopeng123/utils.function";
-export {pipe} from "@gaopeng123/utils.function";
-// fullscreen函数
-export {isFullscreen} from "@gaopeng123/utils.function";
-export {fullscreen} from "@gaopeng123/utils.function";
-export {exitFullscreen} from "@gaopeng123/utils.function";
-export {autoFullscreen} from "@gaopeng123/utils.function";
-
-// 窗口尺寸
-export type {WindowSize} from "@gaopeng123/utils.function";
-export {windowSize} from "@gaopeng123/utils.function";
-// 去抖 节流
-export type {DebounceOptions} from "@gaopeng123/utils.function";
-export {debounce} from "@gaopeng123/utils.function";
-export type {ThrottleOptions} from "@gaopeng123/utils.function";
-export {throttle} from "@gaopeng123/utils.function";
+export {MemoizedFn, AsyncMemoizedFn, WindowSize, DebounceOptions, ThrottleOptions,}
 
 /****************************  时间操作    *****************************/
-export {formatTimestamp} from "@gaopeng123/utils.date";
-export type {TimestampType} from "@gaopeng123/utils.date";
 
-export {getYear} from "@gaopeng123/utils.date";
+export {
+    formatTimestamp,
+    getYear, getMonth, getDay, getHours, getMinutes, getSeconds, getWeek, getWeekCN,
+    timeRange, timeRangeCurrent, timeRangePrevious,
+    currentQuarterFirstMonth, currentQuarterLastMonth, currentQuarterDays,
+    currentDayEarliest, currentDayLatest,
+}
 
-export {getMonth} from "@gaopeng123/utils.date";
+export {
+    TimestampType, TimeRange, TimeRangeType,
+}
 
-export {getDay} from "@gaopeng123/utils.date";
-
-export {getHours} from "@gaopeng123/utils.date";
-
-export {getMinutes} from "@gaopeng123/utils.date";
-
-export {getSeconds} from "@gaopeng123/utils.date";
-
-export {getWeek} from "@gaopeng123/utils.date";
-
-export {getWeekCN} from "@gaopeng123/utils.date";
-
-export {timeRange} from "@gaopeng123/utils.date";
-export type {TimeRange} from "@gaopeng123/utils.date";
-
-export type {TimeRangeType} from "@gaopeng123/utils.date";
-export {timeRangeCurrent} from "@gaopeng123/utils.date";
-
-export {timeRangePrevious} from "@gaopeng123/utils.date";
-
-export {currentQuarterFirstMonth} from "@gaopeng123/utils.date";
-
-export {currentQuarterLastMonth} from "@gaopeng123/utils.date";
-
-export {currentQuarterDays} from "@gaopeng123/utils.date";
-
-export {currentDayEarliest} from "@gaopeng123/utils.date";
-
-export {currentDayLatest} from "@gaopeng123/utils.date";
 /****************************  number操作    *****************************/
-export {randomInt} from "@gaopeng123/utils.number";
+export {
+    randomInt, toThousands, unitUpgrade, bitUpgrade, bitRateUpgrade,
+    max, min
+}
 
-export {toThousands} from "@gaopeng123/utils.number";
-export {unitUpgrade} from "@gaopeng123/utils.number";
-export {bitUpgrade} from "@gaopeng123/utils.number";
-export {bitRateUpgrade} from "@gaopeng123/utils.number";
-
-export {max} from "@gaopeng123/utils.number";
-export {min} from "@gaopeng123/utils.number";
