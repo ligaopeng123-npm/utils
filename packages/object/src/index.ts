@@ -18,7 +18,7 @@ export {mousePosition}
 export {getStyle, parentByExpected, copyText}
 
 /**
- * 获取数组、对象长度
+ * 获取数组、对象长度  length();
  */
 export {length}
 /**
