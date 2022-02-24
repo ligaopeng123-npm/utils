@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.string",
     "author": "ligaopeng123",
-    "version": "0.4.3",
+    "version": "0.4.5",
     "description": "字符串方法",
     "license": "MIT",
     "main": "dist/index.js",
@@ -62,7 +62,7 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@gaopeng123/utils.function": "^0.4.3",
-        "@gaopeng123/utils.types": "^0.4.1"
+        "@gaopeng123/utils.function": "^0.4.5",
+        "@gaopeng123/utils.types": "^0.4.5"
     }
 }
