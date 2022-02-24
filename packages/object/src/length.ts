@@ -11,7 +11,7 @@
  **********************************************************************/
 import {isArray, isObject, isString} from "@gaopeng123/utils.types";
 
-const length = (val: any): number => {
+export const length = (val: any): number => {
 	if (isObject(val)) {
 		return Object.keys(val).length;
 	} else if (isArray(val) || isString(val)) {
@@ -20,5 +20,3 @@ const length = (val: any): number => {
 		return 0;
 	}
 };
-
-export default length;

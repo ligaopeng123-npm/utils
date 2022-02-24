@@ -80,20 +80,3 @@ export const cloneAllItems = <T>(val: T): T => {
 	}
 	return val;
 };
-
-/**
- * 属性的浅copy 如果目标对象 有该属性 则不copy
- * @param target
- * @param source
- */
-export const assignIf = (target: any, source: any): any => {
-	if (isObject(target) && isObject(source)) {
-		let property;
-		for (property in source) {
-			if (target[property] === undefined) {
-				target[property] = source[property];
-			}
-		}
-	}
-	return target;
-};

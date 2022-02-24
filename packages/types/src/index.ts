@@ -12,6 +12,7 @@ export {isPromise as isPromise} from "./data";
 export {isFunction as isFunction} from "./data";
 export {isNumber as isNumber} from "./data";
 export {isUndefined as isUndefined} from "./data";
+export {isNull as isNull} from "./data";
 export {isString as isString} from "./data";
 export {isJSON as isJSON} from "./data";
 export {isDate as isDate} from "./data";

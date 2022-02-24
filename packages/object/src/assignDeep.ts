@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isArray, isObject, isUndefined} from "@gaopeng123/utils.types";
+import {isArray, isNull, isObject, isUndefined} from "@gaopeng123/utils.types";
 
 /**
  * merge数组
@@ -99,7 +99,7 @@ const deepMerge = (target: any, sources: Array<any>, options?: Options) => {
  * @param target
  * @param source
  */
-const assignDeep = (target: any, ...source: any) => {
+export const assignDeep = (target: any, ...source: any) => {
     /**
      * 如果target 不是对象类型 则默认Merge给一个新对象
      */
@@ -128,4 +128,23 @@ export const assignDeepMergeArray = (target: any, ...source: any) => {
      */
     return deepMerge(target, source, {arrayHandle: 'merge'});
 };
-export default assignDeep;
+
+/**
+ * 属性的浅copy 如果目标对象 有该属性 则不copy
+ * @param target
+ * @param source
+ */
+export const assignIf = (target: any, ...source: any): any => {
+    const _target = Object.assign({}, target);
+    source?.forEach((sourceItem: any) => {
+        if (isObject(target) && isObject(sourceItem)) {
+            let property;
+            for (property in sourceItem) {
+                if (isNull(_target[property]) || isUndefined(_target[property])) {
+                    _target[property] = sourceItem[property];
+                }
+            }
+        }
+    });
+    return _target;
+};

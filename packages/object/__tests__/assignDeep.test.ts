@@ -1,4 +1,4 @@
-import {assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray} from '../src';
+import {assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray, assignIf} from '../src';
 
 const object1 = {
     a: `a`,
@@ -59,6 +59,17 @@ describe('assignDeep', () => {
         expect(assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1})).toStrictEqual({
             a: [1, 2, 3],
             b: 1
+        });
+    });
+});
+
+describe('assignIf', function () {
+    it('works', () => {
+        expect(assignIf({a: 1, b: null, c: 1}, {a: [1], b: 2, d: null})).toStrictEqual({
+            a: 1,
+            b: 2,
+            c: 1,
+            d: null
         });
     });
 });

@@ -11,6 +11,7 @@
 | isNumber          | 判断数字                                   |
 | isBoolean         | 判断boolean                                |
 | isUndefined       | 判断undefined                              |
+| isNull            | 判断null                                   |
 | isString          | 判断string                                 |
 | isElement         | 判断element                                |
 | isDate            | 判断是否是Date类型                         |

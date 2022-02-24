@@ -124,6 +124,14 @@ export const isEmpty: typeFn = (val) => {
 };
 
 /**
+ * 是否为null
+ * @param val
+ */
+export const isNull: typeFn = (val) => {
+    return val === null;
+}
+
+/**
  * 判断是不是空对象
  * @param val
  */
