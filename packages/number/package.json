@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.number",
     "author": "ligaopeng123",
-    "version": "0.4.5",
+    "version": "0.4.6",
     "description": "数字处理",
     "license": "MIT",
     "main": "dist/index.js",
@@ -62,7 +62,7 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@gaopeng123/utils.types": "^0.4.5"
+        "@gaopeng123/utils.types": "^0.4.6"
     },
     "gitHead": "82b264d5e34b5de0ebcdcd599b540ba5777b3e08"
 }
