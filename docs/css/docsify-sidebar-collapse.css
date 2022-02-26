@@ -10,10 +10,10 @@
     position: absolute;
     top: 15px;
     left: calc(100% - 24px);
-    height: 9px;
-    width: 8px;
-    border-right: 3px solid #505d6b;
-    border-bottom: 3px solid #505d6b;
+    height: 6px;
+    width: 6px;
+    border-right: 2px solid #505d6b;
+    border-bottom: 2px solid #505d6b;
     transform: rotate(
             -45deg);
     transition: transform .1s;
