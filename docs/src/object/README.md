@@ -38,7 +38,7 @@ cloneAllItem({});
 
 ##### assignIf:(target: any, source: any): any
 
-`对象属性的浅赋值，如果目标对象的属性非undefined,则不赋值`
+`对象属性的浅赋值，如果目标对象的属性为undefined null,则复制source属性`
 
 ```typescript
 assignIf({a: 1}, {a:2, b: 1}); // {a:1,b:1}

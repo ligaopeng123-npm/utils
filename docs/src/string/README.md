@@ -1,4 +1,4 @@
-# String
+# string
 
 ## 随机数
 
