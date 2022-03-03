@@ -1,0 +1,68 @@
+.sidebar {
+    margin-left: 20px;
+    text-align: var(--main-sidebar-algin);
+    padding-right: 32px !important;
+}
+
+.sidebar > h1 {
+    text-align: var(--main-sidebar-algin) !important;
+    padding-left: 14px;
+}
+
+.sidebar > h1 > a:not(.app-name-link) {
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    text-transform: uppercase;
+    /*display: block;*/
+    font-size: 1.2rem;
+    /*color: #f1ebe5;*/
+    text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #fff;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-align: center;
+    /*background: linear-gradient(to bottom, #ece4d9 0%, #e9dfd1 100%);*/
+    /*position: absolute;*/
+    /* padding: 100px 200px; */
+    /* top: 480px; */
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+}
+
+.sidebar-nav ul:not(.app-sub-sidebar) > li:not(.file)::after {
+    top: 13px;
+    left: calc(100% + 12px);
+}
+
+.sidebar > h1 {
+    /*text-align: right !important;*/
+    padding-top: 32px;
+}
+
+.sidebar > .search {
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    left: 320px;
+    width: 60%;
+    background-color: var(--background);
+}
+
+.sidebar-nav > ul > li > ul > li.active {
+    position: relative;
+    background-color: rgba(230, 247, 255, 0.4);
+    display: block;
+    box-shadow: 0px 0px #52abff !important;
+}
+
+.parent-active {
+    box-shadow: 0px 0px #52abff !important;
+}
+
+.parent-active:before, .sidebar-nav > ul > li > ul > li.active:before {
+    content: "";
+    width: 4px;
+    height: 40px;
+    background-color: #52abff;
+    position: absolute;
+    right: -18px;
+    top: 0px;
+}

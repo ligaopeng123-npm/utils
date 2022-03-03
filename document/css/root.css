@@ -1,0 +1,9 @@
+:root {
+    /*字体尺寸*/
+    --main-sidebar-size: 1rem;
+    /*方向*/
+    --main-sidebar-algin: left;
+    /*颜色*/
+    --main-sidebar-box-shadow-color: #52abfff;
+    --main-sidebar-box-shadow: inset -8px -4px 0px -4px #52abff;
+}

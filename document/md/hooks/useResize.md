@@ -1,0 +1,1 @@
+[filename](./useResize-document.md ':include')

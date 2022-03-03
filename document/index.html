@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/vue.css">
+    <link rel="stylesheet" href="css/docsify-demo.css">
+    <link rel="stylesheet" href="css/docsify-sidebar-collapse.css">
+    <link rel="stylesheet" href="css/css-v1.3.css">
+    <link rel="stylesheet" href="css/css-v1-center.css">
+    <link rel="stylesheet" href="css/markrun.css">
+    <link rel="stylesheet" href="css/docsify-darklight-theme.css">
+</head>
+<body>
+<div id="app"></div>
+<!--<script src="js/react.production.min.js"></script>-->
+<!--<script src="js/react-dom.production.min.js"></script>-->
+<!--<script src="js/docsify-demo-box-react.min.js"></script>-->
+<!--<script src="js/babel.min.js"></script>-->
+<!--js预览-->
+<script src="js/markrun.min.js"></script>
+<script>
+    // react组件预览 目前不支持hooks 暂时放弃
+    // var jsResources = '<scr' + 'ipt src="js/react.production.min.js"></scr' + 'ipt>\n' +
+    // 	'<scr' + 'ipt src="js/react-dom.production.min.js"></scr' + 'ipt>';
+    // var cssResources = '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");'
+    // var bootCode = 'var globalVariable = "leon"';
+
+    window.$docsify = {
+        name: '<img width="26" style="border-radius: 16px;margin-bottom: -6px;margin-right: 6px;" src="favicon.ico" /><a href="/utils/">随笔文档</a>',
+        repo: 'https://github.com/ligaopeng123-npm/utils',
+        loadSidebar: true,
+        maxLevel: 1,
+        subMaxLevel: 2, // 显示页面目录
+        sidebarDisplayLevel: 1, // 默认层级
+        sidebarDisplayOpenNumber: 100, // 默认打开个数
+        formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}',
+        // 锚点输入校验正则
+        regExUrl: /\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/,
+        // executeScript: true,
+        externalLinkRel: 'noopener', // default: 'noopener'
+        alias: {
+            '.*?/_sidebar.md': '/_sidebar.md',
+        },
+        // 完整配置参数
+        search: {
+            // maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+            // paths: [], // or 'auto'
+            placeholder: '全局搜索',
+            noData: '找不到结果!',
+            // 搜索标题的最大层级, 1 - 6
+            // depth: 6,
+            // hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+            // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+            // 匹配到的字符串将被用来识别索引
+            // pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+        },
+        // 复制按钮
+        copyCode: {
+            buttonText: 'Copy to clipboard',
+            errorText: 'Error',
+            successText: 'Copied'
+        },
+        // 分页
+        pagination: {
+            previousText: '上一章节',
+            nextText: '下一章节',
+            crossChapter: true,
+            crossChapterText: true,
+        },
+        // 浏览进度 css-v1.3有冲突
+        progress: {
+            position: "top",
+            color: "var(--theme-color,#42b983)",
+            height: "3px",
+        },
+        // docsify-demo-box-react效果预览
+        plugins: [
+            //次数是react组件预览
+            // DemoBoxReact.create(jsResources, cssResources, bootCode)
+            // 此处可将菜单默认收起 且切换是自动隐藏其他目录
+            // (hook) => {
+            // 	hook.doneEach(() => {
+            // 		const openLi = document.querySelector('.sidebar-nav').querySelectorAll('.open');
+            // 		Array.from(openLi).forEach((li, index) => {
+            // 			if (!li.querySelector('.active')) {
+            // 				li.classList.remove('open');
+            // 			}
+            // 		})
+            // 	});
+            // }
+        ],
+        // 改变位置插件
+        // rtl: {
+        // 	body: "ltr",
+        // 	side: "ltr",
+        // 	bdo: "rtl"
+        // }
+        // 告警信息
+        'flexible-alerts': {
+            note: {
+                label: "消息"
+            },
+            tip: {
+                label: "提示"
+            },
+            warning: {
+                label: "警告"
+            },
+            attention: {
+                label: "注意"
+            }
+        }
+    }
+</script>
+<script src="js/docsify.js"></script>
+<!--代码预览 支持 js ts-->
+<script src="js/docsify-markrun.js"></script>
+<script src="js/search.min.js"></script>
+<!--<script src="js/docsify-copy-code.min.js"></script>-->
+<!--分页-->
+<script src="js/docsify-pagination.min.js"></script>
+<!--菜单收起-->
+<script src="js/docsify-sidebar-collapse.js"></script>
+<!--主题-->
+<script src="js/docsify-darklight-theme.js"></script>
+<script src="js/docsify-demo.js"></script>
+<!--外部脚本-->
+<script src="js/external-script.min.js"></script>
+<!--告警消息-->
+<script src="js/docsify-plugin-flexible-alerts.min.js"></script>
+<!--代码优化-->
+<!--<script src="js/docsify-code-inline.min.js"></script>-->
+<!--iframe插件-->
+<script src="js/codeblock-iframe.js"></script>
+<script src="js/docsify-codeblock-iframe.js"></script>
+<!--<script src="js/docsify-rtl.min.js"></script>-->
+<!--<script src="js/progress.min.js"></script>-->
+</body>
+</html>
+

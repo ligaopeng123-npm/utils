@@ -1,0 +1,121 @@
+.sidebar {
+    margin-left: 20px;
+}
+
+.markdown-section {
+    padding: 30px 300px 40px 15px !important;
+}
+
+.sidebar .sidebar-nav {
+    padding-left: 0px;
+}
+
+.app-sub-sidebar {
+    width: 200px;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    /*background: #fff;*/
+}
+
+#docsify-darklight-theme {
+    right: 0px !important;
+}
+
+.app-sub-sidebar li:before {
+    content: "" !important;
+}
+
+.sidebar li.active {
+    padding: .2em 0rem .2em .2rem;
+}
+
+.sidebar ul {
+    margin: 10px 0;
+}
+
+.sidebar > h1 a {
+    font-weight: bold;
+}
+
+/*调整字体大小*/
+.sidebar ul li {
+    font-weight: bold;
+    font-size: var(--main-sidebar-size);
+}
+
+/*调整字体大小*/
+.sidebar ul li a {
+    font-weight: normal;
+    font-size: var(--main-sidebar-size) !important;
+}
+
+.sidebar-nav > ul > li > ul > li.active {
+    position: relative;
+    background-color: rgba(230, 247, 255, 0.4);
+    display: block;
+    box-shadow: var(--main-sidebar-box-shadow);
+}
+
+.sidebar-nav > ul > li > ul > li > a:active {
+    position: relative;
+    background-color: rgba(230, 247, 255, 0.4);
+    display: block;
+    box-shadow: var(--main-sidebar-box-shadow);
+}
+
+.app-sub-sidebar::before {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 100%;
+    display: block;
+    /*margin-left: 15px;*/
+    content: '本章目录';
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.app-sub-sidebar li.active {
+    box-shadow: inset 0px -2px 0px -2px var(--main-sidebar-box-shadow-color);
+    padding: .2em 0rem .2em .2rem !important;
+    /*background-color: #fff;*/
+}
+
+.sidebar ul li.active > a {
+    border-right: 0px solid !important;
+}
+
+.app-name-link {
+    pointer-events: none;
+}
+
+.markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section strong {
+    font-weight: 700;
+}
+
+.parent-active {
+    position: relative;
+    background-color: var(--background);
+    display: block;
+    box-shadow: inset -8px -4px 0px -4px var(--main-sidebar-box-shadow-color);
+}
+
+/*表格样式*/
+.markdown-section table > tbody > tr > td {
+    padding: 12px;
+}
+
+:root {
+    --main-table-td-padding: 12px;
+}
+
+.markdown-section table > thead > tr > th {
+    padding: var(--main-table-td-padding);
+    border: 1px solid rgba(221, 221, 221, 0.2);
+}
+
+.markdown-section table > tbody > tr > td {
+    padding: var(--main-table-td-padding);
+    border: 1px solid rgba(221, 221, 221, 0.2);
+}

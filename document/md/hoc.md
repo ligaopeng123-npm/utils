@@ -1,0 +1,1 @@
+[filename](./hoc-document.md ':include')
