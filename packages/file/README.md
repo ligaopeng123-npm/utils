@@ -113,6 +113,22 @@ imageToBase64({image:imgae})
 openToPreviewBase64('base64...');
 ```
 
+#### injectScript
+
+`动态加载js文件，返回一个promise`
+
+```typescript
+injectScript('http://***').then(()=> {});
+```
+
+#### injectScripts
+
+`批量动态加载就是文件`
+
+```typescript
+injectScripts(['http://***']).then(()=> {});
+```
+
 ## convert文件类型转换
 
 ##### file2Blob(file:File):Blob;

@@ -12,17 +12,18 @@
 type ObjectCallBack = (currentVal?: any, index?: number, obj?: any) => any;
 type FilterObjectCallBack = (currentVal?: any, index?: number, obj?: any) => boolean;
 export const filterObject = (obj: any, callback?: FilterObjectCallBack) => {
-	let index = 0;
-	const newObj = Object.assign({}, obj);
-	for (let key in newObj) {
-		if (callback) {
-			const callBackVal = callback(newObj[key], index, obj);
-			if (callBackVal === false) {
-				delete newObj[key];
-			}
-		}
-	}
-	return newObj;
+    let index = 0;
+    const newObj = Object.assign({}, obj);
+    for (let key in newObj) {
+        if (callback) {
+            const callBackVal = callback(newObj[key], index, obj);
+            if (callBackVal === false) {
+                delete newObj[key];
+            }
+        }
+        index++;
+    }
+    return newObj;
 };
 
 /**
@@ -31,15 +32,16 @@ export const filterObject = (obj: any, callback?: FilterObjectCallBack) => {
  * @param callback
  */
 export const forEachObject = (obj: any, callback?: ObjectCallBack) => {
-	let index = 0;
-	const newObj = Object.assign({}, obj);
-	for (let key in newObj) {
-		if (callback) {
-			const callBackVal = callback(newObj[key], index, obj);
-			newObj[key] = callBackVal;
-		}
-	}
-	return newObj;
+    let index = 0;
+    const newObj = Object.assign({}, obj);
+    for (let key in newObj) {
+        if (callback) {
+            const callBackVal = callback(newObj[key], index, obj);
+            newObj[key] = callBackVal;
+        }
+        index++;
+    }
+    return newObj;
 };
 
 /**
@@ -48,12 +50,13 @@ export const forEachObject = (obj: any, callback?: ObjectCallBack) => {
  * @param callback
  */
 export const mapObject = (obj: any, callback?: ObjectCallBack) => {
-	let index = 0;
-	for (let key in obj) {
-		if (callback) {
-			const callBackVal = callback(obj[key], index, obj);
-			obj[key] = callBackVal;
-		}
-	}
-	return obj;
+    let index = 0;
+    for (let key in obj) {
+        if (callback) {
+            const callBackVal = callback(obj[key], index, obj);
+            obj[key] = callBackVal;
+        }
+        index++;
+    }
+    return obj;
 };

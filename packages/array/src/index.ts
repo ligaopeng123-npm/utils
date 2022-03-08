@@ -9,6 +9,6 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-export {convertToTwodimensional} from './conversion';
+export {convertToTwodimensional, pageTurnerFixedLength} from './conversion';
 export {findTreeOrder} from './tree';
 export {findSubtreeByOrder} from './tree';

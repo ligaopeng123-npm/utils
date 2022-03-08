@@ -19,7 +19,7 @@
 import {isFunction} from "@gaopeng123/utils.types";
 
 export type DebounceOptions = {
-    leading: boolean; // 第一时间是否立即执行 后续在去抖
+    leading?: boolean; // 第一时间是否立即执行 后续再去抖
     notDebounce?: (...arg: any) => any; // 在去抖过程中 有一些非去抖处理 可以添加此参数
 }
 const debounce = (fn: any, wait?: number, options?: DebounceOptions) => {

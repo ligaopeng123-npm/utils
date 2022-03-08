@@ -69,15 +69,7 @@ assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1});
 // {a: [1, 2, 3], b: 1}  
 ```
 
-## other
-
-##### length:(val: any): number
-
-`获取对象的length`
-
-```typescript
-length({a:1}); // 1
-```
+## dom
 
 ##### mousePosition:(event: any): {x:number,y:number}
 
@@ -111,6 +103,69 @@ parentByExpected(dom, (currntDom)=> {
 
 ```typescript
 <div onClick="copyText"></div>
+```
+
+##### isVisibleInViewport
+
+`元素是否在可视范围内`
+
+```typescript
+// partiallyVisible 是否部分可见
+isVisibleInViewport(el: Element, partiallyVisible = true):boolean;
+isVisibleInViewport(document.body, false);
+```
+
+##### observeViewport
+
+`监听dom是否进入视口`
+
+```typescript
+/**
+ * @param observeDomList 监控的对象集合 数组
+ * @param observeCallBack    监听函数  范围在可视范围内的元素集合
+ * @param wait          去抖时间
+ * @param options       去抖配置
+ */
+const observeViewport = (observeDomList: any[], observeCallBack: any, wait?: number, options?: DebounceOptions): void;
+```
+
+`usage`
+
+```typescript
+import {observeViewport} from "@gaopeng123/utils";
+import testImg from './public/test.jpg';
+
+window.onload = () => {
+    const app = document.querySelector('#root');
+    const list = [];
+    for (let i = 0; i < 100; i++) {
+        const item = document.createElement('div');
+        item.classList.add('item');
+        item.style.height = '180px';
+        item.id = `item-${i}`;
+        app.append(item);
+        list.push(item);
+    }
+    observeViewport(list, (els: any) => {
+        els.forEach((el: any) => {
+            if (!el.querySelector('img')) {
+                const img = document.createElement('img');
+                img.src = testImg;
+                el.append(img);
+            }
+        })
+    }, 200);
+}
+```
+
+## other
+
+##### length:(val: any): number
+
+`获取对象的length`
+
+```typescript
+length({a:1}); // 1
 ```
 
 ##### mapObject: (obj, callBack: ObjectCallBack) => any;

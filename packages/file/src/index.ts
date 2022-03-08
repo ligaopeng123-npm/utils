@@ -9,6 +9,8 @@ export {imageToBase64} from './download';
 
 export {dowmloadScreenshotPicture} from './download';
 
+export {injectScript, injectScripts} from "./download";
+
 
 export {urlJoinParmas} from './download';
 export {removeUrlParams} from './download';

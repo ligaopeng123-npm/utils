@@ -19,7 +19,7 @@
     - [useFetch](md/hooks/useFetch.md)
 - Web Components
     - [login-module](md/login-module.md)
-    - [rc-login-module](md/login-module.md)
+    - [rc-login-module](md/rc-login-module.md)
     - [message](md/message.md)
     - [image-upload](md/image-upload.md)
     - [rc-image-upload](md/rc-image-upload.md)

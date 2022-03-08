@@ -1,1 +1,1 @@
-[filename](./rtc-cli-document.md ':include')
+[filename](https://raw.githubusercontent.com/ligaopeng123-npm/rtc-cli/master/README.md ':include')

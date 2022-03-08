@@ -1,24 +1,52 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
-    // 避免
-    entry: './docs.js',
+    mode: 'development',// 环境管理
+    devtool: 'inline-source-map',
+    entry: './__test__/index.ts',
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
+    externals: {
+        // '@gaopeng123/fetch': 'commonjs2 @gaopeng123/fetch',
+        // '@gaopeng123/utils': 'commonjs2 @gaopeng123/utils'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(gif|png|jpe|jpg?g)$/i,
+                type: 'asset/resource'
+            }
+        ]
+    },
     plugins: [
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: path.join(__dirname, 'packages'),
-                    to: path.join(__dirname, 'docs/src'),
-                    toType: 'dir',
-                    filter: (resourcePath) => {
-                        // copy md文件到docs文件中
-                        if (resourcePath.endsWith('.md') || resourcePath.endsWith('.MD')) {
-                            return true;
-                        }
-                        return false;
-                    },
-                },
-            ]
+        new HtmlWebpackPlugin({
+            title: '登录',
+            template: './__test__/index.html'
         })
-    ]
+    ],
+    experiments: {
+        outputModule: true // 让模块可以使用import导入使用
+    },
+    output: {
+        filename: 'main.js',
+        libraryTarget: 'module', //module es6模式 umd模式
+        path: path.resolve(__dirname, 'dist'),
+        clean: true, // 清理冗余文件
+    },
+    target: 'web',
+    devServer: {
+        static: path.resolve(__dirname, '__test__/public'),
+        // 端口
+        port: 3003,
+        // 打开浏览器
+        open: true,
+    }
 };

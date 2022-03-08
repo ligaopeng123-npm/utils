@@ -128,7 +128,7 @@ export const isEmpty: typeFn = (val) => {
  * @param val
  */
 export const isNull: typeFn = (val) => {
-    return val === null;
+    return toString.call(val) === '[object Null]';
 }
 
 /**
