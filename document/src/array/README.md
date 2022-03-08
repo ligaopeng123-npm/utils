@@ -12,6 +12,26 @@
 convertToTwodimensional([], 1);
 ```
 
+##### pageTurnerFixedLength
+
+`(arr: any[], len = 5): [NextAndPreviousType, NextAndPreviousFn, NextAndPreviousFn]`
+
+`固定长度的分页器函数，最后一页不满条数，补满条数`
+
+`usage`
+
+```typescript
+export type NextAndPreviousType = [any[], boolean, boolean];
+export type NextAndPreviousFn = () => NextAndPreviousType;
+
+const [[pageData, canNext, canPrevious], next, previous] = pageTurnerFixedLength(rows, 5);
+// pageData 当前分页数据  any[];
+// canNext 是否可点击下一页  boolen
+// canPrevious 是否可点击上一页
+// next 获取下一页数据的函数 范围值也是pageData, canNext, canPrevious
+// previous 获取上一页数据的函数 范围值也是pageData, canNext, canPrevious
+```
+
 ## tree
 
 ##### findTreeOrder
