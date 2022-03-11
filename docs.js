@@ -2,7 +2,7 @@ const path = require("path");
 const {copyFiles, getFiles, readFiles, readFile, getNewFile, writeFile, getFilePath} = require("./bin/file");
 const {getMDFile} = require("./bin/http");
 /**
- * 文件copy 将md文件爬出来 放到docs中 提高访问速度
+ * 文件copy 将md文件爬出来 放到docs中 提高访问速度 网速好的话 可以全量处理
  */
 // copyFiles(path.resolve(__dirname, 'document/src'), path.resolve(__dirname, 'docs/src')).then(() => {
 //     // job();
