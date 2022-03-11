@@ -17,6 +17,7 @@
     - [useClock](md/hooks/useClock.md)
     - [usePoller](md/hooks/usePoller.md)
     - [useFetch](md/hooks/useFetch.md)
+    - [useWorker](md/hooks/useWorker.md)
 - Web Components
     - [login-module](md/login-module.md)
     - [rc-login-module](md/rc-login-module.md)

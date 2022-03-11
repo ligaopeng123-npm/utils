@@ -2,13 +2,13 @@
 
 `(props?: ScaleProps):{x: number,y:number}`
 
-`监听窗口变化，动态缩放当前dom`
+`监听窗口变化，动态缩放当前dom，并保持居中`
 
 ## 参数
 
 ```typescript
 type ScaleProps = {
-    scaleDom?: any; // 缩放的dom 如果不传 默认为body
+    scaleDom?: any; // 缩放的dom 如果不传 默认为body下得第一个div元素
     width?: number; // 理想宽
     height?: number; // 要求的理想宽高 小于或者大于该数据后进行缩放
 };
@@ -26,20 +26,16 @@ const TestUseScale: React.FC<TestUseScaleProps> = (props) => {
     const scale = useScale({width: 1920, height: 1080});
     useEffect(() => {
         return () => {
-            // @ts-ignore
-            const body = document.querySelector('body');
-            if (body) {
-                body.style.transform = `scale(${1}, ${1})`;
-            }
+
         }
-    }, []);
+    }, [scale]);
     return (
-        <React.Fragment>
+        <div style={{backgroundColor: '#97fa04', width: '100%', height: '100%'}}>
             <h3>useScale</h3>
             scale: {
             JSON.stringify(scale, null, 2)
         }
-        </React.Fragment>
+        </div>
     )
 };
 

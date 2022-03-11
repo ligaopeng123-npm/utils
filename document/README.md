@@ -46,6 +46,8 @@
 >[usePoller](md/hooks/usePoller.md)：轮询器,包括同步轮询，异步轮询。
 > 
 >[usePoller](md/hooks/useFetch.md)：请求函数。
+> 
+>[useWorker](md/hooks/useWorker.md)：Web Worker。
 
 > @gaopeng123/hoc
 >

@@ -94,7 +94,7 @@ const writeFile = (path, data) => {
 }
 
 const getFilePath = (currentPath) => {
-    return currentPath.replace('docs', 'document')
+    return currentPath.replace('document', 'docs')
 }
 
 const getNewFile = (currentPath) => {
