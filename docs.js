@@ -4,13 +4,13 @@ const {getMDFile} = require("./bin/http");
 /**
  * 文件copy 将md文件爬出来 放到docs中 提高访问速度 网速好的话 可以全量处理
  */
-// copyFiles(path.resolve(__dirname, 'document/src'), path.resolve(__dirname, 'docs/src')).then(() => {
-//     // job();
-// });
+copyFiles(path.resolve(__dirname, 'document/src'), path.resolve(__dirname, 'docs/src')).then(() => {
+    job();
+});
 
 const job = () => {
     const files = getFiles(path.resolve(__dirname, 'document/md'));
-    readFiles(files.slice(10, 11), async (data, currentPath) => {
+    readFiles(files, async (data, currentPath) => {
         // 获取md文件内容
         const _data = data.toString();
         if (_data.includes('[filename]')) {

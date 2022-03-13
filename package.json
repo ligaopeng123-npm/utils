@@ -30,6 +30,7 @@
         "build": "lerna exec --ignore=@gaopeng123/utils -- npm run build",
         "test": "lerna exec --ignore=@gaopeng123/utils -- npm run test",
         "push": "lerna publish",
+        "bootstrap": "lerna bootstrap",
         "mark": "doctoc .",
         "lint": "tsdx lint",
         "prepare": "tsdx build",
