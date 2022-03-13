@@ -218,3 +218,24 @@ type ThrottleOptions = {
 }
 throttle(()=> {}, 200, {type: 1});
 ```
+
+#### delay
+
+`函数延迟执行`
+
+```typescript
+// 第一次参数是个函数，第二个参数是延迟时间 第三个参数是传给函数的参数
+delay((...args)=> {}, 200, [1,2,3]);
+```
+
+#### asyncDelay
+
+`延迟异步函数执行`
+
+```typescript
+// 第一个参数是个promise
+// 第二个参数是延迟时间
+// 第三个参数是传递给promise的参数
+asyncDelay(async (...args)=> {}, 200, [1,2,3])
+```
+

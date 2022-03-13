@@ -218,6 +218,7 @@ type ThrottleOptions = {
 }
 throttle(()=> {}, 200, {type: 1});
 ```
+## delay
 
 #### delay
 

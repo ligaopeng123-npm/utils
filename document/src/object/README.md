@@ -35,8 +35,15 @@ cloneAllItem({});
 ```
 
 ## assign
+##### assignIfByOrder
+`(order:AssignIfOrder,target: any, ...source: any):any`
+`对象属性的copy，如果order返回true则赋值`
+```typescript
+// type AssignIfOrder = (v:any)=> boolean;
+assignIfByOrder((v)=> v!==null, {a:1}, {b: null});// {a:1}
+```
 
-##### assignIf:(target: any, source: any): any
+##### assignIf:(target: any, ...source: any): any
 
 `对象属性的浅赋值，如果目标对象的属性为undefined null,则复制source属性`
 
