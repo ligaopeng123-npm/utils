@@ -130,21 +130,30 @@ export const assignDeepMergeArray = (target: any, ...source: any) => {
 };
 
 /**
- * 属性的浅copy 如果目标对象 有该属性 则不copy
- * @param target
- * @param source
+ * 根据指令进行属性copy
  */
-export const assignIf = (target: any, ...source: any): any => {
+type AssignIfOrder = (v:any)=> boolean;
+export const assignIfByOrder = (order:AssignIfOrder,target: any, ...source: any):void=> {
     const _target = Object.assign({}, target);
     source?.forEach((sourceItem: any) => {
         if (isObject(target) && isObject(sourceItem)) {
             let property;
             for (property in sourceItem) {
-                if (isNull(_target[property]) || isUndefined(_target[property])) {
+                if (order(_target[property])) {
                     _target[property] = sourceItem[property];
                 }
             }
         }
     });
     return _target;
+}
+
+/**
+ * 属性的浅copy 如果目标对象 有该属性(不为null undefined) 则不copy
+ * @param target
+ * @param source
+ */
+export const assignIf = (target: any, ...source: any): any => {
+    return assignIfByOrder((v)=> isNull(v) || isUndefined(v), target, ...source);
 };
+

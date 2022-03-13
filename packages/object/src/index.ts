@@ -13,7 +13,7 @@ export {getStyle, parentByExpected, copyText, isVisibleInViewport, observeViewpo
 /**
  * 对象属性合并 数组默认覆盖  对象属性合并（数组是concat合并） 对象属性合并（数组不做处理）
  */
-export {assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray, assignIf} from "./assignDeep";
+export {assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray, assignIf, assignIfByOrder} from "./assignDeep";
 /**
  * 对象的过滤循环  对象的map循环  对象的forEach循环
  */

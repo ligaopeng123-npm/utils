@@ -67,7 +67,7 @@ export {
     // 复制文本 数组 对象 字符串长度
     copyText, length,
     // 1、对象属性合并 数组默认覆盖 2、对象属性合并（数组是concat合并） 3、对象属性合并（数组不做处理）
-    assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray,
+    assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray, assignIfByOrder, assignIf,
     // 对象的过滤循环  对象的map循环 对象forEach
     filterObject, mapObject, forEachObject
 } from "@gaopeng123/utils.object";
