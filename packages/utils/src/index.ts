@@ -83,7 +83,7 @@ export {
     // 窗口尺寸
     windowSize,
     // 去抖 节流
-    debounce, throttle
+    debounce, throttle, delay, asyncDelay
 } from "@gaopeng123/utils.function";
 
 export type {
