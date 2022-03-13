@@ -31,3 +31,8 @@ export {default as debounce} from "./debounce";
 export type {DebounceOptions} from "./debounce";
 export {default as throttle} from "./throttle";
 export type {ThrottleOptions} from "./throttle";
+
+/**
+ * 使函数延迟执行
+ */
+export {delay, asyncDelay} from "./delay";
