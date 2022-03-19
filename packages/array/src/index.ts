@@ -12,3 +12,6 @@
 export {convertToTwodimensional, pageTurnerFixedLength} from './conversion';
 export {findTreeOrder} from './tree';
 export {findSubtreeByOrder} from './tree';
+
+export {traverseTreeData} from './tree';
+export {traverseTree} from './tree';

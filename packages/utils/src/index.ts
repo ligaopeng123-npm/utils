@@ -38,7 +38,7 @@ export {
     // 数组截断转二维数组       分页器
     convertToTwodimensional, pageTurnerFixedLength,
     // 树的查询
-    findTreeOrder, findSubtreeByOrder
+    findTreeOrder, findSubtreeByOrder, traverseTree, traverseTreeData
 } from "@gaopeng123/utils.array";
 
 /****************************  字符串 数字操作    *****************************/
@@ -93,8 +93,8 @@ export type {
 /****************************  时间操作    *****************************/
 
 export {
-    formatTimestamp,
-    getYear, getMonth, getDay, getHours, getMinutes, getSeconds, getWeek, getWeekCN,
+    formatTimestamp, timestampToCN,
+    getYear, getMonth, getDay, getHours, getMinutes, getSeconds, getWeek, getWeekCN, getWeekCNDay,
     timeRange, timeRangeCurrent, timeRangePrevious,
     currentQuarterFirstMonth, currentQuarterLastMonth, currentQuarterDays,
     currentDayEarliest, currentDayLatest,

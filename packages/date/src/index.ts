@@ -19,6 +19,7 @@ export {getMinutes} from './timestamp';
 export {getSeconds} from './timestamp';
 export {getWeek} from './timestamp';
 export {getWeekCN} from './timestamp';
+export {getWeekCNDay} from './timestamp';
 
 export {default as timeRange} from './timeRange';
 export type {TimeRange} from './timeRange';
@@ -30,3 +31,5 @@ export {currentQuarterLastMonth as currentQuarterLastMonth} from './timeRange';
 export {currentQuarterDays as currentQuarterDays} from './timeRange';
 export {currentDayEarliest as currentDayEarliest} from './timeRange';
 export {currentDayLatest as currentDayLatest} from './timeRange';
+
+export {timestampToCN} from './timestampToCN';

@@ -14,102 +14,137 @@ import {isDate, isString} from "@gaopeng123/utils.types";
 
 // 返回 01-12 的月份值
 export const getYear = (date: Date): string => {
-	return date.getFullYear() + '';
+    return date.getFullYear() + '';
 };
 
 // 返回 01-12 的月份值
 export const getMonth = (date: Date): string => {
-	const month = date.getMonth() + 1; // getMonth()得到的月份是0-11
-	return setTimeFillZero(month);
+    const month = date.getMonth() + 1; // getMonth()得到的月份是0-11
+    return setTimeFillZero(month);
 };
 
 // 返回01-30的日期
 export const getDay = (date: Date): string => {
-	const day = date.getDate();
-	return setTimeFillZero(day);
+    const day = date.getDate();
+    return setTimeFillZero(day);
 };
 
 // 返回小时
 export const getHours = (date: Date): string => {
-	const hours = date.getHours();
-	return setTimeFillZero(hours);
+    const hours = date.getHours();
+    return setTimeFillZero(hours);
+};
+/**
+ * 12小时制
+ * @param date
+ */
+export const get12Hours = (date: Date): string => {
+    const hours = date.getHours();
+    return setTimeFillZero(hours > 12 ? hours - 12 : hours);
 };
 
 // 返回分
 export const getMinutes = (date: Date): string => {
-	const minute = date.getMinutes();
-	return setTimeFillZero(minute);
+    const minute = date.getMinutes();
+    return setTimeFillZero(minute);
 };
 
 // 返回秒
 export const getSeconds = (date: Date): number | string => {
-	const second = date.getSeconds();
-	return setTimeFillZero(second);
+    const second = date.getSeconds();
+    return setTimeFillZero(second);
 };
 // 周
 export const getWeek = (date: Date) => {
-	return date.getDay() || 7;
+    return date.getDay() || 7;
 };
 
 export const getWeekCN = (date: Date): string => {
-	// 中文周期
-	const week = ['', '一', '二', '三', '四', '五', '六', '日'];
-	return `星期${week[getWeek(date)]}`
+    // 中文周期
+    const week = ['', '一', '二', '三', '四', '五', '六', '日'];
+    return `星期${week[getWeek(date)]}`
 };
+/**
+ *
+ * @param date
+ */
+export const getWeekCNDay = (date: Date): string => {
+    const week = ['', '一', '二', '三', '四', '五', '六', '日'];
+    return `${week[getWeek(date)]}`
+}
 
 export const setTimeFillZero = (num: number): string => {
-	return num < 10 ? '0' + num : (num + '');
+    return (num + '').length < 2 ? '0' + num : (num + '');
 };
 
 /**
  *@函数名称：timestampToTime
- *@参数：timestamp时间戳 type时间格式 yyyy-MM-dd yyyy-MM-dd HH:mm:ss HH:mm:ssv  HH
+ *@参数：timestamp时间戳 type时间格式 yyyy-MM-dd yyyy-MM-dd HH:mm:ss HH:mm:ss  HH
  *@作用：将时间戳转换成日期
  *@date 2018/5/21
  */
-export type TimestampType = 'yyyy-MM-dd HH:mm:ss' | 'yyyy-MM-dd' | 'HH:mm:ss'
-	| 'MM-dd' | 'MM-dd HH:mm:ss' | 'dd HH:mm:ss'
-	| 'yyyy' | 'MM' | 'dd' | 'HH' | 'mm' | 'ss'
+export type TimestampType = 'yyyy-MM-dd HH:mm:ss' | 'yyyy/MM/dd HH:mm:ss'
+    | 'yyyy-MM-dd HH:mm:ss WW' | 'yyyy/MM/dd HH:mm:ss WW'
+    | 'yyyy-MM-dd' | 'yyyy/MM/dd'
+    | 'HH:mm:ss'
+    | 'MM-dd' | 'MM/dd'
+    | 'MM-dd HH:mm:ss' | 'MM/dd HH:mm:ss'
+    | 'dd HH:mm:ss'
+    | 'yyyy' | 'MM' | 'dd' | 'HH' | 'mm' | 'ss' | 'WW' | 'ww' | string
 const formatTimestamp = (timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string => {
-	// 处理字符串类型
-	if (isString(timestamp) && isNaN(Number(timestamp))) {
-		timestamp = new Date(timestamp);
-	}
-	const date = new Date(isDate(timestamp) ? timestamp : Number(timestamp));
-	switch (type) {
-		case 'yyyy-MM-dd HH:mm:ss':
-			return `${getYear(date)}-${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-		case 'yyyy-MM-dd':
-			return `${getYear(date)}-${getMonth(date)}-${getDay(date)}`;
-		case 'HH:mm:ss':
-			return `${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-		case 'MM-dd':
-			return `${getMonth(date)}-${getDay(date)}`;
-		case 'MM-dd HH:mm:ss':
-			return `${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-		case 'dd HH:mm:ss':
-			return `${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-		case 'yyyy':
-			return getYear(date);
-		case 'MM':
-			return `${getMonth(date)}`;
-		case 'dd':
-			return `${getDay(date)}`;
-		case 'HH':
-			return `${getHours(date)}`;
-		case 'mm':
-			return `${getMinutes(date)}`;
-		case 'ss':
-			return `${getSeconds(date)}`;
-		default:
-			return `${getYear(date)}-${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-	}
+    // 处理字符串类型
+    if (isString(timestamp) && isNaN(Number(timestamp))) {
+        timestamp = new Date(timestamp);
+    }
+    const date = new Date(isDate(timestamp) ? timestamp : Number(timestamp));
+
+    return type
+        .replace(/yyyy/i, getYear(date))
+        .replace(/MM/, getMonth(date))
+        .replace(/dd/, getDay(date))
+        .replace(/HH/, getHours(date))
+        .replace(/hh/, get12Hours(date))
+        .replace(/mm/, getMinutes(date))
+        .replace(/ss/, getSeconds(date) as string)
+        .replace(/WWW/, getWeekCN(date))
+        .replace(/WW/, getWeekCNDay(date))
+        .replace(/ww/, getWeek(date) + '');
+    // .replace(/A/, getWeekCNDay(date)); // 后续添加对时辰的支持
+
+    // switch (type) {
+    //     case 'yyyy-MM-dd HH:mm:ss':
+    //         return `${getYear(date)}-${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
+    //     case 'yyyy-MM-dd':
+    //         return `${getYear(date)}-${getMonth(date)}-${getDay(date)}`;
+    //     case 'HH:mm:ss':
+    //         return `${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
+    //     case 'MM-dd':
+    //         return `${getMonth(date)}-${getDay(date)}`;
+    //     case 'MM-dd HH:mm:ss':
+    //         return `${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
+    //     case 'dd HH:mm:ss':
+    //         return `${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
+    //     case 'yyyy':
+    //         return getYear(date);
+    //     case 'MM':
+    //         return `${getMonth(date)}`;
+    //     case 'dd':
+    //         return `${getDay(date)}`;
+    //     case 'HH':
+    //         return `${getHours(date)}`;
+    //     case 'mm':
+    //         return `${getMinutes(date)}`;
+    //     case 'ss':
+    //         return `${getSeconds(date)}`;
+    //     default:
+    //         return `${getYear(date)}-${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
+    // }
 };
 /**
- * 将时间转换为HH mm ss 格式展示
+ * 将秒转换为dd HH mm ss 格式展示
  * @param s
  */
-// export const timeToCN = (timmer: number): string => {
+// export const timeToCN = (timestamp: Date | number | string, type: string): string => {
 // 	// 最小值
 // 	const min = this._minTime;
 // 	// 当大于最小值时 开始转换进度
