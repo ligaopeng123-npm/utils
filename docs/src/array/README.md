@@ -96,3 +96,49 @@ findTreeOrder(treeData, (item) => {
 findSubtreeByOrder(treeData, [1, 2]); // {id: 6}
 ```
 
+##### traverseTreeData
+
+`(tree: any[], callBack: TraverseTreeCallBack, options?: TreeOptions):TreeNode`
+
+`遍历树，并根据callBack处理遍历中的数据，默认子级字段是children`
+
+```typescript
+const treeData1 =  [{
+    id: 1,
+    children: [{
+        id: 11,
+        children: [{
+            id: 7,
+        }]
+    }, {
+        id: 11
+    }, {
+        id: 7
+    }]
+}];
+
+const treeData2 = traverseTreeData(treeData1, (item) => {
+    return Object.assign({}, item, item.id === 1 ? {name: `${item.id}`} : {});
+});
+
+const treeData2 = [{
+	id: 1,
+	__path: '0',
+	name: '1',
+	children: [{
+		id: 11,
+		__path: '0-0',
+		children: [{
+			__path: '0-0-0',
+			id: 7,
+		}]
+	}, {
+		__path: '0-1',
+		id: 11
+	}, {
+		__path: '0-2',
+		id: 7
+	}]
+}];
+```
+

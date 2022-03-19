@@ -25,6 +25,7 @@
         "build:test": "webpack build --config webpack.dev.config.js",
         "build:md": "webpack build --config webpack.md.config.js",
         "start:md": "docsify serve ./document",
+        "start:doc": "docsify serve ./docs",
         "build:docs": "node docs.js",
         "start": "tsdx watch",
         "build": "lerna exec --ignore=@gaopeng123/utils -- npm run build",

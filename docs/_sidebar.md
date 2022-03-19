@@ -19,18 +19,20 @@
     - [useFetch](md/hooks/useFetch.md)
     - [useWorker](md/hooks/useWorker.md)
 - Web Components
-    - [login-module](md/login-module.md)
-    - [rc-login-module](md/rc-login-module.md)
-    - [message](md/message.md)
-    - [image-upload](md/image-upload.md)
-    - [rc-image-upload](md/rc-image-upload.md)
-    - [vue-image-upload](md/vue-image-upload.md)
+    - [login-module](md/components/login-module.md)
+    - [rc-login-module](md/components/rc-login-module.md)
+    - [message](md/components/message.md)
+    - [image-upload](md/components/image-upload.md)
+    - [rc-image-upload](md/components/rc-image-upload.md)
+    - [vue-image-upload](md/components/vue-image-upload.md)
 - fetch
     - [介绍](md/fetch.md)
 - 高阶函数
     - [hoc](md/hoc.md)
 - 大屏组件
     - [screen](md/screen.md)
+- 正则
+    - [RegExp](md/RegExp.md)
 - cli
     - [rtc-cli](md/rtc-cli.md)
     - [browser](md/browser.md)

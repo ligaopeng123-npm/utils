@@ -55,21 +55,25 @@
 
 > Web Components
 >
-> [login-module](md/login-module)
+> [login-module](md/components/login-module)
 >
-> [rc-login-module](md/rc-login-module)
+> [rc-login-module](md/components/rc-login-module)
 >
-> [message](md/message)
+> [message](md/components/message)
 >
-> [image-upload](md/image-upload)
+> [image-upload](md/components/image-upload)
 >
-> [rc-image-upload](md/rc-image-upload)
+> [rc-image-upload](md/components/rc-image-upload)
 >
-> [vue-image-upload](md/vue-image-upload)
+> [vue-image-upload](md/components/vue-image-upload)
 
 > @gaopeng123/screen
 >
 > [大屏组件](md/screen)
+
+> 正则
+>
+> [正则](md/RegExp)
 
 > @gaopeng123/rtc-cli
 >
