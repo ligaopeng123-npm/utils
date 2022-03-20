@@ -35,8 +35,8 @@ export type {DownloadStreamParams, DownloadParams} from "@gaopeng123/utils.file"
 
 /****************************  数组操作函数    *****************************/
 export {
-    // 数组截断转二维数组       分页器
-    convertToTwodimensional, pageTurnerFixedLength,
+    // 数组截断转二维数组       分页器                  array 转 tree
+    convertToTwodimensional, pageTurnerFixedLength, list2tree,
     // 树的查询
     findTreeOrder, findSubtreeByOrder, traverseTree, traverseTreeData
 } from "@gaopeng123/utils.array";
