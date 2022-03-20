@@ -15,3 +15,5 @@ export {findSubtreeByOrder} from './tree';
 
 export {traverseTreeData} from './tree';
 export {traverseTree} from './tree';
+
+export {list2tree} from './tree'

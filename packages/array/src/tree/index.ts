@@ -13,6 +13,7 @@ export {traverseTreeData} from './traverseTreeData';
 export {findSubtreeByOrder} from './findSubtreeByOrder';
 export {findTreeOrder} from './findTreeOrder';
 export {traverseTree} from './traverseTree';
+export {list2tree} from './list2tree'
 
 export type {TreeOptions, TraverseTreeProps, TreeNode, RelyFn, TraverseTreeCallBack} from './typing'
 

@@ -9,8 +9,7 @@
  * @版权所有: pgli
  *
  ********************************************************************* */
-import {TreeNode, TreeOptions} from "./typing";
-import {defaultOptions} from "./traverseTree";
+import {TreeNode, defaultOptions, TreeOptions} from "./typing";
 
 /**
  * 根据顺序 查找子树

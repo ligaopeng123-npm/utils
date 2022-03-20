@@ -80,3 +80,41 @@ export const treeData2 = [{
 		id: 7
 	}]
 }];
+
+export const listData = [{ id: 2, pid: 1 }, {id: 10, pid: 3},{ id: 3, pid: 2 }, { id: 4, pid: 6 },{ id: 5, pid: 4 },  {id: 7, pid: 9}];
+
+export const listTreeData: any = [
+    {
+        "id": 2,
+        "pid": 1,
+        "children": [
+            {
+                "id": 3,
+                "pid": 2,
+                "children": [
+                    {
+                        "id": 10,
+                        "pid": 3,
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "pid": 6,
+        "children": [
+            {
+                "id": 5,
+                "pid": 4,
+                "children": []
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "pid": 9,
+        "children": []
+    }
+]

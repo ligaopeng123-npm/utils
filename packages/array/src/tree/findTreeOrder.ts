@@ -9,8 +9,8 @@
  * @版权所有: pgli
  *
  ********************************************************************* */
-import {defaultOptions, traverseTree} from "./traverseTree";
-import {RelyFn, TreeOptions} from "./typing";
+import {traverseTree} from "./traverseTree";
+import {RelyFn, TreeOptions, defaultOptions} from "./typing";
 
 /**
  * 查找树的顺序

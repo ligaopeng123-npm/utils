@@ -26,13 +26,13 @@
     - [rc-image-upload](md/components/rc-image-upload.md)
     - [vue-image-upload](md/components/vue-image-upload.md)
 - fetch
-    - [介绍](md/fetch.md)
+    - [介绍](md/cli/fetch.md)
 - 高阶函数
-    - [hoc](md/hoc.md)
+    - [hoc](md/cli/hoc.md)
 - 大屏组件
     - [screen](md/screen.md)
 - 正则
     - [RegExp](md/RegExp.md)
 - cli
-    - [rtc-cli](md/rtc-cli.md)
-    - [browser](md/browser.md)
+    - [rtc-cli](md/cli/rtc-cli.md)
+    - [browser](md/cli/browser.md)

@@ -9,9 +9,18 @@
  * @版权所有: pgli
  *
  ********************************************************************* */
+
+ export const defaultOptions = {
+    childrenKey: 'children',
+    idKey: 'id',
+    pidKey: 'pid',
+};
+
 export type RelyFn = (itemTree: any) => boolean;
 export type TreeOptions = {
     childrenKey: string;
+    idKey?: string | number; // 当前唯一标识
+    pidKey?: string | number; // 父级id
 }
 
 export type TreeNode = {
@@ -21,10 +30,11 @@ export type TreeNode = {
 }
 
 export type TraverseTreeProps = {
-    tree: Array<TreeNode>;
+    list?: Array<TreeNode>;
+    tree?: Array<TreeNode>;
     rely?: RelyFn; // 暂停的凭据 一旦范围tree 则停止遍历
     callBack?: TraverseTreeCallBack; // 遍历每一项都会执行的处理函数
-    options: TreeOptions;
+    options?: TreeOptions;
     parentNode?: any;
 }
 

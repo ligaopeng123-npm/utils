@@ -10,18 +10,6 @@
  *
  ********************************************************************* */
 import {TraverseTreeProps} from "./typing";
-
-/**
- * 遍历当前子树
- * @param currentTree
- * @param rely
- */
-
-
-export const defaultOptions = {
-    childrenKey: 'children'
-};
-
 /**
  * 遍历树
  */

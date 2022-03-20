@@ -1,6 +1,3 @@
-import {defaultOptions, traverseTree} from "./traverseTree";
-import {TraverseTreeCallBack, TreeNode, TreeOptions} from "./typing";
-
 /** ********************************************************************
  *
  * @模块名称: traverseTreeData
@@ -12,6 +9,9 @@ import {TraverseTreeCallBack, TreeNode, TreeOptions} from "./typing";
  * @版权所有: pgli
  *
  ********************************************************************* */
+ import {traverseTree} from "./traverseTree";
+ import {TraverseTreeCallBack, TreeNode, TreeOptions,defaultOptions} from "./typing";
+ 
 /**
  * 遍历树 获取遍历后的数据
  * @param tree

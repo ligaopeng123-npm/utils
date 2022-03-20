@@ -25,9 +25,6 @@
 >
 >[@gaopeng123/utils.date](src/date/README.md)
 
-> @gaopeng123/fetch
->
->[fetch封装](md/fetch)
 
 > @gaopeng123/hooks
 >
@@ -49,9 +46,13 @@
 > 
 >[useWorker](md/hooks/useWorker.md)：Web Worker。
 
+> @gaopeng123/fetch
+>
+>[fetch封装](md/cli/fetch)
+
 > @gaopeng123/hoc
 >
->[常用高阶组件](md/hoc)
+>[常用高阶组件](md/cli/hoc)
 
 > Web Components
 >
@@ -77,8 +78,8 @@
 
 > @gaopeng123/rtc-cli
 >
-> [rtc-cli](md/rtc-cli)
+> [rtc-cli](md/cli/rtc-cli)
 
 > @gaopeng123/browser
 >
->[浏览器检测升级插件](md/browser)
+>[浏览器检测升级插件](md/cli/browser)
