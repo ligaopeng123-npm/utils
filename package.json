@@ -23,20 +23,15 @@
     "scripts": {
         "dev": "webpack serve",
         "build:test": "webpack build --config webpack.dev.config.js",
-        "build:md": "webpack build --config webpack.md.config.js",
-        "start:md": "docsify serve ./document",
+        "copy_md": "webpack build --config webpack.md.config.js",
+        "start:dm": "docsify serve ./document",
         "start:doc": "docsify serve ./docs",
         "build:docs": "node docs.js",
-        "start": "tsdx watch",
         "build": "lerna exec --ignore=@gaopeng123/utils -- npm run build",
         "test": "lerna exec --ignore=@gaopeng123/utils -- npm run test",
         "push": "lerna publish",
         "bootstrap": "lerna bootstrap",
-        "mark": "doctoc .",
-        "lint": "tsdx lint",
-        "prepare": "tsdx build",
-        "size": "size-limit",
-        "analyze": "size-limit --why"
+        "mark": "doctoc ."
     },
     "files": [],
     "engines": {
