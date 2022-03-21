@@ -38,7 +38,7 @@ export {
     // 数组截断转二维数组       分页器                  array 转 tree
     convertToTwodimensional, pageTurnerFixedLength, list2tree,
     // 树的查询
-    findTreeOrder, findSubtreeByOrder, traverseTree, traverseTreeData
+    findTreeOrder, findSubtreeByOrder, traverseTree, mapTree
 } from "@gaopeng123/utils.array";
 
 /****************************  字符串 数字操作    *****************************/

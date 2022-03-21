@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-export {traverseTreeData} from './traverseTreeData';
+export {mapTree} from './mapTree';
 export {findSubtreeByOrder} from './findSubtreeByOrder';
 export {findTreeOrder} from './findTreeOrder';
 export {traverseTree} from './traverseTree';

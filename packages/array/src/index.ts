@@ -13,7 +13,7 @@ export {convertToTwodimensional, pageTurnerFixedLength} from './conversion';
 export {findTreeOrder} from './tree';
 export {findSubtreeByOrder} from './tree';
 
-export {traverseTreeData} from './tree';
+export {mapTree} from './tree';
 export {traverseTree} from './tree';
 
 export {list2tree} from './tree'

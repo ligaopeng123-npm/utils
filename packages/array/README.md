@@ -147,7 +147,7 @@ findTreeOrder(treeData, (item) => {
 findSubtreeByOrder(treeData, [1, 2]); // {id: 6}
 ```
 
-##### traverseTreeData
+##### mapTree
 
 `(tree: any[], callBack: TraverseTreeCallBack, options?: TreeOptions):TreeNode`
 
@@ -168,7 +168,7 @@ const treeData1 =  [{
     }]
 }];
 
-const treeData2 = traverseTreeData(treeData1, (item) => {
+const treeData2 = mapTree(treeData1, (item) => {
     return Object.assign({}, item, item.id === 1 ? {name: `${item.id}`} : {});
 });
 

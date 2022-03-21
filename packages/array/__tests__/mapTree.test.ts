@@ -9,12 +9,12 @@
  * @版权所有: pgli
  *
  ********************************************************************* */
-import {traverseTreeData} from "../src";
+import {mapTree} from "../src";
 import {treeData1, treeData2} from "./mockData";
 
 describe('traverseTreeData', () => {
     it('works', () => {
-        expect(traverseTreeData(treeData1, (item) => {
+        expect(mapTree(treeData1, (item) => {
             return Object.assign({}, item, item.id === 1 ? {name: `${item.id}`} : {});
         })).toStrictEqual(treeData2);
     });
