@@ -48,3 +48,8 @@ export {pathJoin} from './path';
  */
 export {hump2hyphen} from './hump';
 export {hyphen2hump} from './hump';
+
+/**
+ * css处理
+ */
+export {addBoxSizeUnit} from './css';

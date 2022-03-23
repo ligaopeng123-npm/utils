@@ -56,6 +56,8 @@ export {
     pathJoin,
     // 驼峰转换
     hump2hyphen, hyphen2hump,
+    // css style 尺寸单位处理
+    addBoxSizeUnit
 } from "@gaopeng123/utils.string";
 
 /****************************  对象操作    *****************************/
