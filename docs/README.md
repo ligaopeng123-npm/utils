@@ -46,14 +46,6 @@
 > 
 >[useWorker](md/hooks/useWorker.md)：Web Worker。
 
-> @gaopeng123/fetch
->
->[fetch封装](md/cli/fetch)
-
-> @gaopeng123/hoc
->
->[常用高阶组件](md/cli/hoc)
-
 > Web Components
 >
 > [login-module](md/components/login-module)
@@ -67,19 +59,33 @@
 > [rc-image-upload](md/components/rc-image-upload)
 >
 > [vue-image-upload](md/components/vue-image-upload)
+>
+> [multi-player](md/components/multi-player.md)
+>
+> [rc-multi-player](md/components/rc-multi-player.md)
+
+
+
+> @gaopeng123/rtc-cli
+>
+> [rtc-cli](md/cli/rtc-cli)
+>
+> @gaopeng123/fetch
+>
+>[fetch封装](md/cli/fetch)
+> 
+> @gaopeng123/hoc
+>
+>[常用高阶组件](md/cli/hoc)
+> 
+> @gaopeng123/browser
+>
+>[浏览器检测升级插件](md/cli/browser)
 
 > @gaopeng123/screen
 >
 > [大屏组件](md/screen)
 
-> 正则
+> 笔记
 >
-> [正则](md/RegExp)
-
-> @gaopeng123/rtc-cli
->
-> [rtc-cli](md/cli/rtc-cli)
-
-> @gaopeng123/browser
->
->[浏览器检测升级插件](md/cli/browser)
+> [RegExp](md/notes/RegExp.md)

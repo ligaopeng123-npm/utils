@@ -186,3 +186,18 @@ document.getElementById('utils-hump2hyphen').innerText = hyphen2hump(width); //w
 document.getElementById('utils-hump2hyphen2').innerText = hyphen2hump(backgroundColor) //backgroundColor
 document.getElementById('utils-hump2hyphen3').innerText = hyphen2hump(borderBottomStyle);//borderBottomStyle
 ```
+
+## css
+
+##### addBoxSizeUnit
+
+`添加style单位，无单位添加单位`
+
+`添加box尺寸单位  [em px % rem vw vh vmax vmin ex]`
+
+```typescript
+addBoxSizeUnit(10); // 10px
+addBoxSizeUnit('10px'); // 10px
+addBoxSizeUnit('10%'); // 10%
+```
+
