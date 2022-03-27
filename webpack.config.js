@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ReplaceWebpackPlugin = require("./ReplaceWebpackPlugin");
 // const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -30,7 +31,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: '登录',
             template: './__test__/index.html'
-        })
+        }),
+        // new ReplaceWebpackPlugin({
+        //     content: `
+        //         window.aaa = {
+        //             bbb: {
+        //                 ddd: ''
+        //             }
+        //         };
+        //     `
+        // })
     ],
     experiments: {
         outputModule: true // 让模块可以使用import导入使用

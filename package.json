@@ -22,7 +22,7 @@
     "typings": "dist/index.d.ts",
     "scripts": {
         "dev": "webpack serve",
-        "build:test": "webpack build --config webpack.dev.config.js",
+        "build:test": "webpack build --config webpack.config.js",
         "copy_md": "webpack build --config webpack.md.config.js",
         "start:dm": "docsify serve ./document",
         "start:doc": "docsify serve ./docs",
