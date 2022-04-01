@@ -1,0 +1,53 @@
+{
+    "include": [
+        "packages",
+        "types"
+    ],
+    "exclude": [
+        "**/*.spec.ts",
+        "**/*.test.ts",
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./",
+        "baseUrl": "./packages",
+        "module": "esnext",
+        "declaration": true,
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "target": "es6",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "lib": [
+            "dom",
+            "esnext"
+        ],
+        "paths": {
+            "@gaopeng123/utils.types": [
+                "./packages/types/src"
+            ],
+            "@gaopeng123/utils.array": [
+                "./packages/array/src"
+            ],
+            "@gaopeng123/utils.date": [
+                "./packages/date/src"
+            ],
+            "@gaopeng123/utils.file": [
+                "./packages/file/src"
+            ],
+            "@gaopeng123/utils.function": [
+                "./packages/function/src"
+            ],
+            "@gaopeng123/utils.number": [
+                "./packages/number/src"
+            ],
+            "@gaopeng123/utils.object": [
+                "./packages/object/src"
+            ],
+            "@gaopeng123/utils.string": [
+                "./packages/string/src"
+            ]
+        }
+    }
+}

@@ -28,19 +28,20 @@ module.exports = {
         ]
     },
     plugins: [
+        new ReplaceWebpackPlugin({
+            content: `
+                window.aaa = {
+                    bbb: {
+                        ddd: ''
+                    }
+                };
+            `
+        }),
         new HtmlWebpackPlugin({
             title: '登录',
             template: './__test__/index.html'
         }),
-        // new ReplaceWebpackPlugin({
-        //     content: `
-        //         window.aaa = {
-        //             bbb: {
-        //                 ddd: ''
-        //             }
-        //         };
-        //     `
-        // })
+        
     ],
     experiments: {
         outputModule: true // 让模块可以使用import导入使用
