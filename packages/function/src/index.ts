@@ -25,9 +25,9 @@ export {default as autoFullscreen, isFullscreen, fullscreen, exitFullscreen} fro
 export {default as windowSize, WindowSize} from './windowSize';
 
 /**
- * 去抖
+ * 去抖   createDebounce 创建去抖动函数 主要用于创建hooks
  */
-export {default as debounce} from "./debounce";
+export {default as debounce, createDebounce} from "./debounce";
 export type {DebounceOptions} from "./debounce";
 export {default as throttle} from "./throttle";
 export type {ThrottleOptions} from "./throttle";
