@@ -29,6 +29,7 @@
         "build:docs": "node docs.js",
         "build": "lerna exec --ignore=@gaopeng123/utils -- npm run build",
         "test": "lerna exec --ignore=@gaopeng123/utils -- npm run test",
+        "push:all": "lerna exec --ignore=@gaopeng123/utils -- npm run push",
         "push": "lerna publish",
         "bootstrap": "lerna bootstrap",
         "mark": "doctoc ."
