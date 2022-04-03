@@ -18,6 +18,8 @@
     - [usePoller](md/hooks/usePoller.md)
     - [useFetch](md/hooks/useFetch.md)
     - [useWorker](md/hooks/useWorker.md)
+    - [useDebounce](md/hooks/useDebounce.md)
+    - [useThrottle](md/hooks/useThrottle.md)
 - Web Components
     - [login-module](md/components/login-module.md)
     - [rc-login-module](md/components/rc-login-module.md)

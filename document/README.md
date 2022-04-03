@@ -45,6 +45,10 @@
 >[usePoller](md/hooks/useFetch.md)：请求函数。
 > 
 >[useWorker](md/hooks/useWorker.md)：Web Worker。
+> 
+>[useDebounce](md/hooks/useDebounce.md)：去抖
+> 
+>[useThrottle](md/hooks/useThrottle.md)：节流
 
 > Web Components
 >
