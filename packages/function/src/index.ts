@@ -27,9 +27,9 @@ export {default as windowSize, WindowSize} from './windowSize';
 /**
  * 去抖   createDebounce 创建去抖动函数 主要用于创建hooks
  */
-export {default as debounce, createDebounce} from "./debounce";
+export {default as debounce, createDebounce, debounceOptions} from "./debounce";
 export type {DebounceOptions} from "./debounce";
-export {default as throttle} from "./throttle";
+export {default as throttle, createThrottle, throttleOptions} from "./throttle";
 export type {ThrottleOptions} from "./throttle";
 
 /**

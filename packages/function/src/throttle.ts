@@ -18,37 +18,43 @@
  */
 export type ThrottleOptions = {
     type?: 1 | 2; // 1 时间戳记录 2 setTimeout版本
-    leading?: boolean; // 第一时间是否立即调用 后续在去抖
+    leading?: boolean; // 第一时间是否立即调用 后续在节流
 }
-const throttle = (fn: any, wait?: number, options?: ThrottleOptions) => {
-    let previous = 0;
-    let _timeout: any;
-	const _wait = wait || 200;
-    const _options = Object.assign({
-        type: 1,
-        leading: false
-    }, options);
 
-    const _throttle = function () {
+export const createThrottle = (fn: any, wait: number, options: ThrottleOptions, timeout: any) => {
+    const _throttle = function (...args: any) {
         // @ts-ignore
-        let context = this;
-        let args = arguments;
-        if (_options.type === 1) {
+        const context: any = this;
+        if (options.type === 1) {
             let now = Date.now();
-            if (now - previous > _wait) {
+            if (now - timeout > wait) {
                 fn.apply(context, args);
-                previous = now;
+                timeout = now;
             }
-        } else if (_options.type === 2) {
-            if (!_timeout) {
-                _timeout = setTimeout(() => {
-                    _timeout = null;
-                    fn.apply(context, args)
-                }, _wait)
+        } else if (options.type === 2) {
+            if (!timeout) {
+                timeout = setTimeout(() => {
+                    timeout = null;
+                    fn.apply(context, args);
+                }, wait);
             }
         }
+        return timeout;
     };
     return _throttle;
+}
+/**
+ * 获取默认参数
+ * @param options
+ */
+export const throttleOptions = (options?: ThrottleOptions) => Object.assign({
+    type: 1,
+    leading: false
+}, options);
+
+const throttle = (fn: any, wait?: number, options?: ThrottleOptions) => {
+    let _timeout: any = 0; // setTimeout 返回值timeoutID是一个正整数
+    return createThrottle(fn, wait || 200, throttleOptions(options), _timeout);
 };
 
 export default throttle;

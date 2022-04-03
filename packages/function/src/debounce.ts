@@ -16,7 +16,7 @@
  * @param timeout 延迟执行毫秒数
  * @param options
  */
-import { isFunction } from "@gaopeng123/utils.types";
+import {isFunction} from "@gaopeng123/utils.types";
 
 export type DebounceOptions = {
     leading?: boolean; // 第一时间是否立即执行 后续再去抖
@@ -25,7 +25,7 @@ export type DebounceOptions = {
 
 export const createDebounce = (fn: any, _wait: number, options: DebounceOptions, _timeout: any) => {
     // @ts-ignore
-    const { leading, notDebounce } = options || {};
+    const {leading, notDebounce} = options || {};
     const _debounce = function (...arg: any) {
         // @ts-ignore
         let context: any = this;
@@ -49,11 +49,11 @@ export const createDebounce = (fn: any, _wait: number, options: DebounceOptions,
     };
     return _debounce
 }
+
+export const debounceOptions = (options: DebounceOptions) => Object.assign({leading: false}, options)
 const debounce = (fn: any, wait?: number, options?: DebounceOptions) => {
     let _timeout: any;
-    const _wait = wait || 200;
-    const _options = Object.assign({ leading: false }, options);
-    return createDebounce(fn, _wait, _options, _timeout);
+    return createDebounce(fn, wait || 200, debounceOptions(options), _timeout);
 };
 
 
