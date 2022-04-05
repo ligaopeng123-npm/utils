@@ -42,4 +42,6 @@ or yarn add @gaopeng123/hooks
 * [usePoller](./src/usePoller/README.md)：轮询器,包括同步轮询，异步轮询。
 * [useFetch](./src/useFetch/README.md)：请求函数
 * [useWorker](./src/useWorker/README.md)：Web Worker使用
+* [useDebounce](./src/useDebounce/README.md)：去抖
+* [useThrottle](./src/useThrottle/README.md)：节流
 
