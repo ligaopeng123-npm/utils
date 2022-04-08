@@ -12,7 +12,7 @@
         "labels": {
             "feat": ":rocket: add css-obj and hump functions(4)",
             "bug": ":bug: Bug Fix",
-            "doc": ":memo: Documentation",
+            "doc": "RegExp文档完善",
             "internal": ":house: Internal",
             "breaking": ":boom: Breaking Change"
         }
