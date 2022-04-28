@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isDate, isString} from "@gaopeng123/utils.types";
+import {isDate, isSafari, isString} from "@gaopeng123/utils.types";
 
 
 // 返回 01-12 的月份值
@@ -94,7 +94,8 @@ export type TimestampType = 'yyyy-MM-dd HH:mm:ss' | 'yyyy/MM/dd HH:mm:ss'
 const formatTimestamp = (timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string => {
     // 处理字符串类型
     if (isString(timestamp) && isNaN(Number(timestamp))) {
-        timestamp = new Date(timestamp);
+        // @ts-ignore
+        timestamp = isSafari() ? new Date(timestamp?.replace(/-/g, '/')) : new Date(timestamp);
     }
     const date = new Date(isDate(timestamp) ? timestamp : Number(timestamp));
 
