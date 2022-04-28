@@ -11,7 +11,7 @@
     "changelog": {
         "labels": {
             "feat": ":rocket: add css-obj and hump functions(4)",
-            "bug": ":bug: Bug Fix",
+            "bug": ":bug: 正则后查safari兼容",
             "doc": "RegExp文档完善",
             "internal": ":house: Internal",
             "breaking": ":boom: Breaking Change"

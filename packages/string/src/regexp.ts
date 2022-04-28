@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isString} from "@gaopeng123/utils.types";
+import {isSafari, isString} from "@gaopeng123/utils.types";
 import {partial} from "@gaopeng123/utils.function";
 
 const RegExpCharacters = ['$', '(', ')', '*', '+', '.', '[', ']', '?', '\\', '^', '{', '}', '|'];
@@ -21,10 +21,24 @@ const RegExpCharacters = ['$', '(', ')', '*', '+', '.', '[', ']', '?', '\\', '^'
  */
 const extractEnclosedContent = (str: string, startStr: string, endStr: string): Array<string> => {
     if (isString(str) && isString(startStr) && isString(endStr)) {
-        if (RegExpCharacters.includes(startStr)) startStr = '\\' + startStr;
-        if (RegExpCharacters.includes(endStr)) endStr = '\\' + endStr;
-        const regStr = '(?<=' + startStr + ')(.+?)(?=' + endStr + ')';
-        return str.match(new RegExp(regStr, 'g')) || [];
+        if (isSafari()) {
+            const arr = [];
+            let currentIndex = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === startStr) {
+                    currentIndex = i;
+                }
+                if (str[i] === endStr) {
+                    arr.push(str.substr(currentIndex + 1, i - currentIndex - 1))
+                }
+            }
+            return arr;
+        } else {
+            if (RegExpCharacters.includes(startStr)) startStr = '\\' + startStr;
+            if (RegExpCharacters.includes(endStr)) endStr = '\\' + endStr;
+            const regStr = '(?<=' + startStr + ')(.+?)(?=' + endStr + ')';
+            return str.match(new RegExp(regStr, 'g')) || [];
+        }
     }
     return [];
 };
