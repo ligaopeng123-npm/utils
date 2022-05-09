@@ -95,7 +95,7 @@ const formatTimestamp = (timestamp: Date | number | string, type: TimestampType 
     // 处理字符串类型
     if (isString(timestamp) && isNaN(Number(timestamp))) {
         // @ts-ignore
-        timestamp = isSafari() ? new Date(timestamp?.replace(/-/g, '/')) : new Date(timestamp);
+        timestamp = isSafari() && isString(timestamp) ? new Date(timestamp?.replace(/-/g, '/')) : new Date(timestamp);
     }
     const date = new Date(isDate(timestamp) ? timestamp : Number(timestamp));
 
