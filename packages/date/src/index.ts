@@ -9,12 +9,13 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-export {default as formatTimestamp} from './timestamp';
+export {default as formatTimestamp, getTime, getDate} from './timestamp';
 export type {TimestampType} from './timestamp';
 export {getYear} from './timestamp';
 export {getMonth} from './timestamp';
 export {getDay} from './timestamp';
 export {getHours} from './timestamp';
+export {get12Hours} from './timestamp';
 export {getMinutes} from './timestamp';
 export {getSeconds} from './timestamp';
 export {getWeek} from './timestamp';

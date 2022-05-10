@@ -76,7 +76,18 @@ export const getWeekCNDay = (date: Date): string => {
 export const setTimeFillZero = (num: number): string => {
     return (num + '').length < 2 ? '0' + num : (num + '');
 };
-
+/**
+ * 获取时间戳
+ * @param timestamp
+ */
+export const getDate = (timestamp: Date | number | string) => {
+// 处理字符串类型
+    if (isString(timestamp) && isNaN(Number(timestamp))) {
+        // @ts-ignore
+        timestamp = new Date(timestamp?.replace(/-/g, '/'));
+    }
+    return new Date(isDate(timestamp) ? timestamp : Number(timestamp));
+}
 /**
  *@函数名称：timestampToTime
  *@参数：timestamp时间戳 type时间格式 yyyy-MM-dd yyyy-MM-dd HH:mm:ss HH:mm:ss  HH
@@ -90,15 +101,10 @@ export type TimestampType = 'yyyy-MM-dd HH:mm:ss' | 'yyyy/MM/dd HH:mm:ss'
     | 'MM-dd' | 'MM/dd'
     | 'MM-dd HH:mm:ss' | 'MM/dd HH:mm:ss'
     | 'dd HH:mm:ss'
-    | 'yyyy' | 'MM' | 'dd' | 'HH' | 'mm' | 'ss' | 'WW' | 'ww' | string
-const formatTimestamp = (timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string => {
-    // 处理字符串类型
-    if (isString(timestamp) && isNaN(Number(timestamp))) {
-        // @ts-ignore
-        timestamp = isSafari() && isString(timestamp) ? new Date(timestamp?.replace(/-/g, '/')) : new Date(timestamp);
-    }
-    const date = new Date(isDate(timestamp) ? timestamp : Number(timestamp));
+    | 'yyyy' | 'MM' | 'dd' | 'HH' | 'mm' | 'ss' | 'WW' | 'ww' | string;
 
+const formatTimestamp = (timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string => {
+    const date = getDate(timestamp);
     return type
         .replace(/yyyy/i, getYear(date))
         .replace(/MM/, getMonth(date))
@@ -111,36 +117,13 @@ const formatTimestamp = (timestamp: Date | number | string, type: TimestampType 
         .replace(/WW/, getWeekCNDay(date))
         .replace(/ww/, getWeek(date) + '');
     // .replace(/A/, getWeekCNDay(date)); // 后续添加对时辰的支持
-
-    // switch (type) {
-    //     case 'yyyy-MM-dd HH:mm:ss':
-    //         return `${getYear(date)}-${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-    //     case 'yyyy-MM-dd':
-    //         return `${getYear(date)}-${getMonth(date)}-${getDay(date)}`;
-    //     case 'HH:mm:ss':
-    //         return `${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-    //     case 'MM-dd':
-    //         return `${getMonth(date)}-${getDay(date)}`;
-    //     case 'MM-dd HH:mm:ss':
-    //         return `${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-    //     case 'dd HH:mm:ss':
-    //         return `${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-    //     case 'yyyy':
-    //         return getYear(date);
-    //     case 'MM':
-    //         return `${getMonth(date)}`;
-    //     case 'dd':
-    //         return `${getDay(date)}`;
-    //     case 'HH':
-    //         return `${getHours(date)}`;
-    //     case 'mm':
-    //         return `${getMinutes(date)}`;
-    //     case 'ss':
-    //         return `${getSeconds(date)}`;
-    //     default:
-    //         return `${getYear(date)}-${getMonth(date)}-${getDay(date)} ${getHours(date)}:${getMinutes(date)}:${getSeconds(date)}`;
-    // }
 };
+/**
+ * 抹平Safari对于new Date的兼容性问题
+ */
+export const getTime = (timestamp: Date | number | string) => {
+    return getDate(timestamp).getTime();
+}
 /**
  * 将秒转换为dd HH mm ss 格式展示
  * @param s
