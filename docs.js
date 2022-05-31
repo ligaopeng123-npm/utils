@@ -41,13 +41,13 @@ const job = () => {
 }
 
 const writeJob = ()=> {
-    const mi = new markdownIframe({path: join(__dirname, './docs/md')});
+    const mi = new markdownIframe({path: join(__dirname, './docs/news')});
     mi.run()
         .then(data => {
             console.log('data', data);
         }).catch((err) => {
-        console.error(err);
-    });
-}
+            console.error(err);
+        });
+    }
 
 writeJob();

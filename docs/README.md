@@ -67,7 +67,8 @@
 > [multi-player](md/components/multi-player.md)
 >
 > [rc-multi-player](md/components/rc-multi-player.md)
-
+>
+> [rc-br](md/components/rc-br.md)
 
 
 > @gaopeng123/rtc-cli
@@ -85,6 +86,10 @@
 > @gaopeng123/browser
 >
 >[浏览器检测升级插件](md/cli/browser)
+>
+> @gaopeng123/markdowniframe
+> 
+>[文档爬取插件](md/cli/markdowniframe)
 
 > @gaopeng123/screen
 >
