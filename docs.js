@@ -1,12 +1,14 @@
 const path = require("path");
 const {copyFiles, getFiles, readFiles, readFile, getNewFile, writeFile, getFilePath} = require("./bin/file");
 const {getMDFile} = require("./bin/http");
+const {join} = require("path");
+const {markdownIframe} = require("./markdowniframe.cjs.development");
 /**
  * 文件copy 将md文件爬出来 放到docs中 提高访问速度 网速好的话 可以全量处理
  */
-copyFiles(path.resolve(__dirname, 'document'), path.resolve(__dirname, 'docs')).then(() => {
-   job();
-});
+// copyFiles(path.resolve(__dirname, 'document'), path.resolve(__dirname, 'docs')).then(() => {
+//    writeJob();
+// });
 
 const job = () => {
     const files = getFiles(path.resolve(__dirname, 'document/md'));
@@ -38,4 +40,14 @@ const job = () => {
     });
 }
 
-// job();
+const writeJob = ()=> {
+    const mi = new markdownIframe({path: join(__dirname, './docs/md')});
+    mi.run()
+        .then(data => {
+            console.log('data', data);
+        }).catch((err) => {
+        console.error(err);
+    });
+}
+
+writeJob();
