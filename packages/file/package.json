@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.file",
     "author": "ligaopeng123",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "description": "文件函数处理",
     "license": "MIT",
     "main": "dist/index.js",
@@ -64,7 +64,7 @@
     },
     "dependencies": {
         "@gaopeng123/utils.object": "^0.5.0",
-        "@gaopeng123/utils.string": "^0.5.0",
+        "@gaopeng123/utils.string": "^0.5.1",
         "@gaopeng123/utils.types": "^0.5.0"
     },
     "gitHead": "e7e3d1e92cc458db1807808e0e4d7848c9ff6113"
