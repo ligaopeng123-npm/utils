@@ -57,10 +57,14 @@ export const extractBigParenthesesContent = partial(extractEnclosedContent, unde
 /**
  * IPV4正则
  */
-export const IPV4 = /^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$/;
+export const IPV4_STR = '^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$';
+export const IPV4 = new RegExp(IPV4_STR);
+export const PASSWORD_STR = '(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}';
+export const PASSWORD = new RegExp(PASSWORD_STR);
 /**
  * 手机号校验
  */
-export const PHONE_NUMBER = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
+export const PHONE_NUMBER_STR = '^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$';
+export const PHONE_NUMBER = new RegExp(PHONE_NUMBER_STR);
 
 export default extractEnclosedContent;

@@ -28,8 +28,7 @@ export {extractParenthesesContent} from './regexp';
 export {extractMiddleParenthesesContent} from './regexp';
 export {extractBigParenthesesContent} from './regexp';
 // 常用正则校验
-export {IPV4} from './regexp';
-export {PHONE_NUMBER} from './regexp';
+export {PHONE_NUMBER_STR, PHONE_NUMBER, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4} from './regexp';
 /**
  * 颜色处理
  */

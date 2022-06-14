@@ -49,7 +49,7 @@ export {
     // 提取被字符包裹住的内容
     extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
     // 常用正则校验
-    IPV4, PHONE_NUMBER,
+    PHONE_NUMBER_STR, PHONE_NUMBER, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4,
     // 颜色处理
     addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb,
     // url路径拼接
