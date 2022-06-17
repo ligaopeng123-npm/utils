@@ -1,6 +1,6 @@
 # useFetch
 
-`(url: string, options: Options, checkResponse?: CheckResponse) : [loading, error, data];`
+`(url: string, options: Options, checkResponse?: CheckResponse, deps: Array<any>) : [loading, error, data];`
 
 ## 参数
 
@@ -30,34 +30,38 @@ type Deps = any[];
 import {useGet, usePost, useDel, usePut, usePatch} from "@gaopeng123/hooks.use-fetch";
 
 const TestUseFetch: React.FC<TestUseFetchProps> = (props) => {
-    const [loading, error, data] = useGet('/assets/test.json', {params: {name: '123'}}, (res) => {
+     const [dep1, setDep1] = useState(1);
+    const [dep2, setDep2] = useState(2);
+    const [loading, error, data] = useGet('/assets/test.json', {}, (res) => {
         return res.data;
-    }, []);
-    
-    // const [loading2, error2, data2] = usePost('/assets/test.json', {body: {name: '123'}}, (res) => {
-    //    return res.data;
-    // });
-    
-    // useDel usePut usePatch
-    
+    }, [dep1, dep2]);
+
+    const onClick = () => {
+        setDep1(Math.random())
+    }
+
     if (loading) {
-       return (<span>loading</span>)
+        return (<span>loading</span>)
     }
-    
+
     if (error) {
-         return (<span>{error}</span>)
+        return (<span>{error}</span>)
     }
-    
+
     return (
         <React.Fragment>
-            <h3>useGet</h3>
+            <h3 onClick={onClick}>useGet</h3>
             <div style={{display: 'flex', width: 500}}>
                 <div style={itemStyle}>loading: {loading}</div>
                 <div style={itemStyle}>error: {error}</div>
                 <div style={itemStyle}>data: {JSON.stringify(data, null, 2)}</div>
             </div>
+            <h3>usePost</h3>
+            <h3>useDel</h3>
+            <h3>usePut</h3>
+            <h3>usePatch</h3>
         </React.Fragment>
-    ) 
+    )
 };
 
 export default TestUseFetch;

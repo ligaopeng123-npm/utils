@@ -1,4 +1,6 @@
-### 使用方式
+## Usage
+
+
 
 ```typescript
 import {register} from '@gaopeng123/fetch';
@@ -42,7 +44,7 @@ const intercept: Intercept = {
 export const unregisterFetch = register(Intercept);
 ```
 
-### Option
+## Option
 
 ```typescript
 body?: any; // post请求 参数放在body上
@@ -57,7 +59,7 @@ headers?: {
 };
 ```
 
-### function
+## function
 
 #### get
 
@@ -92,18 +94,34 @@ errorCode(code:number):string;
 
 #### register
 
+`注入拦截器`
+
 ```typescript
 (intercept: Intercept): Unregister;
-
 ```
 
-##### Intercept
+#### Intercept 
+
+`拦截器属性`
 
 ```typescript
 request?(url: string, config: any): Promise<any[]> | any[];
 requestError?(error: any): Promise<any>;
 response?(response: FetchInterceptorResponse): FetchInterceptorResponse;
 responseError?(error: any): Promise<any>;
+```
+
+## AbortController
+
+```typescript
+const abortController = new AbortController();
+get('/test.json', {responseType: 'text', abortController: abortController}).then((res) => {
+    console.log(res);
+});
+
+setTimeout(() => {
+    abortController.abort();
+}, 100);
 ```
 
 

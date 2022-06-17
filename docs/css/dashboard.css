@@ -1,0 +1,79 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+.dashboard-row {
+    display: flex;
+    flex: 1;
+    gap: 16px
+}
+
+.dashboard-card {
+    width: 50%;
+    min-height: 240px;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow .3s, border-color .3s;
+}
+
+.dashboard-card > a {
+    display: block;
+    height: 100%;
+}
+
+.dashboard-card:hover {
+    border-color: transparent;
+    box-shadow: 0 1px 2px -2px #00000029, 0 3px 6px #0000001f, 0 5px 12px 4px #00000017
+}
+
+.dashboard-card-image {
+    height: calc(100% - 60px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.dashboard-card-image-utils {
+    background-image: url("../image/utils.png");
+}
+
+.dashboard-card-image-hooks {
+    background-image: url("../image/hooks.png");
+}
+
+.dashboard-card-image-components {
+    background-image: url("../image/components.png");
+}
+
+.dashboard-card-image-cli {
+    background-image: url("../image/cli.png");
+}
+
+.dashboard-card-image-screen {
+    background-image: url("../image/screen.png");
+}
+
+.dashboard-card-image-notes {
+    background-image: url("../image/notes.png");
+    border-bottom: 1px solid rgba(153, 153, 153, 0.1);
+}
+
+
+.dashboard-card-text {
+    color: var(--textColor);
+    margin: 4px 16px;
+    align-items: center;
+    height: 60px;
+}
+
+.dashboard-card-title {
+
+}
+
+.dashboard-card-sub-title {
+    color: #999999;
+    font-size: 14px;
+    margin: 4px 0px;
+}

@@ -1,7 +1,1 @@
-### Text1
-
-### AlignText
-
-### EllipsisText
-
-### Card1
+[filename](https://raw.githubusercontent.com/ligaopeng123/screen/main/README.md ':include')

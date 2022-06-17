@@ -16,13 +16,15 @@
 | user       | form表单用户的name属性                                  | string | user         |
 | password   | form表单密码的name属性                                  | string | password     |
 | password-text | 密码是否支持明文显示 <br />plain支持切换明文 cipher不支持 | string | plain |
-| captcha | 验证码能力 | string  | '' |
-| captchasrc | 验证码src地���，手动设置 | string | null |
+| captcha | 验证码能力，同时定义验证码字段名词 | string  | '' |
+| captchasrc | 验证码src地址，手动设置 | string | null |
 | captchaurl | 验证码请求地址地址 | string \| null | null |
 | captchamethod | 验证码请求类型 | string | POST |
 | publickey | 加密公钥 | string | null |
 | keeplogged | 支持记住密码 | boolean | false |
 | agreement-proprietary | 用户协议的主题<br />（主要体现的解释权）例如：干饭人集团<br />用户协议中，会将title和“干饭人集团”进行拼接 | string | '' |
+| forgot-password-url | 是否支持忘记密码功能，如果传递url 插件处理密码找回逻辑<br />否则使用事件监听处理 | url \| boolean | ‘’ |
+| phone-login-url | 手机号登录，如果传递url 则插件会处理验证码请求，<br />如果不传则使用监听函数处理 | url \| boolean | ‘’ |
 
 ## 事件配置 
 
@@ -37,18 +39,18 @@ captchaClick 在点击验证码的时候触发
 
 ```tsx
 <login-module
-        url="/login"
-        method="POST"
-        publickey="*"
-        user="userId"
-        password="password"
-        captcha="captcha"
-        captchamethod="GET"
-        captchaurl="/captcha"
-        id="form"
-        main-style="background-image: url(./assets/background.jpg)"
-        body-style="right: 200px;"
-        title="系统">
+    url="/login"
+    method="POST"
+    publickey="*"
+    user="userId"
+    password="password"
+    captcha="captcha"
+    captchamethod="GET"
+    captchaurl="/captcha"
+    id="form"
+    main-style="background-image: url(./assets/background.jpg)"
+    body-style="right: 200px;"
+    title="系统">
 </login-module>
 ```
 
@@ -56,24 +58,36 @@ captchaClick 在点击验证码的时候触发
 // 事件订阅
 <script>
         const form = document.querySelector('#form');
-		// 提交事件
-        form.addEventListener('submit', (data)=> {
-        	console.log(data)
-        });
-        // fetch请求响应后
-        form.addEventListener('afterSubmit', (data)=> {
-	        console.log(data)
-        });
-        // fetch请求失败后
-        form.addEventListener('submitError', (data)=> {
-            console.log(data)
-        });
-		// 点击验证码触发事件
-		form.addEventListener('captchaClick', (data) => {
-			console.log(data);
-			form.setAttribute('captchasrc', '/iconfont/test.svg')   
-		});
-    </script>
+    // 提交事件
+    form.addEventListener('submit', (data)=> {
+        console.log(data)
+    });
+    // fetch请求响应后
+    form.addEventListener('afterSubmit', (data)=> {
+        console.log(data)
+    });
+    // fetch请求失败后
+    form.addEventListener('submitError', (data)=> {
+        console.log(data)
+    });
+    // 点击验证码触发事件
+    form.addEventListener('captchaClick', (data) => {
+        console.log(data);
+        form.setAttribute('captchasrc', '/iconfont/test.svg')   
+    });
+    // 密码重置
+    form.addEventListener('resetPasswordSubmit', (data) => {
+        console.log('resetPasswordSubmit', data);
+        // 关闭窗口
+        form.success();
+    });
+    /**
+    * 短信验证码接口
+    */
+    form.addEventListener('sendSMSVerificationCode', (data) => {
+        console.log('sendSMSVerificationCode', data);
+    });
+</script>
 ```
 
 ## CSS variables

@@ -41,7 +41,7 @@ const job = () => {
 }
 
 const writeJob = ()=> {
-    const mi = new markdownIframe({path: join(__dirname, './docs/news')});
+    const mi = new markdownIframe({path: join(__dirname, './docs/md/cli')});
     mi.run()
         .then(data => {
             console.log('data', data);
@@ -50,4 +50,14 @@ const writeJob = ()=> {
         });
     }
 
+
+
+let time = 0;
 writeJob();
+const timmer = setInterval(()=> {
+    writeJob();
+    time ++;
+    if (time > 100) {
+        clearInterval(timmer);
+    }
+}, 5000)
