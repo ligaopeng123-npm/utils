@@ -21,8 +21,10 @@
     - [useDebounce](md/hooks/useDebounce.md)
     - [useThrottle](md/hooks/useThrottle.md)
 - Web Components
+    - [介绍](md/components/index.md)
     - [login-module](md/components/login-module.md)
     - [rc-login-module](md/components/rc-login-module.md)
+    - [rc-login-jsencrypt](md/components/rc-login-jsencrypt.md)
     - [message](md/components/message.md)
     - [image-upload](md/components/image-upload.md)
     - [rc-image-upload](md/components/rc-image-upload.md)
