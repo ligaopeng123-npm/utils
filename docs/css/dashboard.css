@@ -12,7 +12,7 @@
 
 .dashboard-card {
     width: 50%;
-    min-height: 240px;
+    min-height: 30vh;
     border: 1px solid rgba(0, 0, 0, .06);
     border-radius: 4px;
     cursor: pointer;
