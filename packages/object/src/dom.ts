@@ -111,3 +111,28 @@ export const observeViewport = (observeDomList: any[], observeCallBack: any, wai
         IO.observe(item)
     });
 }
+
+/**
+ *获取当前的滚动位置
+ * @param el
+ */
+export const getScrollPosition = (el: Window | Element = window): { x: number, y: number } => {
+    return {
+        // @ts-ignore
+        x: el?.pageXOffset === undefined ? el?.scrollLeft : el.pageXOffset,
+        // @ts-ignore
+        y: el?.pageYOffset !== undefined ? el.pageYOffset : el?.scrollTop
+    }
+};
+
+/**
+ * 滚动到顶部
+ */
+export const scrollToTop = (el?: Element): void => {
+    const element = el || document.documentElement || document.body;
+    const c = element.scrollTop;
+    if (c > 0) {
+        window.requestAnimationFrame(() => scrollToTop(element));
+        (element || window).scrollTo(0, c - c / 8);
+    }
+}

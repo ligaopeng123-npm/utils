@@ -13,16 +13,12 @@ interface Cache {
     [propName: string]: any
 }
 
-export interface MemoizedFn {
-    (...arg: any): Array<any> | any
-}
-
-
 /**
  * 缓存管理
  */
 type SetFn = (key: string, value: any) => Cache;
-const cacheManagement = (): [Cache, SetFn] => {
+type Clear = (key?: string) => void;
+const cacheManagement = (): [Cache, SetFn, Clear] => {
     const cache: Cache = {};
     const set: SetFn = (key, value) => {
         return Object.defineProperty(cache, key, {
@@ -32,18 +28,40 @@ const cacheManagement = (): [Cache, SetFn] => {
             value: value
         });
     };
-    return [cache, set]
+    /**
+     * 数据清理
+     * @param key
+     */
+    const clear = (key: string) => {
+        if (key) {
+            cache[key] = null;
+        } else {
+            for (const cacheKey in cache) {
+                cache[cacheKey] = null;
+            }
+        }
+    }
+    return [cache, set, clear]
 };
+/**
+ * 返回值类型定义
+ */
+export type MemoizedReturn = [any, Cache, string, Clear] | any;
+
+export interface MemoizedFn {
+    (...arg: any): MemoizedReturn;
+}
+
 /**
  * 同步缓存函数
  * @param fn
  */
 export const memoized = (fn: MemoizedFn) => {
     // 缓存求值 如果有则取缓存 如果没有则赋值
-    const [cache, set] = cacheManagement();
+    const [cache, set, clear] = cacheManagement();
     const memoize: MemoizedFn = (...arg) => {
         const key = arg[0];
-        return [cache[key] || set(key, fn(...arg))[key], cache];
+        return [cache[key] || set(key, fn(...arg))[key], cache, key, clear];
     };
     return memoize;
 };
@@ -54,15 +72,15 @@ export const memoized = (fn: MemoizedFn) => {
  * @param fn
  */
 export interface AsyncMemoizedFn {
-    (...arg: any): Promise<Array<any>> | Promise<any>
+    (...arg: any): Promise<MemoizedReturn> | Promise<any>
 }
 
 export const asyncMemoized = (fn: AsyncMemoizedFn) => {
     // 缓存求值 如果有则取缓存 如果没有则赋值
-    const [cache, set] = cacheManagement();
-    const memoiz: AsyncMemoizedFn = async (...arg) => {
+    const [cache, set, clear] = cacheManagement();
+    const memoize: AsyncMemoizedFn = async (...arg) => {
         const key = arg[0];
-        return [cache[key] || set(key, await fn(...arg))[key], cache];
+        return [cache[key] || set(key, await fn(...arg))[key], cache, key, clear];
     };
-    return memoiz;
+    return memoize;
 };
