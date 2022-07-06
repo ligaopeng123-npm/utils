@@ -83,7 +83,7 @@ export {
     // fullscreen函数
     isFullscreen, fullscreen, exitFullscreen, autoFullscreen,
     // 窗口尺寸
-    windowSize,
+    windowSize, pcZoom,
     // 去抖 节流
     debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay
 } from "@gaopeng123/utils.function";
