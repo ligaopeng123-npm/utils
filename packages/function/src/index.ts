@@ -22,7 +22,8 @@ export {default as autoFullscreen, isFullscreen, fullscreen, exitFullscreen} fro
 /**
  * 窗口尺寸
  */
-export {default as windowSize, WindowSize} from './windowSize';
+export {default as windowSize, pcZoom} from './windowSize';
+export type {WindowSize} from './windowSize';
 
 /**
  * 去抖   createDebounce 创建去抖动函数 主要用于创建hooks

@@ -9,6 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
+import {isIE} from "@gaopeng123/utils.types";
+
 /**
  *
  * @returns {{width: number; 浏览器宽度
@@ -18,12 +20,13 @@
  */
 
 export type WindowSize = {
-    availWidth: number; // 可视化宽度
-    availHeight: number; // 可视化高度
+    availWidth: number; // 可视宽度
+    availHeight: number; // 可视高度
     width: number; // 浏览器宽度
-    height: number; // 浏览器宽度
+    height: number; // 浏览器高度
     screenWidth: number; // 分辨率宽度
     screenHeight: number; // 分辨率高度
+    pcZoom: number; // 终端pc设备的缩放大小 *100数据
 }
 const windowSize = (): WindowSize => {
     let xScroll: number;
@@ -91,7 +94,31 @@ const windowSize = (): WindowSize => {
         availHeight: windowHeight as number,
         screenHeight: window.screen.height,
         screenWidth: window.screen.width,
+        pcZoom: pcZoom()
     };
 };
+
+/**
+ * 终端浏览器缩放大小
+ */
+export const pcZoom = (): number => {
+    let ratio = 1;
+    const screen = window.screen;
+    if (window.devicePixelRatio !== undefined) {
+        ratio = window.devicePixelRatio
+    } else if (isIE()) {
+        // @ts-ignore
+        if (screen.deviceXDPI && screen.logicalXDPI) {
+            // @ts-ignore
+            ratio = screen.deviceXDPI / screen.logicalXDPI
+        }
+    } else if (window.outerWidth !== undefined && window.innerWidth !== undefined) {
+        ratio = window.outerWidth / window.innerWidth
+    }
+    if (ratio) {
+        ratio = Math.round(ratio * 100)
+    }
+    return ratio;
+}
 
 export default windowSize;
