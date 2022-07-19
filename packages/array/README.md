@@ -193,3 +193,19 @@ const treeData2 = [{
 }];
 ```
 
+## arr2enum: (arr: object[], keyProp?: string, labelPro?: string): object
+
+`数组转换成基于object形式的枚举, 比如可以用于生成antd procomponents里的selectEnum`
+
+```typescript
+const res = await loadOptions()
+const optionEnum = arr2enum(res.data, 'deviceId', 'deviceName')
+```
+
+## binarySearch: (arr: any[], compare: (element: any) => number, start?: number, end?: number): index
+
+`二分查找法获取有序数组的匹配元素下标, 失败返回-1, compare函数返回0则匹配成功, 大于0表示往左继续匹配, 小于0表示往右继续匹配`
+
+```typescript
+binarySearch(arr, e => e[0] - 3333)
+```
