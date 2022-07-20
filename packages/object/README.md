@@ -251,3 +251,11 @@ forEachObject(Object.assign({}, object1), (item)=> {
 }
 ```
 
+## clearEmpty: <T>(val: T): T
+
+`清除object中的空值键值对, 比如可以用来处理请求参数`
+
+```typescript
+const query = {name: '', type: null, page: 1}
+const clearedQuery = clearEmpty(query) // {page: 1}
+```

@@ -22,6 +22,7 @@ or yarn add @gaopeng123/utils
 * [number](../src/number/README.md)：数字跳级转换、随机数生成等
 * [array](../src/array/README.md)：数组维度转换等
 * [date](../src/date/README.md)：日期时间处理、常用日期转换、周获取等
+* [color](../src/color/README.md)：颜色转换, 添加透明度
 
 ##### 文档
 

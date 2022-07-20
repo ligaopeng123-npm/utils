@@ -23,5 +23,7 @@ export {filterObject, mapObject, forEachObject} from './objectLoop';
  */
 export {length} from "./length";
 
+export { clearEmpty } from './clearEmpty'
+
 
 
