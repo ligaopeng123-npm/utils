@@ -25,5 +25,5 @@ export const findTreeOrder = (tree: any, rely: RelyFn, options?: TreeOptions): A
         rely,
         options: Object.assign(defaultOptions, options)
     });
-    return currentTree.__path?.split('-')?.map((item: string) => Number(item));
+    return currentTree ? currentTree?.__path?.split('-')?.map((item: string) => Number(item)) : [];
 };
