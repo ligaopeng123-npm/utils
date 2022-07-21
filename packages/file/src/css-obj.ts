@@ -45,3 +45,15 @@ export const css2obj = (css: string) => {
         return css;
     }
 }
+
+/**
+ * 创建css字符串
+ * @param cssTexts
+ */
+export const makeCssText = (cssTexts: any) => {
+    let cssText = ``;
+    for (const cssTextsKey in cssTexts) {
+        cssText += `.${cssTextsKey} { ${obj2css(cssTexts[cssTextsKey])} } `
+    }
+    return cssText
+}

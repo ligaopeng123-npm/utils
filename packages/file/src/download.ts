@@ -11,7 +11,6 @@
  **********************************************************************/
 import {isElement, isEmpty, isObject, isString, isUndefined} from "@gaopeng123/utils.types";
 import {mapObject, filterObject} from "@gaopeng123/utils.object";
-
 /**
  * @params  需要拼接的参数
  *  拼接url地址参数
@@ -229,33 +228,3 @@ export const makeParamsProper = (params: any) => {
 export const routeFromUri = (uri: string): string => {
     return `/${uri?.split('/')?.splice(3)?.join('/')}`;
 };
-
-/**
- * 动态导入script
- * @param src
- */
-export const injectScript = (src: string): Promise<any> => {
-    return new Promise((resolve, reject) => {
-        const s = document.createElement('script');
-        s.type = 'text/JavaScript';
-        s.async = true;
-        s.onload = function () {
-            resolve(true);
-        };
-        s.onerror = function () {
-            reject(false);
-        };
-        s.src = src;
-        const t = document.getElementsByTagName('script')[0];
-        t.parentNode.insertBefore(s, t);
-    });
-}
-/**
- * 批量加载js文件
- * @param src
- */
-export const injectScripts = (src: any[string]): Promise<any> => {
-    return Promise.all(src.map((itemStr: string) => {
-        return injectScript(itemStr);
-    }));
-}

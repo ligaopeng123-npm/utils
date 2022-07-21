@@ -113,7 +113,9 @@ imageToBase64({image:imgae})
 openToPreviewBase64('base64...');
 ```
 
-#### injectScript
+## inject
+
+##### injectScript
 
 `动态加载js文件，返回一个promise`
 
@@ -121,13 +123,24 @@ openToPreviewBase64('base64...');
 injectScript('http://***').then(()=> {});
 ```
 
-#### injectScripts
+##### injectScripts
 
 `批量动态加载就是文件`
 
 ```typescript
 injectScripts(['http://***']).then(()=> {});
 ```
+
+##### injectCSS
+
+`插入css`
+
+```typescript
+injectCSS(id: string, cssText: string);
+injectCSS('my-id', makeCssText({color: '#fff', fontSize: '12px'}));
+```
+
+
 
 ## convert文件类型转换
 
@@ -196,5 +209,21 @@ obj2css(testData); // cssData
 
 ```typescript
 css2obj(cssData); // testData
+```
+
+##### makeCssText
+
+`将对象拼接成css字符串`
+
+```typescript
+makeCssText({'my-class-name': testData});
+```
+
+```css
+.my-class-name {
+    background-color: red;
+    border-bottom-color: #000000;
+    ...
+}
 ```
 

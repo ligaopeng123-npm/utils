@@ -9,7 +9,7 @@ export {imageToBase64} from './download';
 
 export {dowmloadScreenshotPicture} from './download';
 
-export {injectScript, injectScripts} from "./download";
+export {injectScript, injectScripts, injectCSS} from "./inject";
 
 
 export {urlJoinParmas} from './download';
@@ -36,5 +36,4 @@ export {blob2Base64} from './convert';
 
 // css 和 react style 相互转换
 
-export {obj2css} from "./css-obj";
-export {css2obj} from "./css-obj";
+export {obj2css, css2obj, makeCssText} from "./css-obj";

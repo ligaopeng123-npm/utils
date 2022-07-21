@@ -1,4 +1,4 @@
-import {css2obj, obj2css} from '../src';
+import {css2obj, obj2css, makeCssText} from '../src';
 
 const testData = {
     backgroundColor: "red",
@@ -33,6 +33,12 @@ describe('obj2css', () => {
 describe('css2obj', () => {
     it('works', () => {
         expect(css2obj(cssData)).toStrictEqual(testData);
+    });
+});
+
+describe('makeCssText', () => {
+    it('works', () => {
+        expect(makeCssText({'my-class-name': testData})).toStrictEqual(`.my-class-name { ${cssData} } `);
     });
 });
 
