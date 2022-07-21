@@ -1,1 +1,0 @@
-export const colorHexReg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
