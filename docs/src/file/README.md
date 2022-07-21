@@ -44,7 +44,25 @@ makeParamsProper({a: null, b: undefined, c: '', d: [], e: 0, f: '   b d  f  ',})
 `解析url中包含的参数`
 
 ```typescript
-queryParamsFromUrl('https:/www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'xxx'}
+queryParamsFromUrl('https://www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'xxx'}
+```
+
+##### domainNameFromUri
+
+`重uri中获取域名`
+
+```typescript
+domainNameFromUri('https://www.baidu.com/getBaseInfo?userId=xxx'); // https://www.baidu.com
+domainNameFromUri('www.baidu.com/getBaseInfo?userId=xxx'); // www.baidu.com
+```
+
+##### routeFromUri
+
+`重uri中获取路由地址`
+
+```typescript
+routeFromUri('https://www.baidu.com/getBaseInfo?userId=xxx'); // /getBaseInfo
+routeFromUri('https://www.baidu.com/#/getBaseInfo?userId=xxx'); // /getBaseInfo
 ```
 
 ## download
@@ -113,7 +131,9 @@ imageToBase64({image:imgae})
 openToPreviewBase64('base64...');
 ```
 
-#### injectScript
+## inject
+
+##### injectScript
 
 `动态加载js文件，返回一个promise`
 
@@ -121,13 +141,24 @@ openToPreviewBase64('base64...');
 injectScript('http://***').then(()=> {});
 ```
 
-#### injectScripts
+##### injectScripts
 
 `批量动态加载就是文件`
 
 ```typescript
 injectScripts(['http://***']).then(()=> {});
 ```
+
+##### injectCSS
+
+`插入css`
+
+```typescript
+injectCSS(id: string, cssText: string);
+injectCSS('my-id', makeCssText({color: '#fff', fontSize: '12px'}));
+```
+
+
 
 ## convert文件类型转换
 
@@ -196,5 +227,21 @@ obj2css(testData); // cssData
 
 ```typescript
 css2obj(cssData); // testData
+```
+
+##### makeCssText
+
+`将对象拼接成css字符串`
+
+```typescript
+makeCssText({'my-class-name': testData});
+```
+
+```css
+.my-class-name {
+    background-color: red;
+    border-bottom-color: #000000;
+    ...
+}
 ```
 

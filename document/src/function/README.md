@@ -2,7 +2,7 @@
 
 ## 缓存函数
 
-##### memoized: (...arg: any): Array<any>  
+#### memoized: (...arg: any): Array<any>  
 
 `缓存函数返回值，fn可为多参函数，但第一个参数会作为缓存对象的key`
 
@@ -12,7 +12,7 @@ const cacheFn = memoized(fn);
 cacheFn(4,2); // [4, {4: 8}]
 ```
 
-##### asyncMemoized:  (arg: string): Promise<Array<any>>
+#### asyncMemoized:  (arg: string): Promise<Array<any>>
 
 `缓存异步函数的返回值，fn可为多参async函数，但第一个参数会作为缓存对象的key`
 
@@ -32,7 +32,7 @@ export const menuData = loadLocalJson('/json/menus.json');
 
 ## monad
 
-##### ResponseMonad
+#### ResponseMonad
 
 `Response响应值处理`
 
@@ -62,7 +62,7 @@ ResponseMonad.of({
 
 ## curry
 
-##### curry:(fn: Curry)
+#### curry:(fn: Curry)
 
 `将函数转为柯理化函数`
 
@@ -71,7 +71,7 @@ type Curry = (...args: Array<any>) => any;
 curry((args1)=> {return (args2)=> args1 + args2);
 ```
 
-##### partial
+#### partial
 
 `将函数转换为偏应用函数`
 
@@ -87,7 +87,7 @@ afterTenSeconds(() => {
 
 ## compose
 
-##### compose
+#### compose
 
 `合并函数`
 
@@ -95,7 +95,7 @@ afterTenSeconds(() => {
 compose((a)=> a+a,(b)=> b*b, (c)=> c/c); // a(b(c()));
 ```
 
-##### pipe
+#### pipe
 
 `合并函数`
 
@@ -103,7 +103,7 @@ compose((a)=> a+a,(b)=> b*b, (c)=> c/c); // a(b(c()));
 compose((a)=> a+a,(b)=> b*b, (c)=> c/c); // c(b(a()));
 ```
 
-##### composePromises：(promises: Promises, initialValue?: any): Promise<void>
+#### composePromises：(promises: Promises, initialValue?: any): Promise<void>
 
 `合并promise，将上一次的结果，作为下一个promise的参数`
 
@@ -135,7 +135,7 @@ composePromises([p1, p2], 8).then((res) => {
 
 ## fullscreen
 
-##### fullscreen: (el: Element,options: FullscreenOptions): Promise<any>
+#### fullscreen: (el: Element,options: FullscreenOptions): Promise<any>
 
 `进入全屏`
 
@@ -143,7 +143,7 @@ composePromises([p1, p2], 8).then((res) => {
 fullscreen(document.getElementById(''))
 ```
 
-##### exitFullscreen: ():Promise<any>
+#### exitFullscreen: ():Promise<any>
 
 `退出全屏`
 
@@ -151,7 +151,7 @@ fullscreen(document.getElementById(''))
 exitFullscreen()
 ```
 
-##### autoFullscreen:(el: Element, options: FullscreenOptions, callBack: (args: AutoFullscreenCallBack) => void):Promise<any>
+#### autoFullscreen:(el: Element, options: FullscreenOptions, callBack: (args: AutoFullscreenCallBack) => void):Promise<any>
 
 `如果非全屏模式，则进入全屏，如果是全屏状态，则退出全屏`
 
@@ -162,7 +162,7 @@ autoFullscreen(document.getElementById(''), null, ({type})=> {
 })
 ```
 
-##### isFullscreen: ():boolean
+#### isFullscreen: ():boolean
 
 `判断是否是全屏状态`
 
@@ -170,7 +170,7 @@ autoFullscreen(document.getElementById(''), null, ({type})=> {
 isFullscreen(); // true or false
 ```
 
-##### windowSize(): WindowSize
+#### windowSize(): WindowSize
 
 `窗口尺寸`
 
@@ -188,7 +188,7 @@ windowSize(); //
 
 ## debounce/throttle
 
-##### debounce
+#### debounce
 
 `函数防抖`
 
@@ -207,7 +207,7 @@ debounce(()=> {
 }});
 ```
 
-##### throttle
+#### throttle
 
 `函数节流`
 

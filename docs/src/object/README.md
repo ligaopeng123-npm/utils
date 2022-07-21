@@ -2,7 +2,7 @@
 
 ## clone
 
-##### clone: <T>(val: T): T
+#### clone: <T>(val: T): T
 
 `将对象或者数组clone一份，解除引用`
 
@@ -10,7 +10,7 @@
 clone({});
 ```
 
-##### cloneAllObject: <T>(val: T): T
+#### cloneAllObject: <T>(val: T): T
 
 `clone所有对象的属性`
 
@@ -18,7 +18,7 @@ clone({});
 cloneAllObject({});
 ```
 
-##### cloneAllArray: <T>(val: T): T
+#### cloneAllArray: <T>(val: T): T
 
 `clone所有的数组属性`
 
@@ -26,7 +26,7 @@ cloneAllObject({});
 cloneAllArray([]);
 ```
 
-##### cloneAllItem: <T>(val: T): T
+#### cloneAllItem: <T>(val: T): T
 
 `clone所有`
 
@@ -35,7 +35,7 @@ cloneAllItem({});
 ```
 
 ## assign
-##### assignIfByOrder
+#### assignIfByOrder
 `(order:AssignIfOrder,target: any, ...source: any):any`
 `对象属性的copy，如果order返回true则赋值`
 ```typescript
@@ -43,14 +43,14 @@ cloneAllItem({});
 assignIfByOrder((v)=> v!==null, {a:1}, {b: null});// {a:1}
 ```
 
-##### assignIf:(target: any, ...source: any): any
+#### assignIf:(target: any, ...source: any): any
 
 `对象属性的浅赋值，如果目标对象的属性为undefined null,则复制source属性`
 
 ```typescript
 assignIf({a: 1}, {a:2, b: 1}); // {a:1,b:1}
 ```
-##### assignDeep:(target: any, source: any): any
+#### assignDeep:(target: any, source: any): any
 
 `对象属性的深度合并（非覆盖），数组默认为直接被source属性覆盖。`
 
@@ -58,7 +58,7 @@ assignIf({a: 1}, {a:2, b: 1}); // {a:1,b:1}
 assignDeep({a: 1}, {a: [1], b: 2}); // {a: [1], b: 2}   
 ```
 
-##### assignDeepMergeArray:(target: any, source: any): any
+#### assignDeepMergeArray:(target: any, source: any): any
 
 `对象属性的深度合并（非覆盖），数组通过concat拼接。`
 
@@ -67,7 +67,7 @@ assignDeepMergeArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1});
 // {a: [1, 2, 3, 4, 5, 6], b: 1}    
 ```
 
-##### assignDeepNotIncludedArray:(target: any, source: any): any
+#### assignDeepNotIncludedArray:(target: any, source: any): any
 
 `对象属性的深度合并（非覆盖），数组通过concat拼接。`
 
@@ -78,7 +78,7 @@ assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1});
 
 ## dom
 
-##### mousePosition:(event: any): {x:number,y:number}
+#### mousePosition:(event: any): {x:number,y:number}
 
 `根据event 获取鼠标位置`
 
@@ -86,7 +86,7 @@ assignDeepNotIncludedArray({a: [1, 2, 3]}, {a: [4, 5, 6], b: 1});
 mousePosition(event)
 ```
 
-##### getStyle: (el, styleName)
+#### getStyle: (el, styleName)
 
 `获取el的某个样式属性`
 
@@ -94,7 +94,7 @@ mousePosition(event)
 getStyle(div, 'color');
 ```
 
-##### parentByExpected: (dom, expected): parent
+#### parentByExpected: (dom, expected): parent
 
 `获取复合逾期的父级dom`
 
@@ -104,7 +104,7 @@ parentByExpected(dom, (currntDom)=> {
 })
 ```
 
-##### copyText: (dom)
+#### copyText: (dom)
 
 `点击后复制文本`
 
@@ -112,7 +112,7 @@ parentByExpected(dom, (currntDom)=> {
 <div onClick="copyText"></div>
 ```
 
-##### isVisibleInViewport
+#### isVisibleInViewport
 
 `元素是否在可视范围内`
 
@@ -122,7 +122,7 @@ isVisibleInViewport(el: Element, partiallyVisible = true):boolean;
 isVisibleInViewport(document.body, false);
 ```
 
-##### observeViewport
+#### observeViewport
 
 `监听dom是否进入视口`
 
@@ -165,9 +165,21 @@ window.onload = () => {
 }
 ```
 
+#### getScrollPosition
+
+`获取当前dom的滚动条滚动位置`
+
+```typescript
+getScrollPosition(document.querySelector('#xxx')); // {x: number,y:number}
+```
+
+#### scrollToTop
+
+`将有滚动条的dom，滚动到最顶部`
+
 ## other
 
-##### length:(val: any): number
+#### length:(val: any): number
 
 `获取对象的length`
 
@@ -175,7 +187,7 @@ window.onload = () => {
 length({a:1}); // 1
 ```
 
-##### mapObject: (obj, callBack: ObjectCallBack) => any;
+#### mapObject: (obj, callBack: ObjectCallBack) => any;
 
 `模拟数组的map操作`
 
@@ -205,7 +217,7 @@ mapObject(mapObject.assign({}, object1), (item)=> {
 }
 ```
 
-##### filterObject: (obj, callBack: FilterObjectCallBack) => any;
+#### filterObject: (obj, callBack: FilterObjectCallBack) => any;
 
 `模拟数组的filter操作`
 
@@ -221,7 +233,7 @@ filterObject(Object.assign({}, object1), (item)=> {
 }
 ```
 
-##### forEachObject: (obj, callBack: ObjectCallBack) => any;
+#### forEachObject: (obj, callBack: ObjectCallBack) => any;
 
 `模拟数组的forEach操作`
 
@@ -239,3 +251,11 @@ forEachObject(Object.assign({}, object1), (item)=> {
 }
 ```
 
+## clearEmpty: <T>(val: T): T
+
+`清除object中的空值键值对, 比如可以用来处理请求参数`
+
+```typescript
+const query = {name: '', type: null, page: 1}
+const clearedQuery = clearEmpty(query) // {page: 1}
+```
