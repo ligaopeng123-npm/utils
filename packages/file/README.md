@@ -44,7 +44,25 @@ makeParamsProper({a: null, b: undefined, c: '', d: [], e: 0, f: '   b d  f  ',})
 `解析url中包含的参数`
 
 ```typescript
-queryParamsFromUrl('https:/www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'xxx'}
+queryParamsFromUrl('https://www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'xxx'}
+```
+
+##### domainNameFromUri
+
+`重uri中获取域名`
+
+```typescript
+domainNameFromUri('https://www.baidu.com/getBaseInfo?userId=xxx'); // https://www.baidu.com
+domainNameFromUri('www.baidu.com/getBaseInfo?userId=xxx'); // www.baidu.com
+```
+
+##### routeFromUri
+
+`重uri中获取路由地址`
+
+```typescript
+routeFromUri('https://www.baidu.com/getBaseInfo?userId=xxx'); // /getBaseInfo
+routeFromUri('https://www.baidu.com/#/getBaseInfo?userId=xxx'); // /getBaseInfo
 ```
 
 ## download

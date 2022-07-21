@@ -14,7 +14,7 @@ export {injectScript, injectScripts, injectCSS} from "./inject";
 
 export {urlJoinParmas} from './download';
 export {removeUrlParams} from './download';
-export {routeFromUri} from './download';
+export {routeFromUri, domainNameFromUri} from './download';
 // 删除参数中的空数据
 export {removeEmptyParams} from './download';
 // 处理参数 使参数更合适下发给后端

@@ -11,6 +11,7 @@
  **********************************************************************/
 import {isElement, isEmpty, isObject, isString, isUndefined} from "@gaopeng123/utils.types";
 import {mapObject, filterObject} from "@gaopeng123/utils.object";
+
 /**
  * @params  需要拼接的参数
  *  拼接url地址参数
@@ -222,9 +223,19 @@ export const makeParamsProper = (params: any) => {
 };
 
 /**
+ * 从URI中获取域名或者ip地址
+ * @param uri
+ */
+export const domainNameFromUri = (uri: string): string => {
+    const urlArr = uri.split('/');
+    return urlArr[0].includes('http') ? `${urlArr[0]}//${urlArr[2]}` : urlArr[0];
+};
+
+/**
  * 从uri中过滤出路由地址
  * @param uri
  */
 export const routeFromUri = (uri: string): string => {
-    return `/${uri?.split('/')?.splice(3)?.join('/')}`;
+    const uriArr = uri?.split('?');
+    return uriArr[0].replace(domainNameFromUri(uriArr[0]), '')?.replace('/#', '');
 };
