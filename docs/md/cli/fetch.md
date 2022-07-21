@@ -1,6 +1,8 @@
+## 介绍
+
+`fetch函数封装，提供更便捷的使用方式`
+
 ## Usage
-
-
 
 ```typescript
 import {register} from '@gaopeng123/fetch';
@@ -61,38 +63,82 @@ headers?: {
 
 ## function
 
-#### get
+### createFetch
+
+`创建带有拦截器及响应数据处理的fetch函数`
+
+```typescript
+createFetch(url:string, option: Option):Promise<any>;
+```
+
+### get
 
 ```typescript
 get(url:string, option: Option):Promise<any>;
 ```
 
-#### post
+### post
 
 ```typescript
 post(url:string, option: Option):Promise<any>;
 ```
 
-#### put
+### put
 
 ```typescript
 put(url:string, option: Option):Promise<any>;
 ```
 
-#### del
+### del
 
 ```typescript
 del(url:string, option: Option):Promise<any>;
 ```
 
-#### errorCode
+### patch
+
+```typescript
+patch(url:string, option: Option):Promise<any>;
+```
+
+### downLoadFile
+
+`文件流下载`
+
+```typescript
+downLoadFile(url:string, option: Option):Promise<{ progress: string }> | any;
+// 1 跟服务端有参数下发
+downLoadFile("/api", {body: {}}).then((res)=>{
+    if(res.progress){
+       // 开始下载 如果有状态 此处可以清除状态
+    }
+});
+// 2 根据服务端数据类型来判断是否有文件可以下载
+downLoadFile("/api", {body: {}}).then((res)=>{
+    if(!res.progress){
+       // 服务端响应内容 下载内容失败 此��可处理一些逻辑
+    }
+});
+```
+
+### uploadFormData
+
+`表单上传`
+
+```typescript
+uploadFormData('api', {body: formData}).then(()=> {
+    
+})
+```
+
+### errorCode
 
 ```typescript
 // 根据错误状态吗 返回错误信息
 errorCode(code:number):string; 
 ```
 
-#### register
+### register
 
 `注入拦截器`
 
@@ -100,7 +146,7 @@ errorCode(code:number):string;
 (intercept: Intercept): Unregister;
 ```
 
-#### Intercept 
+### Intercept 
 
 `拦截器属性`
 
