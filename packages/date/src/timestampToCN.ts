@@ -68,7 +68,10 @@ export const timestampToCN = (timestamp: Date | number | string, type: TimeType 
 
         }
     });
-    const {dd, HH, mm, ss} = values;
+    let {dd, HH, mm, ss} = values;
+    HH = type?.includes('d') ? HH : (dd || 0) * 24 + HH;
+    mm = type?.includes('H') ? mm : (HH || 0) * 60 + mm;
+    ss = type?.includes('m') ? ss : (mm || 0) * 60 + ss;
     return type.replace(/dd/, dd ? setTimeFillZero(dd) : '')
         .replace(/d/, dd)
         .replace(/HH/, HH ? setTimeFillZero(HH) : '')
