@@ -45,13 +45,13 @@ export {
 export {
     uuid, formatStr,
     // 字符串截断
-    ellipsps, strWidth,
+    ellipsps, ellipsis, strWidth,
     // 提取被字符包裹住的内容
     extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
     // 常用正则校验
     PHONE_NUMBER_STR, PHONE_NUMBER, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4,
     // 颜色处理
-    addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb,
+    addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb, RTF2str, RTF_TAG,
     // url路径拼接
     pathJoin,
     // 驼峰转换

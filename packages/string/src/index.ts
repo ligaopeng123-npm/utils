@@ -13,7 +13,7 @@
 export type {FormatStrFn} from './format';
 export {default as formatStr} from './format';
 
-export {default as ellipsps} from './ellipsps';
+export {default as ellipsps, default as ellipsis} from './ellipsps';
 export {strWidth} from './ellipsps';
 
 
@@ -28,7 +28,7 @@ export {extractParenthesesContent} from './regexp';
 export {extractMiddleParenthesesContent} from './regexp';
 export {extractBigParenthesesContent} from './regexp';
 // 常用正则校验
-export {PHONE_NUMBER_STR, PHONE_NUMBER, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4} from './regexp';
+export {PHONE_NUMBER_STR, PHONE_NUMBER, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4, RTF2str, RTF_TAG} from './regexp';
 /**
  * 颜色处理
  */

@@ -68,3 +68,17 @@ export const PHONE_NUMBER_STR = '^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14
 export const PHONE_NUMBER = new RegExp(PHONE_NUMBER_STR);
 
 export default extractEnclosedContent;
+// 富文本标签
+export const RTF_TAG = /<\/?[a-zA-Z]+.*?>/g;
+// 左边箭头
+const lt = /&lt;/g;
+// 右边箭头
+const gt = /&gt;/g;
+/**
+ * 富文本标签转字符串
+ * @param rtf
+ * @constructor
+ */
+export const RTF2str = (rtf: string)=> {
+    return rtf?.replace(RTF_TAG, '')?.replace(lt, '<')?.replace(gt, '<')
+}
