@@ -52,16 +52,16 @@
 
 .sidebar-nav > ul > li > ul > li.active {
     position: relative;
-    background-color: rgba(230, 247, 255, 0.4);
+    /*background-color: rgba(230, 247, 255, 0.4);*/
     display: block;
-    box-shadow: var(--main-sidebar-box-shadow);
+    /*box-shadow: var(--main-sidebar-box-shadow);*/
 }
 
 .sidebar-nav > ul > li > ul > li > a:active {
     position: relative;
-    background-color: rgba(230, 247, 255, 0.4);
+    /*background-color: rgba(230, 247, 255, 0.4);*/
     display: block;
-    box-shadow: var(--main-sidebar-box-shadow);
+    /*box-shadow: var(--main-sidebar-box-shadow);*/
 }
 
 .app-sub-sidebar::before {
@@ -99,6 +99,12 @@
     background-color: var(--background);
     display: block;
     box-shadow: inset -8px -4px 0px -4px var(--main-sidebar-box-shadow-color);
+}
+
+.sidebar ul li.parent-active>a {
+    border-right: 2px solid;
+    color: var(--accent);
+    font-weight: 600;
 }
 
 /*表格样式*/
