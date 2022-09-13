@@ -35,14 +35,29 @@ or yarn add @gaopeng123/hooks
 ## Usage
 
 * [useScale](./src/useScale/README.md)：监听窗口变化，动态缩放当前dom。
+
+* [useZoom](./src/useZoom/README.md)：监听窗口变化，动态调整zoom大小。
+
 * [useResize](./src/useResize/README.md)：监听窗口变化，返回窗口尺寸。
+
 * [useMergeValue](./src/useMergeValue/README.md)：解决npm因peerDependencies导致安装失败问题。
+
 * [useEasing](./src/useEasing/README.md)：缓动函数。
+
 * [useClock](./src/useClock/README.md)：时钟器。
+
 * [usePoller](./src/usePoller/README.md)：轮询器,包括同步轮询，异步轮询。
+
 * [useFetch](./src/useFetch/README.md)：请求函数
+
 * [useWorker](./src/useWorker/README.md)：Web Worker使用
+
 * [useDebounce](./src/useDebounce/README.md)：去抖
+
 * [useThrottle](./src/useThrottle/README.md)：节流
+
+* [usePagination](./src/usePagination/README.md)：分页器
+
+  
 
 
