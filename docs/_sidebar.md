@@ -11,6 +11,7 @@
 - hooks
     - [介绍](md/hooks/index.md)
     - [useScale](md/hooks/useScale.md)
+    - [useZoom](md/hooks/useZoom.md)
     - [useResize](md/hooks/useResize.md)
     - [useMergeValue](md/hooks/useMergeValue.md)
     - [useEasing](md/hooks/useEasing.md)
@@ -20,6 +21,8 @@
     - [useWorker](md/hooks/useWorker.md)
     - [useDebounce](md/hooks/useDebounce.md)
     - [useThrottle](md/hooks/useThrottle.md)
+    - [usePagination](md/hooks/usePagination.md)
+    - [useVisibility](md/hooks/useVisibility.md)
 - Web Components
     - [介绍](md/components/index.md)
     - [login-module](md/components/login-module.md)
