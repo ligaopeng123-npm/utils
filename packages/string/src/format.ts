@@ -17,16 +17,34 @@
  */
 export type FormatStrFn = (...args: any) => string;
 const formatStr = (str: string): FormatStrFn => {
-	return (...args: any) => {
-		let result = str;
-		for (let i = 0; i < args.length; i++) {
-			if (args[i] != undefined) {
-				const reg = new RegExp('({)' + i + '(})', 'g');
-				result = result.replace(reg, args[i]);
-			}
-		}
-		return result;
-	}
+    return (...args: any) => {
+        let result = str;
+        for (let i = 0; i < args.length; i++) {
+            if (args[i] != undefined) {
+                const reg = new RegExp('({)' + i + '(})', 'g');
+                result = result.replace(reg, args[i]);
+            }
+        }
+        return result;
+    }
 };
+
+/**
+ * 字符串转大小写
+ * @param str
+ * @param type 0-首字母大写 1-全大写 2-全小写
+ */
+export const toCase = (str: string, type: 1 | 2 | 0 = 0) => {
+    switch (type) {
+        case 1:
+            return str.toUpperCase()
+        case 2:
+            return str.toLowerCase()
+        case 0:
+            return str[0].toUpperCase() + str.substring(1).toLowerCase()
+        default:
+            return str
+    }
+}
 
 export default formatStr;

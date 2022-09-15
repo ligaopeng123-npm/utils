@@ -2,7 +2,7 @@
 
 ## array
 
-##### convertToTwodimensional 
+#### convertToTwodimensional 
 
 ``(arr: Array<any>, len: number): Array<Array<any>>``
 
@@ -12,7 +12,7 @@
 convertToTwodimensional([], 1);
 ```
 
-##### pageTurnerFixedLength
+#### pageTurnerFixedLength
 
 `(arr: any[], len = 5): [NextAndPreviousType, NextAndPreviousFn, NextAndPreviousFn]`
 
@@ -81,6 +81,52 @@ expect(list2tree({
   list: listData, 
   options: {idKey: 'id', pidKey: 'pid', childrenKey: 'children'}
 })).toStrictEqual(listTreeData);
+```
+
+#### arr2enumBase:(arr: any[], callBack: (item: any) => Arr2enumValue)
+
+`数组迭代函数，用于转换成枚举对象`
+
+#### arr2enum: (arr: object[], keyProp?: string, labelPro?: string): object
+
+`数组转换成基于object形式的枚举, 比如可以用于生成antd procomponents里的selectEnum`
+
+```typescript
+const res = await loadOptions()
+const optionEnum = arr2enum(res.data, 'deviceId', 'deviceName')
+```
+
+#### arr2AntdTableEnum
+
+`Antd Table组件的枚举，返回的枚举用在table表格上`
+
+#### enum2arrBase:(val: Arr2enumValue, callBack: (key: string, item: any, rows: Arr2enumValue)
+
+`将枚举类型数据转成数组，迭代枚举类型数据`
+
+#### enum2arr:(val: any): Array<Enum2arrValue>
+
+`枚举转换成数组`
+
+```typescript
+type Enum2arrValue = {
+    label: any;
+    value: string;
+}
+```
+
+#### uniqueArrByKey:<T>(arr: Array<T>, key: string): Array<T>
+
+`数组对象去重`
+
+
+
+#### binarySearch: (arr: any[], compare: (element: any) => number, start?: number, end?: number): index
+
+`二分查找法获取有序数组的匹配元素下标, 失败返回-1, compare函数返回0则匹配成功, 大于0表示往左继续匹配, 小于0表示往右继续匹配`
+
+```typescript
+binarySearch(arr, e => e[0] - 3333)
 ```
 
 ## tree
@@ -193,19 +239,3 @@ const treeData2 = [{
 }];
 ```
 
-## arr2enum: (arr: object[], keyProp?: string, labelPro?: string): object
-
-`数组转换成基于object形式的枚举, 比如可以用于生成antd procomponents里的selectEnum`
-
-```typescript
-const res = await loadOptions()
-const optionEnum = arr2enum(res.data, 'deviceId', 'deviceName')
-```
-
-## binarySearch: (arr: any[], compare: (element: any) => number, start?: number, end?: number): index
-
-`二分查找法获取有序数组的匹配元素下标, 失败返回-1, compare函数返回0则匹配成功, 大于0表示往左继续匹配, 小于0表示往右继续匹配`
-
-```typescript
-binarySearch(arr, e => e[0] - 3333)
-```

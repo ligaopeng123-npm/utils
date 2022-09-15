@@ -31,25 +31,28 @@ export {
     obj2css, css2obj, makeCssText,
 } from "@gaopeng123/utils.file";
 
-export type {DownloadStreamParams, DownloadParams} from "@gaopeng123/utils.file";
+export type { DownloadStreamParams, DownloadParams } from "@gaopeng123/utils.file";
 
 /****************************  数组操作函数    *****************************/
 export {
     // 数组截断转二维数组       分页器                  array 转 tree
     convertToTwodimensional, pageTurnerFixedLength, list2tree,
+    // 数组和枚举的转换
+    arr2enum, arr2enumBase, arr2AntdTableEnum, enum2arr, enum2arrBase,
+    uniqueArrByKey, binarySearch,
     // 树的查询
     findTreeOrder, findSubtreeByOrder, traverseTree, mapTree
 } from "@gaopeng123/utils.array";
 
 /****************************  字符串 数字操作    *****************************/
 export {
-    uuid, formatStr,
+    uuid, formatStr, toCase,
     // 字符串截断
     ellipsps, ellipsis, strWidth,
     // 提取被字符包裹住的内容
     extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
     // 常用正则校验
-    PHONE_NUMBER_STR, PHONE_NUMBER, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4,
+    PHONE_NUMBER_STR, PHONE_NUMBER, maskMobile, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4,
     // 颜色处理
     addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb, RTF2str, RTF_TAG,
     // url路径拼接
@@ -103,7 +106,7 @@ export {
     currentDayEarliest, currentDayLatest,
 } from "@gaopeng123/utils.date";
 
-export type {TimestampType, TimeRange, TimeRangeType} from "@gaopeng123/utils.date";
+export type { TimestampType, TimeRange, TimeRangeType } from "@gaopeng123/utils.date";
 
 /****************************  number操作    *****************************/
 export {

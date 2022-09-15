@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isArray, isNumber} from "@gaopeng123/utils.types";
+import { isArray, isNumber } from "@gaopeng123/utils.types";
 
 /**
  * 将一维数组转换二维数组
@@ -39,7 +39,9 @@ export const pageTurnerFixedLength = (arr: any[], len = 5): [NextAndPreviousType
     const fn: any = (pageIndex = 1) => {
         const currentList = arr.slice((pageIndex - 1) * len, len * pageIndex);
         if (currentList.length === len) return currentList;
-        currentPages = arr.slice(arr.length - len, arr.length);
+        const beginLen = arr.length - len;
+        // 避免起始值小于0
+        currentPages = arr.slice(beginLen < 0 ? 0 : beginLen, arr.length);
         return currentPages;
     }
     /**

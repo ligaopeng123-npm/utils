@@ -9,8 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isSafari, isString} from "@gaopeng123/utils.types";
-import {partial} from "@gaopeng123/utils.function";
+import { isSafari, isString } from "@gaopeng123/utils.types";
+import { partial } from "@gaopeng123/utils.function";
 
 const RegExpCharacters = ['$', '(', ')', '*', '+', '.', '[', ']', '?', '\\', '^', '{', '}', '|'];
 
@@ -79,6 +79,13 @@ const gt = /&gt;/g;
  * @param rtf
  * @constructor
  */
-export const RTF2str = (rtf: string)=> {
+export const RTF2str = (rtf: string) => {
     return rtf?.replace(RTF_TAG, '')?.replace(lt, '<')?.replace(gt, '<')
+}
+/**
+ * 手机号脱敏
+ * @param mobile
+ */
+export const maskMobile = (mobile: string) => {
+    return mobile.replace(/^(\d{3})\d{4}(\d{4})$/, "$1****$2");
 }
