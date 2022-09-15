@@ -16,9 +16,7 @@ rtc ls
 
 ## 模板支持
 
-### 框架
-
-#### react-sample
+## react-sample
 
 ### 技术栈
 
@@ -29,31 +27,70 @@ rtc ls
 
 ### 目录文件
 
-public/json/menus.json: 定义路由模块相关
+#### public/json/menus.json: 定义路由模块相关
 
-```typescript
+```json
 {
     "id": 53,
-     "name": "系统配置",
-     "path": "/system/config",
-     "component": "/system/config", // pages/system/config均可 pages前不能加 '/' 
-     "auth": null
+    "name": "系统配置",
+    "mName": "系统配置", // 移动端展示菜单名称 不填默认取name
+    "path": "/system/config",
+    "component": "/system/config", // pages/system/config均可 pages前不能加 '/' 
+    "mComponent": "/system/config", // 移动端组件路径 不填默认取component
+    "auth": null,
+    "icon": "" // 菜单前图标 请放https://www.iconfont.cn/上 从iconfont上获取  
 }
 ```
 
-public/json/OEM.json: 定义OEM相关
+#### public/json/OEM.json: 定义OEM相关
 
-src/pages：业务代码放在该目录下，路由规则会基于该目录匹配。
+```json
+"data": {
+    "loginName": "某某管理系统",
+    "loginLogo": "./logo.svg",
+    "loginDesc": "登录页产品描述",
+    "menusLogo": "./logo.svg",
+    "menusName": "某某管理系统",
+    "copyright": "2022 某某有限公司",
+    "links": [
+        {
+            "key": "ICP",
+            "title": "京ICP备xxxx号-1",
+            "href": "https://beian.miit.gov.cn/",
+            "blankTarget": true
+        },
+        {
+            "key": "gongan",
+            "title": "京公网安备 xxxx号",
+            "image": "./assets/gongan.png",
+            "href": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=xxxx",
+            "blankTarget": true
+        }
+    ]
+}
+```
 
-src/headersJS：在header中引入的外部js文件
+#### env文件
 
-src/httpClient/intercept：定义拦截器
+```shell
+# 开发环境 根据该配置启动和编译不同版本
+REACT_APP_ENV=dev
+REACT_APP_SERVICE=mock
+# 部署路径
+REACT_APP_PUBLICPATH=''
+# 终端设备  auto pc mobile
+REACT_APP_TERMINAL=auto
+```
 
-src/defaultSettings：定义布局相关
+#### src/pages：业务代码放在该目录下，路由规则会基于该目录匹配。
 
-### 细节
+#### src/headersJS：在header中引入的外部js文件
 
-#### 静态资源
+#### src/httpClient/intercept：定义拦截器
+
+#### src/defaultSettings：定义布局相关
+
+### 静态资源
 
 ##### public：tsx中直接使用 /img/*.png；在样式中需要放到src目录下进行编译。
 
@@ -63,15 +100,13 @@ body {
 }
 ```
 
-#### 部署
+### 部署
 
 默认使用docker部署，如果使用static方式部署，需要修改REACT_APP_PUBLICPATH变量
 
+## react-electron
 
-
-#### react-electron
-
-## 介绍
+### 介绍
 
 Electron16+
 
@@ -83,7 +118,7 @@ electron-builder 打包
 
 webpack5+  编译
 
-## Install
+### Install
 
 ```bash
 git clone --depth 1 --branch react-electron-template https://github.com/ligaopeng123/react-project-template.git your-project-name
@@ -96,7 +131,7 @@ npm install
 
 [^注意]: 如果需要添加新的依赖包，请确认该包的使用环境，如果是node-gyp之类的原生模块，或者ffpmeg之类的第三方程序，请在release目录下得app环境安装依赖，electron-builder会将这些依赖打到程序包里。
 
-## 开发环境
+### 开发环境
 
 无需编译的静态资源 统一放到根目录下得assets下
 
@@ -106,14 +141,13 @@ npm install
 npm start 
 ```
 
-## build
+### build
 
 ```bash
 npm run package
 ```
 
-
-#### react-screen
+## react-screen
 
 ### 技术栈
 
@@ -138,12 +172,10 @@ src/httpClient/intercept：定义拦截器
 
 src/defaultSettings：定义布局相关
 
+## table
 
 ### 模块
 
-#### table
-
-404: Not Found
 
 ## 插件依赖
 

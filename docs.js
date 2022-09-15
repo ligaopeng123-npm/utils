@@ -31,4 +31,4 @@ const timmer = setInterval(() => {
     if (time > 100) {
         clearInterval(timmer);
     }
-}, 5000)
+}, 60000)
