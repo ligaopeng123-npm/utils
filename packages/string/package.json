@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.string",
     "author": "ligaopeng123",
-    "version": "0.5.2",
+    "version": "0.5.5",
     "description": "字符串方法",
     "license": "MIT",
     "main": "dist/index.js",
