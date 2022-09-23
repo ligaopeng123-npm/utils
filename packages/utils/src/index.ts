@@ -34,6 +34,10 @@ export {
 export type { DownloadStreamParams, DownloadParams } from "@gaopeng123/utils.file";
 
 /****************************  数组操作函数    *****************************/
+export type {
+    TreeOptions, TraverseTreeProps, TreeNode, RelyFn, TraverseTreeCallBack, FilterTreeOptions, FilterFn
+} from "@gaopeng123/utils.array";
+
 export {
     // 数组截断转二维数组       分页器                  array 转 tree
     convertToTwodimensional, pageTurnerFixedLength, list2tree,
@@ -41,7 +45,7 @@ export {
     arr2enum, arr2enumBase, arr2AntdTableEnum, enum2arr, enum2arrBase,
     uniqueArrByKey, binarySearch,
     // 树的查询
-    findTreeOrder, findSubtreeByOrder, traverseTree, mapTree
+    findTreeOrder, findSubtreeByOrder, traverseTree, mapTree, filterTree
 } from "@gaopeng123/utils.array";
 
 /****************************  字符串 数字操作    *****************************/

@@ -10,7 +10,7 @@
  *
  ********************************************************************* */
 
- export const defaultOptions = {
+export const defaultOptions = {
     childrenKey: 'children',
     idKey: 'id',
     pidKey: 'pid',
@@ -18,10 +18,14 @@
 
 export type RelyFn = (itemTree: any) => boolean;
 export type TreeOptions = {
-    childrenKey: string;
+    childrenKey?: string;
     idKey?: string | number; // 当前唯一标识
     pidKey?: string | number; // 父级id
 }
+
+export type FilterTreeOptions = {
+    deep?: boolean; // 如果父节点命中 是否将子节点返回 默认false不返回
+} & TreeOptions;
 
 export type TreeNode = {
     __path?: string; // 保存当前路径
@@ -39,3 +43,4 @@ export type TraverseTreeProps = {
 }
 
 export type TraverseTreeCallBack = (v: TreeNode) => TreeNode;
+export type FilterFn = (v: TreeNode) => boolean;

@@ -131,15 +131,17 @@ binarySearch(arr, e => e[0] - 3333)
 
 ## tree
 
-##### findTreeOrder
+#### findTreeOrder
 
 `(tree: Array<any>, rely: RelyFn, options?: TreeOptions): Array<number>`
 
 `根据rely返回的条件，查找树的位置`
 
 ```typescript
-type TreeOptions = {
-	childrenKey: string;
+export type TreeOptions = {
+    childrenKey?: string;
+    idKey?: string | number; // 当前唯一标识
+    pidKey?: string | number; // 父级id
 }
 const treeData = [{
 	id: 1,
@@ -183,7 +185,7 @@ findTreeOrder(treeData, (item) => {
 		});  // [0, 0, 0]
 ```
 
-##### findSubtreeByOrder
+#### findSubtreeByOrder
 
 `(tree: any, order: Array<number>, options?: TreeOptions): TreeNode`
 
@@ -193,7 +195,7 @@ findTreeOrder(treeData, (item) => {
 findSubtreeByOrder(treeData, [1, 2]); // {id: 6}
 ```
 
-##### mapTree
+#### mapTree
 
 `(tree: any[], callBack: TraverseTreeCallBack, options?: TreeOptions):TreeNode`
 
@@ -237,5 +239,168 @@ const treeData2 = [{
 		id: 7
 	}]
 }];
+```
+
+#### filterTree
+
+`(treeData: Array<TreeNode>, filterFn: FilterFn, options?: FilterTreeOptions): Array<TreeNode>`
+
+`根据判断条件过滤树`
+
+```typescript
+export type FilterTreeOptions = {
+    deep?: boolean; // 如果父节点命中 是否将子节点返回 默认false不返回
+} & TreeOptions;
+
+export const filterTreeData = [{
+    id: 1,
+    children: [{
+        id: 11,
+        children: [{
+            id: 7,
+            children: [{
+                id: 99
+            }]
+        }]
+    }, {
+        id: 11
+    }, {
+        id: 7
+    }]
+}, {
+    id: 2,
+    children: [{
+        id: 11,
+    }, {
+        id: 11
+    }, {
+        id: 6
+    }]
+}, {
+    id: 3,
+}, {
+    id: 4,
+}, {
+    id: 5,
+    children: [{
+        id: 6,
+        children: [{
+            id: 7,
+        }, {
+            id: 8,
+        }]
+    }]
+}];
+
+export const filterTreeValue1 = [
+    {
+        "id": 1,
+        "children": [
+            {
+                "id": 11,
+                "children": [
+                    {
+                        "id": 7,
+                        // @ts-ignore
+                        "children": [],
+                        "__path": "0-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "0-0",
+                "__isMatch": true
+            },
+            {
+                "id": 7,
+                "__path": "0-2",
+                "__isMatch": true
+            }
+        ],
+        "__path": "0",
+        "__isMatch": true
+    },
+    {
+        "id": 5,
+        "children": [
+            {
+                "id": 6,
+                "children": [
+                    {
+                        "id": 7,
+                        "__path": "4-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "4-0",
+                "__isMatch": true
+            }
+        ],
+        "__path": "4",
+        "__isMatch": true
+    }
+]
+
+
+export const filterTreeValue2 = [
+    {
+        "id": 1,
+        "children": [
+            {
+                "id": 11,
+                "children": [
+                    {
+                        "id": 7,
+                        "children": [
+                            {
+                                "id": 99,
+                                "__path": "0-0-0-0",
+                                "__isMatch": false
+                            }
+                        ],
+                        "__path": "0-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "0-0",
+                "__isMatch": true
+            },
+            {
+                "id": 7,
+                "__path": "0-2",
+                "__isMatch": true
+            }
+        ],
+        "__path": "0",
+        "__isMatch": true
+    },
+    {
+        "id": 5,
+        "children": [
+            {
+                "id": 6,
+                "children": [
+                    {
+                        "id": 7,
+                        "__path": "4-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "4-0",
+                "__isMatch": true
+            }
+        ],
+        "__path": "4",
+        "__isMatch": true
+    }
+];
+
+expect(filterTree(filterTreeData, (item) => {
+    return item.id === 7;
+})).toStrictEqual(filterTreeValue1);
+
+
+ expect(filterTree(filterTreeData, (item) => {
+     return item.id === 7;
+ }, {deep: true})).toStrictEqual(filterTreeValue2);
 ```
 

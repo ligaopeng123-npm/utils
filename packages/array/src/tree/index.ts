@@ -9,13 +9,16 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-export {mapTree} from './mapTree';
-export {findSubtreeByOrder} from './findSubtreeByOrder';
-export {findTreeOrder} from './findTreeOrder';
-export {traverseTree} from './traverseTree';
-export {list2tree} from './list2tree'
+export { mapTree } from './mapTree';
+export { findSubtreeByOrder } from './findSubtreeByOrder';
+export { findTreeOrder } from './findTreeOrder';
+export { traverseTree } from './traverseTree';
+export { list2tree } from './list2tree'
+export { default as filterTree } from "./filterTree";
 
-export type {TreeOptions, TraverseTreeProps, TreeNode, RelyFn, TraverseTreeCallBack} from './typing'
+export type {
+    TreeOptions, TraverseTreeProps, TreeNode, RelyFn, TraverseTreeCallBack, FilterTreeOptions, FilterFn
+} from './typing';
 
 
 
