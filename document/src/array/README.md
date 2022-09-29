@@ -2,7 +2,7 @@
 
 ## array
 
-##### convertToTwodimensional 
+#### convertToTwodimensional 
 
 ``(arr: Array<any>, len: number): Array<Array<any>>``
 
@@ -12,7 +12,7 @@
 convertToTwodimensional([], 1);
 ```
 
-##### pageTurnerFixedLength
+#### pageTurnerFixedLength
 
 `(arr: any[], len = 5): [NextAndPreviousType, NextAndPreviousFn, NextAndPreviousFn]`
 
@@ -83,17 +83,65 @@ expect(list2tree({
 })).toStrictEqual(listTreeData);
 ```
 
+#### arr2enumBase:(arr: any[], callBack: (item: any) => Arr2enumValue)
+
+`数组迭代函数，用于转换成枚举对象`
+
+#### arr2enum: (arr: object[], keyProp?: string, labelPro?: string): object
+
+`数组转换成基于object形式的枚举, 比如可以用于生成antd procomponents里的selectEnum`
+
+```typescript
+const res = await loadOptions()
+const optionEnum = arr2enum(res.data, 'deviceId', 'deviceName')
+```
+
+#### arr2AntdTableEnum
+
+`Antd Table组件的枚举，返回的枚举用在table表格上`
+
+#### enum2arrBase:(val: Arr2enumValue, callBack: (key: string, item: any, rows: Arr2enumValue)
+
+`将枚举类型数据转成数组，迭代枚举类型数据`
+
+#### enum2arr:(val: any): Array<Enum2arrValue>
+
+`枚举转换成数组`
+
+```typescript
+type Enum2arrValue = {
+    label: any;
+    value: string;
+}
+```
+
+#### uniqueArrByKey:<T>(arr: Array<T>, key: string): Array<T>
+
+`数组对象去重`
+
+
+
+#### binarySearch: (arr: any[], compare: (element: any) => number, start?: number, end?: number): index
+
+`二分查找法获取有序数组的匹配元素下标, 失败返回-1, compare函数返回0则匹配成功, 大于0表示往左继续匹配, 小于0表示往右继续匹配`
+
+```typescript
+binarySearch(arr, e => e[0] - 3333)
+```
+
 ## tree
 
-##### findTreeOrder
+#### findTreeOrder
 
 `(tree: Array<any>, rely: RelyFn, options?: TreeOptions): Array<number>`
 
 `根据rely返回的条件，查找树的位置`
 
 ```typescript
-type TreeOptions = {
-	childrenKey: string;
+export type TreeOptions = {
+    childrenKey?: string;
+    idKey?: string | number; // 当前唯一标识
+    pidKey?: string | number; // 父级id
 }
 const treeData = [{
 	id: 1,
@@ -137,7 +185,7 @@ findTreeOrder(treeData, (item) => {
 		});  // [0, 0, 0]
 ```
 
-##### findSubtreeByOrder
+#### findSubtreeByOrder
 
 `(tree: any, order: Array<number>, options?: TreeOptions): TreeNode`
 
@@ -147,7 +195,7 @@ findTreeOrder(treeData, (item) => {
 findSubtreeByOrder(treeData, [1, 2]); // {id: 6}
 ```
 
-##### mapTree
+#### mapTree
 
 `(tree: any[], callBack: TraverseTreeCallBack, options?: TreeOptions):TreeNode`
 
@@ -193,19 +241,166 @@ const treeData2 = [{
 }];
 ```
 
-## arr2enum: (arr: object[], keyProp?: string, labelPro?: string): object
+#### filterTree
 
-`数组转换成基于object形式的枚举, 比如可以用于生成antd procomponents里的selectEnum`
+`(treeData: Array<TreeNode>, filterFn: FilterFn, options?: FilterTreeOptions): Array<TreeNode>`
 
-```typescript
-const res = await loadOptions()
-const optionEnum = arr2enum(res.data, 'deviceId', 'deviceName')
-```
-
-## binarySearch: (arr: any[], compare: (element: any) => number, start?: number, end?: number): index
-
-`二分查找法获取有序数组的匹配元素下标, 失败返回-1, compare函数返回0则匹配成功, 大于0表示往左继续匹配, 小于0表示往右继续匹配`
+`根据判断条件过滤树`
 
 ```typescript
-binarySearch(arr, e => e[0] - 3333)
+export type FilterTreeOptions = {
+    deep?: boolean; // 如果父节点命中 是否将子节点返回 默认false不返回
+} & TreeOptions;
+
+export const filterTreeData = [{
+    id: 1,
+    children: [{
+        id: 11,
+        children: [{
+            id: 7,
+            children: [{
+                id: 99
+            }]
+        }]
+    }, {
+        id: 11
+    }, {
+        id: 7
+    }]
+}, {
+    id: 2,
+    children: [{
+        id: 11,
+    }, {
+        id: 11
+    }, {
+        id: 6
+    }]
+}, {
+    id: 3,
+}, {
+    id: 4,
+}, {
+    id: 5,
+    children: [{
+        id: 6,
+        children: [{
+            id: 7,
+        }, {
+            id: 8,
+        }]
+    }]
+}];
+
+export const filterTreeValue1 = [
+    {
+        "id": 1,
+        "children": [
+            {
+                "id": 11,
+                "children": [
+                    {
+                        "id": 7,
+                        // @ts-ignore
+                        "children": [],
+                        "__path": "0-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "0-0",
+                "__isMatch": true
+            },
+            {
+                "id": 7,
+                "__path": "0-2",
+                "__isMatch": true
+            }
+        ],
+        "__path": "0",
+        "__isMatch": true
+    },
+    {
+        "id": 5,
+        "children": [
+            {
+                "id": 6,
+                "children": [
+                    {
+                        "id": 7,
+                        "__path": "4-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "4-0",
+                "__isMatch": true
+            }
+        ],
+        "__path": "4",
+        "__isMatch": true
+    }
+]
+
+
+export const filterTreeValue2 = [
+    {
+        "id": 1,
+        "children": [
+            {
+                "id": 11,
+                "children": [
+                    {
+                        "id": 7,
+                        "children": [
+                            {
+                                "id": 99,
+                                "__path": "0-0-0-0",
+                                "__isMatch": false
+                            }
+                        ],
+                        "__path": "0-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "0-0",
+                "__isMatch": true
+            },
+            {
+                "id": 7,
+                "__path": "0-2",
+                "__isMatch": true
+            }
+        ],
+        "__path": "0",
+        "__isMatch": true
+    },
+    {
+        "id": 5,
+        "children": [
+            {
+                "id": 6,
+                "children": [
+                    {
+                        "id": 7,
+                        "__path": "4-0-0",
+                        "__isMatch": true
+                    }
+                ],
+                "__path": "4-0",
+                "__isMatch": true
+            }
+        ],
+        "__path": "4",
+        "__isMatch": true
+    }
+];
+
+expect(filterTree(filterTreeData, (item) => {
+    return item.id === 7;
+})).toStrictEqual(filterTreeValue1);
+
+
+ expect(filterTree(filterTreeData, (item) => {
+     return item.id === 7;
+ }, {deep: true})).toStrictEqual(filterTreeValue2);
 ```
+

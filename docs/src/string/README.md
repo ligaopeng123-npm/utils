@@ -26,6 +26,21 @@ document.getElementById('utils-uuid2').innerText = `32位：` + uuid(32);
 formatStr('hello {o}, I like {1}')('china', 'you');
 ```
 
+##### toCase
+
+`字母大小写转换`
+
+```typescript
+/**
+ * 字符串转大小写
+ * @param str
+ * @param type 0-首字母大写 1-全大写 2-全小写
+ */
+console.log(toCase('name')); // Name
+console.log(toCase('name', 1)); // NAME
+console.log(toCase('name', 2)); //name
+```
+
 ##### ellipsps: (text: string, width: number = 100, size: number = 12, font: string = 'Arial'): string;
 
 `截取超长字符串...显示`
@@ -117,6 +132,14 @@ const IPV4_STR = '^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]
 ```typescript
 /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/
 const PHONE_NUMBER_STR = '^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$';
+```
+
+##### maskMobile
+
+`手机号脱敏`
+
+```()
+maskMobile('18511110000'); // 185****0000
 ```
 
 ### PASSWORD
