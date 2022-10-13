@@ -108,7 +108,7 @@ export const filterByMatch = (treeData: Array<TreeNode>, callBack: FilterFn, opt
  * @param options
  */
 export const filterTree = (treeData: Array<TreeNode>, filterFn: FilterFn, options?: FilterTreeOptions): Array<TreeNode> => {
-    if (isArray) {
+    if (isArray(treeData)) {
         const _options = Object.assign({}, defaultOptions, options);
         return filterByMatch(setMatch(JSON.parse(JSON.stringify(treeData)), filterFn, _options), filterFn, _options);
     } else {
