@@ -23,7 +23,7 @@ export type { UuidFn } from './uuid';
 /**
  * 提取被字符包裹中的内容
  */
-export { default as extractEnclosedContent } from './regexp';
+export { default as extractEnclosedContent, extractEnclosedContentByStrs } from './regexp';
 export { extractParenthesesContent } from './regexp';
 export { extractMiddleParenthesesContent } from './regexp';
 export { extractBigParenthesesContent } from './regexp';

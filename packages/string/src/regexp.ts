@@ -19,12 +19,12 @@ const RegExpCharacters = ['$', '(', ')', '*', '+', '.', '[', ']', '?', '\\', '^'
  * @param str
  * @param relyStr
  */
-export const extractEnclosedContentHelper = (str: string, startStr: string, endStr: string, arr: Array<string> = []): Array<string> => {
+export const extractEnclosedContentByStrs = (str: string, startStr: string, endStr: string, arr: Array<string> = []): Array<string> => {
     const startIndex = str.indexOf(startStr);
-    const endIndex = str.indexOf(endStr);
+    const endIndex = str.indexOf(endStr, startIndex + startStr.length);
     if (~startIndex && ~endIndex && endIndex > startIndex) {
         arr.push(str.substring(startIndex + startStr.length, endIndex));
-        return extractEnclosedContentHelper(str.substring(endIndex + endStr?.length), startStr, endStr, arr)
+        return extractEnclosedContentByStrs(str.substring(endIndex + endStr?.length), startStr, endStr, arr)
     } else {
         return arr;
     }
@@ -34,7 +34,7 @@ const extractEnclosedContent = (str: string, startStr: string, endStr: string): 
         if (isSafari()) {
             const arr: Array<string> = [];
             if (startStr?.length || endStr?.length > 1) {
-                return extractEnclosedContentHelper(str, startStr, endStr, arr);
+                return extractEnclosedContentByStrs(str, startStr, endStr, arr);
             } else {
                 let currentIndex = 0;
                 for (let i = 0; i < str.length; i++) {
@@ -46,7 +46,6 @@ const extractEnclosedContent = (str: string, startStr: string, endStr: string): 
                     }
                 }
             }
-
             return arr;
         } else {
             if (RegExpCharacters.includes(startStr)) startStr = '\\' + startStr;
@@ -57,7 +56,6 @@ const extractEnclosedContent = (str: string, startStr: string, endStr: string): 
     }
     return [];
 };
-
 /**
  * 提取小括号内容
  */
