@@ -16,19 +16,40 @@ export {
 
 /****************************   文件操作    *****************************/
 export {
-    downloadStream, download,
+    downloadStream,
+    download,
     // 删除参数中的空数据 处理不合规参数 从url中获取参数
-    urlJoinParmas, removeUrlParams, routeFromUri, removeEmptyParams, domainNameFromUri,
+    urlJoinParmas,
+    removeUrlParams,
+    routeFromUri,
+    removeEmptyParams,
+    domainNameFromUri,
     //使参数合适 正确, 解析url，获取参数
-    makeParamsProper, queryParamsFromUrl,
+    makeParamsProper,
+    queryParamsFromUrl,
     // 图片操作
-    imageFromFile, openToPreviewBase64, imageToBase64, dowmloadScreenshotPicture,
+    imageFromFile,
+    openToPreviewBase64,
+    imageToBase64,
+    downloadScreenshotPicture,
+    imageUrlToBase64,
+    imageUrlToBlob,
+    imageTypeFromUrl,
     // 动态插入js css
-    injectScript, injectScripts, injectCSS,
+    injectScript,
+    injectScripts,
+    injectCSS,
     // 图片类型数据转换
-    file2Blob, file2Url, base642Blob, blob2File, base642File, blob2Base64,
+    file2Blob,
+    file2Url,
+    base642Blob,
+    blob2File,
+    base642File,
+    blob2Base64,
     // css 和 react style 相互转换
-    obj2css, css2obj, makeCssText,
+    obj2css,
+    css2obj,
+    makeCssText,
 } from "@gaopeng123/utils.file";
 
 export type { DownloadStreamParams, DownloadParams } from "@gaopeng123/utils.file";

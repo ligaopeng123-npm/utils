@@ -9,8 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isElement, isEmpty, isObject, isString, isUndefined} from "@gaopeng123/utils.types";
-import {mapObject, filterObject} from "@gaopeng123/utils.object";
+import { isEmpty, isObject, isString } from "@gaopeng123/utils.types";
+import { mapObject, filterObject } from "@gaopeng123/utils.object";
 
 /**
  * @params  需要拼接的参数
@@ -68,7 +68,7 @@ export declare type DownloadParams = {
     parmas?: any, // 请求参数
 }
 
-export const download = ({url, fileName, blob, parmas}: DownloadParams): void | Error => {
+export const download = ({ url, fileName, blob, parmas }: DownloadParams): void | Error => {
     if (!url && !blob) return new Error('url or blob is undefined');
     const href = blob ? URL.createObjectURL(blob as Blob) : url + urlJoinParmas(parmas);
     const elt = document.createElement('a');
@@ -90,11 +90,11 @@ export declare type DownloadStreamParams = {
     options?: any; // fetch参数
     fileName?: string; // 文件名
 }
-export const downloadStream = ({url, options, fileName}: DownloadStreamParams): void => {
-    fetch(url, Object.assign({responseType: 'blob'}, options)).then((res: any) => {
+export const downloadStream = ({ url, options, fileName }: DownloadStreamParams): void => {
+    fetch(url, Object.assign({ responseType: 'blob' }, options)).then((res: any) => {
         const blob = new Blob([res],
-            {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8"});
-        download({blob: blob, fileName: fileName});
+            { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8" });
+        download({ blob: blob, fileName: fileName });
     });
 };
 
@@ -118,83 +118,6 @@ export const queryParamsFromUrl = (url: string): Object => {
     return obj;
 };
 
-type ImageType = 'image/png' | 'image/jpeg' | 'image/webp';
-type CanvasToDataURL = {
-    canvas: HTMLCanvasElement,
-    type: ImageType,
-    encoderOptions?: number,
-}
-/**
- * 基于canvas进行图片转换成base64
- * @param canvas
- * @param type
- * @param encoderOptions
- */
-export const toBase64 = ({canvas, type, encoderOptions}: CanvasToDataURL): string => {
-    if (canvas?.toDataURL) return canvas.toDataURL(type || 'image/png',
-        isUndefined(encoderOptions) ? 1 : encoderOptions);
-    return '';
-};
-/**
- * 将image标签转为base64编码
- */
-export type ImageToBase64Props = {
-    image: HTMLImageElement,
-    width?: number; // 宽度 默认图片宽度
-    height?: number; // 高度 默认图片高度
-    type?: ImageType; // 图片类型 默认'image/png'
-    opacity?: number; // 透明度 默认1
-}
-export const imageToBase64 = ({image, width, height, type, opacity}: ImageToBase64Props) => {
-    const canvas = document.createElement('canvas');
-    canvas.width = width ? width : image.width;
-    canvas.height = height ? height : image.height;
-    return toBase64({
-        canvas,
-        type: type || 'image/png',
-        encoderOptions: opacity
-    })
-};
-
-/**
- * 图片下载
- */
-type DowmloadPictureOptions = {
-    fileName?: string,
-    type?: ImageType,
-    encoderOptions?: number
-}
-export const dowmloadScreenshotPicture = (dom: HTMLCanvasElement | HTMLVideoElement | string,
-                                          options: DowmloadPictureOptions) => {
-    let videoDom: any;
-    if (isElement(dom)) {
-        videoDom = dom;
-    } else {
-        // @ts-ignore
-        videoDom = document.getElementById(video);
-    }
-
-    if (videoDom) {
-        let canvas;
-        if (videoDom.tagName === 'VIDEO') {
-            canvas = document.createElement('canvas');
-            canvas.width = videoDom.offsetWidth;
-            canvas.height = videoDom.offsetHeight;
-            canvas.style.height = `${videoDom.offsetWidth}px`;
-            canvas.style.height = `${videoDom.offsetHeight}px`;
-        } else {
-            canvas = videoDom;
-        }
-        download({
-            url: toBase64({
-                canvas: canvas,
-                type: options?.type || 'image/png',
-                encoderOptions: options?.encoderOptions
-            }),
-            fileName: options?.fileName
-        })
-    }
-};
 
 /**
  * 过滤参数中的冗余字段
