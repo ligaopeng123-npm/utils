@@ -100,6 +100,8 @@ options: {
 }
 ```
 
+## image
+
 ##### imageFromFile:(file: File): string
 
 `将图片的file文件，转化成blob图片路径，可直接在src中体现`
@@ -131,6 +133,45 @@ imageToBase64({image:imgae})
 openToPreviewBase64('base64...');
 ```
 
+##### imageUrlToBase64
+
+`图片地址转为base64图片`
+
+```typescript
+/**
+ * @param url
+ * @param isProxy 是否需要前端处理代理 默认为true 如果服务端配置好允许跨域 则可设置为false
+ */
+type ImageUrlToBase64 = (url: string, isProxy: boolean) => Promise<string>;
+imageUrlToBase64("https://xxx/xxx.jpg", false).then((base64)=> {
+    
+});
+```
+
+##### imageUrlToBlob
+
+`图片地址转为blob图片`
+
+```typescript
+/**
+ * @param url
+ * @param isProxy 是否需要前端处理代理 默认为true 如果服务端配置好允许跨域 则可设置为false
+ */
+type ImageUrlToBlob = (url: string, isProxy: boolean) => Promise<Blob>;
+imageUrlToBlob("https://xxx/xxx.jpg").then((blob)=> {
+    
+});
+```
+
+##### imageTypeFromUrl
+
+`根据图片url获取图片类型`
+
+```typescript
+imageTypeFromUrl("https://xxx/xxx.jpg?aaa=bbb"); // jgp
+imageTypeFromUrl("https://xxx/xxx.jpg"); // jgp
+```
+
 ## inject
 
 ##### injectScript
@@ -157,8 +198,6 @@ injectScripts(['http://***']).then(()=> {});
 injectCSS(id: string, cssText: string);
 injectCSS('my-id', makeCssText({color: '#fff', fontSize: '12px'}));
 ```
-
-
 
 ## convert文件类型转换
 

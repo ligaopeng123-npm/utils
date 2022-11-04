@@ -69,7 +69,7 @@ pathJoin('/api', '/test'); // '/api/test'
 pathJoin(); // ''
 ```
 
-#### extractEnclosedContent
+## extractEnclosedContent
 
 ##### extractEnclosedContent: (str: string, startStr: string, endStr: string): Array<string>
 
@@ -79,6 +79,10 @@ pathJoin(); // ''
 extractEnclosedContent("a (1111),b (4444), d(3333)", '(', ')'); 
 // ['1111', '4444', '3333']
 ```
+
+##### extractEnclosedContentByStrs(str: string, startStr: string, endStr: string, arr:Array<string> ):Array<string>;
+
+`非正则模式提取字符串，兼容Safari, extractEnclosedContent的辅助函数`
 
 ##### extractParenthesesContent:(str:string):Array<string>
 
