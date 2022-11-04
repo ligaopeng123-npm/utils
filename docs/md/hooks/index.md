@@ -58,6 +58,8 @@ or yarn add @gaopeng123/hooks
 
 * [usePagination](./src/usePagination/README.md)：分页器
 
+* [useBoolean](./src/useBoolean/README.md)：boolean类型管理器
+
   
 
 
