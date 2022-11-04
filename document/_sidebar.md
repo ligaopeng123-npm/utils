@@ -23,6 +23,7 @@
     - [useThrottle](md/hooks/useThrottle.md)
     - [usePagination](md/hooks/usePagination.md)
     - [useVisibility](md/hooks/useVisibility.md)
+    - [useBoolean](md/hooks/useBoolean.md)
 - Web Components
     - [介绍](md/components/index.md)
     - [login-module](md/components/login-module.md)
