@@ -104,12 +104,20 @@ parentByExpected(dom, (currntDom)=> {
 })
 ```
 
-#### copyText: (dom)
+#### copyText: (dom)=>Promise<{message: string, status: boolean}
 
 `点击后复制文本`
 
 ```typescript
-<div onClick="copyText"></div>
+// 直接放在click函数中使用  粘贴板上为test
+<div onClick="copyText">test</div>
+// 传入dom
+copyText(document.querySelector('#dom'))
+/*
+* 姓名：张三
+*	性别：男
+*/
+copyText('姓名：张三\n性别：男')
 ```
 
 #### isVisibleInViewport

@@ -9,8 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isElement, isFunction} from "@gaopeng123/utils.types";
-import {debounce, DebounceOptions} from "@gaopeng123/utils.function";
+import { isElement, isFunction, isString, isUndefined } from "@gaopeng123/utils.types";
+import { debounce, DebounceOptions } from "@gaopeng123/utils.function";
 
 /**
  * 获取样式
@@ -48,15 +48,44 @@ export const parentByExpected = (dom: any, expected: any): any => {
  * 点击文本复制
  * @param span
  */
-export const copyText = (span: any): void => {
-    const text = span.innerText;
-    const inputCache = document.createElement('input');
-    inputCache.setAttribute('value', text);
-    // document.getElementsByTagName('body')[0].appendChild(input);
-    inputCache.select();
-    if (document.execCommand('copy')) {
-        console.log('复制成功')
-    }
+export const copyText = (span: any): Promise<{message: string, status: boolean}> => {
+    return new Promise((resolve, reject)=> {
+        let text: string;
+        if (isString(span)) {
+            text = span;
+        } else if (isElement(span)) {
+            text = span.innerText;
+        } else {
+            resolve({
+                status: false,
+                message: `请检查参数${span}`
+            });
+            return;
+        }
+        if (!isUndefined(text)) {
+            const input = document.createElement('textarea');
+            document.body.appendChild(input);
+            input.innerHTML = text;
+            input.setAttribute('code', '1');
+            input.select();
+
+            if (document.execCommand('Copy')) {
+                console.log('复制成功');
+                resolve({
+                    status: true,
+                    message: `复制成功`
+                });
+            }
+
+            const list = document.getElementsByTagName('textarea');
+            const inputList = Array.prototype.slice.call(list);
+            inputList.forEach((item: Element) => {
+                if (item.getAttribute('code')) {
+                    document.body.removeChild(item);
+                }
+            });
+        }
+    })
 };
 
 /**
