@@ -2,7 +2,7 @@
 
 ## URI参数处理
 
-##### urlJoinParmas: (parmas?: urlJoinParmasPatams): string
+##### urlJoinParams: (parmas?: urlJoinParamsProps): string
 
 `将对象参数拼接到url中`
 
@@ -65,11 +65,17 @@ routeFromUri('https://www.baidu.com/getBaseInfo?userId=xxx'); // /getBaseInfo
 routeFromUri('https://www.baidu.com/#/getBaseInfo?userId=xxx'); // /getBaseInfo
 ```
 
+##### checkOrigin(url:string)
+
+`检查url是否同源`
+
 ## download
 
-##### download: ({url, fileName, blob, parmas}: downloadParams): void \| Error
+##### download: ({url, fileName, blob, parmas,origin}: downloadParams): void \| Error
 
 `文件下载函数`
+
+`origin: 服务端是否处理过跨域，如果为true，非同源场景下走xhr请求`
 
 ```typescript
 download({url: '',fileName: '',parmas: {}});
@@ -78,6 +84,10 @@ download({
      fileName: 'xxx_V2.1'
 })
 ```
+
+##### downloadClickA({href, fileName, blob})
+
+`a标签下载文件`
 
 ##### downloadStream:({url, options, fileName}: downloadStreamParams): void
 
@@ -99,6 +109,10 @@ options: {
 	encoderOptions?: number
 }
 ```
+
+##### getFileNameFromUrl(url:string)
+
+`从url上获取fileName名称`
 
 ## image
 

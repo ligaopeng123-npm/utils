@@ -17,9 +17,9 @@ export {
 /****************************   文件操作    *****************************/
 export {
     downloadStream,
-    download,
+    download, downloadClickA, checkOrigin, getFileNameFromUrl,
     // 删除参数中的空数据 处理不合规参数 从url中获取参数
-    urlJoinParmas,
+    urlJoinParmas, urlJoinParams,
     removeUrlParams,
     routeFromUri,
     removeEmptyParams,

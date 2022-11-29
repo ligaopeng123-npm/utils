@@ -17,7 +17,7 @@ import { mapObject, filterObject } from "@gaopeng123/utils.object";
  *  拼接url地址参数
  *  urlJoinParmas({name:'zhangsan'})
  */
-export interface urlJoinParmasPatams {
+export interface urlJoinParamsProps {
     [propName: string]: any
 }
 
@@ -25,13 +25,13 @@ export interface urlJoinParmasPatams {
  * 将参数拼接到url中
  * @param parmas
  */
-export const urlJoinParmas = (parmas?: urlJoinParmasPatams): string => {
-    if (isObject(parmas)) {
+export const urlJoinParmas = (params?: urlJoinParamsProps): string => {
+    if (isObject(params)) {
         let str = ``;
         let count = 1;
-        for (let i in parmas) {
+        for (let i in params) {
             const concatSymbol = count > 1 ? '&' : '';
-            str += `${concatSymbol}${i}=${parmas[i]}`;
+            str += `${concatSymbol}${i}=${params[i]}`;
             count++;
         }
         // 防止空对象 传递冗余的'?'
@@ -40,6 +40,8 @@ export const urlJoinParmas = (parmas?: urlJoinParmasPatams): string => {
         return '';
     }
 };
+
+export const urlJoinParams = urlJoinParmas;
 
 /**
  * 去掉url的参数
@@ -62,23 +64,73 @@ export function removeUrlParams(url: string): string {
  * @param {string} name
  */
 export declare type DownloadParams = {
-    url?: string, // uri地址
-    fileName?: string, // 文件名
-    blob?: string | Blob, // blob地址
-    parmas?: any, // 请求参数
+    url?: string; // uri地址
+    fileName?: string; // 文件名
+    blob?: string | Blob; // blob地址
+    parmas?: any; // 请求参数
+    params?: any; // 请求参数
+    origin?: boolean; // 是否处理过跨域
 }
 
-export const download = ({ url, fileName, blob, parmas }: DownloadParams): void | Error => {
-    if (!url && !blob) return new Error('url or blob is undefined');
-    const href = blob ? URL.createObjectURL(blob as Blob) : url + urlJoinParmas(parmas);
+/**
+ * 检查是否同域
+ * @param url
+ */
+export const checkOrigin = (url: string) => {
+    return url?.startsWith(window.location.origin) || !url?.startsWith('http');
+}
+
+/**
+ * 获取文件名
+ * @param url
+ */
+export const getFileNameFromUrl = (url: string) => {
+    const urlArr = url.split('/');
+    const currentUrl = urlArr[urlArr.length - 1];
+    return currentUrl.includes('.') ? currentUrl : null;
+}
+
+type DownloadClickAProps = {
+    href?: string;
+    fileName?: string;
+    blob?: Blob | string;
+}
+export const downloadClickA = ({href, fileName, blob}: DownloadClickAProps) => {
     const elt = document.createElement('a');
     elt.setAttribute('href', href);
-    elt.setAttribute('download', fileName || 'default');
+    elt.setAttribute('download', fileName || getFileNameFromUrl(href) || 'default');
     elt.style.display = 'none';
     document.body.appendChild(elt);
     elt.click();
     document.body.removeChild(elt);
     if (blob) URL.revokeObjectURL(href);
+}
+
+/**
+ * 文件下载
+ * @param url
+ * @param fileName
+ * @param blob
+ * @param parmas
+ */
+export const download = ({url, fileName, blob, parmas, params, origin}: DownloadParams): void | Error => {
+    if (!url && !blob) return new Error('url or blob is undefined');
+    if (blob) {
+        downloadClickA({href: URL.createObjectURL(blob as Blob), blob, fileName});
+    } else {
+        if (checkOrigin(url) || !origin) {
+            downloadClickA({href: url + urlJoinParams(params || parmas), blob, fileName});
+        } else {
+            const xhr = new window.XMLHttpRequest();
+            xhr.open('GET', url + urlJoinParams(params || parmas), true);
+            xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
+            xhr.responseType = 'blob';
+            xhr.onload = () => {
+                downloadClickA({href: URL.createObjectURL(xhr.response), blob: xhr.response, fileName});
+            };
+            xhr.send();
+        }
+    }
 };
 
 /**
@@ -90,11 +142,11 @@ export declare type DownloadStreamParams = {
     options?: any; // fetch参数
     fileName?: string; // 文件名
 }
-export const downloadStream = ({ url, options, fileName }: DownloadStreamParams): void => {
-    fetch(url, Object.assign({ responseType: 'blob' }, options)).then((res: any) => {
+export const downloadStream = ({url, options, fileName}: DownloadStreamParams): void => {
+    fetch(url, Object.assign({responseType: 'blob'}, options)).then((res: any) => {
         const blob = new Blob([res],
-            { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8" });
-        download({ blob: blob, fileName: fileName });
+            {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8"});
+        download({blob: blob, fileName: fileName});
     });
 };
 
