@@ -15,7 +15,7 @@ import { mapObject, filterObject } from "@gaopeng123/utils.object";
 /**
  * @params  需要拼接的参数
  *  拼接url地址参数
- *  urlJoinParmas({name:'zhangsan'})
+ *  urlJoinParams({name:'zhangsan'})
  */
 export interface urlJoinParamsProps {
     [propName: string]: any
@@ -23,7 +23,7 @@ export interface urlJoinParamsProps {
 
 /**
  * 将参数拼接到url中
- * @param parmas
+ * @param params
  */
 export const urlJoinParmas = (params?: urlJoinParamsProps): string => {
     if (isObject(params)) {
