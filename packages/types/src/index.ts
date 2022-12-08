@@ -1,6 +1,8 @@
 /**
  * 数据类型
  */
+import { isAndroid, isIOS } from "./browser";
+
 export {isObject as isObject} from "./data";
 export {isArray as isArray} from "./data";
 export {isBoolean as isBoolean} from "./data";
@@ -42,6 +44,8 @@ export {isWindows as isWindows} from "./browser";
 export {isMac as isMac} from "./browser";
 export {isLinux as isLinux} from "./browser";
 export {isMobile as isMobile} from "./browser";
+export {isAndroid as isAndroid} from "./browser";
+export {isIOS as isIOS} from "./browser";
 /**
  * 版本获取
  */

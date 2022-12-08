@@ -91,6 +91,14 @@ export const isMac = (): boolean => {
 export const isLinux = (): boolean => {
 	return check(/linux/);
 };
+
+export const isAndroid = (): boolean => {
+	return check(/android/);
+};
+
+export const isIOS = (): boolean => {
+	return check(/ios|iphone|ipad|ipod/);
+};
 /**
  * 是否是移动端设备
  */
