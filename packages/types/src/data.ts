@@ -161,7 +161,8 @@ export const isJSON: typeFn = (val) => {
     // 开头结尾不一致 也非合法json
     if (str.startsWith('{') && !str.endsWith('}')) return false;
     if (str.startsWith('[') && !str.endsWith(']')) return false;
-
+    // 开头不是{ [ 也不是合法的json
+    if (!str?.startsWith('{') && !str?.startsWith('[')) return false;
     try {
         JSON.parse(str);
         return true;
