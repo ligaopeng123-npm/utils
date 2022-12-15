@@ -24,7 +24,7 @@
         "start": "tsdx watch",
         "build": "tsdx build",
         "test": "tsdx test",
-        "push": "npm publish --access public",
+        "push": "pnpm publish --access public",
         "lint": "tsdx lint",
         "prepare": "tsdx build",
         "size": "size-limit",

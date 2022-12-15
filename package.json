@@ -27,9 +27,9 @@
         "start:dm": "docsify serve ./document",
         "start:doc": "docsify serve ./docs",
         "build:docs": "node docs.js",
-        "build": "lerna exec --ignore=@gaopeng123/utils -- npm run build",
-        "test": "lerna exec --ignore=@gaopeng123/utils -- npm run test",
-        "push:all": "lerna exec --ignore=@gaopeng123/utils -- npm run push",
+        "build": "lerna exec --ignore=@gaopeng123/utils -- pnpm run build",
+        "test": "lerna exec --ignore=@gaopeng123/utils -- pnpm run test",
+        "push:all": "lerna exec --ignore=@gaopeng123/utils -- pnpm run push",
         "push": "lerna publish",
         "bootstrap": "lerna bootstrap",
         "mark": "doctoc ."
@@ -80,5 +80,10 @@
         "webpack": "^5.70.0",
         "webpack-cli": "^4.9.1",
         "webpack-dev-server": "^4.7.4"
+    },
+    "pnpm": {
+        "overrides": {
+            "language-tags": "1.0.5"
+        }
     }
 }
