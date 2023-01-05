@@ -113,11 +113,12 @@ export {
     // 窗口尺寸
     windowSize, pcZoom,
     // 去抖 节流
-    debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay
+    debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay,
+    hasOperate
 } from "@gaopeng123/utils.function";
 
 export type {
-    MemoizedFn, AsyncMemoizedFn, WindowSize, DebounceOptions, ThrottleOptions
+    MemoizedFn, AsyncMemoizedFn, WindowSize, DebounceOptions, ThrottleOptions, OperateConfig
 } from "@gaopeng123/utils.function";
 
 /****************************  时间操作    *****************************/
