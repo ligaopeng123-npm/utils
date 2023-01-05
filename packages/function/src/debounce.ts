@@ -16,7 +16,7 @@
  * @param timeout 延迟执行毫秒数
  * @param options
  */
-import {isFunction} from "@gaopeng123/utils.types";
+import { isFunction } from "@gaopeng123/utils.types";
 
 export type DebounceOptions = {
     leading?: boolean; // 第一时间是否立即执行 后续再去抖
@@ -27,12 +27,13 @@ export const createDebounce = (fn: any, _wait: number, options: DebounceOptions,
     // @ts-ignore
     const {leading, notDebounce} = options || {};
     const _debounce = function (...arg: any) {
+        notDebounce && isFunction(notDebounce) && notDebounce(...arg);
         // @ts-ignore
         let context: any = this;
         let args = arguments;
         if (_timeout) clearTimeout(_timeout);
         if (leading) {
-            // 此时callNow为true _timeout为undfined 没有执行过
+            // 此时callNow为true _timeout为undefined 没有执行过
             let callNow = !_timeout;
             // wait 秒后 将_timeout重置为null callNow就为true了 继续执行
             _timeout = setTimeout(() => {
@@ -44,7 +45,6 @@ export const createDebounce = (fn: any, _wait: number, options: DebounceOptions,
                 fn.apply(context, args);
             }, _wait);
         }
-        notDebounce && isFunction(notDebounce) && notDebounce(...arg);
         return _timeout;
     };
     return _debounce
