@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils",
     "author": "ligaopeng123",
-    "version": "0.8.4",
+    "version": "1.0.0",
     "description": "utils公共包",
     "license": "MIT",
     "main": "dist/index.js",
@@ -64,14 +64,14 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@gaopeng123/utils.array": "^0.8.4",
-        "@gaopeng123/utils.date": "^0.8.4",
-        "@gaopeng123/utils.file": "^0.8.4",
-        "@gaopeng123/utils.function": "^0.8.4",
-        "@gaopeng123/utils.number": "^0.8.4",
-        "@gaopeng123/utils.object": "^0.8.4",
-        "@gaopeng123/utils.string": "^0.8.4",
-        "@gaopeng123/utils.types": "^0.8.4"
+        "@gaopeng123/utils.array": "^1.0.0",
+        "@gaopeng123/utils.date": "^1.0.0",
+        "@gaopeng123/utils.file": "^1.0.0",
+        "@gaopeng123/utils.function": "^1.0.0",
+        "@gaopeng123/utils.number": "^1.0.0",
+        "@gaopeng123/utils.object": "^1.0.0",
+        "@gaopeng123/utils.string": "^1.0.0",
+        "@gaopeng123/utils.types": "^1.0.0"
     },
     "gitHead": "bfcbbffc0c68c1195deccf4fb34762a8e1a5a500"
 }
