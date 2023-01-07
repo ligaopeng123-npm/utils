@@ -27,7 +27,9 @@
 }
 
 .sidebar li.active {
-    padding: .2em 0rem .2em .2rem;
+    /*padding: .2em 0rem .2em .2rem;*/
+    padding: 0px;
+    font-weight: bolder;
 }
 
 .sidebar ul {
@@ -78,7 +80,8 @@
 
 .app-sub-sidebar li.active {
     box-shadow: inset 0px -2px 0px -2px var(--main-sidebar-box-shadow-color);
-    padding: .2em 0rem .2em .2rem !important;
+    /*padding: .2em 0rem .2em .2rem !important;*/
+    padding: 0px !important;
     /*background-color: #fff;*/
 }
 
