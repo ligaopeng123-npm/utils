@@ -240,3 +240,17 @@ delay((...args)=> {}, 200, [1,2,3]);
 asyncDelay(async (...args)=> {}, 200, [1,2,3])
 ```
 
+## operate
+
+#### hasOperate
+
+`监听是否长时间未操作dom`
+
+```typescript
+type OperateConfig = {
+    wait?: number,  // 多长时间未操作，到期触发callBack 默认一个小时  单位 毫秒
+    interval?: number // 每隔多长时间检测一次 默认1分钟 单位 毫秒
+}
+hasOperate(()=> {}, {wait: 5000, interval: 1000});
+```
+

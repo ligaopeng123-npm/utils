@@ -40,6 +40,8 @@
 | isMac     | Mac系统                                             |
 | isLinux   | Linux系统                                           |
 | isMobile  | 移动端设备 Android、webOS、iPhone、iPod、BlackBerry |
+| isIOS     | 移动端设备 iPhone、iPod                             |
+| isAndroid | 移动端设备 Android                                  |
 | isStrict  | 是否是严格模式                                      |
 | isSecure  | 是否是https访问                                     |
 

@@ -13,10 +13,11 @@ const {markdownIframe} = require("./markdowniframe.cjs.development");
  */
 const writeJob = () => {
     // cli components hooks
-    const mi = new markdownIframe({path: join(__dirname, './docs/md/cli')});
+    const mi = new markdownIframe({path: join(__dirname, './docs/md/hooks')});
     mi.run()
         .then(data => {
             console.log('data', data);
+            clearInterval(timmer);
         }).catch((err) => {
         console.error(err);
     });
@@ -31,4 +32,4 @@ const timmer = setInterval(() => {
     if (time > 100) {
         clearInterval(timmer);
     }
-}, 60000)
+}, 20000)

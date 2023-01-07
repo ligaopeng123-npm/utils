@@ -2,12 +2,12 @@
 
 ## URI参数处理
 
-##### urlJoinParams: (parmas?: urlJoinParamsProps): string
+##### urlJoinParams: (params?: urlJoinParamsProps): string
 
 `将对象参数拼接到url中`
 
 ```typescript
-urlJoinParmas({name:'zhangsan'})
+urlJoinParams({name:'zhangsan'})
 ```
 
 ##### removeUrlParams:(url: string): string
@@ -71,14 +71,14 @@ routeFromUri('https://www.baidu.com/#/getBaseInfo?userId=xxx'); // /getBaseInfo
 
 ## download
 
-##### download: ({url, fileName, blob, parmas,origin}: downloadParams): void \| Error
+##### download: ({url, fileName, blob, params,origin}: downloadParams): void \| Error
 
 `文件下载函数`
 
 `origin: 服务端是否处理过跨域，如果为true，非同源场景下走xhr请求`
 
 ```typescript
-download({url: '',fileName: '',parmas: {}});
+download({url: '',fileName: '',params: {}});
 download({
      url: 'http://xxx.xxx.xxx.xxx/dl/player/xxx_V2.1.exe',
      fileName: 'xxx_V2.1'

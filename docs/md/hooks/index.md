@@ -56,6 +56,10 @@ or yarn add @gaopeng123/hooks
 
 * [useThrottle](./src/useThrottle/README.md)：节流
 
+* [useThrottleAndMerge](./src/useThrottleAndMerge/README.md)：节流并合并数据
+
+* [useReloadAfterStationary](./src/useReloadAfterStationary/README.md)：无操作后重新加载当前页面
+
 * [usePagination](./src/usePagination/README.md)：分页器
 
 * [useBoolean](./src/useBoolean/README.md)：boolean类型管理器
