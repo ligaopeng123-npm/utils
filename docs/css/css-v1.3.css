@@ -136,11 +136,3 @@
     padding: var(--main-table-td-padding);
     border: 1px solid rgba(221, 221, 221, 0.2);
 }
-
-body {
-    overflow: hidden;
-}
-
-.content {
-    overflow: auto;
-}
