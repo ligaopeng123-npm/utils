@@ -185,6 +185,27 @@ getScrollPosition(document.querySelector('#xxx')); // {x: number,y:number}
 
 `将有滚动条的dom，滚动到最顶部`
 
+```tsx
+scrollToTop = (el?: Element): void 
+```
+
+#### levitatingBall
+
+`悬浮球`
+
+```tsx
+export type levitatingBallConfig = {
+    el: any; // 可拖拽的dom
+  	style?: any; // 样式
+    up_down?: boolean; // 是否可以上下移动
+    left_right?: boolean; // 是否可以左右移动
+}
+
+levitatingBall(config: levitatingBallConfig, onClick: onClick: (e: MouseEvent | TouchEvent) => void);
+```
+
+
+
 ## other
 
 #### length:(val: any): number
