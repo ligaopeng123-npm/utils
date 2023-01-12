@@ -11,13 +11,20 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { isString } from "@gaopeng123/utils.types";
+import { isJSON, isString } from "@gaopeng123/utils.types";
+import { debounce, } from "@gaopeng123/utils.function";
 
 export type levitatingBallConfig = {
     el: any; // 可拖拽的dom 或者 selectors
     style?: any; // 样式
     up_down?: boolean; // 是否可以上下移动
     left_right?: boolean; // 是否可以左右移动
+    minTop?: number; // 上边距
+    minBottom?: number; // 下边距
+    minLeft?: number; // 左边距
+    minRight?: number; // 右边距
+    persistenceKey?: string; // 行为定制
+    persistenceType?: 'sessionStorage' | 'localStorage'; // 存储类型
 }
 
 export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: MouseEvent | TouchEvent) => void) => {
@@ -25,12 +32,19 @@ export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: Mouse
         el,
         up_down,
         left_right,
-        style
-    } = config;
+        style,
+        minTop,
+        minBottom,
+        minLeft,
+        minRight,
+        persistenceKey,
+        persistenceType,
+    } = Object.assign({minTop: 0, minBottom: 0, minLeft: 0, minRight: 0}, config);
     if (el) {
         let startEvt: string;
         let moveEvt: string;
         let endEvt: string;
+        const _persistenceType = persistenceType || 'sessionStorage';
         // 判断是否支持触摸事件
         if ('ontouchstart' in window) {
             startEvt = 'touchstart'
@@ -42,7 +56,7 @@ export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: Mouse
             endEvt = 'mouseup'
         }
         // 获取元素
-        const dragEl = isString(el) ? document.querySelector(el) : el
+        const dragEl = isString(el) ? document.querySelector(el) : el;
         dragEl.style.position = 'fixed';
         dragEl.style.cursor = 'move';
         dragEl.style.transition = 'all 0.08s';
@@ -52,9 +66,64 @@ export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: Mouse
                 dragEl.style[styleKey] = style[styleKey];
             }
         }
+        /**
+         * 定制数据获取
+         */
+        if (persistenceKey) {
+            const cacheConfig = window[_persistenceType].getItem(persistenceKey);
+            if (cacheConfig && isJSON(cacheConfig)) {
+                const {left, top} = JSON.parse(cacheConfig);
+                dragEl.style.top = `${top}px`;
+                dragEl.style.left = `${left}px`;
+            }
+        }
         // 标记是拖曳还是点击
         let isClick = true
-        let disX: number, disY: number, left: number, top: number, starX: number, starY: number
+        let disX: number, disY: number, left: number, top: number, starX: number, starY: number;
+
+        const moving = (event: any) => {
+            // 兼容IE浏览器
+            const e = event || window.event
+            // 防止触摸不灵敏，拖动距离大于20像素就认为不是点击，小于20就认为是click
+            if (
+                Math.abs(starX - (e.touches ? e.touches[0].clientX : e.clientX)) > 20 ||
+                Math.abs(starY - (e.touches ? e.touches[0].clientY : e.clientY)) > 20
+            ) {
+                isClick = false
+            }
+            left = (e.touches ? e.touches[0].clientX : e.clientX) - disX
+            top = (e.touches ? e.touches[0].clientY : e.clientY) - disY
+            // 限制拖拽的X范围，不能拖出屏幕
+            if (left < minLeft) {
+                left = minLeft;
+            } else if (left > document.documentElement.clientWidth - dragEl.offsetWidth - minRight) {
+                left = document.documentElement.clientWidth - dragEl.offsetWidth - minRight;
+            }
+
+            // 限制拖拽的Y范围，不能拖出屏幕
+            if (top < minTop) {
+                top = minTop;
+            } else if (top > document.documentElement.clientHeight - dragEl.offsetHeight - minBottom) {
+                top = document.documentElement.clientHeight - dragEl.offsetHeight - minBottom;
+            }
+
+            if (up_down !== false) {
+                dragEl.style.top = top + 'px'
+            }
+
+            if (left_right !== false) {
+                dragEl.style.left = left + 'px'
+            }
+        }
+
+        const moveFun = debounce(() => {
+            /**
+             * 定制数据存储
+             */
+            if (persistenceKey) {
+                window[_persistenceType].setItem(persistenceKey, JSON.stringify({left, top}));
+            }
+        }, 200, {notDebounce: moving})
 
         dragEl.addEventListener(startEvt, function (event: any) {
             // 阻止页面的滚动，缩放
@@ -72,46 +141,32 @@ export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: Mouse
             document.addEventListener(moveEvt, moveFun)
             document.addEventListener(endEvt, endFun)
         })
-
-        function moveFun(event: any) {
-            // 兼容IE浏览器
-            const e = event || window.event
-            // 防止触摸不灵敏，拖动距离大于20像素就认为不是点击，小于20就认为是点击跳转
-            if (
-                Math.abs(starX - (e.touches ? e.touches[0].clientX : e.clientX)) > 20 ||
-                Math.abs(starY - (e.touches ? e.touches[0].clientY : e.clientY)) > 20
-            ) {
-                isClick = false
-            }
-            left = (e.touches ? e.touches[0].clientX : e.clientX) - disX
-            top = (e.touches ? e.touches[0].clientY : e.clientY) - disY
-            // 限制拖拽的X范围，不能拖出屏幕
-            if (left < 0) {
-                left = 0
-            } else if (left > document.documentElement.clientWidth - dragEl.offsetWidth) {
-                left = document.documentElement.clientWidth - dragEl.offsetWidth
-            }
-            // 限制拖拽的Y范围，不能拖出屏幕
-            if (top < 0) {
-                top = 0
-            } else if (top > document.documentElement.clientHeight - dragEl.offsetHeight) {
-                top = document.documentElement.clientHeight - dragEl.offsetHeight
-            }
-            if (up_down !== false) {
-                dragEl.style.top = top + 'px'
-            }
-
-            if (left_right !== false) {
-                dragEl.style.left = left + 'px'
-            }
-        }
-
-        function endFun(e: any) {
+        /**
+         * 结束事件 清理事件 如果当前状态是点击 则触发点击事件
+         * @param e
+         */
+        const endFun = (e: any) => {
             document.removeEventListener(moveEvt, moveFun)
             document.removeEventListener(endEvt, endFun)
             if (isClick) { // 点击
-                onClick(e);
+                onClick?.(e);
             }
+        }
+        return {
+            /**
+             * 清理订阅事件
+             */
+            removeEventListener: () => {
+                document.removeEventListener(moveEvt, moveFun);
+                document.removeEventListener(endEvt, endFun);
+            }
+        }
+    }
+    return {
+        /**
+         * 清理订阅事件
+         */
+        removeEventListener: () => {
         }
     }
 }
