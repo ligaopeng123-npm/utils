@@ -89,7 +89,7 @@ importers:
 
   packages/file:
     specifiers:
-      '@gaopeng123/utils.object': ^1.0.2
+      '@gaopeng123/utils.object': ^1.0.3
       '@gaopeng123/utils.string': ^1.0.0
       '@gaopeng123/utils.types': ^1.0.0
       '@size-limit/preset-small-lib': ^5.0.1
@@ -234,10 +234,10 @@ importers:
     specifiers:
       '@gaopeng123/utils.array': ^1.0.0
       '@gaopeng123/utils.date': ^1.0.0
-      '@gaopeng123/utils.file': ^1.0.2
+      '@gaopeng123/utils.file': ^1.0.3
       '@gaopeng123/utils.function': ^1.0.0
       '@gaopeng123/utils.number': ^1.0.0
-      '@gaopeng123/utils.object': ^1.0.2
+      '@gaopeng123/utils.object': ^1.0.3
       '@gaopeng123/utils.string': ^1.0.0
       '@gaopeng123/utils.types': ^1.0.0
       '@size-limit/preset-small-lib': ^5.0.1
