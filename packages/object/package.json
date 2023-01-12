@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.object",
     "author": "ligaopeng123",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "对象处理",
     "license": "MIT",
     "main": "dist/index.js",
