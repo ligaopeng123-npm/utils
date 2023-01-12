@@ -11,8 +11,10 @@
  * @版权所有: pgli
  *
  **********************************************************************/
+import { isString } from "@gaopeng123/utils.types";
+
 export type levitatingBallConfig = {
-    el: any; // 可拖拽的dom
+    el: any; // 可拖拽的dom 或者 selectors
     style?: any; // 样式
     up_down?: boolean; // 是否可以上下移动
     left_right?: boolean; // 是否可以左右移动
@@ -40,7 +42,7 @@ export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: Mouse
             endEvt = 'mouseup'
         }
         // 获取元素
-        const dragEl = el
+        const dragEl = isString(el) ? document.querySelector(el) : el
         dragEl.style.position = 'fixed';
         dragEl.style.cursor = 'move';
         dragEl.style.transition = 'all 0.08s';

@@ -195,7 +195,7 @@ scrollToTop = (el?: Element): void
 
 ```tsx
 export type levitatingBallConfig = {
-    el: any; // 可拖拽的dom
+    el: any; // 可拖拽的dom 或者 selectors
   	style?: any; // 样式
     up_down?: boolean; // 是否可以上下移动
     left_right?: boolean; // 是否可以左右移动
