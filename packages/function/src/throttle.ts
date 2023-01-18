@@ -35,7 +35,7 @@ export const createThrottle = (fn: any, wait: number, options: ThrottleOptions, 
         notThrottle && isFunction(notThrottle) && notThrottle(...args);
         // @ts-ignore
         const context: any = this;
-        if (type === 1 || leading) {
+        if (type === 1 || (leading && type !== 2)) {
             let now = Date.now();
             if (now - timeout > wait) {
                 fn.apply(context, args);
