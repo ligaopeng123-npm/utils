@@ -89,8 +89,8 @@ importers:
 
   packages/file:
     specifiers:
-      '@gaopeng123/utils.object': ^1.0.4
-      '@gaopeng123/utils.string': ^1.0.4
+      '@gaopeng123/utils.object': ^1.0.5
+      '@gaopeng123/utils.string': ^1.0.5
       '@gaopeng123/utils.types': ^1.0.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
@@ -162,7 +162,7 @@ importers:
 
   packages/object:
     specifiers:
-      '@gaopeng123/utils.function': ^1.0.4
+      '@gaopeng123/utils.function': ^1.0.5
       '@gaopeng123/utils.types': ^1.0.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
@@ -187,7 +187,7 @@ importers:
 
   packages/string:
     specifiers:
-      '@gaopeng123/utils.function': ^1.0.4
+      '@gaopeng123/utils.function': ^1.0.5
       '@gaopeng123/utils.types': ^1.0.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
@@ -234,11 +234,11 @@ importers:
     specifiers:
       '@gaopeng123/utils.array': ^1.0.0
       '@gaopeng123/utils.date': ^1.0.0
-      '@gaopeng123/utils.file': ^1.0.4
-      '@gaopeng123/utils.function': ^1.0.4
+      '@gaopeng123/utils.file': ^1.0.5
+      '@gaopeng123/utils.function': ^1.0.5
       '@gaopeng123/utils.number': ^1.0.0
-      '@gaopeng123/utils.object': ^1.0.4
-      '@gaopeng123/utils.string': ^1.0.4
+      '@gaopeng123/utils.object': ^1.0.5
+      '@gaopeng123/utils.string': ^1.0.5
       '@gaopeng123/utils.types': ^1.0.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
