@@ -9,6 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
+import { isBrowser } from "@gaopeng123/utils.types";
+
 /**
  * 获取uuid方法 用于做唯一标识时使用
  * @param {number} len  id的长度  默认64位
@@ -17,6 +19,12 @@
  */
 export type UuidFn = (len?: number, radix?: number) => string;
 const uuid: UuidFn = (len = 64, radix = 62): string => {
+	// 优先使用crypto
+	if (isBrowser() && window.crypto) {
+		// @ts-ignore
+		const uuidStr = crypto.randomUUID();
+		if (uuidStr) return crypto.randomUUID();
+	}
 	const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 	const uuid = [];
 	let i;

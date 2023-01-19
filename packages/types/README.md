@@ -1,6 +1,6 @@
 # types
 
-## date
+## data
 
 | 函数名            | 作用                                       |
 | ----------------- | ------------------------------------------ |
@@ -44,6 +44,8 @@
 | isAndroid | 移动端设备 Android                                  |
 | isStrict  | 是否是严格模式                                      |
 | isSecure  | 是否是https访问                                     |
+| isNodejs  | 是否是node运行环境                                  |
+| isBrowser | 是否是浏览器运行环境                                |
 
 ## browser version
 

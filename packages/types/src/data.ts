@@ -233,3 +233,16 @@ export const isStream: typeFn = (val) => {
 export const isURLSearchParams: typeFn = (val) => {
     return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
 }
+
+/**
+ * node环境
+ */
+export const isNodejs = ()=> {
+    return !(typeof window !== "undefined" && window !== null);
+}
+/**
+ * 浏览器环境
+ */
+export const isBrowser = ()=> {
+    return typeof window !== "undefined" && window !== null && this === window;
+}

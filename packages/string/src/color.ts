@@ -10,7 +10,7 @@
  *
  **********************************************************************/
 // 检查颜色值
-const COLORREGEXP = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+const COLOR_REGEXP = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
 /**
  * 将16进制转换成rgb颜色
  * @param col
@@ -18,7 +18,7 @@ const COLORREGEXP = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
  */
 export const hex2Rgb = (col: string): string => {
 	let sColor = col.toLowerCase();
-	const reg = COLORREGEXP;
+	const reg = COLOR_REGEXP;
 	if (sColor && reg.test(sColor)) {
 		if (sColor.length === 4) {
 			let sColorNew = '#';
@@ -99,7 +99,7 @@ export const rgba2rgb = (rgba_color: string): string => {
  * @returns {any}
  */
 export const rgb2hex = (rgb: string): string => {
-	const reg = COLORREGEXP;
+	const reg = COLOR_REGEXP;
 	if (/^(rgb|RGB)/.test(rgb)) {
 		const aColor: any[] = rgb.replace(/(?:\(|\)|rgb|RGB)*/g, '').split(',');
 		let strHex: string = '#';

@@ -64,7 +64,7 @@
     },
     "dependencies": {
         "@gaopeng123/utils.function": "^1.0.5",
-        "@gaopeng123/utils.types": "^1.0.0"
+        "@gaopeng123/utils.types": "workspace:^1.0.0"
     },
     "gitHead": "bfcbbffc0c68c1195deccf4fb34762a8e1a5a500"
 }
