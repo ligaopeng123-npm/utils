@@ -23,7 +23,7 @@ const uuid: UuidFn = (len = 64, radix = 62): string => {
 	if (isBrowser() && window.crypto) {
 		// @ts-ignore
 		const uuidStr = crypto.randomUUID();
-		if (uuidStr) return crypto.randomUUID();
+		if (uuidStr) return uuidStr;
 	}
 	const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
 	const uuid = [];
