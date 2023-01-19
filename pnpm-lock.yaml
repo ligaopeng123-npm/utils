@@ -43,7 +43,7 @@ importers:
 
   packages/array:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.0
+      '@gaopeng123/utils.types': ^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -66,7 +66,7 @@ importers:
 
   packages/date:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.0
+      '@gaopeng123/utils.types': ^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -89,9 +89,9 @@ importers:
 
   packages/file:
     specifiers:
-      '@gaopeng123/utils.object': ^1.0.5
-      '@gaopeng123/utils.string': ^1.0.5
-      '@gaopeng123/utils.types': ^1.0.0
+      '@gaopeng123/utils.object': ^1.0.6
+      '@gaopeng123/utils.string': ^1.0.6
+      '@gaopeng123/utils.types': ^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -116,7 +116,7 @@ importers:
 
   packages/function:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.0
+      '@gaopeng123/utils.types': ^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -139,7 +139,7 @@ importers:
 
   packages/number:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.0
+      '@gaopeng123/utils.types': ^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -162,8 +162,8 @@ importers:
 
   packages/object:
     specifiers:
-      '@gaopeng123/utils.function': ^1.0.5
-      '@gaopeng123/utils.types': ^1.0.0
+      '@gaopeng123/utils.function': ^1.0.6
+      '@gaopeng123/utils.types': ^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -187,8 +187,8 @@ importers:
 
   packages/string:
     specifiers:
-      '@gaopeng123/utils.function': ^1.0.5
-      '@gaopeng123/utils.types': workspace:^1.0.0
+      '@gaopeng123/utils.function': ^1.0.6
+      '@gaopeng123/utils.types': workspace:^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -232,14 +232,14 @@ importers:
 
   packages/utils:
     specifiers:
-      '@gaopeng123/utils.array': ^1.0.0
-      '@gaopeng123/utils.date': ^1.0.0
-      '@gaopeng123/utils.file': ^1.0.5
-      '@gaopeng123/utils.function': ^1.0.5
-      '@gaopeng123/utils.number': ^1.0.0
-      '@gaopeng123/utils.object': ^1.0.5
-      '@gaopeng123/utils.string': ^1.0.5
-      '@gaopeng123/utils.types': ^1.0.0
+      '@gaopeng123/utils.array': ^1.0.6
+      '@gaopeng123/utils.date': ^1.0.6
+      '@gaopeng123/utils.file': ^1.0.6
+      '@gaopeng123/utils.function': ^1.0.6
+      '@gaopeng123/utils.number': ^1.0.6
+      '@gaopeng123/utils.object': ^1.0.6
+      '@gaopeng123/utils.string': ^1.0.6
+      '@gaopeng123/utils.types': ^1.0.6
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -5464,7 +5464,7 @@ packages:
       postcss-value-parser: 4.2.0
       schema-utils: 3.1.1
       semver: 7.3.8
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /css-select/4.3.0:
@@ -6766,7 +6766,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /file-uri-to-path/1.0.0:
@@ -10178,7 +10178,7 @@ packages:
       cssnano: 5.1.14_postcss@8.4.20
       last-call-webpack-plugin: 3.0.0
       postcss: 8.4.20
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /optionator/0.8.3:
@@ -12542,7 +12542,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /stylehacks/5.1.1_postcss@8.4.20:
@@ -12684,7 +12684,7 @@ packages:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
     dev: true
