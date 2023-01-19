@@ -43,7 +43,7 @@ importers:
 
   packages/array:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.6
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -66,7 +66,7 @@ importers:
 
   packages/date:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.6
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -89,9 +89,9 @@ importers:
 
   packages/file:
     specifiers:
-      '@gaopeng123/utils.object': ^1.0.6
-      '@gaopeng123/utils.string': ^1.0.6
-      '@gaopeng123/utils.types': ^1.0.6
+      '@gaopeng123/utils.object': ^1.1.0
+      '@gaopeng123/utils.string': ^1.1.0
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -116,7 +116,7 @@ importers:
 
   packages/function:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.6
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -139,7 +139,7 @@ importers:
 
   packages/number:
     specifiers:
-      '@gaopeng123/utils.types': ^1.0.6
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -162,8 +162,8 @@ importers:
 
   packages/object:
     specifiers:
-      '@gaopeng123/utils.function': ^1.0.6
-      '@gaopeng123/utils.types': ^1.0.6
+      '@gaopeng123/utils.function': ^1.1.0
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -187,8 +187,8 @@ importers:
 
   packages/string:
     specifiers:
-      '@gaopeng123/utils.function': ^1.0.6
-      '@gaopeng123/utils.types': workspace:^1.0.6
+      '@gaopeng123/utils.function': ^1.1.0
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -232,14 +232,14 @@ importers:
 
   packages/utils:
     specifiers:
-      '@gaopeng123/utils.array': ^1.0.6
-      '@gaopeng123/utils.date': ^1.0.6
-      '@gaopeng123/utils.file': ^1.0.6
-      '@gaopeng123/utils.function': ^1.0.6
-      '@gaopeng123/utils.number': ^1.0.6
-      '@gaopeng123/utils.object': ^1.0.6
-      '@gaopeng123/utils.string': ^1.0.6
-      '@gaopeng123/utils.types': ^1.0.6
+      '@gaopeng123/utils.array': ^1.1.0
+      '@gaopeng123/utils.date': ^1.1.0
+      '@gaopeng123/utils.file': ^1.1.0
+      '@gaopeng123/utils.function': ^1.1.0
+      '@gaopeng123/utils.number': ^1.1.0
+      '@gaopeng123/utils.object': ^1.1.0
+      '@gaopeng123/utils.string': ^1.1.0
+      '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
