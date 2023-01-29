@@ -1,4 +1,5 @@
 import { hasOperate, OperateConfig } from "./hasOperate";
+import { animate, easingFuncs, EasingType } from "./easing";
 
 export { compose as compose } from './compose';
 export { composePromises as composePromises } from './compose';
@@ -45,3 +46,9 @@ export { delay, asyncDelay } from "./delay";
  */
 export { hasOperate } from "./hasOperate";
 export type { OperateConfig } from "./hasOperate";
+
+/**
+ * 缓动函数
+ */
+export { easingFuncs, animate } from "./easing";
+export type { EasingType } from "./easing";
