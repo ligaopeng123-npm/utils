@@ -254,3 +254,41 @@ type OperateConfig = {
 hasOperate(()=> {}, {wait: 5000, interval: 1000});
 ```
 
+## easing
+
+#### easingFuncs
+
+`常用的缓动函数`
+
+```typescript
+type EasingType = 'linear' | 'quadraticIn' | 'quadraticOut' | 'quadraticInOut'
+    | 'cubicIn' | 'cubicOut' | 'cubicInOut' | 'quarticIn' | 'quarticOut' | 'quarticInOut'
+    | 'quinticIn' | 'quinticOut' | 'quinticInOut' | 'sinusoidalIn' | 'sinusoidalOut'
+    | 'sinusoidalInOut' | 'exponentialIn' | 'exponentialOut' | 'exponentialInOut'
+    | 'circularIn' | 'circularOut' | 'circularInOut' | 'elasticIn' | 'elasticOut'
+    | 'elasticInOut' | 'backIn' | 'backOut' | 'backInOut' | 'bounceIn' | 'bounceOut'
+    | 'bounceInOut';
+
+easingFuncs.linear(x); // number
+```
+
+#### animate
+
+`创建一个js动画`
+
+```typescript
+/**
+ * 添加动画能力
+ **/
+type AnimateConfig = {
+    duration?: number; // 执行时长 默认1000ms
+    easing?: EasingType | any; // 动画类型
+    afterAnimate: ()=> void; // 动画执行完成后回调
+}
+
+type AnimateFnReturn = {
+    clear: ()=> void;
+}
+
+animate(callBack: (v: number)=> void, config: AnimateConfig): AnimateFnReturn;
+```

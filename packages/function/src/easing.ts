@@ -218,9 +218,9 @@ export const easingFuncs: {
  * 添加动画能力
  **/
 type AnimateConfig = {
-    duration?: number;
-    easing?: EasingType | any;
-    afterAnimate: ()=> void;
+    duration?: number; // 执行时长 默认1000ms
+    easing?: EasingType | any; // 动画类型
+    afterAnimate: ()=> void; // 动画执行完成后回调
 }
 
 type AnimateFnReturn = {
