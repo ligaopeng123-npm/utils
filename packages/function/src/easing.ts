@@ -217,9 +217,10 @@ export const easingFuncs: {
 /**
  * 添加动画能力
  **/
+type EasingFn = (v: number)=> number;
 type AnimateConfig = {
     duration?: number; // 执行时长 默认1000ms
-    easing?: EasingType | any; // 动画类型
+    easing?: EasingType | EasingFn; // 动画类型
     afterAnimate: ()=> void; // 动画执行完成后回调
 }
 
@@ -227,7 +228,7 @@ type AnimateFnReturn = {
     clear: ()=> void;
 }
 
-export const animate = (callBack: (v: number)=> void, config: AnimateConfig): AnimateFnReturn => {
+export const animate = (callBack: (v: number)=> void, config?: AnimateConfig): AnimateFnReturn => {
     let start = 0;
     let startTime = Date.now();
     let handlerId: any;
@@ -236,7 +237,7 @@ export const animate = (callBack: (v: number)=> void, config: AnimateConfig): An
         easing: 'linear'
     }, config);
 
-    const easingFn = isFunction(easing) ? easing : easingFuncs[easing as EasingType];
+    const easingFn: any = isFunction(easing) ? easing : easingFuncs[easing as EasingType] as EasingFn;
 
     /**
      *  动画执行函数

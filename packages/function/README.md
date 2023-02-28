@@ -289,6 +289,6 @@ type AnimateConfig = {
 type AnimateFnReturn = {
     clear: ()=> void;
 }
-
+// v为从0到1的值
 animate(callBack: (v: number)=> void, config: AnimateConfig): AnimateFnReturn;
 ```

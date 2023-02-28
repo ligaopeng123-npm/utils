@@ -1,6 +1,8 @@
 /**
  * clone函数
  */
+import { validatesCssValue } from "./dom";
+
 export { clone, cloneAllItems, cloneAllArray, cloneAllObject } from './clone';
 /**
  * 鼠标位置
@@ -9,7 +11,7 @@ export { mousePosition } from './mouse';
 /**
  * 1、获取样式 2、获取符合预期的父节点 3、文本复制 4、是否在可视范围内 5、可视范围加载监听
  */
-export { getStyle, parentByExpected, copyText, isVisibleInViewport, observeViewport } from './dom';
+export { getStyle, parentByExpected, copyText, isVisibleInViewport, observeViewport, validatesCssValue } from './dom';
 /**
  * 悬浮球函数
  */

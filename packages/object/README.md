@@ -96,7 +96,7 @@ getStyle(div, 'color');
 
 #### parentByExpected: (dom, expected): parent
 
-`获取复合逾期的父级dom`
+`获取复合预期的父级dom`
 
 ```typescript
 parentByExpected(dom, (currntDom)=> {
@@ -187,6 +187,14 @@ getScrollPosition(document.querySelector('#xxx')); // {x: number,y:number}
 
 ```tsx
 scrollToTop = (el?: Element): void 
+```
+
+#### validatesCssValue
+
+`判断浏览器是否支持css属性`
+
+```typescript
+validatesCssValue('position', 'sticky');
 ```
 
 #### levitatingBall

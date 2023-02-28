@@ -48,8 +48,8 @@ export const parentByExpected = (dom: any, expected: any): any => {
  * 点击文本复制
  * @param span
  */
-export const copyText = (span: any): Promise<{message: string, status: boolean}> => {
-    return new Promise((resolve, reject)=> {
+export const copyText = (span: any): Promise<{ message: string, status: boolean }> => {
+    return new Promise((resolve, reject) => {
         let text: string;
         if (isString(span)) {
             text = span;
@@ -164,4 +164,22 @@ export const scrollToTop = (el?: Element): void => {
         window.requestAnimationFrame(() => scrollToTop(element));
         (element || window).scrollTo(0, c - c / 8);
     }
+}
+
+
+/**
+ * 检查浏览器是否支持某个css属性值
+ */
+export const validatesCssValue = (key: string, value: string) => {
+    const prefix = ['-o-', '-ms-', '-moz-', '-webkit-', ''];
+    const prefixValue = [];
+    for (let i = 0; i < prefix.length; i++) {
+        prefixValue.push(prefix[i] + value)
+    }
+    const element = document.createElement('div');
+    const eleStyle: any = element.style;
+    for (let j = 0; j < prefixValue.length; j++) {
+        eleStyle[key] = prefixValue[j];
+    }
+    return eleStyle[key];
 }

@@ -9,16 +9,21 @@
  * @版权所有: pgli
  *
  **********************************************************************/
+import { isObject, isString } from "@gaopeng123/utils.types";
+
 /**
  * 获取文本宽度
  * @param {string} text
  */
-export function strWidth(ctx: any, text: string, fontSize: number = 12, fontFamily: string = 'Arial') {
-	if (!ctx) {
-		ctx = document.createElement('canvas').getContext('2d');
-	}
-	ctx.font = fontSize + 'px ' + fontFamily; // sans-serif
-	return ctx.measureText(text).width;
+export function strWidth(ctx: any, text: string, fontSize?: number, fontFamily?: string) {
+    if (!ctx) {
+        ctx = document.createElement('canvas').getContext('2d');
+    }
+    const _fontFamily = fontFamily || 'Arial'
+    const _fontSize = fontSize || getComputedStyle(document.documentElement)["fontSize"];
+    ctx.font = `${isString(_fontSize) ? _fontSize : _fontSize + 'px '}${_fontFamily}`; // sans-serif
+    const textWidth = ctx.measureText(text).width;
+    return textWidth;
 }
 
 /**
@@ -29,14 +34,31 @@ export function strWidth(ctx: any, text: string, fontSize: number = 12, fontFami
  * @param {string} font
  * @returns {string}
  */
-export default function ellipsps(text: string, width: number = 100, size: number = 12, font: string = 'Arial'): string {
-	const w = strWidth(null, text, size, font);
-	if (w < width) return text;
-	let ellipspsText = '';
-	const len = text.length;
-	for (let i = 0; i < len; i++) {
-		ellipspsText += text[i];
-		if (strWidth(null, ellipspsText + '...', size, font) > width) return ellipspsText + '...';
-	}
-	return text;
+type EllipsisOpts = {
+    width?: number;
+    fontSize?: number;
+    fontFamily?: string;
+    ellipsisValue?: string;
+}
+export default function ellipsis(text: string, width: number | EllipsisOpts = 100, fontSize?: number, fontFamily?: string, ellipsisValue?: string): string {
+    if (isObject(width)) {
+        // @ts-ignore
+        const opt: EllipsisOpts = width;
+        width = opt.width;
+        fontSize = opt.fontSize;
+        fontFamily = opt.fontFamily;
+        ellipsisValue = opt.ellipsisValue;
+    }
+    const _ellipsisValue = ellipsisValue || '...';
+    const w = strWidth(null, text, fontSize, fontFamily);
+    if (w < width) return text;
+    let ellipsisText = '';
+    const len = text.length;
+    for (let i = 0; i < len; i++) {
+        ellipsisText += text[i];
+        if (strWidth(null, ellipsisText + (text[i + 1] || '') + _ellipsisValue, fontSize, fontFamily) >= width) {
+            return ellipsisText + _ellipsisValue;
+        }
+    }
+    return text;
 }
