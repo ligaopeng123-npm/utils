@@ -76,11 +76,17 @@ export const IPV4 = new RegExp(IPV4_STR);
 /**
  * 密码正则
  */
-export const PASSWORD_STR = '(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}';
+export const PASSWORD_RegExp_STR = (min: number = 8, max: number | string = '')=> {
+    return `(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{${min},${max}}`
+}
+export const PASSWORD_RegExp = (min = 8, max = 16): RegExp => {
+    return new RegExp(PASSWORD_RegExp_STR(min, max));
+}
+export const PASSWORD_STR = PASSWORD_RegExp_STR(8, '');
 export const PASSWORD = new RegExp(PASSWORD_STR);
 // 8-16位
-export const PASSWORD_STR_MAX_16 = '(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,16}';
-export const PASSWORD_MAX_16 = new RegExp(PASSWORD_STR_MAX_16);
+export const PASSWORD_STR_MAX_16 = PASSWORD_RegExp_STR(8, 16);
+export const PASSWORD_MAX_16 = PASSWORD_RegExp(8, 16);
 /**
  * 手机号校验
  */
