@@ -73,8 +73,14 @@ export const extractBigParenthesesContent = partial(extractEnclosedContent, unde
  */
 export const IPV4_STR = '^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$';
 export const IPV4 = new RegExp(IPV4_STR);
+/**
+ * 密码正则
+ */
 export const PASSWORD_STR = '(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}';
 export const PASSWORD = new RegExp(PASSWORD_STR);
+// 8-16位
+export const PASSWORD_STR_MAX_16 = '(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,16}';
+export const PASSWORD_MAX_16 = new RegExp(PASSWORD_STR_MAX_16);
 /**
  * 手机号校验
  */

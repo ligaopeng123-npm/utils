@@ -10,6 +10,8 @@
  *
  **********************************************************************/
 
+import { PASSWORD_STR_MAX_16 } from "./regexp";
+
 export type { FormatStrFn } from './format';
 export { default as formatStr, toCase } from './format';
 
@@ -29,7 +31,9 @@ export { extractMiddleParenthesesContent } from './regexp';
 export { extractBigParenthesesContent } from './regexp';
 // 常用正则校验
 export {
-    PHONE_NUMBER_STR, PHONE_NUMBER, maskMobile, PASSWORD_STR, PASSWORD, IPV4_STR, IPV4, RTF2str, RTF_TAG
+    PHONE_NUMBER_STR, PHONE_NUMBER, maskMobile,
+    PASSWORD_STR, PASSWORD, PASSWORD_STR_MAX_16, PASSWORD_MAX_16,
+    IPV4_STR, IPV4, RTF2str, RTF_TAG
 } from './regexp';
 /**
  * 颜色处理
