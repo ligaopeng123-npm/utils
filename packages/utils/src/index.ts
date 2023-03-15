@@ -77,7 +77,9 @@ export {
     // 提取被字符包裹住的内容
     extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
     // 常用正则校验
-    PHONE_NUMBER_STR, PHONE_NUMBER, maskMobile, IPV4_STR, IPV4,
+    PHONE_NUMBER_STR, PHONE_NUMBER, OPERATOR_NUMBER_STR, OPERATOR_NUMBER, IOT_PHONE_NUMBER_STR, IOT_PHONE_NUMBER, maskMobile,
+    // ip正则校验
+    IPV4_STR, IPV4,
     // 密码相关正则
     PASSWORD_RegExp_STR, PASSWORD_RegExp, PASSWORD_STR, PASSWORD, PASSWORD_STR_MAX_16, PASSWORD_MAX_16,
     // 颜色处理

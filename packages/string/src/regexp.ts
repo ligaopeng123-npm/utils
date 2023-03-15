@@ -88,10 +88,20 @@ export const PASSWORD = new RegExp(PASSWORD_STR);
 export const PASSWORD_STR_MAX_16 = PASSWORD_RegExp_STR(8, 16);
 export const PASSWORD_MAX_16 = PASSWORD_RegExp(8, 16);
 /**
- * 手机号校验
+ * 手机卡 + 数据卡 + 上网卡
  */
-export const PHONE_NUMBER_STR = '^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$';
+export const OPERATOR_NUMBER_STR = `^(?:\\+?86)?1(?:3\\d{3}|5[^4\\D]\\d{2}|8\\d{3}|7(?:[01356789]\\d{2}|4(?:0\\d|1[0-2]|9\\d))|9[012356789]\\d{2}|6[2567]\\d{2}|4(?:[14]0\\d{3}|[68]\\d{4}|[579]\\d{2}))\\d{6}$`;
+export const OPERATOR_NUMBER = new RegExp(OPERATOR_NUMBER_STR);
+/**
+ * 匹配所有支持短信功能的号码（手机卡 + 上网卡）
+ */
+export const PHONE_NUMBER_STR = `^(?:\\+?86)?1(?:3\\d{3}|5[^4\\D]\\d{2}|8\\d{3}|7(?:[012356789]\\d{2}|4(?:0\\d|1[0-2]|9\\d))|9[012356789]\\d{2}|6[2567]\\d{2}|4[579]\\d{2})\\d{6}$`;
 export const PHONE_NUMBER = new RegExp(PHONE_NUMBER_STR);
+/**
+ * 物联网数据卡
+ */
+export const IOT_PHONE_NUMBER_STR = `^(?:\\+?86)?14(?:[14]0|[68]\\d)\\d{9}$`;
+export const IOT_PHONE_NUMBER = new RegExp(IOT_PHONE_NUMBER_STR);
 
 export default extractEnclosedContent;
 // 富文本标签
