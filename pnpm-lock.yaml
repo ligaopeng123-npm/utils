@@ -96,7 +96,7 @@ importers:
   packages/file:
     specifiers:
       '@gaopeng123/utils.object': ^1.1.2
-      '@gaopeng123/utils.string': ^1.1.3
+      '@gaopeng123/utils.string': ^1.1.4
       '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
@@ -240,11 +240,11 @@ importers:
     specifiers:
       '@gaopeng123/utils.array': ^1.1.0
       '@gaopeng123/utils.date': ^1.1.0
-      '@gaopeng123/utils.file': ^1.1.3
+      '@gaopeng123/utils.file': ^1.1.4
       '@gaopeng123/utils.function': ^1.1.2
       '@gaopeng123/utils.number': ^1.1.0
       '@gaopeng123/utils.object': ^1.1.2
-      '@gaopeng123/utils.string': ^1.1.3
+      '@gaopeng123/utils.string': ^1.1.4
       '@gaopeng123/utils.types': ^1.1.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
