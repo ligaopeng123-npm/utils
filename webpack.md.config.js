@@ -13,7 +13,7 @@ module.exports = {
                     toType: 'dir',
                     filter: (resourcePath) => {
                         // copy md文件到docs文件中
-                        if (resourcePath.endsWith('.md') || resourcePath.endsWith('.MD')) {
+                        if ((resourcePath.endsWith('.md') || resourcePath.endsWith('.MD')) && !resourcePath.includes('node_modules')) {
                             return true;
                         }
                         return false;

@@ -96,7 +96,7 @@ getStyle(div, 'color');
 
 #### parentByExpected: (dom, expected): parent
 
-`获取复合逾期的父级dom`
+`获取复合预期的父级dom`
 
 ```typescript
 parentByExpected(dom, (currntDom)=> {
@@ -184,6 +184,41 @@ getScrollPosition(document.querySelector('#xxx')); // {x: number,y:number}
 #### scrollToTop
 
 `将有滚动条的dom，滚动到最顶部`
+
+```tsx
+scrollToTop = (el?: Element): void 
+```
+
+#### validatesCssValue
+
+`判断浏览器是否支持css属性`
+
+```typescript
+validatesCssValue('position', 'sticky');
+```
+
+#### levitatingBall
+
+`悬浮球`
+
+```tsx
+export type levitatingBallConfig = {
+    el: any; // 可拖拽的dom 或者 selectors
+    style?: any; // 样式
+    up_down?: boolean; // 是否可以上下移动
+    left_right?: boolean; // 是否可以左右移动
+    minTop?: number; // 上边距
+    minBottom?: number; // 下边距
+    minLeft?: number; // 左边距
+    minRight?: number; // 右边距
+    persistenceKey?: string; // 行为定制
+    persistenceType?: 'sessionStorage' | 'localStorage'; // 存储类型
+}
+
+levitatingBall(config: levitatingBallConfig, onClick: onClick: (e: MouseEvent | TouchEvent) => void);
+```
+
+
 
 ## other
 
