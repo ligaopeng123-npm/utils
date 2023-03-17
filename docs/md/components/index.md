@@ -1,5 +1,5 @@
 # web-components-repo
-web组件仓库
+`web组件仓库,变更日志见`[CHANGELOG](./CHANGELOG.md)
 
 ### 安装依赖 
 
@@ -7,7 +7,8 @@ web组件仓库
 
 ```js
 npm install --global lerna
-lerna bootstrap
+npm install --global pnpm
+pnpm install
 ```
 
 ### 启动

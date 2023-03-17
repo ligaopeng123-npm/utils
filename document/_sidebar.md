@@ -41,6 +41,7 @@
     - [rc-br](md/components/rc-br.md)
     - [rc-qrcode](md/components/rc-qrcode.md)
     - [rc-paginated-list](md/components/rc-paginated-list.md)
+    - [scroll-nav](md/components/scroll-nav.md)
 - cli
     - [rtc-cli](md/cli/rtc-cli.md)
     - [fetch](md/cli/fetch.md)
@@ -51,3 +52,4 @@
     - [screen](md/screen.md)
 - 笔记
     - [RegExp](md/notes/RegExp.md)
+    - [changelog](md/notes/changelog.md)

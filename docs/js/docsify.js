@@ -2449,7 +2449,7 @@
 		
 		// Scroll into view
 		// https://github.com/vuejs/vuejs.org/blob/master/themes/vue/source/js/common.js#L282-L297
-		if (!hoverOver && window.$docsify.sidebarScrollTop !== false&& body.classList.contains('sticky')) {
+		if (!hoverOver && window.$docsify.sidebarScrollTop !== false && body.classList.contains('sticky')) {
 			var height = sidebar.clientHeight;
 			var curOffset = 0;
 			var cur = active.offsetTop + active.clientHeight + 40;
