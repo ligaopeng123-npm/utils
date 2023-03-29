@@ -1,4 +1,33 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.2...v0.4.1) (2023-03-14)
+## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.5...v0.4.1) (2023-03-29)
+
+
+
+## [1.1.5](https://github.com/ligaopeng123-npm/utils/compare/v1.1.4...v1.1.5) (2023-03-29)
+
+
+### Features
+
+* isEqual ([28d125a](https://github.com/ligaopeng123-npm/utils/commit/28d125aa7b54d96ce3cc4e2c167c430dcd45dc62))
+* makeEmptyValue ([2bbfabe](https://github.com/ligaopeng123-npm/utils/commit/2bbfabe5c0d776f95cba3273e3cddc177f396eab))
+* 文档scrollIntoView函数处理 ([d8a90c3](https://github.com/ligaopeng123-npm/utils/commit/d8a90c3e2a0fd97adcf8cef44f4433f223b9f070))
+
+
+
+## [1.1.4](https://github.com/ligaopeng123-npm/utils/compare/v1.1.3...v1.1.4) (2023-03-15)
+
+
+### Features
+
+* 完善手机号正则相关 ([564a96a](https://github.com/ligaopeng123-npm/utils/commit/564a96a66db2ad7e1b24211bfc72605aec2db56e))
+
+
+
+## [1.1.3](https://github.com/ligaopeng123-npm/utils/compare/v1.1.2...v1.1.3) (2023-03-14)
+
+
+### Features
+
+* 生成changelog ([d593916](https://github.com/ligaopeng123-npm/utils/commit/d593916b0bf9e534247460e058449faa06f3abd5))
 
 
 
