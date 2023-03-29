@@ -57,6 +57,18 @@ ellipsps('wwwwwwwwwwwwwwwwwwwwwwwww', 50, 14);
 strWidth(null, 'WWWWWWW');
 ```
 
+##### makeEmptyValue
+
+`处理空数据展示`
+
+```typescript
+makeEmptyValue(''); // '-';
+makeEmptyValue('', {unit: 'm', emptyValue: 'm'}); // ''
+makeEmptyValue('1', {unit: 'm', emptyValue: 'm'}); // '1m'
+```
+
+
+
 ## path
 
 ##### pathJoin:(...args): string

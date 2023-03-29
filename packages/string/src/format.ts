@@ -9,6 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
+import { isEmpty } from "@gaopeng123/utils.types";
+
 /**
  * 字符串格式化
  * 将一个'hello {o}, I like {1}' {0}{1} 替换成对应字符
@@ -48,3 +50,20 @@ export const toCase = (str: string, type: 1 | 2 | 0 = 0) => {
 }
 
 export default formatStr;
+
+
+/**
+ * 处理空数据展示处理
+ */
+export type EmptyValueOpts = {
+    unit?: string;
+    emptyValue?: string;
+}
+
+export const makeEmptyValue = (v: any, opt?: EmptyValueOpts)=> {
+    const {unit, emptyValue} = Object.assign({unit: '', emptyValue: '-'}, opt);
+    if (isEmpty(v)) {
+        return emptyValue;
+    }
+    return `${v}${unit || ''}`;
+}

@@ -20,8 +20,8 @@ import {
     PASSWORD_STR_MAX_16
 } from "./regexp";
 
-export type { FormatStrFn } from './format';
-export { default as formatStr, toCase } from './format';
+export type { FormatStrFn, EmptyValueOpts } from './format';
+export { default as formatStr, toCase, makeEmptyValue } from './format';
 
 export { default as ellipsps, default as ellipsis } from './ellipsps';
 export { strWidth } from './ellipsps';

@@ -73,7 +73,7 @@ export {
 export {
     uuid, formatStr, toCase,
     // 字符串截断
-    ellipsps, ellipsis, strWidth,
+    ellipsps, ellipsis, strWidth, makeEmptyValue,
     // 提取被字符包裹住的内容
     extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
     // 常用正则校验
