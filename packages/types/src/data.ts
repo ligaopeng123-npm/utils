@@ -147,6 +147,30 @@ export const isEmptyObject: typeFn = (val) => {
 export const isEqualByObj = function (k: object, l: object) {
     return k === l || JSON.stringify(k) === JSON.stringify(l);
 };
+
+/**
+ * 判断多个数字是否相等
+ * @param args
+ */
+export const isEqual = (...args: Array<any>) => {
+    const equalFn = (val: any) => {
+        return (k: string, v: any) => {
+            if (isNumber(val) || isBoolean(val)) {
+                return `${v}`;
+            }
+            return v;
+        }
+    }
+    for (let i = 0; i < args.length; i++) {
+        if (i > 0) {
+            if (args[i] !== args[i - 1] && (JSON.stringify(args[i], equalFn(args[i])) !== JSON.stringify(args[i - 1], equalFn(args[i - 1])))) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 /**
  * 判断字符串是否是json格式
  * @param str

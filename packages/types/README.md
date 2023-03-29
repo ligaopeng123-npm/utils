@@ -2,29 +2,30 @@
 
 ## data
 
-| 函数名            | 作用                                       |
-| ----------------- | ------------------------------------------ |
-| isObject          | 判断对象                                   |
-| isArray           | 判断数组                                   |
-| isPromise         | 判断Promise                                |
-| isFunction        | 判断函数                                   |
-| isNumber          | 判断数字                                   |
-| isBoolean         | 判断boolean                                |
-| isUndefined       | 判断undefined                              |
-| isNull            | 判断null                                   |
-| isString          | 判断string                                 |
-| isElement         | 判断element                                |
-| isDate            | 判断是否是Date类型                         |
-| isEqualByObj      | 判断对象是否相等（包括各个属性）           |
-| isEmptyObject     | 判断是否是空对象                           |
-| isEmpty           | 判断是否是空 null undefined '' [] 都为true |
-| isJSON            | 判断是否为合法的可格式化的json字符串       |
-| isBuffer          | 判断是否是buffer类型                       |
-| isFormData        | 判断是否是formData类型                     |
-| isFile            | 判断是否是file类型                         |
-| isBlob            | 判断是否是blob类型                         |
-| isStream          | 判断是否是stream流                         |
-| isURLSearchParams | 判断是否是URLSearchParams类型              |
+| 函数名            | 作用                                                        |
+| ----------------- | ----------------------------------------------------------- |
+| isObject          | 判断对象                                                    |
+| isArray           | 判断数组                                                    |
+| isPromise         | 判断Promise                                                 |
+| isFunction        | 判断函数                                                    |
+| isNumber          | 判断数字                                                    |
+| isBoolean         | 判断boolean                                                 |
+| isUndefined       | 判断undefined                                               |
+| isNull            | 判断null                                                    |
+| isString          | 判断string                                                  |
+| isElement         | 判断element                                                 |
+| isDate            | 判断是否是Date类型                                          |
+| isEqualByObj      | 判断对象是否相等（包括各个属性）                            |
+| isEqual           | 判断数据是否相等，主要用户判断 1 = '1',  true = 'true' 场景 |
+| isEmptyObject     | 判断是否是空对象                                            |
+| isEmpty           | 判断是否是空 null undefined '' [] 都为true                  |
+| isJSON            | 判断是否为合法的可格式化的json字符串                        |
+| isBuffer          | 判断是否是buffer类型                                        |
+| isFormData        | 判断是否是formData类型                                      |
+| isFile            | 判断是否是file类型                                          |
+| isBlob            | 判断是否是blob类型                                          |
+| isStream          | 判断是否是stream流                                          |
+| isURLSearchParams | 判断是否是URLSearchParams类型                               |
 
 ## browser
 

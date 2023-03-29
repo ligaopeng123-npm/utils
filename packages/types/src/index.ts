@@ -2,13 +2,8 @@
  * 数据类型
  */
 import { isAndroid, isIOS } from "./browser";
-export { isObject as isObject } from "./data";
-export { isArray as isArray } from "./data";
-export { isBoolean as isBoolean } from "./data";
-export { isEqualByObj as isEqualByObj } from "./data";
-export { isEmptyObject as isEmptyObject } from "./data";
+export { isObject, isArray, isBoolean,  } from "./data";
 export { isElement as isElement } from "./data";
-export { isEmpty as isEmpty } from "./data";
 export { isPromise as isPromise } from "./data";
 export { isFunction as isFunction } from "./data";
 export { isNumber as isNumber } from "./data";
@@ -23,6 +18,7 @@ export { isFile as isFile } from "./data";
 export { isBlob as isBlob } from "./data";
 export { isStream as isStream } from "./data";
 export { isURLSearchParams as isURLSearchParams } from "./data";
+export { isEmpty, isEmptyObject, isEqualByObj, isEqual } from "./data";
 
 /**
  * 执行环境判断
