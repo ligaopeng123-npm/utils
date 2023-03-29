@@ -2542,7 +2542,9 @@
 		if (!id) {
 			return;
 		}
-		var topMargin = config().topMargin;
+		// todo 处理searhc在正中间上方
+		var searchDom = document.querySelector('.search');
+		var topMargin = config().topMargin + (searchDom ? searchDom.offsetHeight : 0);
 		var section = find('#' + id);
 		section && scrollTo(section, topMargin);
 		
