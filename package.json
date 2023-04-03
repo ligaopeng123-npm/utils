@@ -32,7 +32,8 @@
         "push:all": "lerna exec --ignore=@gaopeng123/utils -- pnpm run push",
         "push": "lerna publish",
         "bootstrap": "lerna bootstrap",
-        "mark": "doctoc ."
+        "mark": "doctoc .",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
     },
     "files": [],
     "engines": {
