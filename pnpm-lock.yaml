@@ -96,7 +96,7 @@ importers:
   packages/file:
     specifiers:
       '@gaopeng123/utils.object': ^1.1.5
-      '@gaopeng123/utils.string': ^1.1.5
+      '@gaopeng123/utils.string': ^1.1.6
       '@gaopeng123/utils.types': ^1.1.5
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
@@ -240,11 +240,11 @@ importers:
     specifiers:
       '@gaopeng123/utils.array': ^1.1.5
       '@gaopeng123/utils.date': ^1.1.5
-      '@gaopeng123/utils.file': ^1.1.5
+      '@gaopeng123/utils.file': ^1.1.6
       '@gaopeng123/utils.function': ^1.1.5
       '@gaopeng123/utils.number': ^1.1.5
       '@gaopeng123/utils.object': ^1.1.5
-      '@gaopeng123/utils.string': ^1.1.5
+      '@gaopeng123/utils.string': ^1.1.6
       '@gaopeng123/utils.types': ^1.1.5
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
@@ -7272,7 +7272,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
