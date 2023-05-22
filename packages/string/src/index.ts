@@ -54,7 +54,7 @@ export { rgba2rgb } from './color';
 /**
  * 路径拼接
  */
-export { pathJoin } from './path';
+export { pathJoin, replaceDomain } from './path';
 
 /**
  * 驼峰转换

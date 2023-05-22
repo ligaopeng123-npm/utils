@@ -10,12 +10,14 @@
  *
  **********************************************************************/
 
-import {pathJoin} from "../src";
+import {pathJoin, replaceDomain} from "../src";
 
 describe('pathJoin', () => {
 	it('works', () => {
 		expect(pathJoin('http://10.3.3.3', 'api/test')).toEqual('http://10.3.3.3/api/test');
 		expect(pathJoin('/api', '/test')).toEqual('/api/test');
 		expect(pathJoin()).toEqual('');
+		expect(replaceDomain('https://10.1.1.1:4000/api/a/b', 'https://10.1.1.1:6000/appApi')).toEqual('https://10.1.1.1:6000/appApi/api/a/b');
+		expect(replaceDomain('https://10.1.1.1:4000/api/a/b', '/appApi')).toEqual('/appApi/api/a/b');
 	});
 });

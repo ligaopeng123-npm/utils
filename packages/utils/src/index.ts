@@ -84,8 +84,8 @@ export {
     PASSWORD_RegExp_STR, PASSWORD_RegExp, PASSWORD_STR, PASSWORD, PASSWORD_STR_MAX_16, PASSWORD_MAX_16,
     // 颜色处理
     addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb, RTF2str, RTF_TAG,
-    // url路径拼接
-    pathJoin,
+    // url路径拼接  Domain替换
+    pathJoin, replaceDomain,
     // 驼峰转换
     hump2hyphen, hyphen2hump,
     // css style 尺寸单位处理
