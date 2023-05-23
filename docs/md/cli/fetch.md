@@ -2,6 +2,10 @@
 
 `fetch函数封装，提供更便捷的使用方式`
 
+## Changelog
+
+ [changelog](./CHANGELOG.md)
+
 ## Usage
 
 ```typescript
@@ -116,8 +120,28 @@ downLoadFile("/api", {body: {}}).then((res)=>{
 // 2 根据服务端数据类型来判断是否有文件可以下载
 downLoadFile("/api", {body: {}}).then((res)=>{
     if(!res.progress){
-       // 服务端响应内容 下载内容失败 此��可处理一些逻辑
+       // ��务端响应内容 下载内容失败 此处可处理一些逻辑
     }
+});
+```
+
+### createFormFetch
+
+`创建formData类型的请求`
+
+```tsx
+const postFormData = createFormFetch(url, {method: MethodEnum.post, body: {}});
+```
+
+### postFormData
+
+`下发表单数据`
+
+```tsx
+const params: FormData | {[propsName:string]: any
+// 参数如果不是FormData 则会转成FormData                   
+postFormData('api', {body: formData}).then(()=> {
+    
 });
 ```
 

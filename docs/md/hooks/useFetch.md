@@ -67,3 +67,38 @@ const TestUseFetch: React.FC<TestUseFetchProps> = (props) => {
 export default TestUseFetch;
 ```
 
+## useUpdateFetch
+
+`初始化时不下发，只有当依赖参数变更后才会下发`
+
+```tsx
+// 初次opts赋值时不加载，当opts再次赋值时接口调用；会自动处理接口abort
+const [opts, setOpts] = useState({});
+useEffect(()=> {}, [
+  setTimeout(()=> {
+    setOpts({params: {name: 'name'}});
+  }, 5000);
+]);
+const [loading, error, data] = useUpdateGet('/assets/test.json', opts}, (res) => {
+        return res.data;
+    });
+```
+
+## useCtrlFetch
+
+`初次不加载，只有当依赖参数变更后才会触发查询`
+
+```tsx
+// 初次不加载，当run()时触发接口调用；会自动处理接口abort
+const [opts, setOpts] = useState({});
+useEffect(()=> {}, [
+  setTimeout(()=> {
+    run();
+  }, 5000);
+]);
+const [loading, error, data, {run}] = useCtrlGet('/assets/test.json', opts}, (res) => {
+        return res.data;
+    });
+```
+
+

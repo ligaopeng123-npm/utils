@@ -57,6 +57,18 @@ ellipsps('wwwwwwwwwwwwwwwwwwwwwwwww', 50, 14);
 strWidth(null, 'WWWWWWW');
 ```
 
+##### makeEmptyValue
+
+`处理空数据展示`
+
+```typescript
+makeEmptyValue(''); // '-';
+makeEmptyValue('', {unit: 'm', emptyValue: 'm'}); // ''
+makeEmptyValue('1', {unit: 'm', emptyValue: 'm'}); // '1m'
+```
+
+
+
 ## path
 
 ##### pathJoin:(...args): string
@@ -67,6 +79,16 @@ strWidth(null, 'WWWWWWW');
 pathJoin('http://10.3.3.3', 'api/test'); // http://10.3.3.3/api/test
 pathJoin('/api', '/test'); // '/api/test'
 pathJoin(); // ''
+```
+
+#####  replaceDomain
+
+`Domain name 替换 `
+
+```typescript
+	expect(replaceDomain('https://10.1.1.1:4000/api/a/b', 'https://10.1.1.1:6000/appApi')).toEqual('https://10.1.1.1:6000/appApi/api/a/b');
+		expect(replaceDomain('https://10.1.1.1:4000/api/a/b', '/appApi')).toEqual('/appApi/api/a/b');
+	
 ```
 
 ## extractEnclosedContent
