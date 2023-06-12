@@ -5679,7 +5679,7 @@ packages:
       postcss-value-parser: 4.2.0
       schema-utils: 3.1.1
       semver: 7.3.8
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /css-select/4.3.0:
@@ -7010,7 +7010,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /file-uri-to-path/1.0.0:
@@ -10505,7 +10505,7 @@ packages:
       cssnano: 5.1.14_postcss@8.4.20
       last-call-webpack-plugin: 3.0.0
       postcss: 8.4.20
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /optionator/0.8.3:
@@ -12890,7 +12890,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.1.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
     dev: true
 
   /stylehacks/5.1.1_postcss@8.4.20:
@@ -13045,7 +13045,7 @@ packages:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@4.10.0
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
     dev: true

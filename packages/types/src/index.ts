@@ -11,7 +11,7 @@ export { isUndefined as isUndefined } from "./data";
 export { isNull as isNull } from "./data";
 export { isString as isString } from "./data";
 export { isJSON as isJSON } from "./data";
-export { isDate as isDate } from "./data";
+export { isDate as isDate, isUTC } from "./data";
 export { isBuffer as isBuffer } from "./data";
 export { isFormData as isFormData } from "./data";
 export { isFile as isFile } from "./data";

@@ -2,7 +2,7 @@
 export {
     // 数据类型判断
     isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull,
-    isEqualByObj, isEqual, isFunction, isPromise, isString, isDate, isUndefined,
+    isEqualByObj, isEqual, isFunction, isPromise, isString, isDate, isUTC, isUndefined,
     isJSON, isBoolean, isBuffer, isFormData, isFile, isBlob, isStream, isURLSearchParams,
     // 浏览器判断
     isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko,

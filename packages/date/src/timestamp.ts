@@ -9,7 +9,11 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isDate, isSafari, isString} from "@gaopeng123/utils.types";
+import {
+    isDate,
+    isString,
+    isUTC
+} from "@gaopeng123/utils.types";
 
 
 // 返回 01-12 的月份值
@@ -82,9 +86,15 @@ export const setTimeFillZero = (num: number): string => {
  */
 export const getDate = (timestamp: Date | number | string) => {
 // 处理字符串类型
-    if (isString(timestamp) && isNaN(Number(timestamp))) {
-        // @ts-ignore
-        timestamp = new Date(timestamp?.replace(/-/g, '/'));
+    if (isString(timestamp)) {
+        if (isUTC(timestamp)) {
+            timestamp = new Date(timestamp);
+        } else if (isNaN(Number(timestamp))) {
+            // @ts-ignore
+            timestamp = new Date(timestamp?.replace(/-/g, '/'));
+        } else {
+
+        }
     }
     return new Date(isDate(timestamp) ? timestamp : Number(timestamp));
 }
@@ -94,14 +104,28 @@ export const getDate = (timestamp: Date | number | string) => {
  *@作用：将时间戳转换成日期
  *@date 2018/5/21
  */
-export type TimestampType = 'yyyy-MM-dd HH:mm:ss' | 'yyyy/MM/dd HH:mm:ss'
-    | 'yyyy-MM-dd HH:mm:ss WW' | 'yyyy/MM/dd HH:mm:ss WW'
-    | 'yyyy-MM-dd' | 'yyyy/MM/dd'
+export type TimestampType =
+    'yyyy-MM-dd HH:mm:ss'
+    | 'yyyy/MM/dd HH:mm:ss'
+    | 'yyyy-MM-dd HH:mm:ss WW'
+    | 'yyyy/MM/dd HH:mm:ss WW'
+    | 'yyyy-MM-dd'
+    | 'yyyy/MM/dd'
     | 'HH:mm:ss'
-    | 'MM-dd' | 'MM/dd'
-    | 'MM-dd HH:mm:ss' | 'MM/dd HH:mm:ss'
+    | 'MM-dd'
+    | 'MM/dd'
+    | 'MM-dd HH:mm:ss'
+    | 'MM/dd HH:mm:ss'
     | 'dd HH:mm:ss'
-    | 'yyyy' | 'MM' | 'dd' | 'HH' | 'mm' | 'ss' | 'WW' | 'ww' | string;
+    | 'yyyy'
+    | 'MM'
+    | 'dd'
+    | 'HH'
+    | 'mm'
+    | 'ss'
+    | 'WW'
+    | 'ww'
+    | string;
 
 const formatTimestamp = (timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string => {
     const date = getDate(timestamp);

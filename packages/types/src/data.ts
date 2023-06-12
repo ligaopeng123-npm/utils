@@ -201,6 +201,16 @@ export const isJSON: typeFn = (val) => {
 export const isDate: typeFn = (val) => {
     return toString.call(val) === '[object Date]';
 };
+/**
+ * 判断字符串是否是utc格式
+ * @param val
+ */
+export const isUTC: typeFn = (val) => {
+    if (isString(val)) {
+        return /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.\d{3}\+00:00$/.test(val);
+    }
+    return false;
+}
 
 /**
  * 判断是不是Buffer类型
@@ -261,12 +271,12 @@ export const isURLSearchParams: typeFn = (val) => {
 /**
  * node环境
  */
-export const isNodejs = ()=> {
+export const isNodejs = () => {
     return !(typeof window !== "undefined" && window !== null);
 }
 /**
  * 浏览器环境
  */
-export const isBrowser = ()=> {
+export const isBrowser = () => {
     return typeof window !== "undefined" && window !== null && this === window;
 }
