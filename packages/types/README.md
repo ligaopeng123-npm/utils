@@ -15,6 +15,7 @@
 | isString          | 判断string                                                  |
 | isElement         | 判断element                                                 |
 | isDate            | 判断是否是Date类型                                          |
+| isUTC             | 判断字符串是否是UTC格式                                     |
 | isEqualByObj      | 判断对象是否相等（包括各个属性）                            |
 | isEqual           | 判断数据是否相等，主要用户判断 1 = '1',  true = 'true' 场景 |
 | isEmptyObject     | 判断是否是空对象                                            |
