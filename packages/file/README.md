@@ -97,7 +97,7 @@ download({
 downloadStream({url:'', options: {body: ''},fileName: ''})
 ```
 
-##### dowmloadScreenshotPicture: (dom, options) 
+##### downloadScreenshotPicture: (dom, options) 
 
 `下载视频和canvas截图 `
 
