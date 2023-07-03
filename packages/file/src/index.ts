@@ -1,12 +1,10 @@
-import { downloadClickA, getFileNameFromUrl } from "./download";
-
 export { downloadStream } from './download';
 export type { DownloadStreamParams } from './download';
 
 export { download, downloadClickA, checkOrigin, getFileNameFromUrl } from './download';
 export type { DownloadParams } from './download';
 // 将图片转为base64位
-export { imageToBase64, downloadScreenshotPicture, imageUrlToBase64, imageUrlToBlob, imageTypeFromUrl } from './image';
+export { toBase64, imageToBase64, downloadScreenshotPicture, imageUrlToBase64, imageUrlToBlob, imageTypeFromUrl } from './image';
 
 export { injectScript, injectScripts, injectCSS } from "./inject";
 

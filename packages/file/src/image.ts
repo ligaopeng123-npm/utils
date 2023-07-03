@@ -41,7 +41,11 @@ export const openToPreviewBase64 = (base64URL: string) => {
     win.document.write('<iframe src="' + base64URL + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
 }
 
-type ImageType = 'image/png' | 'image/jpeg' | 'image/jpg' | 'image/webp';
+type ImageType =
+    'image/png'
+    | 'image/jpeg'
+    | 'image/jpg'
+    | 'image/webp';
 type CanvasToDataURL = {
     canvas: HTMLCanvasElement,
     type: ImageType,
@@ -62,7 +66,11 @@ export const imageTypeFromUrl = (url: string): string => {
  * @param type
  * @param encoderOptions
  */
-export const toBase64 = ({ canvas, type, encoderOptions }: CanvasToDataURL): string => {
+export const toBase64 = ({
+    canvas,
+    type,
+    encoderOptions
+}: CanvasToDataURL): string => {
     if (canvas?.toDataURL) {
         const base64Str = canvas.toDataURL(type || 'image/png',
             isUndefined(encoderOptions) ? 1 : encoderOptions);
@@ -81,7 +89,13 @@ export type ImageToBase64Props = {
     type?: ImageType; // 图片类型 默认'image/png'
     opacity?: number; // 透明度 默认1
 }
-export const imageToBase64 = ({ image, width, height, type, opacity }: ImageToBase64Props) => {
+export const imageToBase64 = ({
+    image,
+    width,
+    height,
+    type,
+    opacity
+}: ImageToBase64Props) => {
     const canvas = document.createElement('canvas');
     const currentWidth = width || image.width;
     const currentHeight = height || image.height;
@@ -109,7 +123,10 @@ export const imageUrlToBase64: ImageUrlToBase64 = (url: string, isProxy = true) 
         image.src = currentSrc;
         image.onload = () => {
             const type = `image/${imageTypeFromUrl(url)}` as ImageType;
-            const base64 = imageToBase64({ image, type: type });
+            const base64 = imageToBase64({
+                image,
+                type: type
+            });
             resolve(base64);
         }
         image.onerror = () => {
@@ -136,10 +153,12 @@ export const imageUrlToBlob: ImageUrlToBlob = async (url: string, isProxy = true
 type DownloadPictureOptions = {
     fileName?: string,
     type?: ImageType,
-    encoderOptions?: number
+    encoderOptions?: number,
+    height?: number,
+    width?: number,
 }
 export const downloadScreenshotPicture = (dom: HTMLCanvasElement | HTMLVideoElement | string,
-                                          options: DownloadPictureOptions) => {
+    options: DownloadPictureOptions) => {
     let videoDom: any;
     if (isElement(dom)) {
         videoDom = dom;
@@ -152,10 +171,14 @@ export const downloadScreenshotPicture = (dom: HTMLCanvasElement | HTMLVideoElem
         let canvas;
         if (videoDom.tagName === 'VIDEO') {
             canvas = document.createElement('canvas');
-            canvas.width = videoDom.offsetWidth;
-            canvas.height = videoDom.offsetHeight;
-            canvas.style.height = `${videoDom.offsetWidth}px`;
-            canvas.style.height = `${videoDom.offsetHeight}px`;
+            const width = options.width || videoDom.offsetWidth;
+            const height = options.height || videoDom.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+            canvas.style.height = `${width}px`;
+            canvas.style.height = `${height}px`;
+            const context = canvas.getContext('2d');
+            context.drawImage(videoDom, 0, 0, width, height);
         } else {
             canvas = videoDom;
         }

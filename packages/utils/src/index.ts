@@ -1,4 +1,6 @@
 /****************************   基本类型判断    *****************************/
+import { toBase64 } from "@gaopeng123/utils.file";
+
 export {
     // 数据类型判断
     isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull,
@@ -30,6 +32,7 @@ export {
     // 图片操作
     imageFromFile,
     openToPreviewBase64,
+    toBase64,
     imageToBase64,
     downloadScreenshotPicture,
     imageUrlToBase64,
