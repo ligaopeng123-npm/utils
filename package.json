@@ -27,7 +27,7 @@
         "start:dm": "docsify serve ./document",
         "start:doc": "docsify serve ./docs",
         "build:docs": "node docs.js",
-        "build": "lerna exec --ignore=@gaopeng123/utils -- pnpm run build",
+        "build": "lerna exec -- pnpm run build",
         "test": "lerna exec --ignore=@gaopeng123/utils -- pnpm run test",
         "push:all": "lerna exec --ignore=@gaopeng123/utils -- pnpm run push",
         "push": "lerna publish",

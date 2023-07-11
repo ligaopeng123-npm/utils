@@ -9,11 +9,15 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {min, max} from "../src";
+import {min, max, toFixed} from "../src";
 
 describe('math', () => {
 	it('works', () => {
 		expect(min(3, 4, 9)).toEqual(3);
 		expect(max(3, 4, 9)).toEqual(9);
+
+		expect(toFixed(3, 2)).toEqual(3.00);
+		expect(toFixed('3.22' as any, 1)).toEqual(3.2);
+		expect(toFixed(null as any, 1)).toEqual(null);
 	});
 });
