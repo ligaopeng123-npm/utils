@@ -56,6 +56,10 @@ UnitUpgradeProps = {
 unitUpgrade(1000); //(['1.00', 'KB']
 ```
 
+##### toFixed: (num:number, fix?: number);
+
+`4舍5入，避免原生toFixed的银行家舍入法导致的问题`
+
 ## 最值
 
 ##### max: (...args: number[]): number;

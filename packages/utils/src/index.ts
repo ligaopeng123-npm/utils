@@ -1,5 +1,6 @@
 /****************************   基本类型判断    *****************************/
 import { toBase64 } from "@gaopeng123/utils.file";
+import { toFixed } from "@gaopeng123/utils.number";
 
 export {
     // 数据类型判断
@@ -146,6 +147,6 @@ export type { TimestampType, TimeRange, TimeRangeType } from "@gaopeng123/utils.
 
 /****************************  number操作    *****************************/
 export {
-    randomInt, toThousands, unitUpgrade, bitUpgrade, bitRateUpgrade,
+    randomInt, toThousands, unitUpgrade, bitUpgrade, bitRateUpgrade, toFixed,
     max, min
 } from "@gaopeng123/utils.number";
