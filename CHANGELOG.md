@@ -1,4 +1,49 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.5...v0.4.1) (2023-03-29)
+## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.9...v0.4.1) (2023-07-19)
+
+
+
+## [1.1.9](https://github.com/ligaopeng123-npm/utils/compare/v1.1.8...v1.1.9) (2023-07-11)
+
+
+### Features
+
+* 添加toFixed方法 ([05ec54e](https://github.com/ligaopeng123-npm/utils/commit/05ec54ed02a9255dc56964bca28c0d876e078067))
+* 脚本梳理 ([448b8aa](https://github.com/ligaopeng123-npm/utils/commit/448b8aa8c2bff750d178b31701697d7565d72102))
+
+
+
+## [1.1.8](https://github.com/ligaopeng123-npm/utils/compare/v1.1.7...v1.1.8) (2023-07-03)
+
+
+### Bug Fixes
+
+* downloadScreenshotPicture video截图失败处理 ([3f46920](https://github.com/ligaopeng123-npm/utils/commit/3f46920404b7c46a511a0898e99eef7e4e23c35a))
+
+
+### Features
+
+* downloadScreenshotPicture文档修改 ([b161b4a](https://github.com/ligaopeng123-npm/utils/commit/b161b4ac4ef5f87948220a2f09e215146bc51b82))
+
+
+
+## [1.1.7](https://github.com/ligaopeng123-npm/utils/compare/v1.1.6...v1.1.7) (2023-06-12)
+
+
+### Features
+
+* add isUTC fix getDate ([ac97c20](https://github.com/ligaopeng123-npm/utils/commit/ac97c20544bd48d33d1c0d8dee976d3c27a2174f))
+* add isUTC fix getDate ([8b46597](https://github.com/ligaopeng123-npm/utils/commit/8b46597488550ed679911ef12ec9fccbcf3fc5f6))
+
+
+
+## [1.1.6](https://github.com/ligaopeng123-npm/utils/compare/v1.1.5...v1.1.6) (2023-05-22)
+
+
+### Features
+
+* scripts  changelog ([0c6b78b](https://github.com/ligaopeng123-npm/utils/commit/0c6b78b0bd6d5b0053ac00daee6011f9e77c7b81))
+* 文档更新 ([6ea576c](https://github.com/ligaopeng123-npm/utils/commit/6ea576c328ed4a44ba3fad0e4e9e2b0d36282043))
+* 添加string方法replaceDomain ([8be3c19](https://github.com/ligaopeng123-npm/utils/commit/8be3c1972276d67a1427d01aa5db9788946f96d4))
 
 
 
