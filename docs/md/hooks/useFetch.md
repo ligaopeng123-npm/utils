@@ -67,6 +67,41 @@ const TestUseFetch: React.FC<TestUseFetchProps> = (props) => {
 export default TestUseFetch;
 ```
 
+## useCreateFetch
+
+`创建一个可操作的fetch`
+
+```tsx
+import {useGetFetch, usePostFetch, useDelFetch, usePutFetch, usePatchFetch} from "@gaopeng123/hooks.use-fetch";
+
+const TestUseFetch: React.FC<TestUseFetchProps> = (props) => {
+ const [{
+        sent,
+        abort
+    }] = useGetFetch();
+  
+  
+  return (
+        <React.Fragment>
+            <h3 onClick={() => {
+                sent('/assets/test.json').then(res => {
+                    console.log(res);
+                });
+                setTimeout(() => {
+                    abort();
+                }, 1)
+            }
+            }>useGetFetch</h3>
+        </React.Fragment>
+    )
+}
+
+
+
+```
+
+
+
 ## useUpdateFetch
 
 `初始化时不下发，只有当依赖参数变更后才会下发`

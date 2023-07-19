@@ -25,7 +25,7 @@ type RcImageUploadProps = {
     pictureHeight?: string | number;
     action?: string; // 上传的路径
     listType?: 'picture-card' | 'picture';
-    multiple?: boolean; // 是否支持多选
+    multiple?: boolean; // 是否���持多选
     accept?: string; // 支持类型 默认.png,.jpg,.jpeg
     maxCount?: number; // 最大上传个数
     fileList?: FileItem[]; // 上传列表

@@ -8,11 +8,9 @@
 | mediaDataSource | [视频属性](https://github.com/xqq/mpegts.js/blob/master/docs/api.md#mediadatasource) |                                                              |        |
 | robustness      | 容错配置                                                     | {     <br />//  播放过程中缓冲器最小矫正的时间 默认为1000ms   <br />bufferTime: DOMHighResTimeStamp;    <br />// 多场时间探测一次 默认5000ms<br />   loopBufferTime: DOMHighResTimeStamp; <br />  // 最大断线重连次数 默认为 5 次 <br />  maxResetTimes: number;        <br />}; |        |
 | extraParams     | 额外的参数配置                                               | {}                                                           | any    |
-| events          | 事件订阅                                                     | {     <br />// 视频播放开始     <br />onLoadStart?: (playerConfig?: PlayerConfig) => void;     <br />// 点击视频重新加载    <br /> onReload?: (playerConfig?: PlayerConfig) => void;     <br />// 加载错误     <br />onLoadError?: (playerConfig?: PlayerConfig) => void;     <br />// 流加载结束    <br /> onLoadEnd?: (playerConfig?: PlayerConfig)=> void;     <br />// 最大重试次数    <br /> onMaxReload?: (playerConfig?: PlayerConfig) => void;    <br /> // 视频结束     <br />onClose?: (playerConfig?: PlayerConfig) => void; <br />} |        |
+| events          | 事件订阅                                                     | {     <br />// 视频播放开始     <br />onLoadStart?: (playerConfig?: PlayerConfig) => void;     <br />// 点击视频重新加载    <br /> onReload?: (playerConfig?: PlayerConfig) => void;     <br />// 加载错误     <br />onLoadError?: (playerConfig?: PlayerConfig) => void;     <br />// 流加载结束    <br /> onLoadEnd?: (playerConfig?: PlayerConfig)=> void;     <br />// 最大重试次数    <br /> onMaxReload?: (playerConfig?: PlayerConfig) => void;    <br /> // 视频结束     <br />onClose?: (playerConfig?: PlayerConfig) => void; <br />}<br />// 回放视频变更事件     <br />onTimeChange?: (playerConfig?: PlayerConfig) => void; <br />} |        |
 | width           | 视频宽度                                                     | string ｜number                                              | 100%   |
 | height          | 视频高度                                                     | string ｜number                                              | 100%   |
-
-
 
 ## RcFlvPlayer
 
@@ -143,8 +141,6 @@ const LayoutPlayer: React.FC<LayoutPlayerProps> = (props) => {
 export default LayoutPlayer;
 ```
 
-
-
 ## RcMultiScreenPlayer
 
 `多屏播放器`
@@ -153,7 +149,7 @@ export default LayoutPlayer;
 | --------------------- | -------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | className             | 样式                             |                                                              |                                                              |
 | defaultSelectedScreen | 默认分配数量                     | 1 \| 4 \| 6 \| 8 \| 9 \| 12 \| 13 \| 16;                     | 4                                                            |
-| defaultPlayerConfig   | 视频播放基础属性                 | {     <br />// 协议类型     <br />protocol?: Protocol \| false \| {         <br />defaultValue: Protocol,        <br /> options: Array<PlayerConfigOptions>    <br /> },     <br />// 视频拉伸方式     <br />objectFit?: ObjectFit \| false \| {       <br />  defaultValue: ObjectFit,         <br />options: Array<PlayerConfigOptions>    <br /> };     <br />// 是否播放时长     <br />maxPlayerTime?: MaxPlayerTime \| false \| {         <br />defaultValue: MaxPlayerTime,        <br /> options: Array<PlayerConfigOptions>     <br />},     <br />// 视频分辨率    <br /> resolution?: Resolution \| false \| {         <br />defaultValue: Resolution,         <br />options: Array<PlayerConfigOptions>   <br />  } <br />} | {<br />protocol: 'FLV',<br /><br />maxPlayerTime: 'forever'<br /><br />objectFit: 'fill'<br /><br />resolution: '720P'<br />} |
+| defaultPlayerConfig   | 视频播放基础属性                 | {     <br />// 协议���型     <br />protocol?: Protocol \| false \| {         <br />defaultValue: Protocol,        <br /> options: Array<PlayerConfigOptions>    <br /> },     <br />// 视频拉伸方式     <br />objectFit?: ObjectFit \| false \| {       <br />  defaultValue: ObjectFit,         <br />options: Array<PlayerConfigOptions>    <br /> };     <br />// 是否播放时长     <br />maxPlayerTime?: MaxPlayerTime \| false \| {         <br />defaultValue: MaxPlayerTime,        <br /> options: Array<PlayerConfigOptions>     <br />},     <br />// 视频分辨率    <br /> resolution?: Resolution \| false \| {         <br />defaultValue: Resolution,         <br />options: Array<PlayerConfigOptions>   <br />  } <br />} | {<br />protocol: 'FLV',<br /><br />maxPlayerTime: 'forever'<br /><br />objectFit: 'fill'<br /><br />resolution: '720P'<br />} |
 | currentConfig         | player基础属性+RcMultiPlayer属性 |                                                              |                                                              |
 | id                    | 标识                             | string                                                       | multi-screen-player                                          |
 | events                | 事件订阅                         | 基础属性events                                               |                                                              |

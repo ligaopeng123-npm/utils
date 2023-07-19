@@ -41,7 +41,9 @@
     - [rc-br](md/components/rc-br.md)
     - [rc-qrcode](md/components/rc-qrcode.md)
     - [rc-paginated-list](md/components/rc-paginated-list.md)
+    - [rc-time-period](md/components/rc-time-period.md)
     - [scroll-nav](md/components/scroll-nav.md)
+    - [video-progress-bar](md/components/video-progress-bar.md)
 - cli
     - [rtc-cli](md/cli/rtc-cli.md)
     - [fetch](md/cli/fetch.md)
