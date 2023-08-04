@@ -1,3 +1,5 @@
+import { injectKeyframes } from "./inject";
+
 export { downloadStream } from './download';
 export type { DownloadStreamParams } from './download';
 
@@ -6,7 +8,7 @@ export type { DownloadParams } from './download';
 // 将图片转为base64位
 export { toBase64, imageToBase64, downloadScreenshotPicture, imageUrlToBase64, imageUrlToBlob, imageTypeFromUrl } from './image';
 
-export { injectScript, injectScripts, injectCSS } from "./inject";
+export { injectScript, injectScripts, injectCSS, injectKeyframes, findKeyframesRule } from "./inject";
 
 
 export { urlJoinParmas, urlJoinParams } from './download';

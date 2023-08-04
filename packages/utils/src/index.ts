@@ -1,7 +1,4 @@
 /****************************   基本类型判断    *****************************/
-import { toBase64 } from "@gaopeng123/utils.file";
-import { toFixed } from "@gaopeng123/utils.number";
-
 export {
     // 数据类型判断
     isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull,
@@ -43,6 +40,8 @@ export {
     injectScript,
     injectScripts,
     injectCSS,
+    injectKeyframes,
+    findKeyframesRule,
     // 图片类型数据转换
     file2Blob,
     file2Url,

@@ -29,6 +29,7 @@ export const injectScript = (src: string): Promise<any> => {
         t.parentNode.insertBefore(s, t);
     });
 }
+
 /**
  * 批量加载js文件
  * @param src
@@ -84,4 +85,43 @@ export const injectCSS = (id: string, cssText: string) => {
         head.appendChild(style); //把创建的style元素插入到head中
     }
 }
+/**
+ * 根据
+ * @param animationName
+ */
+export const findKeyframesRule = (animationName: string): { rule: CSSRule, styleSheetsIndex: number, cssRulesIndex: number } | null => {
+    //此处过滤非同源的styleSheet，因为非同源的无法访问cssRules，会报错
+    const ss = Array.from(document.styleSheets).filter((styleSheet) => !styleSheet.href || styleSheet.href.startsWith(location.origin))
+    for (let i = 0; i < ss.length; ++i) {
+        for (let j = 0; j < ss[i].cssRules.length; ++j) {
+            // @ts-ignore
+            if (ss[i].cssRules[j].type === window.CSSRule.KEYFRAMES_RULE && ss[i].cssRules[j].name === animationName) {
+                return {
+                    rule: ss[i].cssRules[j],
+                    styleSheetsIndex: i,
+                    cssRulesIndex: j
+                };
+            }
+        }
+    }
+    return null
+}
 
+/**
+ * 插入Keyframes
+ * @param animationName
+ */
+export const injectKeyframes = (animationName: string, keyframesRule: string): void => {
+    try {
+        const rule = findKeyframesRule(animationName);
+        const newKeyframes = `@keyframes ${animationName} ${keyframesRule}`
+        if (rule) {
+            document.styleSheets[rule.styleSheetsIndex].deleteRule(rule.cssRulesIndex);
+            document.styleSheets[rule.styleSheetsIndex].insertRule(newKeyframes, rule.cssRulesIndex);
+        } else {
+            document.styleSheets[0].insertRule(newKeyframes, 0);
+        }
+    } catch (e) {
+        console.error(e);
+    }
+}
