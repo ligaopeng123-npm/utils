@@ -2,7 +2,8 @@
  * 数据类型
  */
 import { isAndroid, isIOS } from "./browser";
-export { isObject, isArray, isBoolean,  } from "./data";
+
+export { isObject, isArray, isBoolean, isTrue, isFalse } from "./data";
 export { isElement as isElement } from "./data";
 export { isPromise as isPromise } from "./data";
 export { isFunction as isFunction } from "./data";

@@ -11,7 +11,7 @@
  **********************************************************************/
 export { mapTree } from './mapTree';
 export { findSubtreeByOrder } from './findSubtreeByOrder';
-export { findTreeOrder } from './findTreeOrder';
+export { findTreeOrder, findTreeNode } from './findTreeOrder';
 export { traverseTree } from './traverseTree';
 export { list2tree } from './list2tree'
 export { default as filterTree } from "./filterTree";

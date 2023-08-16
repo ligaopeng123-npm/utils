@@ -1,9 +1,9 @@
 /****************************   基本类型判断    *****************************/
 export {
     // 数据类型判断
-    isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull,
+    isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull, isBoolean, isTrue, isFalse,
     isEqualByObj, isEqual, isFunction, isPromise, isString, isDate, isUTC, isUndefined,
-    isJSON, isBoolean, isBuffer, isFormData, isFile, isBlob, isStream, isURLSearchParams,
+    isJSON, isBuffer, isFormData, isFile, isBlob, isStream, isURLSearchParams,
     // 浏览器判断
     isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko,
     // 硬件判断
@@ -69,7 +69,7 @@ export {
     arr2enum, arr2enumBase, arr2AntdTableEnum, enum2arr, enum2arrBase,
     uniqueArrByKey, binarySearch,
     // 树的查询
-    findTreeOrder, findSubtreeByOrder, traverseTree, mapTree, filterTree
+    findTreeOrder, findTreeNode, findSubtreeByOrder, traverseTree, mapTree, filterTree
 } from "@gaopeng123/utils.array";
 
 /****************************  字符串 数字操作    *****************************/
