@@ -10,6 +10,8 @@
 | isFunction        | 判断函数                                                    |
 | isNumber          | 判断数字                                                    |
 | isBoolean         | 判断boolean                                                 |
+| isTrue            | true “true” 皆返回true                                      |
+| isFalse           | false “false” 皆返回false                                   |
 | isUndefined       | 判断undefined                                               |
 | isNull            | 判断null                                                    |
 | isString          | 判断string                                                  |
@@ -17,9 +19,9 @@
 | isDate            | 判断是否是Date类型                                          |
 | isUTC             | 判断字符串是否是UTC格式                                     |
 | isEqualByObj      | 判断对象是否相等（包括各个属性）                            |
-| isEqual           | 判断数据是否相等，主要用户判断 1 = '1',  true = 'true' 场景 |
+| isEqual           | 判断数据是否相等，主要用于判断 1 = '1',  true = 'true' 场景 |
 | isEmptyObject     | 判断是否是空对象                                            |
-| isEmpty           | 判断是否是空 null undefined '' [] 都为true                  |
+| isEmpty           | 判断是否是空 null undefined '' [] {} 都为true               |
 | isJSON            | 判断是否为合法的可格式化的json字符串                        |
 | isBuffer          | 判断是否是buffer类型                                        |
 | isFormData        | 判断是否是formData类型                                      |

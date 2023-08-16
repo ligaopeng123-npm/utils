@@ -11,6 +11,7 @@
  ********************************************************************* */
 import {traverseTree} from "./traverseTree";
 import {RelyFn, TreeOptions, defaultOptions} from "./typing";
+import { findSubtreeByOrder } from "./findSubtreeByOrder";
 
 /**
  * 查找树的顺序
@@ -26,4 +27,18 @@ export const findTreeOrder = (tree: any, rely: RelyFn, options?: TreeOptions): A
         options: Object.assign(defaultOptions, options)
     });
     return currentTree ? currentTree?.__path?.split('-')?.map((item: string) => Number(item)) : [];
+};
+
+/**
+ * 查找树节点
+ * @param tree
+ * @param rely
+ * @param options
+ */
+export const findTreeNode = (tree: any, rely: RelyFn, options?: TreeOptions): any => {
+    const order = findTreeOrder(tree, rely, options);
+    if (order?.length) {
+        return findSubtreeByOrder(tree, order, options);
+    }
+    return null;
 };

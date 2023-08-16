@@ -73,6 +73,22 @@ export const isBoolean: typeFn = function (val) {
 };
 
 /**
+ * 判断字符串是否为true
+ * @param val
+ */
+export const isTrue: typeFn = function (val) {
+    return isBoolean(val) ? val : val === 'true';
+};
+
+/**
+ * 判断字符串是否为false
+ * @param val
+ */
+export const isFalse: typeFn = function (val) {
+    return isBoolean(val) ? val : val === 'false';
+};
+
+/**
  * Safari 3.x 4.x type判断dom返回的是function
  * @param val
  * @returns {boolean}
@@ -118,8 +134,8 @@ export const isEmpty: typeFn = (val) => {
         val === undefined ||
         val === null ||
         val === '' ||
-        // @ts-ignore
-        (isArray(val) && val?.length === 0)
+        (isArray(val) && val?.length === 0) ||
+        (isObject(val) && isEmptyObject(val))
     );
 };
 

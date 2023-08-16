@@ -195,6 +195,18 @@ findTreeOrder(treeData, (item) => {
 findSubtreeByOrder(treeData, [1, 2]); // {id: 6}
 ```
 
+#### findTreeNode
+
+`查找树节点`
+
+`(tree: Array<any>, rely: RelyFn, options?: TreeOptions): any`
+
+```typescript
+findTreeOrder(treeData, (item) => {
+			return item.id === 7;
+		}); // {id: 7,}
+```
+
 #### mapTree
 
 `(tree: any[], callBack: TraverseTreeCallBack, options?: TreeOptions):TreeNode`
