@@ -52,3 +52,8 @@ export type { OperateConfig } from "./hasOperate";
  */
 export { easingFuncs, animate } from "./easing";
 export type { EasingType } from "./easing";
+
+/**
+ * 事件注册
+ */
+export { on, off } from "./event";

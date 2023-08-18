@@ -16,43 +16,20 @@ export {
 
 /****************************   文件操作    *****************************/
 export {
-    downloadStream,
-    download, downloadClickA, checkOrigin, getFileNameFromUrl,
+    downloadStream, download, downloadClickA, checkOrigin, getFileNameFromUrl,
     // 删除参数中的空数据 处理不合规参数 从url中获取参数
-    urlJoinParmas, urlJoinParams,
-    removeUrlParams,
-    routeFromUri,
-    removeEmptyParams,
-    domainNameFromUri,
+    urlJoinParmas, urlJoinParams, removeUrlParams, routeFromUri, removeEmptyParams, domainNameFromUri,
     //使参数合适 正确, 解析url，获取参数
-    makeParamsProper,
-    queryParamsFromUrl,
+    makeParamsProper, queryParamsFromUrl,
     // 图片操作
-    imageFromFile,
-    openToPreviewBase64,
-    toBase64,
-    imageToBase64,
-    downloadScreenshotPicture,
-    imageUrlToBase64,
-    imageUrlToBlob,
-    imageTypeFromUrl,
+    imageFromFile, openToPreviewBase64, toBase64, imageToBase64, downloadScreenshotPicture,
+    imageUrlToBase64, imageUrlToBlob, imageTypeFromUrl,
     // 动态插入js css
-    injectScript,
-    injectScripts,
-    injectCSS,
-    injectKeyframes,
-    findKeyframesRule,
+    injectScript, injectScripts, injectCSS, injectKeyframes, findKeyframesRule,
     // 图片类型数据转换
-    file2Blob,
-    file2Url,
-    base642Blob,
-    blob2File,
-    base642File,
-    blob2Base64,
+    file2Blob, file2Url, base642Blob, blob2File, base642File, blob2Base64,
     // css 和 react style 相互转换
-    obj2css,
-    css2obj,
-    makeCssText,
+    obj2css, css2obj, makeCssText,
 } from "@gaopeng123/utils.file";
 
 export type { DownloadStreamParams, DownloadParams } from "@gaopeng123/utils.file";
@@ -123,7 +100,7 @@ export {
     windowSize, pcZoom,
     // 去抖 节流
     debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay,
-    hasOperate,
+    hasOperate, off, on,
     easingFuncs, animate,
 } from "@gaopeng123/utils.function";
 

@@ -24,12 +24,13 @@ export type ThrottleOptions = {
      */
     type?: 1 | 2;
     leading?: boolean; // 第一时间是否立即调用 后续在节流  type为1
-    trailing?: boolean; // 表示禁用停止触发的回调  type为 2
+    trailing?: boolean; // 为true时 表示停止后会触发一次回调，传递最后一次的参数  type为 2
     notThrottle?: (...arg: any) => any; // 在去抖过程中 有一些非去抖处理 可以添加此参数
     clearTimeout?: (val: any) => any; // 清理时间参数 为hooks预留接口
 }
 
 export const createThrottle = (fn: any, wait: number, options: ThrottleOptions, timeout: any) => {
+    let lastArgs: any;
     const _throttle = function (...args: any) {
         const {type, notThrottle, leading, trailing} = options;
         notThrottle && isFunction(notThrottle) && notThrottle(...args);
@@ -42,15 +43,18 @@ export const createThrottle = (fn: any, wait: number, options: ThrottleOptions, 
                 timeout = now;
             }
         } else if (type === 2 || trailing) {
+            if (trailing) lastArgs = args;
             if (!timeout) {
                 if (timeout === 0 && leading) {
                     fn.apply(context, args);
                     timeout = null;
                 } else {
                     timeout = setTimeout(() => {
-                        fn.apply(context, args);
+                        fn.apply(context, trailing ? lastArgs : args);
                         if (isFunction(options.clearTimeout)) {
                             options.clearTimeout(null);
+                        } else {
+                            timeout = null;
                         }
                     }, wait);
                 }
