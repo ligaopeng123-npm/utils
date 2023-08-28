@@ -240,7 +240,7 @@ importers:
     specifiers:
       '@gaopeng123/utils.array': ^1.1.10
       '@gaopeng123/utils.date': ^1.1.10
-      '@gaopeng123/utils.file': ^1.1.11
+      '@gaopeng123/utils.file': ^1.1.12-alpha.0
       '@gaopeng123/utils.function': ^1.1.11
       '@gaopeng123/utils.number': ^1.1.10
       '@gaopeng123/utils.object': ^1.1.11
