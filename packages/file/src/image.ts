@@ -163,12 +163,12 @@ export const downloadScreenshotPicture = (dom: HTMLCanvasElement | HTMLVideoElem
     if (isElement(dom)) {
         videoDom = dom;
     } else {
-        // @ts-ignore
-        videoDom = document.getElementById(video);
+        videoDom = document.getElementById(dom as string);
     }
-
+    console.log('videoDom', videoDom)
     if (videoDom) {
         let canvas;
+        console.log('videoDom.tagName', videoDom.tagName)
         if (videoDom.tagName === 'VIDEO') {
             canvas = document.createElement('canvas');
             const width = options.width || videoDom.offsetWidth;
