@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.file",
     "author": "ligaopeng123",
-    "version": "1.1.12-alpha.0",
+    "version": "1.1.12-alpha.1",
     "description": "文件函数处理",
     "license": "MIT",
     "main": "dist/index.js",
