@@ -15,6 +15,8 @@ export {
 } from '@gaopeng123/utils.types';
 
 /****************************   文件操作    *****************************/
+export type { DownloadStreamParams, DownloadParams } from "@gaopeng123/utils.file";
+
 export {
     downloadStream, download, downloadClickA, checkOrigin, getFileNameFromUrl,
     // 删除参数中的空数据 处理不合规参数 从url中获取参数
@@ -22,18 +24,14 @@ export {
     //使参数合适 正确, 解析url，获取参数
     makeParamsProper, queryParamsFromUrl,
     // 图片操作
-    imageFromFile, openToPreviewBase64, toBase64, imageToBase64, downloadScreenshotPicture,
-    imageUrlToBase64, imageUrlToBlob, imageTypeFromUrl,
+    imageFromFile, openToPreviewBase64, toBase64, imageToBase64, downloadScreenshotPicture, imageUrlToBase64, imageUrlToBlob, imageTypeFromUrl,
     // 动态插入js css
     injectScript, injectScripts, injectCSS, injectKeyframes, findKeyframesRule,
     // 图片类型数据转换
     file2Blob, file2Url, base642Blob, blob2File, base642File, blob2Base64,
     // css 和 react style 相互转换
-    obj2css, css2obj, makeCssText,
+    obj2css, css2obj, makeCssText, classnames
 } from "@gaopeng123/utils.file";
-
-export type { DownloadStreamParams, DownloadParams } from "@gaopeng123/utils.file";
-
 /****************************  数组操作函数    *****************************/
 export type {
     TreeOptions, TraverseTreeProps, TreeNode, RelyFn, TraverseTreeCallBack, FilterTreeOptions, FilterFn
@@ -43,35 +41,61 @@ export {
     // 数组截断转二维数组       分页器                  array 转 tree
     convertToTwodimensional, pageTurnerFixedLength, list2tree,
     // 数组和枚举的转换
-    arr2enum, arr2enumBase, arr2AntdTableEnum, enum2arr, enum2arrBase,
-    uniqueArrByKey, binarySearch,
+    arr2enum, arr2enumBase, arr2AntdTableEnum, enum2arr, enum2arrBase, uniqueArrByKey, binarySearch,
     // 树的查询
     findTreeOrder, findTreeNode, findSubtreeByOrder, traverseTree, mapTree, filterTree
 } from "@gaopeng123/utils.array";
 
 /****************************  字符串 数字操作    *****************************/
 export {
-    uuid, formatStr, toCase,
+    uuid,
+    formatStr,
+    toCase,
     // 字符串截断
-    ellipsps, ellipsis, strWidth, makeEmptyValue,
+    ellipsps,
+    ellipsis,
+    strWidth,
+    makeEmptyValue,
     // 提取被字符包裹住的内容
-    extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
+    extractEnclosedContent,
+    extractParenthesesContent,
+    extractMiddleParenthesesContent,
+    extractBigParenthesesContent,
     // 常用正则校验
-    PHONE_NUMBER_STR, PHONE_NUMBER, OPERATOR_NUMBER_STR, OPERATOR_NUMBER, IOT_PHONE_NUMBER_STR, IOT_PHONE_NUMBER, maskMobile,
+    PHONE_NUMBER_STR,
+    PHONE_NUMBER,
+    OPERATOR_NUMBER_STR,
+    OPERATOR_NUMBER,
+    IOT_PHONE_NUMBER_STR,
+    IOT_PHONE_NUMBER,
+    maskMobile,
     // ip正则校验
-    IPV4_STR, IPV4,
+    IPV4_STR,
+    IPV4,
     // 密码相关正则
-    PASSWORD_RegExp_STR, PASSWORD_RegExp, PASSWORD_STR, PASSWORD, PASSWORD_STR_MAX_16, PASSWORD_MAX_16,
+    PASSWORD_RegExp_STR,
+    PASSWORD_RegExp,
+    PASSWORD_STR,
+    PASSWORD,
+    PASSWORD_STR_MAX_16,
+    PASSWORD_MAX_16,
     // 颜色处理
-    addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb, RTF2str, RTF_TAG,
+    addOpacity,
+    hex2Rgb,
+    rgb2hex,
+    rgba2hex,
+    rgba2rgb,
+    RTF2str,
+    RTF_TAG,
     // url路径拼接  Domain替换
-    pathJoin, replaceDomain,
+    pathJoin,
+    replaceDomain,
     // 驼峰转换
-    hump2hyphen, hyphen2hump,
+    hump2hyphen,
+    hyphen2hump,
     // css style 尺寸单位处理
     addBoxSizeUnit
 } from "@gaopeng123/utils.string";
-
 /****************************  对象操作    *****************************/
 export {
     // clone函数

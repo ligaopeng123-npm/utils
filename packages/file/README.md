@@ -313,3 +313,11 @@ makeCssText({'my-class-name': testData});
 }
 ```
 
+##### classnames
+
+```typescript
+expect(classnames({ 'my-class-name': true })).toEqual(`my-class-name`);
+expect(classnames({ abc: true, 'my-class-name': false })).toEqual(`abc`);
+expect(classnames(['abc', { 'my-class-name': true }])).toEqual(`abc my-class-name`);
+```
+

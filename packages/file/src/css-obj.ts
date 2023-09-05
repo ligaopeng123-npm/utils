@@ -9,8 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {isObject, isString} from "@gaopeng123/utils.types";
-import {hump2hyphen, hyphen2hump} from "@gaopeng123/utils.string";
+import { isArray, isNumber, isObject, isString } from "@gaopeng123/utils.types";
+import { hump2hyphen, hyphen2hump } from "@gaopeng123/utils.string";
 
 /**
  * 将react obj style类型 转换成 css类型
@@ -56,4 +56,36 @@ export const makeCssText = (cssTexts: any) => {
         cssText += `.${cssTextsKey} { ${obj2css(cssTexts[cssTextsKey])} } `
     }
     return cssText
+}
+
+
+const hasOwn = {}.hasOwnProperty;
+
+export const classnames = (...args: Array<any>) => {
+    const classes = [];
+    for (let i = 0; i < args.length; i++) {
+        const arg = args[i];
+        if (!arg) continue;
+        if (isString(arg) || isNumber(arg)) {
+            classes.push(arg);
+        } else if (isArray(arg)) {
+            if (arg.length) {
+                const inner = classnames.apply(null, arg);
+                if (inner) {
+                    classes.push(inner);
+                }
+            }
+        } else if (isObject(arg)) {
+            if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes('[native code]')) {
+                classes.push(arg.toString());
+                continue;
+            }
+            for (const key in arg) {
+                if (hasOwn.call(arg, key) && arg[key]) {
+                    classes.push(key);
+                }
+            }
+        }
+    }
+    return classes.join(' ');
 }
