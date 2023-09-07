@@ -11,7 +11,7 @@ export {
     // 版本获取
     chromeVersion, firefoxVersion, ieVersion, operaVersion, safariVersion, webKitVersion,
     // 安全模式获取
-    isStrict, isSecure
+    isStrict, isSecure,
 } from '@gaopeng123/utils.types';
 
 /****************************   文件操作    *****************************/
@@ -150,3 +150,8 @@ export {
     randomInt, toThousands, unitUpgrade, bitUpgrade, bitRateUpgrade, toFixed,
     max, min
 } from "@gaopeng123/utils.number";
+/****************************  log美化打印    *****************************/
+export {
+    // 日志美化打印
+    consoleBg, consoleStr, consoleTag, createConsoleFactory
+} from "@gaopeng123/utils.log"
