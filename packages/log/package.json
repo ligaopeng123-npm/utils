@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.log",
     "author": "ligaopeng123",
-    "version": "1.1.10",
+    "version": "1.1.12-alpha.2",
     "description": "console print beautification",
     "keywords": [
         "console",
@@ -67,6 +67,6 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@gaopeng123/utils.types": "workspace:^1.1.10"
+        "@gaopeng123/utils.types": "workspace:^1.1.12-alpha.2"
     }
 }
