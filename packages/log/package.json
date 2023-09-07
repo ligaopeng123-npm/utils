@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.log",
     "author": "ligaopeng123",
-    "version": "1.1.12-alpha.2",
+    "version": "1.1.12-alpha.3",
     "description": "console print beautification",
     "keywords": [
         "console",
