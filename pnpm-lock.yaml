@@ -214,6 +214,31 @@ importers:
       tslib: 2.4.1
       typescript: 4.9.4
 
+  packages/socket:
+    specifiers:
+      '@gaopeng123/utils.log': workspace:1.1.12-alpha.3
+      '@gaopeng123/utils.string': workspace:^1.1.12-alpha.2
+      '@size-limit/preset-small-lib': ^5.0.1
+      '@types/node': ^16.4.6
+      husky: ^7.0.0
+      size-limit: ^5.0.1
+      ts-node: ^10.7.0
+      tsdx: ^0.14.1
+      tslib: ^2.3.0
+      typescript: ^4.3.5
+    dependencies:
+      '@gaopeng123/utils.log': link:../log
+      '@gaopeng123/utils.string': link:../string
+    devDependencies:
+      '@size-limit/preset-small-lib': 5.0.5_oktl2cueps5bqr25gprm6xjlau
+      '@types/node': 16.18.9
+      husky: 7.0.4
+      size-limit: 5.0.5
+      ts-node: 10.9.1_stlh3dt2tdhuvazetwmdudbwqe
+      tsdx: 0.14.1_@types+node@16.18.9
+      tslib: 2.4.1
+      typescript: 4.9.4
+
   packages/string:
     specifiers:
       '@gaopeng123/utils.function': ^1.1.12-alpha.2

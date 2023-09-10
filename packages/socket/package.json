@@ -1,0 +1,74 @@
+{
+    "name": "@gaopeng123/utils.socket",
+    "author": "ligaopeng123",
+    "version": "1.1.12-alpha.3",
+    "description": "console print beautification",
+    "keywords": [
+        "socket",
+        "reconnect",
+        "sockets"
+    ],
+    "license": "MIT",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
+    "engines": {
+        "node": ">=10"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ligaopeng123-npm/utils.git"
+    },
+    "scripts": {
+        "start": "tsdx watch",
+        "build": "tsdx build",
+        "test": "tsdx test",
+        "push": "pnpm publish --access public",
+        "lint": "tsdx lint",
+        "prepare": "tsdx build",
+        "size": "size-limit",
+        "analyze": "size-limit --why"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "tsdx lint"
+        }
+    },
+    "prettier": {
+        "printWidth": 80,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "es5"
+    },
+    "module": "dist/utils.types.esm.js",
+    "size-limit": [
+        {
+            "path": "dist/utils.types.cjs.production.min.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/utils.types.esm.js",
+            "limit": "10 KB"
+        }
+    ],
+    "devDependencies": {
+        "@size-limit/preset-small-lib": "^5.0.1",
+        "@types/node": "^16.4.6",
+        "husky": "^7.0.0",
+        "size-limit": "^5.0.1",
+        "ts-node": "^10.7.0",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.3.0",
+        "typescript": "^4.3.5"
+    },
+    "dependencies": {
+        "@gaopeng123/utils.log": "workspace:1.1.12-alpha.3",
+        "@gaopeng123/utils.string": "workspace:^1.1.12-alpha.2"
+    }
+}
