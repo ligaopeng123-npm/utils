@@ -19,11 +19,10 @@ export const pathJoin = (...args: string[]): string => {
         if (newPaths[0].startsWith('http')) {
             newPaths[0] = `${newPaths[0]}/`
         } else {
-            newPaths[0] = `/${newPaths[0]}`
+            newPaths[0] = args[0]?.startsWith('//') ? `//${newPaths[0]}` : `/${newPaths[0]}`
         }
         return newPaths.join('/');
     }
-    // @ts-ignore
     return ''
 };
 
@@ -33,7 +32,7 @@ export const pathJoin = (...args: string[]): string => {
  * @param target
  */
 export const replaceDomain = (url: string, target?: string): string => {
-    if (url.startsWith('http')) {
+    if (url.startsWith('http') || url.startsWith('//')) {
         return pathJoin(target || '/', url.split('/').splice(3).join('/'))
     }
     return url;

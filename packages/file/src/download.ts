@@ -25,7 +25,7 @@ export interface urlJoinParamsProps {
  * 将参数拼接到url中
  * @param params
  */
-export const urlJoinParmas = (params?: urlJoinParamsProps): string => {
+export const urlJoinParams = (params?: urlJoinParamsProps): string => {
     if (isObject(params)) {
         let str = ``;
         let count = 1;
@@ -40,8 +40,6 @@ export const urlJoinParmas = (params?: urlJoinParamsProps): string => {
         return '';
     }
 };
-
-export const urlJoinParams = urlJoinParmas;
 
 /**
  * 去掉url的参数
@@ -67,7 +65,6 @@ export declare type DownloadParams = {
     url?: string; // uri地址
     fileName?: string; // 文件名
     blob?: string | Blob; // blob地址
-    parmas?: any; // 请求参数
     params?: any; // 请求参数
     origin?: boolean; // 是否处理过跨域
 }
@@ -95,7 +92,7 @@ type DownloadClickAProps = {
     fileName?: string;
     blob?: Blob | string;
 }
-export const downloadClickA = ({href, fileName, blob}: DownloadClickAProps) => {
+export const downloadClickA = ({ href, fileName, blob }: DownloadClickAProps) => {
     const elt = document.createElement('a');
     elt.setAttribute('href', href);
     elt.setAttribute('download', fileName || getFileNameFromUrl(href) || 'default');
@@ -111,22 +108,25 @@ export const downloadClickA = ({href, fileName, blob}: DownloadClickAProps) => {
  * @param url
  * @param fileName
  * @param blob
- * @param parmas
+ * @param params
  */
-export const download = ({url, fileName, blob, parmas, params, origin}: DownloadParams): void | Error => {
+export const download = (config: DownloadParams): void | Error => {
+    const { url, fileName, blob, params, origin } = config;
     if (!url && !blob) return new Error('url or blob is undefined');
+    // @ts-ignore
+    const _params = params || config.parmas;
     if (blob) {
-        downloadClickA({href: URL.createObjectURL(blob as Blob), blob, fileName});
+        downloadClickA({ href: URL.createObjectURL(blob as Blob), blob, fileName });
     } else {
         if (checkOrigin(url) || !origin) {
-            downloadClickA({href: url + urlJoinParams(params || parmas), blob, fileName});
+            downloadClickA({ href: url + urlJoinParams(_params), blob, fileName });
         } else {
             const xhr = new window.XMLHttpRequest();
-            xhr.open('GET', url + urlJoinParams(params || parmas), true);
+            xhr.open('GET', url + urlJoinParams(_params), true);
             xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
             xhr.responseType = 'blob';
             xhr.onload = () => {
-                downloadClickA({href: URL.createObjectURL(xhr.response), blob: xhr.response, fileName});
+                downloadClickA({ href: URL.createObjectURL(xhr.response), blob: xhr.response, fileName });
             };
             xhr.send();
         }
@@ -142,11 +142,11 @@ export declare type DownloadStreamParams = {
     options?: any; // fetch参数
     fileName?: string; // 文件名
 }
-export const downloadStream = ({url, options, fileName}: DownloadStreamParams): void => {
-    fetch(url, Object.assign({responseType: 'blob'}, options)).then((res: any) => {
+export const downloadStream = ({ url, options, fileName }: DownloadStreamParams): void => {
+    fetch(url, Object.assign({ responseType: 'blob' }, options)).then((res: any) => {
         const blob = new Blob([res],
-            {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8"});
-        download({blob: blob, fileName: fileName});
+            { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8" });
+        download({ blob: blob, fileName: fileName });
     });
 };
 

@@ -1,4 +1,5 @@
 import { injectKeyframes } from "./inject";
+import { urlJoinParams } from "./download";
 
 export { downloadStream } from './download';
 export type { DownloadStreamParams } from './download';
@@ -10,8 +11,7 @@ export { toBase64, imageToBase64, downloadScreenshotPicture, imageUrlToBase64, i
 
 export { injectScript, injectScripts, injectCSS, injectKeyframes, findKeyframesRule } from "./inject";
 
-
-export { urlJoinParmas, urlJoinParams } from './download';
+export { urlJoinParams as urlJoinParmas, urlJoinParams } from './download';
 export { removeUrlParams } from './download';
 export { routeFromUri, domainNameFromUri } from './download';
 // 删除参数中的空数据
@@ -20,7 +20,7 @@ export { removeEmptyParams } from './download';
 export { makeParamsProper } from './download';
 // 从query中获取参数
 export { queryParamsFromUrl } from './download';
-// 从file中获取imgage
+// 从file中获取image
 export { imageFromFile } from './image';
 // 预览base64图片
 export { openToPreviewBase64 } from './image';
