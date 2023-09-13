@@ -36,17 +36,18 @@ export type CreateSocket = (url: string, events: WebSocketEvent) => { close: () 
 
 interface WebSocketManagerConfig {
     visibilityChange?: boolean; // 是否监听visibilitychange事件
-    heartbeat: { // 心跳参数
+    heartbeat?: { // 心跳参数
         timeout?: number; // 发送心跳间隔时长
         name?: string; // 发送心跳内容 默认 {code: 'heartbeat'}
     },
     binaryType?: 'blob' | 'arraybuffer' // 数据类型 默认字符串
 }
 
-const WebSocketManager = (config?: WebSocketManagerConfig) => {
+const WebSocketManager = (managerConfig?: WebSocketManagerConfig) => {
     /**
      * 保存的socket对象
      */
+    const config: WebSocketManagerConfig = managerConfig || {};
     const sockets: { [key: string]: SocketManager } = {};
     /**
      * 心跳
