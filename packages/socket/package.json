@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.socket",
     "author": "ligaopeng123",
-    "version": "1.1.12-alpha.5",
+    "version": "1.1.12-alpha.6",
     "description": "socket reconnect",
     "keywords": [
         "socket",
