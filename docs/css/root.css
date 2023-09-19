@@ -7,3 +7,15 @@
     --main-sidebar-box-shadow-color: #52abfff;
     --main-sidebar-box-shadow: inset -8px -4px 0px -4px #52abff;
 }
+
+.new {
+    color: #f5222d;
+    background: #f6ffed;
+    border: 1px solid #d9d9d900;
+    border-radius: 4px;
+    font-size: 12px;
+    float: right;
+    height: 18px;
+    margin-top: 8px;
+    line-height: 18px;
+}
