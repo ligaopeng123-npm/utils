@@ -26,6 +26,7 @@
         "copy_md": "webpack build --config webpack.md.config.js",
         "start:dm": "docsify serve ./document",
         "start:doc": "docsify serve ./docs",
+        "copy_document_to_docs": "node webpack.docs.config.js",
         "build:docs": "node docs.js",
         "build": "lerna exec -- pnpm run build",
         "test": "lerna exec --ignore=@gaopeng123/utils -- pnpm run test",

@@ -213,6 +213,21 @@ injectCSS(id: string, cssText: string);
 injectCSS('my-id', makeCssText({color: '#fff', fontSize: '12px'}));
 ```
 
+##### injectKeyframes
+
+```typescript
+injectKeyframes('animationName', '{from: {width: 0px;} to{width: 100px;}}')
+```
+
+##### findKeyframesRule
+
+```typescript
+findKeyframesRule('animationName'); 
+// { rule: CSSRule, styleSheetsIndex: number, cssRulesIndex: number }
+```
+
+
+
 ## convert文件类型转换
 
 ##### file2Blob(file:File):Blob;
@@ -296,5 +311,13 @@ makeCssText({'my-class-name': testData});
     border-bottom-color: #000000;
     ...
 }
+```
+
+##### classnames
+
+```typescript
+expect(classnames({ 'my-class-name': true })).toEqual(`my-class-name`);
+expect(classnames({ abc: true, 'my-class-name': false })).toEqual(`abc`);
+expect(classnames(['abc', { 'my-class-name': true }])).toEqual(`abc my-class-name`);
 ```
 

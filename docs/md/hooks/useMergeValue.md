@@ -1,6 +1,1 @@
-# useMergeValue
-
-#### https://www.npmjs.com/package/use-merge-value
-
-`解决npm因peerDependencies导致安装失败问题`
-
+[filename](https://raw.githubusercontent.com/ligaopeng123-npm/hooks/master/packages/useMergeValue/README.md ':include')
