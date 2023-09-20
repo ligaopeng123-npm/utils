@@ -8,6 +8,8 @@
     - [number](./src/number/README.md)
     - [array <span class="new">Updated</span>](./src/array/README.md)
     - [date](./src/date/README.md)
+    - [log <span class="new">New</span>](./src/log/README.md)
+    - [socket <span class="new">New</span>](./src/socket/README.md)
 - hooks
     - [介绍](md/hooks/hooks/README.md)
     - [useAntdTableSelection <span class="new">New</span>](md/hooks/useAntdTableSelection/README.md)
