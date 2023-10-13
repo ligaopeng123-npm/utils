@@ -19,3 +19,23 @@
     margin-top: 8px;
     line-height: 18px;
 }
+
+/*search样式处理*/
+.search .clear-button.show {
+    position: absolute;
+    right: 64px;
+    margin-top: 4px;
+}
+
+.search .clear-button svg {
+    transform: scale(.8) !important;
+}
+
+.search .results-panel.show {
+    margin: 0px 36px;
+    padding: 0px 16px;
+    box-shadow: 0px 2px 2px var(--borderColor);
+    width: calc(100% - 72px);
+    max-height: 400px;
+    overflow-y: auto;
+}

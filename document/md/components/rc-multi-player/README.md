@@ -15,6 +15,8 @@
 ## RcFlvPlayer
 
 > flv播放器，依赖@gaopeng123/multi-player
+>
+> [在线demo](https://ligaopeng123-npm.github.io/web-components-repo/?path=/docs/example-rcflvplayer--props)
 
 ### Usage
 
@@ -45,7 +47,7 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 ## RcWebRTCPlayer
 
-`WebRTC 播放器`
+`WebRTC 播放器`[在线demo](https://ligaopeng123-npm.github.io/web-components-repo/?path=/docs/example-rcwebrtcplayer--props)
 
 ### Usage
 
@@ -75,7 +77,7 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 ## RcMultiPlayer
 
-`混合播放器，双协议`
+`混合播放器，双协议`[在线demo](https://ligaopeng123-npm.github.io/web-components-repo/?path=/docs/example-rcmultiplayer--props)
 
 | 属性          | 说明                         | 类型                          | 默认值  |
 | ------------- | ---------------------------- | ----------------------------- | ------- |
@@ -143,13 +145,13 @@ export default LayoutPlayer;
 
 ## RcMultiScreenPlayer
 
-`多屏播放器`
+`多屏播放器`[在线demo](https://ligaopeng123-npm.github.io/web-components-repo/?path=/docs/example-rcmultiscreenplayer--docs)
 
 | 属性                  | 说明                             | 类型                                                         | 默认值                                                       |
 | --------------------- | -------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | className             | 样式                             |                                                              |                                                              |
 | defaultSelectedScreen | 默认分配数量                     | 1 \| 4 \| 6 \| 8 \| 9 \| 12 \| 13 \| 16;                     | 4                                                            |
-| defaultPlayerConfig   | 视频播放基础属性                 | {     <br />// 协议类型     <br />protocol?: Protocol \| false \| {         <br />defaultValue: Protocol,        <br /> options: Array<PlayerConfigOptions>    <br /> },     <br />// 视频拉伸方式     <br />objectFit?: ObjectFit \| false \| {       <br />  defaultValue: ObjectFit,         <br />options: Array<PlayerConfigOptions>    <br /> };     <br />// 是否播放时长     <br />maxPlayerTime?: MaxPlayerTime \| false \| {         <br />defaultValue: MaxPlayerTime,        <br /> options: Array<PlayerConfigOptions>     <br />},     <br />// 视频分辨率    <br /> resolution?: Resolution \| false \| {         <br />defaultValue: Resolution,         <br />options: Array<PlayerConfigOptions>   <br />  } <br />} | {<br />protocol: 'FLV',<br /><br />maxPlayerTime: 'forever'<br /><br />objectFit: 'fill'<br /><br />resolution: '720P'<br />} |
+| defaultPlayerConfig   | 视频播放基础属性                 | {     <br />// 协议类型     <br />protocol?: Protocol \| false \| {         <br />defaultValue: Protocol,        <br /> options: Array<PlayerConfigOptions>    <br /> },     <br />// 视频拉伸方式     <br />objectFit?: ObjectFit \| false \| {       <br />  defaultValue: ObjectFit,         <br />options: Array<PlayerConfigOptions>    <br /> };     <br />// 是否播放时长     <br />maxPlayerTime?: MaxPlayerTime \| false \| {         <br />defaultValue: MaxPlayerTime,        <br /> options: Array<PlayerConfigOptions>     <br />},     <br />// 视频分辨率    <br /> resolution?: Resolution \| false \| {         <br />defaultValue: Resolution,         <br />options: Array<PlayerConfigOptions>   <br />  } <br /><br />// 视频工具栏 <br />videoToolbar?: {    <br /> close?: boolean; // 是否可关闭     screenshot?: boolean; // 是否可截图     fullScreen?: boolean; // 是否支持全屏<br /> }<br />} | {<br />protocol: 'FLV',<br /><br />maxPlayerTime: 'forever'<br /><br />objectFit: 'fill'<br /><br />resolution: '720P'<br />} |
 | currentConfig         | player基础属性+RcMultiPlayer属性 |                                                              |                                                              |
 | id                    | 标识                             | string                                                       | multi-screen-player                                          |
 | events                | 事件订阅                         | 基础属性events                                               |                                                              |
