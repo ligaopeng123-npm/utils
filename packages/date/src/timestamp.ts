@@ -9,11 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {
-    isDate,
-    isString,
-    isUTC
-} from "@gaopeng123/utils.types";
+import { isDate, isString, isUTC } from "@gaopeng123/utils.types";
 
 
 // 返回 01-12 的月份值

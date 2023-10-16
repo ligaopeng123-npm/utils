@@ -106,6 +106,67 @@ timeRangeCurrent('week');
 timeRangePrevious('threeDays');
 ```
 
+##### timeRangePeriod <span class="new">New</span>
+
+`获取过去{n}天/月的时间区间`
+
+```typescript
+timeRangePeriod('day', 4);
+[
+  {
+    startTime: 1697126400000,
+    endTime: 1697212799000,
+    startTimeStr: '2023-10-13 00:00:00',
+    endTimeStr: '2023-10-13 23:59:59'
+  },
+  {
+    startTime: 1697212800000,
+    endTime: 1697299199000,
+    startTimeStr: '2023-10-14 00:00:00',
+    endTimeStr: '2023-10-14 23:59:59'
+  },
+  {
+    startTime: 1697299200000,
+    endTime: 1697385599000,
+    startTimeStr: '2023-10-15 00:00:00',
+    endTimeStr: '2023-10-15 23:59:59'
+  },
+  {
+    startTime: 1697385600000,
+    endTime: 1697471999000,
+    startTimeStr: '2023-10-16 00:00:00',
+    endTimeStr: '2023-10-16 23:59:59'
+  }
+]
+timeRangePeriod('mouth', 4);
+[
+  {
+    startTime: 1688140800000,
+    endTime: 1690819199000,
+    startTimeStr: '2023-07-01 00:00:00',
+    endTimeStr: '2023-07-31 23:59:59'
+  },
+  {
+    startTime: 1690819200000,
+    endTime: 1693497599000,
+    startTimeStr: '2023-08-01 00:00:00',
+    endTimeStr: '2023-08-31 23:59:59'
+  },
+  {
+    startTime: 1693497600000,
+    endTime: 1696089599000,
+    startTimeStr: '2023-09-01 00:00:00',
+    endTimeStr: '2023-09-30 23:59:59'
+  },
+  {
+    startTime: 1696089600000,
+    endTime: 1698767999000,
+    startTimeStr: '2023-10-01 00:00:00',
+    endTimeStr: '2023-10-31 23:59:59'
+  }
+]
+```
+
 ## 自然时间戳获取
 
 ##### currentQuarterFirstMonth

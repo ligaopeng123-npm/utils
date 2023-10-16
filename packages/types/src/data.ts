@@ -12,7 +12,7 @@
 const toString = Object.prototype.toString;
 
 interface typeFn {
-    (v: any): boolean
+    (v: unknown): boolean
 }
 
 /**
@@ -26,6 +26,7 @@ export const isObject: typeFn = (val) => {
         ? val !== null &&
         val !== undefined &&
         toString.call(val) === '[object Object]' &&
+        // @ts-ignore
         val.ownerDocument === undefined // 排除dom
         : toString.call(val) === '[object Object]';
 };
@@ -77,7 +78,7 @@ export const isBoolean: typeFn = function (val) {
  * @param val
  */
 export const isTrue: typeFn = function (val) {
-    return isBoolean(val) ? val : val === 'true';
+    return isBoolean(val) ? val as boolean : val === 'true';
 };
 
 /**
@@ -85,7 +86,7 @@ export const isTrue: typeFn = function (val) {
  * @param val
  */
 export const isFalse: typeFn = function (val) {
-    return isBoolean(val) ? val : val === 'false';
+    return isBoolean(val) ? val as boolean : val === 'false';
 };
 
 /**
@@ -134,7 +135,7 @@ export const isEmpty: typeFn = (val) => {
         val === undefined ||
         val === null ||
         val === '' ||
-        (isArray(val) && val?.length === 0) ||
+        (isArray(val) && (val as [])?.length === 0) ||
         (isObject(val) && isEmptyObject(val))
     );
 };
@@ -223,7 +224,7 @@ export const isDate: typeFn = (val) => {
  */
 export const isUTC: typeFn = (val) => {
     if (isString(val)) {
-        return /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.\d{3}\+00:00$/.test(val);
+        return /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.\d{3}\+00:00$/.test(val as string);
     }
     return false;
 }
@@ -232,7 +233,7 @@ export const isUTC: typeFn = (val) => {
  * 判断是不是Buffer类型
  * @param val
  */
-export const isBuffer: typeFn = (val) => {
+export const isBuffer: typeFn = (val: any) => {
     // 先判断不是 `undefined`和`null`
     // 再判断 `val`存在构造函数，因为`Buffer`本身是一个类
     // 最后通过自身的`isBuffer`方法判断
@@ -273,7 +274,7 @@ export const isBlob: typeFn = (val) => {
  * @param val
  */
 export const isStream: typeFn = (val) => {
-    return isObject(val) && isFunction(val.pipe);
+    return isObject(val) && isFunction((val as any)?.pipe);
 }
 
 /**

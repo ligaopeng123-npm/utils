@@ -16,8 +16,16 @@
     font-size: 12px;
     float: right;
     height: 18px;
-    margin-top: 8px;
     line-height: 18px;
+}
+
+.file .new {
+    margin-top: 8px;
+}
+
+.anchor .new {
+    color: #f5222d;
+    margin-left: 8px;
 }
 
 /*search样式处理*/

@@ -7,7 +7,7 @@
     - [string](./src/string/README.md)
     - [number](./src/number/README.md)
     - [array <span class="new">Updated</span>](./src/array/README.md)
-    - [date](./src/date/README.md)
+    - [date <span class="new">Updated</span>](./src/date/README.md)
     - [log <span class="new">New</span>](./src/log/README.md)
     - [socket <span class="new">New</span>](./src/socket/README.md)
 - hooks

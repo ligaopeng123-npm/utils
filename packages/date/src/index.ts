@@ -22,7 +22,7 @@ export {getWeek} from './timestamp';
 export {getWeekCN} from './timestamp';
 export {getWeekCNDay} from './timestamp';
 
-export {default as timeRange} from './timeRange';
+export {default as timeRange, timeRangePeriod} from './timeRange';
 export type {TimeRange} from './timeRange';
 export type {TimeRangeType} from './timeRange';
 export {timeRangeCurrent as timeRangeCurrent} from './timeRange';

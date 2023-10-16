@@ -138,7 +138,7 @@ export {
     formatTimestamp, timestampToCN,
     getTime, getDate,
     getYear, getMonth, getDay, getHours, get12Hours, getMinutes, getSeconds, getWeek, getWeekCN, getWeekCNDay,
-    timeRange, timeRangeCurrent, timeRangePrevious,
+    timeRange, timeRangeCurrent, timeRangePrevious, timeRangePeriod,
     currentQuarterFirstMonth, currentQuarterLastMonth, currentQuarterDays,
     currentDayEarliest, currentDayLatest,
 } from "@gaopeng123/utils.date";
