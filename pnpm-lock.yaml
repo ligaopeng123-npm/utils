@@ -286,7 +286,7 @@ importers:
 
   packages/utils:
     specifiers:
-      '@gaopeng123/utils.array': ^1.1.12
+      '@gaopeng123/utils.array': ^1.1.13-alpha.0
       '@gaopeng123/utils.date': ^1.1.12
       '@gaopeng123/utils.file': ^1.1.12
       '@gaopeng123/utils.function': ^1.1.12
