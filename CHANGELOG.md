@@ -1,4 +1,115 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.9...v0.4.1) (2023-07-19)
+## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12...v0.4.1) (2023-10-17)
+
+
+### Features
+
+* add unique, delItem ([069f3a1](https://github.com/ligaopeng123-npm/utils/commit/069f3a1bbade231a4a5a52ac4e445fa495dd20fc))
+
+
+
+## [1.1.12](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.7...v1.1.12) (2023-10-16)
+
+
+### Features
+
+* 文档更新1.0.0版本 ([50c1fbe](https://github.com/ligaopeng123-npm/utils/commit/50c1fbed50ca1cfe265f4161935bbf5ae14f23b5))
+* 文档更新2 ([e3e89ca](https://github.com/ligaopeng123-npm/utils/commit/e3e89ca87ac85c44109fb83f30d3d1c0136925a8))
+* 文档更新3 ([9ba99be](https://github.com/ligaopeng123-npm/utils/commit/9ba99be8bdd456d3c6a78f969ebb1be10b866e08))
+
+
+
+## [1.1.12-alpha.7](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.6...v1.1.12-alpha.7) (2023-09-13)
+
+
+### Bug Fixes
+
+* pathJoin replaceDomain 支持 //10.10.10.1格式 ([d214bef](https://github.com/ligaopeng123-npm/utils/commit/d214befec1e764a6fb21a58c91d1c58eb46ddf9e))
+
+
+
+## [1.1.12-alpha.6](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.5...v1.1.12-alpha.6) (2023-09-13)
+
+
+### Bug Fixes
+
+* @gaopeng123/utils.socket managerConfig为空判断 ([062e38d](https://github.com/ligaopeng123-npm/utils/commit/062e38d8b1653cd1043d331fcafb26877a7536eb))
+
+
+
+## [1.1.12-alpha.5](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.4...v1.1.12-alpha.5) (2023-09-12)
+
+
+### Features
+
+* @gaopeng123/utils.socket 增加sent buffer；暴露WebSocketManager； ([cc866b6](https://github.com/ligaopeng123-npm/utils/commit/cc866b65ee51286fecf221ff228ef14ecc6afa63))
+
+
+
+## [1.1.12-alpha.4](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.3...v1.1.12-alpha.4) (2023-09-10)
+
+
+### Features
+
+* add @gaopeng123/utils.socket ([910f708](https://github.com/ligaopeng123-npm/utils/commit/910f70801b24a6489c5038fdc6cae50c2c4feb33))
+
+
+
+## [1.1.12-alpha.3](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.2...v1.1.12-alpha.3) (2023-09-07)
+
+
+
+## [1.1.12-alpha.2](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.1...v1.1.12-alpha.2) (2023-09-07)
+
+
+### Features
+
+* add @gaopeng123/utils.log ([2bd3854](https://github.com/ligaopeng123-npm/utils/commit/2bd3854fbe132d65805b4bcfef6f2c4202f5da74))
+
+
+
+## [1.1.12-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12-alpha.0...v1.1.12-alpha.1) (2023-09-05)
+
+
+### Features
+
+* add classnames ([83f625f](https://github.com/ligaopeng123-npm/utils/commit/83f625fcd3d180cffd0b767fcb1554e7ffcf08b7))
+
+
+
+## [1.1.12-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.11...v1.1.12-alpha.0) (2023-08-28)
+
+
+### Bug Fixes
+
+* downloadScreenshotPicture bug ([141806a](https://github.com/ligaopeng123-npm/utils/commit/141806a3417a73d6bb6ffbed583981693802f42e))
+
+
+
+## [1.1.11](https://github.com/ligaopeng123-npm/utils/compare/v1.1.10...v1.1.11) (2023-08-18)
+
+
+### Features
+
+* utils add on off;  fix throttle ([1cd51be](https://github.com/ligaopeng123-npm/utils/commit/1cd51bef14dee3a8e47edfcbd550be8ae192cd57))
+
+
+
+## [1.1.10](https://github.com/ligaopeng123-npm/utils/compare/v1.1.10-alpha.0...v1.1.10) (2023-08-16)
+
+
+### Features
+
+* add isTrue isFalse findTreeNode ([12c8555](https://github.com/ligaopeng123-npm/utils/commit/12c85551603b6322494d88aae6eba51bedb542d5))
+* utils add isTrue isFalse findTreeNode ([975b4f7](https://github.com/ligaopeng123-npm/utils/commit/975b4f7124a36f6e143aa555e08fa0f2e08513f6))
+
+
+
+## [1.1.10-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.9...v1.1.10-alpha.0) (2023-08-04)
+
+
+### Features
+
+* add injectKeyframes, findKeyframesRule ([17785eb](https://github.com/ligaopeng123-npm/utils/commit/17785eb918117cda18537cf5aba842548520c735))
 
 
 
