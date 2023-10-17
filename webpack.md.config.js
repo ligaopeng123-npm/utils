@@ -1,5 +1,8 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const lernaJson = require('./lerna.json');
+// 当前的版本
+console.log(lernaJson.version.split('-')[0]);
 const checkMd = (resourcePath) => {
     // copy md文件到docs文件中
     if ((resourcePath.endsWith('.md') || resourcePath.endsWith('.MD')) && !resourcePath.includes('node_modules')) {
