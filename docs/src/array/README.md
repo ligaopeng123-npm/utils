@@ -115,11 +115,26 @@ type Enum2arrValue = {
 }
 ```
 
+#### unique <span class="new">New</span> (arr: Array, key?: string)
+
+`数组去重，如果数组中是对象，则需要传入key作为去重标记`
+
+```typescript
+unique([]);
+```
+
 #### uniqueArrByKey:<T>(arr: Array<T>, key: string): Array<T>
 
 `数组对象去重`
 
+#### delItem <span class="new">New</span>
 
+`删除数组/字符串的某一项`
+
+```typescript
+delItem('abc', (item)=> item === 'a'); // bc
+delItem(['a', 'b', 'c'], (item)=> item === 'a'); // ['b', 'c']
+```
 
 #### binarySearch: (arr: any[], compare: (element: any) => number, start?: number, end?: number): index
 
