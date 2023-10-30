@@ -138,7 +138,7 @@ export type {
 
 export {
     formatTimestamp, timestampToCN,
-    getTime, getDate,
+    getTime, getDate, currentMonthDays, currentYearMonthDays, getMonthDays,
     getYear, getMonth, getDay, getHours, get12Hours, getMinutes, getSeconds, getWeek, getWeekCN, getWeekCNDay,
     timeRange, timeRangeCurrent, timeRangePrevious, timeRangePeriod,
     currentQuarterFirstMonth, currentQuarterLastMonth, currentQuarterDays,

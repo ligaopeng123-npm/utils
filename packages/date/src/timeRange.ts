@@ -9,23 +9,29 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import formatTimestamp, { getMonth, getTime, getWeek, getYear, setTimeFillZero } from "./timestamp";
+import formatTimestamp, { getDate, getMonth, getTime, getWeek, getYear, setTimeFillZero } from "./timestamp";
 
 /**
  * 月份天数
  * @param month
  */
-export const monthDays = (month: number | string): number => {
-    // @ts-ignore
-    return new Date(getYear(new Date()), month, 0).getDate();
+export const currentYearMonthDays = (month: number | string): number => {
+    return new Date(Number(getYear(new Date())), <number>month, 0).getDate();
 };
 /**
- * 当月天数
+ * 本年度当月天数
  */
 export const currentMonthDays = (): number => {
-    // @ts-ignore
-    return monthDays(getMonth(new Date()));
+    return currentYearMonthDays(getMonth(new Date()));
 };
+/**
+ * 根据日期 获取日期月份的天数
+ * @param time
+ */
+export const getMonthDays = (time: Date | number | string): number=> {
+    const date = new Date(getDate(time));
+    return new Date(Number(getYear(date)), Number(getMonth(date)), 0).getDate();
+}
 /**
  * 获取当前季度的第一个月份
  */
@@ -47,7 +53,7 @@ export const currentQuarterLastMonth = (): number => {
 export const currentQuarterDays = (): number => {
     // 当前季度的第一个月份
     const firstMonth = currentQuarterFirstMonth();
-    return [firstMonth, firstMonth + 1, firstMonth + 2].reduce((total: number, current: number) => total + monthDays(current), 0);
+    return [firstMonth, firstMonth + 1, firstMonth + 2].reduce((total: number, current: number) => total + currentYearMonthDays(current), 0);
 };
 
 /**
@@ -131,7 +137,7 @@ export const timeRangeCurrent = (type: TimeRangeType): TimeRange => {
                 const date = new Date();
                 const startTime = Number(new Date(Number(getYear(date)), currentQuarterFirstMonth() - 1, 1).setHours(0, 0, 0, 0));
                 const lastMonth = currentQuarterLastMonth();
-                const endTime = Number(new Date(Number(getYear(date)), lastMonth - 1, monthDays(lastMonth)).setHours(23, 59, 59, 999));
+                const endTime = Number(new Date(Number(getYear(date)), lastMonth - 1, currentYearMonthDays(lastMonth)).setHours(23, 59, 59, 999));
                 return {
                     startTime,
                     endTime
