@@ -9,6 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
+import { setTimeFillZero } from "./timestamp";
+
 export { default as formatTimestamp, getTime, getDate } from './timestamp';
 export type { TimestampType } from './timestamp';
 export { getYear } from './timestamp';
@@ -20,7 +22,7 @@ export { getMinutes } from './timestamp';
 export { getSeconds } from './timestamp';
 export { getWeek } from './timestamp';
 export { getWeekCN } from './timestamp';
-export { getWeekCNDay } from './timestamp';
+export { getWeekCNDay, setTimeFillZero } from './timestamp';
 
 export { default as timeRange, timeRangePeriod } from './timeRange';
 export type { TimeRange } from './timeRange';
