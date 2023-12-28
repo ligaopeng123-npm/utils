@@ -219,6 +219,13 @@ export const isDate: typeFn = (val) => {
     return toString.call(val) === '[object Date]';
 };
 /**
+ * 是否是有效日期
+ * @param date
+ */
+export const isNotValidDate: typeFn = (date) => {
+    return date instanceof Date && !isNaN(date.getTime())
+}
+/**
  * 判断字符串是否是utc格式
  * @param val
  */
