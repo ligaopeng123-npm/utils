@@ -81,21 +81,24 @@ export const setTimeFillZero = (num: number): string => {
  * @param timestamp
  */
 export const getDate = (timestamp: Date | number | string) => {
-// 处理字符串类型
+    let _timestamp = timestamp;
+    // 处理字符串类型
     if (isString(timestamp)) {
         if (isUTC(timestamp)) {
-            timestamp = new Date(timestamp);
+            _timestamp = new Date(timestamp);
         } else if (isNaN(Number(timestamp))) {
             // @ts-ignore  ios 解析不了 2022/09 这种格式
-            timestamp = new Date(timestamp?.replace(/-/g, '/'));
+            _timestamp = new Date(timestamp?.replace(/-/g, '/'));
         } else {
 
         }
     }
-    return new Date(isDate(timestamp) && isValidDate(timestamp)
-        ? timestamp
+
+    return new Date(isDate(_timestamp) && isValidDate(_timestamp)
+        ? _timestamp
         : `${timestamp}`.includes('-') || `${timestamp}`.includes('/') ? timestamp : Number(timestamp));
 }
+
 /**
  *@函数名称：timestampToTime
  *@参数：timestamp时间戳 type时间格式 yyyy-MM-dd yyyy-MM-dd HH:mm:ss HH:mm:ss  HH
