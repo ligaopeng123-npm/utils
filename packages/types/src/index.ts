@@ -4,7 +4,7 @@
 
 export { isObject, isArray, isBoolean, isTrue, isFalse } from "./data";
 export { isElement, isPromise, isFunction, isNumber, isUndefined } from "./data";
-export { isNull, isString, isJSON, isDate, isNotValidDate, isBuffer, isUTC, isFormData } from "./data";
+export { isNull, isString, isJSON, isDate, isValidDate, isBuffer, isUTC, isFormData } from "./data";
 export { isFile, isBlob, isStream, isURLSearchParams } from "./data";
 export { isEmpty, isEmptyObject, isEqualByObj, isEqual } from "./data";
 /**

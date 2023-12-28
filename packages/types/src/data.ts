@@ -222,7 +222,7 @@ export const isDate: typeFn = (val) => {
  * 是否是有效日期
  * @param date
  */
-export const isNotValidDate: typeFn = (date) => {
+export const isValidDate: typeFn = (date) => {
     return date instanceof Date && !isNaN(date.getTime())
 }
 /**

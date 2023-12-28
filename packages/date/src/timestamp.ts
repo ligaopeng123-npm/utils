@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { isDate, isString, isUTC, isNotValidDate } from "@gaopeng123/utils.types";
+import { isDate, isString, isUTC, isValidDate } from "@gaopeng123/utils.types";
 
 
 // 返回 01-12 的月份值
@@ -92,7 +92,7 @@ export const getDate = (timestamp: Date | number | string) => {
 
         }
     }
-    return new Date(isDate(timestamp) && isNotValidDate(timestamp)
+    return new Date(isDate(timestamp) && !isValidDate(timestamp)
         ? timestamp
         : `${timestamp}`.includes('-') || `${timestamp}`.includes('/') ? timestamp : Number(timestamp));
 }
