@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { isDate, isString, isUTC } from "@gaopeng123/utils.types";
+import { isDate, isString, isUTC, isNotValidDate } from "@gaopeng123/utils.types";
 
 
 // 返回 01-12 的月份值
@@ -86,13 +86,15 @@ export const getDate = (timestamp: Date | number | string) => {
         if (isUTC(timestamp)) {
             timestamp = new Date(timestamp);
         } else if (isNaN(Number(timestamp))) {
-            // @ts-ignore
+            // @ts-ignore  ios 解析不了 2022/09 这种格式
             timestamp = new Date(timestamp?.replace(/-/g, '/'));
         } else {
 
         }
     }
-    return new Date(isDate(timestamp) ? timestamp : Number(timestamp));
+    return new Date(isDate(timestamp) && isNotValidDate(timestamp)
+        ? timestamp
+        : `${timestamp}`.includes('-') || `${timestamp}`.includes('/') ? timestamp : Number(timestamp));
 }
 /**
  *@函数名称：timestampToTime
