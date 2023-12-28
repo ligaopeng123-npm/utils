@@ -92,7 +92,7 @@ export const getDate = (timestamp: Date | number | string) => {
 
         }
     }
-    return new Date(isDate(timestamp) && !isValidDate(timestamp)
+    return new Date(isDate(timestamp) && isValidDate(timestamp)
         ? timestamp
         : `${timestamp}`.includes('-') || `${timestamp}`.includes('/') ? timestamp : Number(timestamp));
 }
