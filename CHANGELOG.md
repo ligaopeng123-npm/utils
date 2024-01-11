@@ -1,4 +1,70 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12...v0.4.1) (2023-10-17)
+## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13...v0.4.1) (2024-01-11)
+
+
+
+## [1.1.13](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13-alpha.5...v1.1.13) (2023-12-28)
+
+
+### Bug Fixes
+
+* getDate bug 处理【兼容 safari】 ([6450c55](https://github.com/ligaopeng123-npm/utils/commit/6450c55489bc125ed55ff16c13034fe64cd46bb0))
+* getDate bug 处理【兼容 safari】 ([972e219](https://github.com/ligaopeng123-npm/utils/commit/972e219e002e5f4022881d837bd16d71261d745d))
+* getDate bug 处理【兼容 safari】 ([544682a](https://github.com/ligaopeng123-npm/utils/commit/544682a95ae8443e7c77c1f1b0d5e57341002d57))
+
+
+
+## [1.1.13-alpha.5](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13-alpha.4...v1.1.13-alpha.5) (2023-12-28)
+
+
+### Bug Fixes
+
+* getDate bug 处理 ([cf06269](https://github.com/ligaopeng123-npm/utils/commit/cf06269ea8198d5b26544903139d5e48c920080b))
+
+
+
+## [1.1.13-alpha.4](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13-alpha.3...v1.1.13-alpha.4) (2023-12-28)
+
+
+### Bug Fixes
+
+* change isNotValidDate to isValidDate ([ebcf282](https://github.com/ligaopeng123-npm/utils/commit/ebcf2820ffb2a753c426ad4f571ff950fa247719))
+
+
+
+## [1.1.13-alpha.3](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13-alpha.2...v1.1.13-alpha.3) (2023-12-28)
+
+
+### Bug Fixes
+
+* safari new Date('2020/09') 异常 ([d8a018f](https://github.com/ligaopeng123-npm/utils/commit/d8a018f54b4e37d0fa23c6099b0e9ec116ad4a31))
+
+
+### Features
+
+* add isNotValidDate ([6cd2dcd](https://github.com/ligaopeng123-npm/utils/commit/6cd2dcd00ef3415287decc35fd8ebad0c43e7df6))
+
+
+
+## [1.1.13-alpha.2](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13-alpha.1...v1.1.13-alpha.2) (2023-10-30)
+
+
+### Features
+
+* add setTimeFillZero ([a126e5f](https://github.com/ligaopeng123-npm/utils/commit/a126e5f77fa6789c87badfc9ebfa3af681d90b7d))
+
+
+
+## [1.1.13-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13-alpha.0...v1.1.13-alpha.1) (2023-10-30)
+
+
+### Features
+
+* add currentMonthDays, currentYearMonthDays, getMonthDays ([e733397](https://github.com/ligaopeng123-npm/utils/commit/e7333978139af6b9fc8cec881f21df80f1782d40))
+* unique, delItem导入到utils ([543f39b](https://github.com/ligaopeng123-npm/utils/commit/543f39bdc62267659ffc39a0da71e5a231964395))
+
+
+
+## [1.1.13-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.12...v1.1.13-alpha.0) (2023-10-17)
 
 
 ### Features
