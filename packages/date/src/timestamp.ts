@@ -88,7 +88,9 @@ export const getDate = (timestamp: Date | number | string) => {
             _timestamp = new Date(timestamp);
         } else if (isNaN(Number(timestamp))) {
             // @ts-ignore  ios 解析不了 2022/09 这种格式
-            _timestamp = new Date(timestamp?.replace(/-/g, '/'));
+            // _timestamp = new Date(timestamp?.replace(/-/g, '/'));
+            // https://hq5544.com/resolve-invalid-date-error-on-ios/
+            _timestamp = new Date(...timestamp?.split(/[^0-9]/));
         } else {
 
         }

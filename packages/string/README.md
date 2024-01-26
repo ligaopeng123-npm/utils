@@ -263,6 +263,26 @@ color2Rgb('rgb(0,0,0)'); // '#000'
 
 `将rgba颜色转换为rgb颜色`
 
+##### randomColor <span class="new">New</span>
+
+```ty
+randomColor('hex' | 'rgb'); // 返回颜色 默认hex格式
+```
+
+##### randomRgb <span class="new">New</span>
+
+```typescript
+randomRgb(); // rgb(110, 112, 220)
+```
+
+##### randomHex <span class="new">New</span>
+
+```typescript
+randomHex(); // '#37c972'
+```
+
+
+
 ## hump
 
 ##### hump2hyphen
