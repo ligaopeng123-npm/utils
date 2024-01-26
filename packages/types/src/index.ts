@@ -2,6 +2,8 @@
  * 基础数据类型
  */
 
+import { isHasDom } from "./browser";
+
 export { isObject, isArray, isBoolean, isTrue, isFalse } from "./data";
 export { isElement, isPromise, isFunction, isNumber, isUndefined } from "./data";
 export { isNull, isString, isJSON, isDate, isValidDate, isBuffer, isUTC, isFormData } from "./data";
@@ -14,7 +16,7 @@ export { isNodejs, isBrowser } from "./data";
 /**
  * 浏览器判断
  */
-export { isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko } from "./browser";
+export { isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko, isHasDom } from "./browser";
 /**
  * 硬件判断
  */

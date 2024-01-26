@@ -1,13 +1,15 @@
 /****************************   基本类型判断    *****************************/
+import { isAndroid } from "@gaopeng123/utils.types";
+
 export {
     // 数据类型判断
     isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull, isBoolean, isTrue, isFalse,
     isEqualByObj, isEqual, isFunction, isPromise, isString, isDate, isValidDate, isUTC, isUndefined,
     isJSON, isBuffer, isFormData, isFile, isBlob, isStream, isURLSearchParams,
     // 浏览器判断
-    isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko,
+    isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko, isHasDom,
     // 硬件判断
-    isWindows, isMac, isLinux, isMobile,
+    isWindows, isMac, isLinux, isMobile, isAndroid, isIOS,
     // 版本获取
     chromeVersion, firefoxVersion, ieVersion, operaVersion, safariVersion, webKitVersion,
     // 安全模式获取
