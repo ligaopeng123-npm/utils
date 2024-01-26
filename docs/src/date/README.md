@@ -75,6 +75,33 @@ getWeekCN(new Date());// '星期五'
 getWeekCN(new Date());// '五'
 ```
 
+##### getMonthDays
+
+`根据时间戳获取其月份的天数`
+
+```tsx
+getMonthDays('2023-01-01'); // 31
+getMonthDays(1672531200000); // 31
+```
+
+##### currentMonthDays
+
+`获取当月的天数`
+
+```tsx
+currentMonthDays(); // 31
+```
+
+##### currentYearMonthDays
+
+`获取本年任意月份的天数`
+
+```tsx
+currentYearMonthDays(1); // 31
+currentYearMonthDays('02'); // 28
+currentYearMonthDays('01');// 31
+```
+
 ## 区间时间戳获取
 
 ##### timeRange: (days: number): TimeRange

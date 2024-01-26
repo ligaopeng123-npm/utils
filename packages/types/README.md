@@ -15,7 +15,7 @@
 | isUndefined       | 判断undefined                                               |
 | isNull            | 判断null                                                    |
 | isString          | 判断string                                                  |
-| isHasDom          | 判断是否可以使用dom对象                                     |
+| isHasDom <span class="new">New</span>         | 判断是否可以使用dom对象                                     |
 | isElement         | 判断element                                                 |
 | isDate            | 判断是否是Date类型                                          |
 | isUTC             | 判断字符串是否是UTC格式                                     |
