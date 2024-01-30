@@ -293,7 +293,6 @@ importers:
       '@gaopeng123/utils.log': workspace:^1.1.15-alpha.1
       '@gaopeng123/utils.number': ^1.1.14
       '@gaopeng123/utils.object': ^1.1.14
-      '@gaopeng123/utils.socket': workspace:^1.1.15-alpha.2
       '@gaopeng123/utils.string': ^1.1.14
       '@gaopeng123/utils.types': ^1.1.14
       '@size-limit/preset-small-lib': ^5.0.1
@@ -312,7 +311,6 @@ importers:
       '@gaopeng123/utils.log': link:../log
       '@gaopeng123/utils.number': link:../number
       '@gaopeng123/utils.object': link:../object
-      '@gaopeng123/utils.socket': link:../socket
       '@gaopeng123/utils.string': link:../string
       '@gaopeng123/utils.types': link:../types
     devDependencies:
