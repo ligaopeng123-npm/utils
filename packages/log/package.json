@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.log",
     "author": "ligaopeng123",
-    "version": "1.1.14-alpha.1",
+    "version": "1.1.14",
     "description": "console print beautification",
     "keywords": [
         "console",
@@ -9,7 +9,7 @@
     ],
     "license": "MIT",
     "main": "dist/index.js",
-    "module": "dist/utils.log.esm.js",
+    "module": "dist/utils.types.esm.js",
     "typings": "dist/index.d.ts",
     "private": false,
     "publishConfig": {
@@ -46,7 +46,6 @@
         "singleQuote": true,
         "trailingComma": "es5"
     },
-    "module": "dist/utils.types.esm.js",
     "size-limit": [
         {
             "path": "dist/utils.types.cjs.production.min.js",
@@ -68,6 +67,6 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@gaopeng123/utils.types": "workspace:^1.1.14-alpha.1"
+        "@gaopeng123/utils.types": "workspace:^1.1.14"
     }
 }
