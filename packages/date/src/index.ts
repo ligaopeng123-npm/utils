@@ -9,8 +9,6 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { setTimeFillZero } from "./timestamp";
-
 export { formatTimestamp, getTime, getDate } from './timestamp';
 export type { TimestampType } from './timestamp';
 export { getYear } from './timestamp';
