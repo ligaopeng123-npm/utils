@@ -78,8 +78,7 @@ export type AutoFullscreenCallBack = {
  * 自使用全屏
  * @param el
  */
-// @ts-ignore
-const autoFullscreen = async (el: Element, options: FullscreenOptions, callBack: (args: AutoFullscreenCallBack) => void): Promise<any> => {
+export const autoFullscreen = async (el: Element, options: FullscreenOptions, callBack: (args: AutoFullscreenCallBack) => void): Promise<any> => {
     if (isFullscreen()) {
         const state = await exitFullscreen();
         isUndefined(state) && isFunction(callBack) && callBack({type: TypeEnum.noFullscreen});
@@ -89,5 +88,3 @@ const autoFullscreen = async (el: Element, options: FullscreenOptions, callBack:
     isUndefined(state) && isFunction(callBack) && callBack({type: TypeEnum.fullscreen});
     return state;
 };
-
-export default autoFullscreen;

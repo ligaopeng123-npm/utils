@@ -10,7 +10,7 @@
  *
  **********************************************************************/
 type PartialFn = (...args: Array<any>) => any;
-const partial = (fn: PartialFn, ...args: Array<any>): any => {
+export const partial = (fn: PartialFn, ...args: Array<any>): any => {
     return (...args2: Array<any>) => {
         let current = 0;
         // 定义当前参数，避免执行后被污染
@@ -22,6 +22,3 @@ const partial = (fn: PartialFn, ...args: Array<any>): any => {
         return fn(...curArgs);
     }
 };
-
-
-export default partial;

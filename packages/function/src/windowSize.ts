@@ -28,7 +28,7 @@ export type WindowSize = {
     screenHeight: number; // 分辨率高度
     pcZoom: number; // 终端pc设备的缩放大小 *100数据
 }
-const windowSize = (): WindowSize => {
+export const windowSize = (): WindowSize => {
     let xScroll: number;
     let yScroll: number;
     let pageWidth: number;
@@ -120,5 +120,3 @@ export const pcZoom = (): number => {
     }
     return ratio;
 }
-
-export default windowSize;

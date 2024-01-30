@@ -18,7 +18,7 @@ import { isBrowser } from "@gaopeng123/utils.types";
  * @returns {string}
  */
 export type UuidFn = (len?: number, radix?: number) => string;
-const uuid: UuidFn = (len = 64, radix = 62): string => {
+export const uuid: UuidFn = (len = 64, radix = 62): string => {
 	// 优先使用crypto
 	if (isBrowser() && window.crypto) {
 		// @ts-ignore
@@ -52,5 +52,3 @@ const uuid: UuidFn = (len = 64, radix = 62): string => {
 	}
 	return uuid.join('');
 };
-
-export default uuid;

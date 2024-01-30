@@ -5,6 +5,7 @@
     "description": "函数处理",
     "license": "MIT",
     "main": "dist/index.js",
+    "module": "dist/utils.array.esm.js",
     "typings": "dist/index.d.ts",
     "private": false,
     "publishConfig": {

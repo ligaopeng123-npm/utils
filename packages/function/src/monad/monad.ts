@@ -11,7 +11,7 @@
  **********************************************************************/
 type Fn = (...args: any) => any
 
-class Monad {
+export class Monad {
 	value: any = null;
 	
 	constructor(v: any) {
@@ -33,5 +33,3 @@ class Monad {
 		return fn(this.join())
 	};
 }
-
-export default Monad;

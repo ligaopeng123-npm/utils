@@ -18,7 +18,7 @@ import { isEmpty } from "@gaopeng123/utils.types";
  * @param str
  */
 export type FormatStrFn = (...args: any) => string;
-const formatStr = (str: string): FormatStrFn => {
+export const formatStr = (str: string): FormatStrFn => {
     return (...args: any) => {
         let result = str;
         for (let i = 0; i < args.length; i++) {
@@ -48,8 +48,6 @@ export const toCase = (str: string, type: 1 | 2 | 0 = 0) => {
             return str
     }
 }
-
-export default formatStr;
 
 
 /**

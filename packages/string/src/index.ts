@@ -10,19 +10,18 @@
  *
  **********************************************************************/
 export type { FormatStrFn, EmptyValueOpts } from './format';
-export { default as formatStr, toCase, makeEmptyValue } from './format';
+export { formatStr, toCase, makeEmptyValue } from './format';
 
-export { default as ellipsps, default as ellipsis } from './ellipsps';
-export { strWidth } from './ellipsps';
+export { ellipsis as ellipsps, ellipsis, strWidth } from './ellipsps';
 
 
-export { default as uuid } from './uuid';
+export { uuid } from './uuid';
 export type { UuidFn } from './uuid';
 
 /**
  * 提取被字符包裹中的内容
  */
-export { default as extractEnclosedContent, extractEnclosedContentByStrs } from './regexp';
+export { extractEnclosedContent, extractEnclosedContentByStrs } from './regexp';
 export { extractParenthesesContent } from './regexp';
 export { extractMiddleParenthesesContent } from './regexp';
 export { extractBigParenthesesContent } from './regexp';

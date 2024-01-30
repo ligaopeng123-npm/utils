@@ -43,7 +43,7 @@ interface WebSocketManagerConfig {
     binaryType?: 'blob' | 'arraybuffer' // 数据类型 默认字符串
 }
 
-const WebSocketManager = (managerConfig?: WebSocketManagerConfig) => {
+export const WebSocketManager = (managerConfig?: WebSocketManagerConfig) => {
     /**
      * 保存的socket对象
      */
@@ -250,7 +250,6 @@ const WebSocketManager = (managerConfig?: WebSocketManagerConfig) => {
     return { create, close, destroy, destroyAll, send }
 };
 
-export default WebSocketManager;
 const SocketManager = WebSocketManager();
 export const createSocket: CreateSocket = SocketManager.create;
 export const destroySocket = SocketManager.destroy;

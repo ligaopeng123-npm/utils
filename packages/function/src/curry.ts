@@ -11,7 +11,7 @@
  **********************************************************************/
 type Curry = (...args: Array<any>) => any;
 
-const curry = (fn: Curry) => {
+export const curry = (fn: Curry) => {
 	if (typeof fn !== 'function') {
 		throw new Error(`${fn} is not a function`);
 	}
@@ -29,5 +29,3 @@ const curry = (fn: Curry) => {
 	};
 	return g;
 };
-
-export default curry;

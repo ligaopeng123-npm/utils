@@ -73,9 +73,8 @@ export const throttleOptions = (options?: ThrottleOptions) => Object.assign({
     leading: false
 }, options);
 
-const throttle = (fn: any, wait?: number, options?: ThrottleOptions) => {
+export const throttle = (fn: any, wait?: number, options?: ThrottleOptions) => {
     let _timeout: any = 0; // setTimeout 返回值timeoutID是一个正整数
     return createThrottle(fn, wait || 200, throttleOptions(options), _timeout);
 };
 
-export default throttle;

@@ -1,11 +1,6 @@
-export { default as randomInt } from './random';
-export { default as toThousands } from './toThousands';
+export { randomInt } from './random';
+export { toThousands, unitUpgrade, bitUpgrade, bitRateUpgrade } from './toThousands';
 
-export { unitUpgrade as unitUpgrade } from './toThousands';
-export { bitUpgrade as bitUpgrade } from './toThousands';
-export { bitRateUpgrade as bitRateUpgrade } from './toThousands';
+export { max, min } from './math';
 
-export { max as max } from './math';
-export { min as min } from './math';
-
-export { default as toFixed } from './toFixed';
+export { toFixed } from './toFixed';

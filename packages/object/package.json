@@ -5,6 +5,7 @@
     "description": "对象处理",
     "license": "MIT",
     "main": "dist/index.js",
+    "module": "dist/utils.object.esm.js",
     "typings": "dist/index.d.ts",
     "private": false,
     "publishConfig": {

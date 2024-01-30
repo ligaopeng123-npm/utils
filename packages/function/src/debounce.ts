@@ -51,10 +51,7 @@ export const createDebounce = (fn: any, _wait: number, options: DebounceOptions,
 }
 
 export const debounceOptions = (options: DebounceOptions) => Object.assign({leading: false}, options)
-const debounce = (fn: any, wait?: number, options?: DebounceOptions) => {
+export const debounce = (fn: any, wait?: number, options?: DebounceOptions) => {
     let _timeout: any;
     return createDebounce(fn, wait || 200, debounceOptions(options), _timeout);
 };
-
-
-export default debounce;

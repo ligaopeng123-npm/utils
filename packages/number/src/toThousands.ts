@@ -17,7 +17,7 @@ import {isUndefined} from "@gaopeng123/utils.types";
  *@作用：将数字格式化成千位符号进行展示
  *@date 2018/5/22
  */
-const toThousands = (val: string | number, digit: number = 0): string => {
+export const toThousands = (val: string | number, digit: number = 0): string => {
 	const value = Number(val);
 	const num: any = (value || 0).toFixed(digit || 0).toString();
 	let result = '';
@@ -112,6 +112,3 @@ export const bitRateUpgrade = (num: number, options?: UpgradeOptions) => {
 	const [numStr, unit] = unitUpgrade(num, {type: 'bitRate', decimal: defaultDecimal(options?.decimal)});
 	return `${numStr}${defaultDelimiter(options?.delimiter)}${unit}`;
 };
-
-
-export default toThousands;

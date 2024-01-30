@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import formatTimestamp, { getDate, getMonth, getTime, getWeek, getYear, setTimeFillZero } from "./timestamp";
+import { formatTimestamp, getDate, getMonth, getTime, getWeek, getYear, setTimeFillZero } from "./timestamp";
 
 /**
  * 月份天数
@@ -101,7 +101,7 @@ const monthOrWeekTimeRange = (days: number, nowDay: number): TimeRange => {
  * 时间范围时间戳
  * @param days
  */
-const timeRange = (days: number): TimeRange => {
+export const timeRange = (days: number): TimeRange => {
     return {
         startTime: days === 1 ? currentDayEarliest() : currentDayEarliest() - (days - 1) * DAYTIME,
         endTime: currentDayLatest(), // (Number(thisDayZore) + 86400) * 1000
@@ -202,5 +202,3 @@ export const timeRangePeriod = (type: 'day' | 'month' = 'day', amount: number): 
             return [];
     }
 }
-
-export default timeRange;

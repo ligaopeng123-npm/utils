@@ -14,7 +14,7 @@ export { findSubtreeByOrder } from './findSubtreeByOrder';
 export { findTreeOrder, findTreeNode } from './findTreeOrder';
 export { traverseTree } from './traverseTree';
 export { list2tree } from './list2tree'
-export { default as filterTree } from "./filterTree";
+export { filterTree } from "./filterTree";
 
 export type {
     TreeOptions, TraverseTreeProps, TreeNode, RelyFn, TraverseTreeCallBack, FilterTreeOptions, FilterFn

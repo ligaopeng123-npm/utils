@@ -11,7 +11,7 @@
  **********************************************************************/
 import { setTimeFillZero } from "./timestamp";
 
-export { default as formatTimestamp, getTime, getDate } from './timestamp';
+export { formatTimestamp, getTime, getDate } from './timestamp';
 export type { TimestampType } from './timestamp';
 export { getYear } from './timestamp';
 export { getMonth } from './timestamp';
@@ -24,7 +24,7 @@ export { getWeek } from './timestamp';
 export { getWeekCN } from './timestamp';
 export { getWeekCNDay, setTimeFillZero } from './timestamp';
 
-export { default as timeRange, timeRangePeriod } from './timeRange';
+export { timeRange, timeRangePeriod } from './timeRange';
 export type { TimeRange } from './timeRange';
 export type { TimeRangeType } from './timeRange';
 export { timeRangeCurrent as timeRangeCurrent } from './timeRange';

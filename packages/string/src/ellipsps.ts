@@ -40,7 +40,7 @@ type EllipsisOpts = {
     fontFamily?: string;
     ellipsisValue?: string;
 }
-export default function ellipsis(text: string, width: number | EllipsisOpts = 100, fontSize?: number, fontFamily?: string, ellipsisValue?: string): string {
+export const ellipsis = (text: string, width: number | EllipsisOpts = 100, fontSize?: number, fontFamily?: string, ellipsisValue?: string): string => {
     if (isObject(width)) {
         // @ts-ignore
         const opt: EllipsisOpts = width;

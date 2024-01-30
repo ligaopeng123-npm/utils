@@ -117,5 +117,3 @@ export const filterTree = (treeData: Array<TreeNode>, filterFn: FilterFn, option
     }
 }
 
-export default filterTree;
-

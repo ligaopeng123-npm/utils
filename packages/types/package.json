@@ -10,6 +10,7 @@
     ],
     "license": "MIT",
     "main": "dist/index.js",
+    "module": "dist/utils.types.esm.js",
     "typings": "dist/index.d.ts",
     "private": false,
     "publishConfig": {

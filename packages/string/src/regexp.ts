@@ -29,7 +29,7 @@ export const extractEnclosedContentByStrs = (str: string, startStr: string, endS
         return arr;
     }
 }
-const extractEnclosedContent = (str: string, startStr: string, endStr: string): Array<string> => {
+export const extractEnclosedContent = (str: string, startStr: string, endStr: string): Array<string> => {
     if (isString(str) && isString(startStr) && isString(endStr)) {
         if (isSafari()) {
             const arr: Array<string> = [];
@@ -103,7 +103,6 @@ export const PHONE_NUMBER = new RegExp(PHONE_NUMBER_STR);
 export const IOT_PHONE_NUMBER_STR = `^(?:\\+?86)?14(?:[14]0|[68]\\d)\\d{9}$`;
 export const IOT_PHONE_NUMBER = new RegExp(IOT_PHONE_NUMBER_STR);
 
-export default extractEnclosedContent;
 // 富文本标签
 export const RTF_TAG = /<\/?[a-zA-Z]+.*?>/g;
 // 左边箭头

@@ -13,10 +13,8 @@
  **********************************************************************/
 import { isEmpty } from "@gaopeng123/utils.types";
 
-const toFixed  = (num: number, fix?: number)=> {
+export const toFixed  = (num: number, fix?: number)=> {
     if (isEmpty(num)) return num;
     const factor = Math.pow(10, fix || 1);
     return Math.round(Number(num) * factor) / factor;
 }
-
-export default toFixed;

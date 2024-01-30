@@ -130,7 +130,7 @@ export type TimestampType =
     | 'ww'
     | string;
 
-const formatTimestamp = (timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string => {
+export const formatTimestamp = (timestamp: Date | number | string, type: TimestampType = 'yyyy-MM-dd HH:mm:ss'): string => {
     const date = getDate(timestamp);
     return type
         .replace(/yyyy/i, getYear(date))
@@ -176,6 +176,4 @@ export const getTime = (timestamp: Date | number | string) => {
 // 	}
 // 	return ''
 // };
-
-export default formatTimestamp;
 

@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import Monad from "./monad";
+import { Monad } from "./monad";
 import {compose} from "../compose";
 
 type Fn = (...args: any) => any;
@@ -23,7 +23,7 @@ enum Error {
 	TypeError = 1,
 }
 
-class ResponseMonad {
+export class ResponseMonad {
 	value: any; // 保存当前值
 	// 保存map数据函数
 	readonly mapCallbacks: Array<Fn> = [];
@@ -98,5 +98,3 @@ class ResponseMonad {
 		return this;
 	}
 }
-
-export default ResponseMonad;
