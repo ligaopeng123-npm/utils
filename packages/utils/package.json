@@ -64,7 +64,6 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
-        "@gaopeng123/utils": "^1.1.14-alpha.3",
         "@gaopeng123/utils.array": "^1.1.14",
         "@gaopeng123/utils.date": "^1.1.14",
         "@gaopeng123/utils.file": "^1.1.14",
@@ -72,6 +71,7 @@
         "@gaopeng123/utils.log": "workspace:^1.1.14",
         "@gaopeng123/utils.number": "^1.1.14",
         "@gaopeng123/utils.object": "^1.1.14",
+        "@gaopeng123/utils.socket": "workspace:^1.1.14",
         "@gaopeng123/utils.string": "^1.1.14",
         "@gaopeng123/utils.types": "^1.1.14"
     },

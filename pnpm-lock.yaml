@@ -286,7 +286,6 @@ importers:
 
   packages/utils:
     specifiers:
-      '@gaopeng123/utils': ^1.1.14-alpha.3
       '@gaopeng123/utils.array': ^1.1.14
       '@gaopeng123/utils.date': ^1.1.14
       '@gaopeng123/utils.file': ^1.1.14
@@ -294,6 +293,7 @@ importers:
       '@gaopeng123/utils.log': workspace:^1.1.14
       '@gaopeng123/utils.number': ^1.1.14
       '@gaopeng123/utils.object': ^1.1.14
+      '@gaopeng123/utils.socket': workspace:^1.1.14
       '@gaopeng123/utils.string': ^1.1.14
       '@gaopeng123/utils.types': ^1.1.14
       '@size-limit/preset-small-lib': ^5.0.1
@@ -305,7 +305,6 @@ importers:
       tslib: ^2.3.0
       typescript: ^4.3.5
     dependencies:
-      '@gaopeng123/utils': 'link:'
       '@gaopeng123/utils.array': link:../array
       '@gaopeng123/utils.date': link:../date
       '@gaopeng123/utils.file': link:../file
@@ -313,6 +312,7 @@ importers:
       '@gaopeng123/utils.log': link:../log
       '@gaopeng123/utils.number': link:../number
       '@gaopeng123/utils.object': link:../object
+      '@gaopeng123/utils.socket': link:../socket
       '@gaopeng123/utils.string': link:../string
       '@gaopeng123/utils.types': link:../types
     devDependencies:
