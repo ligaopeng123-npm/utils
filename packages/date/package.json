@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.date",
     "author": "ligaopeng123",
-    "version": "1.1.14",
+    "version": "1.1.15-alpha.1",
     "description": "时间数据处理",
     "license": "MIT",
     "main": "dist/index.js",
