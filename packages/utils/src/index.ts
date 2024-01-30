@@ -1,6 +1,4 @@
 /****************************   基本类型判断    *****************************/
-import { isAndroid } from "@gaopeng123/utils.types";
-
 export {
     // 数据类型判断
     isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull, isBoolean, isTrue, isFalse,
