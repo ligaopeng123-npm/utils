@@ -189,6 +189,3 @@ export {
     // 日志美化打印
     consoleBg, consoleStr, consoleTag, createConsoleFactory
 } from "@gaopeng123/utils.log";
-/****************************  web socket美化打印    *****************************/
-export { WebSocketManager, createSocket, destroySocket, destroyAllSocket, send, WebSocketEvent, } from "@gaopeng123/utils.socket";
-export type { CreateSocket } from "@gaopeng123/utils.socket";

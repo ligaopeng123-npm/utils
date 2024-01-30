@@ -71,7 +71,6 @@
         "@gaopeng123/utils.log": "workspace:^1.1.15-alpha.1",
         "@gaopeng123/utils.number": "^1.1.14",
         "@gaopeng123/utils.object": "^1.1.14",
-        "@gaopeng123/utils.socket": "workspace:^1.1.15-alpha.2",
         "@gaopeng123/utils.string": "^1.1.14",
         "@gaopeng123/utils.types": "^1.1.14"
     },
