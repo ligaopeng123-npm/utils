@@ -9,29 +9,36 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-export { formatTimestamp, getTime, getDate } from './timestamp';
+export {
+    formatTimestamp,
+    getTime,
+    getDate,
+    getYear,
+    getMonth,
+    getDay,
+    getHours,
+    get12Hours,
+    getMinutes,
+    getSeconds,
+    getWeek,
+    getWeekCN,
+    getWeekCNDay, setTimeFillZero
+} from './timestamp';
 export type { TimestampType } from './timestamp';
-export { getYear } from './timestamp';
-export { getMonth } from './timestamp';
-export { getDay } from './timestamp';
-export { getHours } from './timestamp';
-export { get12Hours } from './timestamp';
-export { getMinutes } from './timestamp';
-export { getSeconds } from './timestamp';
-export { getWeek } from './timestamp';
-export { getWeekCN } from './timestamp';
-export { getWeekCNDay, setTimeFillZero } from './timestamp';
 
-export { timeRange, timeRangePeriod } from './timeRange';
-export type { TimeRange } from './timeRange';
-export type { TimeRangeType } from './timeRange';
-export { timeRangeCurrent as timeRangeCurrent } from './timeRange';
-export { timeRangePrevious as timeRangePrevious } from './timeRange';
-export { currentQuarterFirstMonth as currentQuarterFirstMonth } from './timeRange';
-export { currentQuarterLastMonth as currentQuarterLastMonth } from './timeRange';
-export { currentQuarterDays as currentQuarterDays } from './timeRange';
-export { currentDayEarliest as currentDayEarliest } from './timeRange';
-export { currentDayLatest as currentDayLatest } from './timeRange';
-export { currentMonthDays, currentYearMonthDays, getMonthDays } from './timeRange';
+
+export {
+    timeRange,
+    timeRangePeriod,
+    timeRangeCurrent,
+    timeRangePrevious,
+    currentQuarterFirstMonth,
+    currentQuarterLastMonth,
+    currentQuarterDays,
+    currentDayEarliest,
+    currentDayLatest,
+    currentMonthDays, currentYearMonthDays, getMonthDays
+} from './timeRange';
+export type { TimeRange, TimeRangeType } from './timeRange';
 
 export { timestampToCN } from './timestampToCN';

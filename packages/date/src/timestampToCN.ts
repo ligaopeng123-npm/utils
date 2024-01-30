@@ -9,8 +9,8 @@
  * @版权所有: pgli
  *
  ********************************************************************* */
-import {isDate} from "@gaopeng123/utils.types";
-import {setTimeFillZero} from "./timestamp";
+import { isDate } from "@gaopeng123/utils.types";
+import { setTimeFillZero } from "./timestamp";
 
 const TIME_THRESHOLD = [{
     k: 'dd',
@@ -36,7 +36,7 @@ const getTimer = (timestamp: number) => {
     // 是否已经匹配到值
     let vFlag = false;
     for (let i = 0; i < TIME_THRESHOLD.length; i++) {
-        const {k, v} = TIME_THRESHOLD[i];
+        const { k, v } = TIME_THRESHOLD[i];
         if (timestamp >= v) {
             // 最后一位 不再循环 直接赋值
             if (i === TIME_THRESHOLD.length - 1) {
@@ -61,14 +61,14 @@ type TimeType = 'dd天HH小时mm分钟ss秒' | string;
 export const timestampToCN = (timestamp: Date | number | string, type: TimeType = 'dd天HH小时mm分钟ss秒'): string => {
     const times = (isDate(timestamp) ? timestamp : Number(timestamp)) as number;
     const values = getTimer(times / 1000);
-    TIME_THRESHOLD.forEach(({k, v: number}, index) => {
+    TIME_THRESHOLD.forEach(({ k, v: number }, index) => {
         if (!values[k]) {
             const key = TIME_THRESHOLD[index + 1]?.k;
             type = key ? type.replace(new RegExp(`.*(?=${key})`), '') : type;
 
         }
     });
-    let {dd, HH, mm, ss} = values;
+    let { dd, HH, mm, ss } = values;
     HH = type?.includes('d') ? HH : (dd || 0) * 24 + HH;
     mm = type?.includes('H') ? mm : (HH || 0) * 60 + mm;
     ss = type?.includes('m') ? ss : (mm || 0) * 60 + ss;
