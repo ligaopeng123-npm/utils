@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import {hump2hyphen, hyphen2hump} from "../src";
+import {hump2hyphen, hyphen2hump, lowerCamelCase, upperCamelCase} from "../src";
 
 describe('hump', () => {
     it('works', () => {
@@ -24,5 +24,8 @@ describe('hump', () => {
         expect(hyphen2hump('width')).toEqual(width);
         expect(hyphen2hump('background-color')).toEqual(backgroundColor);
         expect(hyphen2hump('border-bottom-style')).toEqual(borderBottomStyle);
+
+        expect(lowerCamelCase('background-color')).toEqual(backgroundColor);
+        expect(upperCamelCase('background-color')).toEqual('BackgroundColor');
     });
 });

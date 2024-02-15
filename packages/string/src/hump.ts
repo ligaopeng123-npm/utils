@@ -23,3 +23,14 @@ export const hyphen2hump = (hyphen: string) => {
         return letter.toUpperCase();
     });
 }
+/**
+ * 转小驼峰
+ */
+export const lowerCamelCase = hyphen2hump;
+/**
+ * 转大驼峰
+ */
+export const upperCamelCase = (str: string) => {
+    const _s = hyphen2hump(str);
+    return _s[0].toUpperCase() + _s.substring(1);
+}

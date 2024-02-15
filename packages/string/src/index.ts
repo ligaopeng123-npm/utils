@@ -59,7 +59,7 @@ export { pathJoin, replaceDomain } from './path';
 /**
  * 驼峰转换
  */
-export { hyphen2hump, hump2hyphen } from './hump';
+export { hyphen2hump, hump2hyphen, lowerCamelCase, upperCamelCase } from './hump';
 
 /**
  * css处理

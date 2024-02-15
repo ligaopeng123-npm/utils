@@ -79,54 +79,24 @@ export {
 
 /****************************  字符串 数字操作    *****************************/
 export {
-    uuid,
-    formatStr,
-    toCase,
+    uuid, formatStr, toCase,
     // 字符串截断
-    ellipsps,
-    ellipsis,
-    strWidth,
+    ellipsps, ellipsis, strWidth,
     makeEmptyValue,
     // 提取被字符包裹住的内容
-    extractEnclosedContent,
-    extractParenthesesContent,
-    extractMiddleParenthesesContent,
-    extractBigParenthesesContent,
+    extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
     // 常用正则校验
-    PHONE_NUMBER_STR,
-    PHONE_NUMBER,
-    OPERATOR_NUMBER_STR,
-    OPERATOR_NUMBER,
-    IOT_PHONE_NUMBER_STR,
-    IOT_PHONE_NUMBER,
-    maskMobile,
+    PHONE_NUMBER_STR, PHONE_NUMBER, OPERATOR_NUMBER_STR, OPERATOR_NUMBER, IOT_PHONE_NUMBER_STR, IOT_PHONE_NUMBER, maskMobile,
     // ip正则校验
-    IPV4_STR,
-    IPV4,
+    IPV4_STR, IPV4,
     // 密码相关正则
-    PASSWORD_RegExp_STR,
-    PASSWORD_RegExp,
-    PASSWORD_STR,
-    PASSWORD,
-    PASSWORD_STR_MAX_16,
-    PASSWORD_MAX_16,
+    PASSWORD_RegExp_STR, PASSWORD_RegExp, PASSWORD_STR, PASSWORD, PASSWORD_STR_MAX_16, PASSWORD_MAX_16,
     // 颜色处理
-    addOpacity,
-    hex2Rgb,
-    rgb2hex,
-    rgba2hex,
-    rgba2rgb,
-    RTF2str,
-    RTF_TAG,
-    randomRgb,
-    randomHex,
-    randomColor,
+    addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb, RTF2str, RTF_TAG, randomRgb, randomHex, randomColor,
     // url路径拼接  Domain替换
-    pathJoin,
-    replaceDomain,
+    pathJoin, replaceDomain,
     // 驼峰转换
-    hump2hyphen,
-    hyphen2hump,
+    hump2hyphen, hyphen2hump, lowerCamelCase, upperCamelCase,
     // css style 尺寸单位处理
     addBoxSizeUnit
 } from "@gaopeng123/utils.string";
