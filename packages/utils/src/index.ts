@@ -1,4 +1,6 @@
 /****************************   基本类型判断    *****************************/
+import { RetryPromise } from "@gaopeng123/utils.function";
+
 export {
     // 数据类型判断
     isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull, isBoolean, isTrue, isFalse,
@@ -79,24 +81,56 @@ export {
 
 /****************************  字符串 数字操作    *****************************/
 export {
-    uuid, formatStr, toCase,
+    uuid,
+    formatStr,
+    toCase,
     // 字符串截断
-    ellipsps, ellipsis, strWidth,
+    ellipsps,
+    ellipsis,
+    strWidth,
     makeEmptyValue,
     // 提取被字符包裹住的内容
-    extractEnclosedContent, extractParenthesesContent, extractMiddleParenthesesContent, extractBigParenthesesContent,
+    extractEnclosedContent,
+    extractParenthesesContent,
+    extractMiddleParenthesesContent,
+    extractBigParenthesesContent,
     // 常用正则校验
-    PHONE_NUMBER_STR, PHONE_NUMBER, OPERATOR_NUMBER_STR, OPERATOR_NUMBER, IOT_PHONE_NUMBER_STR, IOT_PHONE_NUMBER, maskMobile,
+    PHONE_NUMBER_STR,
+    PHONE_NUMBER,
+    OPERATOR_NUMBER_STR,
+    OPERATOR_NUMBER,
+    IOT_PHONE_NUMBER_STR,
+    IOT_PHONE_NUMBER,
+    maskMobile,
     // ip正则校验
-    IPV4_STR, IPV4,
+    IPV4_STR,
+    IPV4,
     // 密码相关正则
-    PASSWORD_RegExp_STR, PASSWORD_RegExp, PASSWORD_STR, PASSWORD, PASSWORD_STR_MAX_16, PASSWORD_MAX_16,
+    PASSWORD_RegExp_STR,
+    PASSWORD_RegExp,
+    PASSWORD_STR,
+    PASSWORD,
+    PASSWORD_STR_MAX_16,
+    PASSWORD_MAX_16,
     // 颜色处理
-    addOpacity, hex2Rgb, rgb2hex, rgba2hex, rgba2rgb, RTF2str, RTF_TAG, randomRgb, randomHex, randomColor,
+    addOpacity,
+    hex2Rgb,
+    rgb2hex,
+    rgba2hex,
+    rgba2rgb,
+    RTF2str,
+    RTF_TAG,
+    randomRgb,
+    randomHex,
+    randomColor,
     // url路径拼接  Domain替换
-    pathJoin, replaceDomain,
+    pathJoin,
+    replaceDomain,
     // 驼峰转换
-    hump2hyphen, hyphen2hump, lowerCamelCase, upperCamelCase,
+    hump2hyphen,
+    hyphen2hump,
+    lowerCamelCase,
+    upperCamelCase,
     // css style 尺寸单位处理
     addBoxSizeUnit
 } from "@gaopeng123/utils.string";
@@ -111,7 +145,7 @@ export {
     // 1、对象属性合并 数组默认覆盖 2、对象属性合并（数组是concat合并） 3、对象属性合并（数组不做处理）
     assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray, assignIfByOrder, assignIf,
     // 对象的过滤循环  对象的map循环 对象forEach
-    filterObject, mapObject, forEachObject
+    filterObject, mapObject, forEachObject, getObjectAttr, setObjectAttr
 } from "@gaopeng123/utils.object";
 
 export type { levitatingBallConfig } from "@gaopeng123/utils.object";
@@ -127,13 +161,13 @@ export {
     // 窗口尺寸
     windowSize, pcZoom,
     // 去抖 节流
-    debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay,
+    debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay, retry,
     hasOperate, off, on,
     easingFuncs, animate,
 } from "@gaopeng123/utils.function";
 
 export type {
-    MemoizedFn, AsyncMemoizedFn, WindowSize, DebounceOptions, ThrottleOptions, OperateConfig, EasingType
+    MemoizedFn, AsyncMemoizedFn, WindowSize, DebounceOptions, ThrottleOptions, OperateConfig, EasingType, RetryConfig, RetryPromise,
 } from "@gaopeng123/utils.function";
 
 /****************************  时间操作    *****************************/

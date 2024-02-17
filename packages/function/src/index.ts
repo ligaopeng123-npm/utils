@@ -1,15 +1,11 @@
-export { compose as compose } from './compose';
-export { composePromises as composePromises } from './compose';
-export { pipe as pipe } from './compose';
+// 函数合并
+export { compose, composePromises, pipe } from './compose';
 // 柯理化函数
 export { curry } from './curry';
 export { partial } from './partial';
 // 函数缓存
-export { memoized } from './memoized';
-export type { MemoizedFn } from './memoized';
-
-export { asyncMemoized } from './memoized';
-export type { AsyncMemoizedFn } from "./memoized";
+export { memoized, asyncMemoized } from './memoized';
+export type { MemoizedFn, AsyncMemoizedFn } from './memoized';
 /**
  * monad函数
  */
@@ -54,3 +50,8 @@ export type { EasingType } from "./easing";
  * 事件注册
  */
 export { on, off } from "./event";
+/**
+ * 函数重试
+ */
+export { default as retry } from "./retry";
+export type { RetryConfig, RetryPromise } from "./retry";

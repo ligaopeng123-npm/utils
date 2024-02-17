@@ -164,7 +164,7 @@ export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: Mouse
     }
     return {
         /**
-         * 清理订阅事件
+         * 清理订阅事件 避免el不存在返回空执行报错
          */
         removeEventListener: () => {
         }

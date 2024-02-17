@@ -254,6 +254,38 @@ type OperateConfig = {
 hasOperate(()=> {}, {wait: 5000, interval: 1000});
 ```
 
+## retry
+
+#### retry  <span class="new">New</span>
+
+`promise 重试`
+
+```typescript
+export type RetryConfig = {
+    max?: number; // 重试次数默认 3
+    timeout?: number; // 延时时间 默认 0
+}
+type Retry = (fn: any, config?: RetryConfig) => Promise<unknown>;
+```
+
+```typescript
+const testFn = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject('res');
+        }, 1000);
+    })
+}
+
+retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
+    console.log(3, res);
+}).catch((err) => {
+    console.log(2, err);
+});
+```
+
+
+
 ## easing
 
 #### easingFuncs

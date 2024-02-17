@@ -2,6 +2,7 @@
  * clone函数
  */
 import { validatesCssValue } from "./dom";
+import { getObjectAttr } from "./objectLoop";
 
 export { clone, cloneAllItems, cloneAllArray, cloneAllObject } from './clone';
 /**
@@ -24,7 +25,7 @@ export { assignDeep, assignDeepMergeArray, assignDeepNotIncludedArray, assignIf,
 /**
  * 对象的过滤循环  对象的map循环  对象的forEach循环
  */
-export { filterObject, mapObject, forEachObject } from './objectLoop';
+export { filterObject, mapObject, forEachObject, getObjectAttr, setObjectAttr, setObjectAttrFn } from './objectLoop';
 /**
  * 获取数组、对象长度  length();
  */
