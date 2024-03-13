@@ -90,7 +90,10 @@ export const getDate = (timestamp: Date | number | string) => {
             // @ts-ignore  ios 解析不了 2022/09 这种格式
             // _timestamp = new Date(timestamp?.replace(/-/g, '/'));
             // https://hq5544.com/resolve-invalid-date-error-on-ios/
-            _timestamp = new Date(...timestamp?.split(/[^0-9]/));
+            _timestamp = new Date(...timestamp?.split(/[^0-9]/).map((item, index) => {
+                // 月份需要减1处理
+                return index === 1 ? `${Number(item) - 1}` : item;
+            }));
         } else {
 
         }
@@ -176,4 +179,3 @@ export const getTime = (timestamp: Date | number | string) => {
 // 	}
 // 	return ''
 // };
-
