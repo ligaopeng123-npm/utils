@@ -1,6 +1,6 @@
 import {
     isJSON,
-    isUTC
+    isUTC,
 } from "../src";
 
 const test = {a: 1};

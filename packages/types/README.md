@@ -33,24 +33,26 @@
 
 ## browser
 
-| 函数名    | 作用                                                |
-| --------- | --------------------------------------------------- |
-| isChrome  | chrome浏览器                                        |
-| isFirefox | 火狐浏览器                                          |
-| isWebKit  | WebKit内核                                          |
-| isSafari  | Safari                                              |
-| isOpera   | Opera                                               |
-| isGecko   | Gecko                                               |
-| isWindows | 是否是Windows系统                                   |
-| isMac     | Mac系统                                             |
-| isLinux   | Linux系统                                           |
-| isMobile  | 移动端设备 Android、webOS、iPhone、iPod、BlackBerry |
-| isIOS     | 移动端设备 iPhone、iPod                             |
-| isAndroid | 移动端设备 Android                                  |
-| isStrict  | 是否是严格模式                                      |
-| isSecure  | 是否是https访问                                     |
-| isNodejs  | 是否是node运行环境                                  |
-| isBrowser | 是否是浏览器运行环境                                |
+| 函数名                                    | 作用                                                         |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| isChrome                                  | chrome浏览器                                                 |
+| isFirefox                                 | 火狐浏览器                                                   |
+| isWebKit                                  | WebKit内核                                                   |
+| isSafari                                  | Safari                                                       |
+| isOpera                                   | Opera                                                        |
+| isGecko                                   | Gecko                                                        |
+| isWindows                                 | 是否是Windows系统                                            |
+| isMac                                     | Mac系统                                                      |
+| isLinux                                   | Linux系统                                                    |
+| isMobile                                  | 移动端设备 Android、webOS、iPhone、iPod、BlackBerry          |
+| isIOS                                     | 移动端设备 iPhone、iPod                                      |
+| isAndroid                                 | 移动端设备 Android                                           |
+| isStrict                                  | 是否是严格模式                                               |
+| isSecure                                  | 是否是https访问                                              |
+| isNodejs                                  | 是否是node运行环境                                           |
+| isBrowser                                 | 是否是浏览器运行环境                                         |
+| isWX  <span class="new">New</span>        | 是否在微信中运行                                             |
+| getPlatform  <span class="new">New</span> | 获取终端信息{ browser: string, operatingSystem: string } 操作系统和浏览器 |
 
 ## browser version
 

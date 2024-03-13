@@ -9,7 +9,7 @@ export {
     // 浏览器判断
     isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko, isHasDom,
     // 硬件判断
-    isWindows, isMac, isLinux, isMobile, isAndroid, isIOS,
+    isWindows, isMac, isLinux, isMobile, isAndroid, isIOS, isWX, getPlatform,
     // 版本获取
     chromeVersion, firefoxVersion, ieVersion, operaVersion, safariVersion, webKitVersion,
     // 安全模式获取

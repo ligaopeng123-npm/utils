@@ -1,4 +1,83 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13...v0.4.1) (2024-01-11)
+## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.4...v0.4.1) (2024-02-23)
+
+
+### Features
+
+* add setObjectAttr, getObjectAttr, retry ([91370ec](https://github.com/ligaopeng123-npm/utils/commit/91370ec833e1be4cc42ce97c8267a37261563133))
+
+
+
+## [1.1.15-alpha.4](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.3...v1.1.15-alpha.4) (2024-02-15)
+
+
+### Features
+
+* add lowerCamelCase, upperCamelCase ([6610d98](https://github.com/ligaopeng123-npm/utils/commit/6610d98582c5ef4dc8c087b2871fcad76421d28c))
+
+
+
+## [1.1.15-alpha.3](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.2...v1.1.15-alpha.3) (2024-01-30)
+
+
+### Bug Fixes
+
+* 删除@gaopeng123/utils.socket ([99214a7](https://github.com/ligaopeng123-npm/utils/commit/99214a759fc3123dc484ba93c5cbef29a5720626))
+
+
+
+## [1.1.15-alpha.2](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.1...v1.1.15-alpha.2) (2024-01-30)
+
+
+### Bug Fixes
+
+* @gaopeng123/utils.date 摇树优化 ([f59545f](https://github.com/ligaopeng123-npm/utils/commit/f59545fe50a6eaa67359ce9b0453d46a8036b3f3))
+* @gaopeng123/utils.socket module错误 ([a3b2cbd](https://github.com/ligaopeng123-npm/utils/commit/a3b2cbded2266941a035f00b68ae73de208d3d25))
+
+
+
+## [1.1.15-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.0...v1.1.15-alpha.1) (2024-01-30)
+
+
+### Bug Fixes
+
+* @gaopeng123/utils.log module错误 ([e9efead](https://github.com/ligaopeng123-npm/utils/commit/e9efead08d1dc5e9138b1732c4acc9960a54bc9f))
+
+
+
+## [1.1.15-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.14...v1.1.15-alpha.0) (2024-01-30)
+
+
+### Features
+
+* 添加@gaopeng123/utils.socket ([eef050f](https://github.com/ligaopeng123-npm/utils/commit/eef050f5835a09f6e11924f4b0b7c1eb966cab4e))
+
+
+
+## [1.1.14](https://github.com/ligaopeng123-npm/utils/compare/v1.1.14-alpha.1...v1.1.14) (2024-01-30)
+
+
+### Bug Fixes
+
+* 添加"module"，移除export方便摇树处理 ([8dd905c](https://github.com/ligaopeng123-npm/utils/commit/8dd905c8556bba69c865787e2ede39a43097d39b))
+* 添加"module"，移除export方便摇树处理 ([43509c2](https://github.com/ligaopeng123-npm/utils/commit/43509c2588641c1fcbaa4b07dd6b0ede390fd52e))
+
+
+
+## [1.1.14-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.14-alpha.0...v1.1.14-alpha.1) (2024-01-26)
+
+
+### Features
+
+* add  isHasDom ([969b8d1](https://github.com/ligaopeng123-npm/utils/commit/969b8d1a6d243966fa98030bf13f144671a832cc))
+
+
+
+## [1.1.14-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.13...v1.1.14-alpha.0) (2024-01-26)
+
+
+### Features
+
+* add  randomRgb, randomHex, randomColor ([c646070](https://github.com/ligaopeng123-npm/utils/commit/c64607072acf3cee4e016c0d070b59af3f9805a7))
 
 
 
