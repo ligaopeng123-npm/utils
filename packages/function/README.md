@@ -324,3 +324,55 @@ type AnimateFnReturn = {
 // v为从0到1的值
 animate(callBack: (v: number)=> void, config: AnimateConfig): AnimateFnReturn;
 ```
+
+## overload
+
+#### addMethod <span class="new">New</span>
+
+`jQuery中重栽函数的实现`
+
+```
+const testObj: any = {};
+
+addMethod(testObj, 'fn', ()=> {
+    console.log('没有参数')
+})
+
+addMethod(testObj, 'fn', (str: number)=> {
+    console.log('一个参数')
+})
+
+addMethod(testObj, 'fn', (str1: number, str2: number)=> {
+    console.log('2个参数')
+})
+
+testObj.fn()
+testObj.fn(1)
+testObj.fn(1, 2)
+```
+
+#### createOverload <span class="new">New</span>
+
+`创建重栽函数`
+
+```typescript
+const overload = createOverload();
+
+
+overload.addMethod(null, ()=> {
+    console.log('没有参数')
+})
+
+overload.addMethod('string', (str: string)=> {
+    console.log('string')
+})
+
+overload.addMethod('number', 'number', (num: number)=> {
+    console.log('number')
+})
+
+overload()
+overload('12')
+overload(1, 2)
+```
+

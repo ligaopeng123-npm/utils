@@ -55,3 +55,7 @@ export { on, off } from "./event";
  */
 export { default as retry } from "./retry";
 export type { RetryConfig, RetryPromise } from "./retry";
+/**
+ * 函数重栽
+ */
+export { addMethod, createOverload } from "./overload";
