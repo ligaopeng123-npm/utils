@@ -1,8 +1,44 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.4...v0.4.1) (2024-02-23)
+## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.9...v0.4.1) (2024-03-15)
+
+
+
+## [1.1.15-alpha.9](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.8...v1.1.15-alpha.9) (2024-03-15)
+
+
+### Bug Fixes
+
+* add isFlutter ([41e8483](https://github.com/ligaopeng123-npm/utils/commit/41e84831fd92a43098dd295d35869b82d903d9c7))
+
+
+
+## [1.1.15-alpha.8](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.7...v1.1.15-alpha.8) (2024-03-14)
+
+
+### Bug Fixes
+
+* add addMethod, createOverload ([24e6c2b](https://github.com/ligaopeng123-npm/utils/commit/24e6c2bd88f1ff4c2f39999f2c3edde1a73063ae))
+
+
+
+## [1.1.15-alpha.7](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.6...v1.1.15-alpha.7) (2024-03-13)
+
+
+### Bug Fixes
+
+* getDate 引入问题处理 ([313af7a](https://github.com/ligaopeng123-npm/utils/commit/313af7a6b1ed2fa2ce450d758d081a01457863fc))
+
+
+
+## [1.1.15-alpha.6](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.5...v1.1.15-alpha.6) (2024-03-13)
+
+
+
+## [1.1.15-alpha.5](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.4...v1.1.15-alpha.5) (2024-03-13)
 
 
 ### Features
 
+* add getPlatform, isWX ([6caa9c5](https://github.com/ligaopeng123-npm/utils/commit/6caa9c545d5eb6cf78b081bc0604cc95dbf40739))
 * add setObjectAttr, getObjectAttr, retry ([91370ec](https://github.com/ligaopeng123-npm/utils/commit/91370ec833e1be4cc42ce97c8267a37261563133))
 
 
