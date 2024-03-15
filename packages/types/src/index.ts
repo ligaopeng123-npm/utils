@@ -14,7 +14,7 @@ export { isNodejs, isBrowser } from "./data";
 /**
  * 浏览器判断
  */
-export { isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko, isHasDom, getPlatform, isWX } from "./browser";
+export { isChrome, isFirefox, isWebKit, isSafari, isOpera, isEdge, isIE, isGecko, isHasDom, getPlatform, isWX, isFlutter } from "./browser";
 /**
  * 硬件判断
  */

@@ -113,6 +113,14 @@ export const isIOS = (userAgent?: string): boolean => {
 export const isWX = (userAgent?: string): boolean => {
     return check(/MicroMessenger/i, userAgent);
 };
+
+/**
+ * 检测是否支持dart
+ * @param userAgent
+ */
+export const isFlutter = (userAgent?: string): boolean => {
+    return check(/dart/i, userAgent);
+};
 /**
  * 是否是移动端设备
  */
@@ -288,8 +296,8 @@ export const getPlatform = (userAgent?: string): { browser: string, operatingSys
         }
     }
 
-    const browserList = [isWX, isChrome, isSafari, isEdge, isIE, isFirefox, isOpera];
-    const browserNames = ['WX', 'Chrome', 'Safari', 'Edge', 'IE', 'Firefox', 'Opera'];
+    const browserList = [isWX, isFlutter, isChrome, isSafari, isEdge, isIE, isFirefox, isOpera];
+    const browserNames = ['WX', 'Flutter', 'Chrome', 'Safari', 'Edge', 'IE', 'Firefox', 'Opera'];
 
     let browserName = null;
     for (let i = 0; i < browserList.length; i++) {
