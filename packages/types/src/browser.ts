@@ -95,12 +95,13 @@ export const isMac = (userAgent?: string): boolean => {
     return check(/macintosh|mac os x/, userAgent);
 };
 
-export const isLinux = (userAgent?: string): boolean => {
-    return check(/linux/, userAgent);
-};
 
 export const isAndroid = (userAgent?: string): boolean => {
     return check(/android/, userAgent);
+};
+
+export const isLinux = (userAgent?: string): boolean => {
+    return !isAndroid && check(/linux/, userAgent);
 };
 
 export const isIOS = (userAgent?: string): boolean => {
@@ -286,8 +287,8 @@ export const isOpera10_5 = (): boolean => {
 export const getPlatform = (userAgent?: string): { browser: string, operatingSystem: string } => {
     // 操作系统 window // mac os // ios // 安卓 // linux // 服务调用
     // 终端平台 小程序 app chrome safari 等等 todo isIOS, isMac 不能换顺序
-    const checkFnList = [isWindows, isLinux, isIOS, isMac, isAndroid];
-    const checkNames = ['Windows', 'Linux', 'IOS', 'Mac', 'Android'];
+    const checkFnList = [isIOS, isMac, isAndroid, isWindows, isLinux];
+    const checkNames = ['IOS', 'Mac', 'Android', 'Windows', 'Linux'];
     let operatingSystem = null;
     for (let i = 0; i < checkFnList.length; i++) {
         if (checkFnList[i](userAgent)) {
