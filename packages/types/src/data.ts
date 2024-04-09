@@ -304,3 +304,11 @@ export const isNodejs = () => {
 export const isBrowser = () => {
     return typeof window !== "undefined" && window !== null && this === window;
 }
+
+/**
+ * 是否在焦点上
+ * @param el
+ */
+export const isFocus: typeFn = (el) => {
+    return document.activeElement === el;
+}
