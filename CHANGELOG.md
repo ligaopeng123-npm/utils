@@ -1,4 +1,24 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.9...v0.4.1) (2024-03-15)
+## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.0...v0.4.1) (2024-04-24)
+
+
+
+## [1.1.16-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15...v1.1.16-alpha.0) (2024-04-24)
+
+
+### Features
+
+* add isFocus ([ddccd4c](https://github.com/ligaopeng123-npm/utils/commit/ddccd4cf22a6554ee1c40de39b67feaf3a4c1778))
+* add isUrl checkVersion ([ba5753f](https://github.com/ligaopeng123-npm/utils/commit/ba5753f7f3f39c0f51fab49c376e13e82af6f251))
+* 新增函数整合到utils中 ([bb63bd5](https://github.com/ligaopeng123-npm/utils/commit/bb63bd501ad13708812f36fddffe09754f6a3d7d))
+
+
+
+## [1.1.15](https://github.com/ligaopeng123-npm/utils/compare/v1.1.15-alpha.9...v1.1.15) (2024-03-18)
+
+
+### Bug Fixes
+
+* getPlatform 区分linux和android异常修复 ([ce4de7c](https://github.com/ligaopeng123-npm/utils/commit/ce4de7cce97a23c3e871834cc01d9f692d4708c1))
 
 
 

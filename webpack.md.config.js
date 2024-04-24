@@ -72,10 +72,16 @@ module.exports = {
                     to: path.join(__dirname, 'document/src'),
                     toType: 'dir',
                     filter: checkMd,
+
                 },
                 // todo 如果从git拉取 则不用从本地拉取【git上太慢了】
                 ...mdList
-            ]
+            ].map((item)=> {
+                return {
+                    ...item,
+                    globOptions: { ignore: ['**/node_modules/**', '**/dist/**'] }
+                }
+            })
         })
     ]
 };
