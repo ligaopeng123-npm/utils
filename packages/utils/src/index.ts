@@ -11,7 +11,7 @@ export {
     // 版本获取
     chromeVersion, firefoxVersion, ieVersion, operaVersion, safariVersion, webKitVersion,
     // 安全模式获取
-    isStrict, isSecure,
+    isStrict, isSecure, isFocus, isUrl
 } from '@gaopeng123/utils.types';
 
 /****************************   文件操作    *****************************/
@@ -130,7 +130,8 @@ export {
     lowerCamelCase,
     upperCamelCase,
     // css style 尺寸单位处理
-    addBoxSizeUnit
+    addBoxSizeUnit,
+    checkVersion
 } from "@gaopeng123/utils.string";
 /****************************  对象操作    *****************************/
 export {

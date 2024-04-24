@@ -316,9 +316,9 @@ export const isFocus: typeFn = (el) => {
  * 是否是个合法的url
  * @param url
  */
-const isUrl = (url: string)  =>{
+export const isUrl: typeFn = (url)  =>{
     try {
-        new URL(url);
+        new URL(url as string);
         return true;
     } catch (err) {
         return false;
