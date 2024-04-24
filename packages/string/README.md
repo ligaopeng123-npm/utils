@@ -6,12 +6,6 @@
 
 `获取uuid 默认获取64位长度 数据基数为62`
 
-<!--
-{
-    html: '<div id="utils-uuid1"></div><div id="utils-uuid2"></div>'
-}
--->
-
 ````js
 import {uuid} from "https://unpkg.com/@gaopeng123/utils.string/dist/utils.string.esm.js";
 document.getElementById('utils-uuid1').innerText = `64位：` + uuid();
@@ -67,7 +61,16 @@ makeEmptyValue('', {unit: 'm', emptyValue: 'm'}); // ''
 makeEmptyValue('1', {unit: 'm', emptyValue: 'm'}); // '1m'
 ```
 
+##### checkVersion <span class="new">New 1.1.5+</span> 
 
+`版本号检查`
+
+```typescript
+expect(checkVersion('1.1.1', '1.1.2')).toEqual(true);
+expect(checkVersion('1.1.1', '1.1.0')).toEqual(false);
+expect(checkVersion('1.1.1', '1.1.1.0')).toEqual(true);
+expect(checkVersion('1.1.1', '1.1.1')).toEqual(false);
+```
 
 ## path
 

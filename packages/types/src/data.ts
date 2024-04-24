@@ -312,3 +312,15 @@ export const isBrowser = () => {
 export const isFocus: typeFn = (el) => {
     return document.activeElement === el;
 }
+/**
+ * 是否是个合法的url
+ * @param url
+ */
+const isUrl = (url: string)  =>{
+    try {
+        new URL(url);
+        return true;
+    } catch (err) {
+        return false;
+    }
+}

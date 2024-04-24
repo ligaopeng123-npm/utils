@@ -65,3 +65,7 @@ export { hyphen2hump, hump2hyphen, lowerCamelCase, upperCamelCase } from './hump
  * css处理
  */
 export { addBoxSizeUnit } from './css';
+/**
+ * 检查版本号
+ */
+export { checkVersion } from "./checkVersion"
