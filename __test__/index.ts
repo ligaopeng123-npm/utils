@@ -1,6 +1,8 @@
 import {initRouter} from "./router";
 import observeViewportTest from './src/observeViewport';
 import pageTurnerFixedLength from "./src/pageTurnerFixedLength";
+import copyTextTest from "./src/copyText";
+
 
 const router = [{
     path: '/observeViewport',
@@ -8,6 +10,9 @@ const router = [{
 }, {
     path: '/pageTurnerFixedLength',
     component: pageTurnerFixedLength
+}, {
+    path: '/copyText',
+    component: copyTextTest
 }]
 
 window.onload = () => {

@@ -49,17 +49,18 @@ export const parentByExpected = (dom: any, expected: any): any => {
  * 点击文本复制
  * @param span
  */
-export const copyText = (span: any): Promise<{ message: string, status: boolean }> => {
+export const copyText = (span: any): Promise<{ message: string, status: boolean, value: string }> => {
     return new Promise((resolve, reject) => {
         let text: string;
         if (isString(span)) {
             text = span;
         } else if (isElement(span)) {
-            text = span.innerText;
+            text = span.value || span.innerText;
         } else {
             resolve({
                 status: false,
-                message: `请检查参数${span}`
+                message: `请检查参数${span}`,
+                value: ''
             });
             return;
         }
@@ -74,6 +75,7 @@ export const copyText = (span: any): Promise<{ message: string, status: boolean 
                 console.log('复制成功');
                 resolve({
                     status: true,
+                    value: text,
                     message: `复制成功`
                 });
             }
