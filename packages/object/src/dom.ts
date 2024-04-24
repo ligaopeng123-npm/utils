@@ -11,6 +11,7 @@
  **********************************************************************/
 import { isElement, isFunction, isString, isUndefined } from "@gaopeng123/utils.types";
 import { debounce, DebounceOptions } from "@gaopeng123/utils.function";
+import { escape } from "@gaopeng123/utils.string";
 
 /**
  * 获取样式
@@ -65,7 +66,7 @@ export const copyText = (span: any): Promise<{ message: string, status: boolean 
         if (!isUndefined(text)) {
             const input = document.createElement('textarea');
             document.body.appendChild(input);
-            input.innerHTML = text;
+            input.innerHTML = escape(text);
             input.setAttribute('code', '1');
             input.select();
 

@@ -192,6 +192,7 @@ importers:
   packages/object:
     specifiers:
       '@gaopeng123/utils.function': ^1.1.16-alpha.0
+      '@gaopeng123/utils.string': workspace:1.1.16-alpha.0
       '@gaopeng123/utils.types': ^1.1.16-alpha.0
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
@@ -203,6 +204,7 @@ importers:
       typescript: ^4.3.5
     dependencies:
       '@gaopeng123/utils.function': link:../function
+      '@gaopeng123/utils.string': link:../string
       '@gaopeng123/utils.types': link:../types
     devDependencies:
       '@size-limit/preset-small-lib': 5.0.5_oktl2cueps5bqr25gprm6xjlau

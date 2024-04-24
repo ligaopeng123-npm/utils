@@ -69,3 +69,7 @@ export { addBoxSizeUnit } from './css';
  * 检查版本号
  */
 export { checkVersion } from "./checkVersion"
+/**
+ * 字符转义
+ */
+export { escape } from "./escape"

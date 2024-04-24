@@ -131,7 +131,8 @@ export {
     upperCamelCase,
     // css style 尺寸单位处理
     addBoxSizeUnit,
-    checkVersion
+    checkVersion,
+    escape
 } from "@gaopeng123/utils.string";
 /****************************  对象操作    *****************************/
 export {
