@@ -1,7 +1,7 @@
 {
     "name": "@gaopeng123/utils.socket",
     "author": "ligaopeng123",
-    "version": "1.1.16-alpha.1",
+    "version": "1.1.16-alpha.2",
     "description": "socket reconnect",
     "keywords": [
         "socket",
@@ -69,6 +69,6 @@
     },
     "dependencies": {
         "@gaopeng123/utils.log": "workspace:1.1.16-alpha.0",
-        "@gaopeng123/utils.string": "workspace:^1.1.16-alpha.1"
+        "@gaopeng123/utils.string": "workspace:^1.1.16-alpha.2"
     }
 }
