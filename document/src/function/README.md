@@ -212,9 +212,16 @@ debounce(()=> {
 `函数节流`
 
 ```typescript
-type ThrottleOptions = {
-	type: 1 | 2; // 1 时间戳记录 2 setTimeout版本 默认为1
-
+export type ThrottleOptions = {
+    /**
+     * 1 时间戳记录 2 setTimeout版本
+     * 时间戳版本第一次会执行 leading为true  setTimeout 尾部会执行一次 trailing为true
+     */
+    type?: 1 | 2;
+    leading?: boolean; // 第一时间是否立即调用 后续在节流  type为1
+    trailing?: boolean; // 为true时 表示停止后会触发一次回调，传递最后一次的参数  type为 2
+    notThrottle?: (...arg: any) => any; // 在去抖过程中 有一些非去抖处理 可以添加此参数
+    clearTimeout?: (val: any) => any; // 清理时间参数 为hooks预留接口
 }
 throttle(()=> {}, 200, {type: 1});
 ```

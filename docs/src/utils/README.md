@@ -8,7 +8,8 @@
 
 ```shell
 npm i @gaopeng123/utils
-or yarn add @gaopeng123/utils
+yarn add @gaopeng123/utils
+pnpm add @gaopeng123/utils
 ```
 
 ##### 功能
