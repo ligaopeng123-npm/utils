@@ -26,6 +26,7 @@ export type DebounceOptions = {
 export const createDebounce = (fn: any, _wait: number, options: DebounceOptions, _timeout: any) => {
     // @ts-ignore
     const {leading, notDebounce} = options || {};
+    let callNow = true;
     const _debounce = function (...arg: any) {
         notDebounce && isFunction(notDebounce) && notDebounce(...arg);
         // @ts-ignore
@@ -34,12 +35,14 @@ export const createDebounce = (fn: any, _wait: number, options: DebounceOptions,
         if (_timeout) clearTimeout(_timeout);
         if (leading) {
             // 此时callNow为true _timeout为undefined 没有执行过
-            let callNow = !_timeout;
-            // wait 秒后 将_timeout重置为null callNow就为true了 继续执行
-            _timeout = setTimeout(() => {
-                _timeout = null;
-            }, _wait);
-            if (callNow) fn.apply(context, args);
+            if (callNow) {
+                fn.apply(context, args);
+                callNow = false;
+            } else {
+                _timeout = setTimeout(function () {
+                    fn.apply(context, args);
+                }, _wait);
+            }
         } else {
             _timeout = setTimeout(function () {
                 fn.apply(context, args);
