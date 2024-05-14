@@ -32,7 +32,7 @@ export type { ThrottleOptions } from "./throttle";
 /**
  * 使函数延迟执行
  */
-export { delay, asyncDelay } from "./delay";
+export { delay, asyncDelay, sleep } from "./delay";
 
 /**
  * 操作检查

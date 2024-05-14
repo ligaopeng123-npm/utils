@@ -25,3 +25,9 @@ export const asyncDelay = (func: AsyncDelayFunc, wait: number, ...args: any): Pr
         }, wait)
     });
 }
+
+/**
+ * 休眠函数
+ * @param wait
+ */
+export const sleep = (wait: number) => new Promise((resolve) => setTimeout(resolve, wait))
