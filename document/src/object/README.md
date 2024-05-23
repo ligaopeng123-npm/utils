@@ -294,7 +294,7 @@ forEachObject(Object.assign({}, object1), (item)=> {
 }
 ```
 
-#### getObjectAttr: <T>(obj: T, chainKeys: string): T; <span class="new">New</span>
+#### getObjectAttr: <T>(obj: T, chainKeys: string): T;
 
 `根据链式keys a.b.c.d获取对象的属性`
 
@@ -303,7 +303,7 @@ getOjbectAttr({ a: { b: { c: { d: 1 } }, 'a.b.c.d'); // 1
 getOjbectAttr({ a: { b: { c: { d: 1 } }, 'a.b.c.e'); // undefined
 ```
 
-#### setObjectAttr:<T>(obj: T, chainKeys: string, val: unknown): T  <span class="new">New</span>
+#### setObjectAttr:<T>(obj: T, chainKeys: string, val: unknown): T
 
 `根据链式keys a.b.c.d设置对象的属性`
 

@@ -7,7 +7,7 @@
 ## Usage
 
 ```tsx
-const [{selectedRows, rowSelection}, {clearSelected}] = useAntdSelection({idKey: 'userId'});
+const [{selectedRows, selectedRowKeys, rowSelection}, {clearSelected}] = useAntdSelection({idKey: 'userId', defaultSelectedRowKeys: []});
 return (
   <ProTable<TableListItem>
             actionRef={ref}

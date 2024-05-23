@@ -32,6 +32,28 @@ const [[pageData, canNext, canPrevious], next, previous] = pageTurnerFixedLength
 // previous 获取上一页数据的函数 范围值也是pageData, canNext, canPrevious
 ```
 
+#### groupBy <span class="new">New 1.1.6+</span>
+
+`数组分组`
+
+```typescript
+expect(groupBy([
+  { testId: 'id1', testName: 'name-1' },
+  { testId: 'id2', testName: 'name-2' },
+], 'testId')).toStrictEqual({
+  id1: [{ testId: 'id1', testName: 'name-1' }],
+  id2: [{ testId: 'id2', testName: 'name-2' }]
+});
+
+expect(groupBy([
+  { testId: 'id1', testName: 'name-1' },
+  { testId: 'id2', testName: 'name-2' },
+], (item) => item.testId)).toStrictEqual({
+  id1: [{ testId: 'id1', testName: 'name-1' }],
+  id2: [{ testId: 'id2', testName: 'name-2' }]
+});
+```
+
 #### list2tree
 
 `(props: TraverseTreeProps): Array<TreeNode>`
@@ -115,7 +137,7 @@ type Enum2arrValue = {
 }
 ```
 
-#### unique <span class="new">New</span> (arr: Array, key?: string)
+#### unique (arr: Array, key?: string)
 
 `数组去重，如果数组中是对象，则需要传入key作为去重标记`
 
@@ -127,7 +149,7 @@ unique([]);
 
 `数组对象去重`
 
-#### delItem <span class="new">New</span>
+#### delItem
 
 `删除数组/字符串的某一项`
 

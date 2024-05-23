@@ -263,7 +263,7 @@ hasOperate(()=> {}, {wait: 5000, interval: 1000});
 
 ## retry
 
-#### retry  <span class="new">New</span>
+#### retry
 
 `promise 重试`
 
@@ -334,7 +334,7 @@ animate(callBack: (v: number)=> void, config: AnimateConfig): AnimateFnReturn;
 
 ## overload
 
-#### addMethod <span class="new">New</span>
+#### addMethod
 
 `jQuery中重栽函数的实现`
 
@@ -358,7 +358,7 @@ testObj.fn(1)
 testObj.fn(1, 2)
 ```
 
-#### createOverload <span class="new">New</span>
+#### createOverload
 
 `创建重栽函数`
 

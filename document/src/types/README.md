@@ -15,7 +15,7 @@
 | isUndefined                           | 判断undefined                                               |
 | isNull                                | 判断null                                                    |
 | isString                              | 判断string                                                  |
-| isHasDom <span class="new">New</span> | 判断是否可以使用dom对象                                     |
+| isHasDom | 判断是否可以使用dom对象                                     |
 | isElement                             | 判断element                                                 |
 | isDate                                | 判断是否是Date类型                                          |
 | isUTC                                 | 判断字符串是否是UTC格式                                     |
@@ -53,8 +53,8 @@
 | isSecure                                  | 是否是https访问                                              |
 | isNodejs                                  | 是否是node运行环境                                           |
 | isBrowser                                 | 是否是浏览器运行环境                                         |
-| isWX  <span class="new">New</span>        | 是否在微信中运行                                             |
-| getPlatform  <span class="new">New</span> | 获取终端信息{ browser: string, operatingSystem: string } 操作系统和浏览器 |
+| isWX                                      | 是否在微信中运行                                             |
+| getPlatform                               | 获取终端信息{ browser: string, operatingSystem: string } 操作系统和浏览器 |
 
 ## browser version
 
