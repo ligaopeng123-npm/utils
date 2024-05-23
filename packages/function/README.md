@@ -247,6 +247,18 @@ delay((...args)=> {}, 200, [1,2,3]);
 asyncDelay(async (...args)=> {}, 200, [1,2,3])
 ```
 
+#### sleep <span class="new">New 1.1.6+</span>
+
+`休眠执行`
+
+```typescript
+async function() {
+  console.log(Date.now());
+  await sleep(2000);
+  console.log(Date.now());
+}
+```
+
 ## operate
 
 #### hasOperate
