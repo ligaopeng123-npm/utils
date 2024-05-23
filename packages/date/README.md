@@ -133,7 +133,7 @@ timeRangeCurrent('week');
 timeRangePrevious('threeDays');
 ```
 
-##### timeRangePeriod <span class="new">New</span>
+##### timeRangePeriod
 
 `获取过去{n}天/月的时间区间`
 

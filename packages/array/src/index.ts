@@ -9,7 +9,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-export { convertToTwodimensional, pageTurnerFixedLength } from './conversion';
+export { convertToTwodimensional, pageTurnerFixedLength, groupBy } from './conversion';
 export { findTreeOrder, findTreeNode, findSubtreeByOrder, mapTree, filterTree, traverseTree, list2tree } from './tree';
 export { arr2enum, arr2enumBase, arr2AntdTableEnum, enum2arr, enum2arrBase } from './arr2enum';
 export { binarySearch } from './binarySearch';

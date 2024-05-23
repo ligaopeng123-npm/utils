@@ -68,7 +68,7 @@ export type {
 
 export {
     // 数组截断转二维数组       分页器                  array 转 tree
-    convertToTwodimensional, pageTurnerFixedLength, list2tree,
+    convertToTwodimensional, pageTurnerFixedLength,  groupBy,list2tree,
     // 数组和枚举的转换
     arr2enum, arr2enumBase, arr2AntdTableEnum, enum2arr, enum2arrBase,
     // 去重及删除

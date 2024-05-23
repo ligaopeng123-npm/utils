@@ -80,3 +80,25 @@ export const pageTurnerFixedLength = (arr: any[], len = 5): [NextAndPreviousType
     }
     return [[fn(currentIndex), canNext(), canPrevious()], next, previous];
 }
+
+type GroupByCallBack = (item: any) => string;
+/**
+ * 根据某个字段分组
+ * @param arr
+ * @param key
+ */
+export const groupBy = (arr: Array<any>, key: string | GroupByCallBack) => {
+    const result: any = {};
+    if (!isArray(arr) || arr.length === 0) {
+        console.error('groupBy arr is not array');
+        return result
+    }
+    for (const item of arr) {
+        const groupKey = typeof key === 'function' ? key(item) : item[key];
+        if (!result[groupKey]) {
+            result[groupKey] = [];
+        }
+        result[groupKey].push(item);
+    }
+    return result;
+}
