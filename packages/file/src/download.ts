@@ -95,6 +95,8 @@ type DownloadClickAProps = {
 export const downloadClickA = ({ href, fileName, blob }: DownloadClickAProps) => {
     const elt = document.createElement('a');
     elt.setAttribute('href', href);
+    // 打开一个新的页签 防止覆盖当前页
+    elt.setAttribute('target', '_blank');
     elt.setAttribute('download', fileName || getFileNameFromUrl(href) || 'default');
     elt.style.display = 'none';
     document.body.appendChild(elt);
