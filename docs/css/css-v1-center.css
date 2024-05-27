@@ -43,7 +43,9 @@
     position: fixed;
     left: 320px;
     width: 60%;
-    background-color: var(--background);
+    /*background-color: var(--background);*/
+    background-color: transparent;
+    backdrop-filter: blur(6px);
 }
 
 /*.sidebar-nav > ul > li > ul > li.active {*/

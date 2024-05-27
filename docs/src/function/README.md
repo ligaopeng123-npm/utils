@@ -395,3 +395,19 @@ overload('12')
 overload(1, 2)
 ```
 
+## event
+
+#### on
+
+`添加事件`
+
+```typescript
+const onClick = ()=> {};
+on(dom, 'click', onClick);
+```
+
+#### off
+
+```typescript
+off(dom, 'click', onClick);
+```
