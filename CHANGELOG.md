@@ -1,4 +1,43 @@
-## [0.4.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.0...v0.4.1) (2024-04-24)
+## [1.1.16-alpha.4](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.3...v1.1.16-alpha.4) (2024-05-30)
+
+
+### Bug Fixes
+
+* downloadClickA打开新页签下载，防止默认打开文件，覆盖当前内容 ([96c9d66](https://github.com/ligaopeng123-npm/utils/commit/96c9d66fbbfecc9b96b353c93afcb9797cff0ce1))
+
+
+### Features
+
+* add createAntdTableCell and version ([9d186f4](https://github.com/ligaopeng123-npm/utils/commit/9d186f4cc2435e02ec94daca7463a7f76363b70c))
+* add groupBy ([bec85ae](https://github.com/ligaopeng123-npm/utils/commit/bec85ae6c856af33d2ba0f53ddbbcd5c4867e304))
+* add sleep ([74ddeac](https://github.com/ligaopeng123-npm/utils/commit/74ddeac6f15cd1792607932b04e18db0f7ba2885))
+
+
+
+## [1.1.16-alpha.3](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.2...v1.1.16-alpha.3) (2024-04-29)
+
+
+### Bug Fixes
+
+* debounce leading为true时，最后一次触发的事件会被忽略 ([c1c0bd4](https://github.com/ligaopeng123-npm/utils/commit/c1c0bd418bbfd5f97dedd7e46e486675d6dee4b8))
+
+
+
+## [1.1.16-alpha.2](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.1...v1.1.16-alpha.2) (2024-04-28)
+
+
+### Bug Fixes
+
+* copyText 转义 并 支持传递input参数 ([53217df](https://github.com/ligaopeng123-npm/utils/commit/53217df48b08f67fa2fa34c03327c0a3671bd62d))
+
+
+
+## [1.1.16-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.0...v1.1.16-alpha.1) (2024-04-24)
+
+
+### Features
+
+* add escape ([d6eef7c](https://github.com/ligaopeng123-npm/utils/commit/d6eef7c118f0d9e610d79c0278b6c35db339bbe0))
 
 
 

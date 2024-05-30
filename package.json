@@ -1,105 +1,105 @@
 {
-    "name": "@gaopeng123/utils",
-    "version": "0.4.1",
-    "private": true,
-    "workspaces": [
-        "packages/*"
-    ],
-    "publishConfig": {
-        "access": "public"
-    },
-    "changelog": {
-        "labels": {
-            "feat": ":rocket: add css-obj and hump functions(4)",
-            "bug": ":bug: 正则后查safari兼容",
-            "doc": "RegExp文档完善",
-            "internal": ":house: Internal",
-            "breaking": ":boom: Breaking Change"
-        }
-    },
-    "license": "MIT",
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts",
-    "scripts": {
-        "dev": "webpack serve",
-        "build:test": "webpack build --config webpack.config.js",
-        "copy_md": "webpack build --config webpack.md.config.js",
-        "start:dm": "docsify serve ./document",
-        "start:doc": "docsify serve ./docs",
-        "copy_document_to_docs": "node webpack.docs.config.js",
-        "build:docs": "npm run copy_md && npm run copy_document_to_docs",
-        "build:docs_old": "node docs.js",
-        "build": "lerna exec -- pnpm run build",
-        "test": "lerna exec --ignore=@gaopeng123/utils -- pnpm run test",
-        "push:all": "lerna exec --ignore=@gaopeng123/utils -- pnpm run push",
-        "lernaPublish": "lerna publish && npm run changeVsesion && npm run changelog",
-        "changeVsesion": "node changeVsesion.js",
-        "push": "lerna publish",
-        "bootstrap": "lerna bootstrap",
-        "mark": "doctoc .",
-        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
-    },
-    "files": [],
-    "engines": {
-        "node": ">=10"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ligaopeng123-npm/utils.git"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "tsdx lint",
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-    },
-    "prettier": {
-        "printWidth": 80,
-        "semi": true,
-        "singleQuote": true,
-        "trailingComma": "es5"
-    },
-    "author": "ligaopeng123",
-    "module": "dist/utils.esm.js",
-    "size-limit": [
-        {
-            "path": "dist/utils.cjs.production.min.js",
-            "limit": "10 KB"
-        },
-        {
-            "path": "dist/utils.esm.js",
-            "limit": "10 KB"
-        }
-    ],
-    "devDependencies": {
-        "@size-limit/preset-small-lib": "^5.0.1",
-        "@types/jest": "^29.2.4",
-        "@types/node": "^16.4.6",
-        "commitizen": "^4.3.0",
-        "conventional-changelog-cli": "^2.2.2",
-        "copy-webpack-plugin": "6.4.1",
-        "cz-conventional-changelog": "^3.3.0",
-        "fs-extra": "^11.1.0",
-        "html-webpack-plugin": "^5.5.0",
-        "husky": "^7.0.4",
-        "lerna": "^6.1.0",
-        "size-limit": "^5.0.1",
-        "ts-loader": "^9.2.7",
-        "tsdx": "^0.14.1",
-        "tslib": "^2.3.0",
-        "typescript": "^4.3.5",
-        "webpack": "^5.70.0",
-        "webpack-cli": "^4.9.1",
-        "webpack-dev-server": "^4.7.4"
-    },
-    "pnpm": {
-        "overrides": {
-            "language-tags": "1.0.5"
-        }
-    },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
-        }
+  "name": "@gaopeng123/utils",
+  "version": "1.1.16-alpha.4",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "changelog": {
+    "labels": {
+      "feat": ":rocket: add css-obj and hump functions(4)",
+      "bug": ":bug: 正则后查safari兼容",
+      "doc": "RegExp文档完善",
+      "internal": ":house: Internal",
+      "breaking": ":boom: Breaking Change"
     }
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "dev": "webpack serve",
+    "build:test": "webpack build --config webpack.config.js",
+    "copy_md": "webpack build --config webpack.md.config.js",
+    "start:dm": "docsify serve ./document",
+    "start:doc": "docsify serve ./docs",
+    "copy_document_to_docs": "node webpack.docs.config.js",
+    "build:docs": "npm run copy_md && npm run copy_document_to_docs",
+    "build:docs_old": "node docs.js",
+    "build": "lerna exec -- pnpm run build",
+    "test": "lerna exec --ignore=@gaopeng123/utils -- pnpm run test",
+    "push:all": "lerna exec --ignore=@gaopeng123/utils -- pnpm run push",
+    "lernaPublish": "lerna publish && npm run changeVsesion && npm run changelog",
+    "changeVsesion": "node changeVsesion.js",
+    "push": "lerna publish",
+    "bootstrap": "lerna bootstrap",
+    "mark": "doctoc .",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "files": [],
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ligaopeng123-npm/utils.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "author": "ligaopeng123",
+  "module": "dist/utils.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/utils.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/utils.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.1",
+    "@types/jest": "^29.2.4",
+    "@types/node": "^16.4.6",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "copy-webpack-plugin": "6.4.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "fs-extra": "^11.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lerna": "^6.1.0",
+    "size-limit": "^5.0.1",
+    "ts-loader": "^9.2.7",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "language-tags": "1.0.5"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
