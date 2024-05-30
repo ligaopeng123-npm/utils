@@ -32,6 +32,8 @@
         "build": "lerna exec -- pnpm run build",
         "test": "lerna exec --ignore=@gaopeng123/utils -- pnpm run test",
         "push:all": "lerna exec --ignore=@gaopeng123/utils -- pnpm run push",
+        "lernaPublish": "lerna publish && npm run changeVsesion && npm run changelog",
+        "changeVsesion": "node changeVsesion.js",
         "push": "lerna publish",
         "bootstrap": "lerna bootstrap",
         "mark": "doctoc .",

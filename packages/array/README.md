@@ -137,6 +137,23 @@ type Enum2arrValue = {
 }
 ```
 
+#### createAntdTableCell
+
+`处理antd table单元格合并`
+
+```typescript
+export const { setTableData, getTdCell, getColSpanIndex, isLastRow } = createAntdTableCell('key'); // 唯一标识
+// 配置Column
+onCell: getTdCell(record, index);
+// 表格数据赋值给table前
+setTableData(data);
+// 配置rowClassName
+rowClassName: (record, index)=> {
+	// 隔行换色
+	return getColSpanIndex(record) % 2 ? 'classOdd' : 'classEven'
+}
+```
+
 #### unique (arr: Array, key?: string)
 
 `数组去重，如果数组中是对象，则需要传入key作为去重标记`

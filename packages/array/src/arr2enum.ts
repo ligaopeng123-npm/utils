@@ -3,6 +3,8 @@
  * @param arr
  * @param callBack
  */
+import { isUndefined } from "@gaopeng123/utils.types";
+
 type Arr2enumValue = {
     [propsName: string]: any;
 }
@@ -67,3 +69,65 @@ export const enum2arr = (val: any): Array<Enum2arrValue> => enum2arrBase(val, (k
         value: key
     }
 })
+
+
+/**
+ * 表格合并处理
+ */
+export const createAntdTableCell = (key: string) => {
+    let cache: Record<string, { val?: number, index?: number, __index?: number }> = {};
+    const setData = (data: Array<unknown>) => {
+        cache = {};
+        let __index = 0;
+        (data || []).forEach((item: Record<string, any>, index: number) => {
+            const cacheKey: string = item[key];
+            if (!cache[cacheKey]) {
+                __index++;
+            }
+            const currentCache = cache[cacheKey];
+            const val = (currentCache?.val || 0) + 1;
+            cache[cacheKey] = {
+                val: val,
+                index: isUndefined(currentCache?.index) ? index : currentCache?.index,
+                __index: __index - 1,
+            }
+        });
+    }
+
+    const getCell = (item: Record<string, any>, index: number): { colSpan: number, rowSpan: number } => {
+        const currentCache = cache[item[key]];
+        if (currentCache) {
+            if (currentCache.index === index) {
+                return {
+                    rowSpan: currentCache.val,
+                    colSpan: 1
+                }
+            } else {
+                return {
+                    rowSpan: 0,
+                    colSpan: 1
+                }
+            }
+        } else {
+            return {
+                rowSpan: 1,
+                colSpan: 1
+            }
+        }
+    }
+    return {
+        setTableData: setData,
+        getTdCell: getCell,
+        getColSpanIndex: (record: Record<string, any>) => {
+            const currentCache = cache[record[key]];
+            return currentCache?.__index;
+        },
+        isLastRow: (record: Record<string, any>, index: number) => {
+            const currentCache = cache[record[key]];
+            if (currentCache) {
+                return (currentCache.index + currentCache.val - 1) === index;
+            }
+            return false;
+        }
+    }
+}
