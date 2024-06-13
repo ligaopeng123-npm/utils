@@ -1,7 +1,7 @@
 // 函数合并
 export { compose, composePromises, pipe } from './compose';
 // 柯理化函数
-export { curry } from './curry';
+export { curry, currySuper } from './curry';
 export { partial } from './partial';
 // 函数缓存
 export { memoized, asyncMemoized } from './memoized';

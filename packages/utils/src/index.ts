@@ -153,7 +153,7 @@ export type { levitatingBallConfig } from "@gaopeng123/utils.object";
 /****************************  函数操作    *****************************/
 export {
     // Monad函数  柯理化函数 函数合并
-    ResponseMonad, curry, partial, compose, composePromises, pipe,
+    ResponseMonad, curry, currySuper, partial, compose, composePromises, pipe,
     // 缓存函数
     memoized, asyncMemoized,
     // fullscreen函数
