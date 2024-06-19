@@ -97,8 +97,8 @@ export const copyText = (span: any): Promise<{ message: string, status: boolean,
  * @param partiallyVisible 是否部分可见
  */
 export const isVisibleInViewport = (el: Element, partiallyVisible = true): boolean => {
-    const {top, left, bottom, right} = el.getBoundingClientRect();
-    const {innerHeight, innerWidth} = window;
+    const { top, left, bottom, right } = el.getBoundingClientRect();
+    const { innerHeight, innerWidth } = window;
     return partiallyVisible
         ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
         ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
@@ -112,7 +112,11 @@ export const isVisibleInViewport = (el: Element, partiallyVisible = true): boole
  * @param wait          去抖时间
  * @param options       去抖配置
  */
-export const observeViewport = (observeDomList: any[], observeCallBack: any, wait?: number, options?: DebounceOptions): void => {
+type ObserveViewport = Pick<IntersectionObserver, "disconnect" | "unobserve" | 'takeRecords'> & {
+    intersectionObserver: IntersectionObserver
+}
+
+export const observeViewport = (observeDomList: any[], observeCallBack: any, wait?: number, options?: DebounceOptions): ObserveViewport => {
     /**
      * 保存当前去抖范围内监听到的元素
      */
@@ -142,6 +146,13 @@ export const observeViewport = (observeDomList: any[], observeCallBack: any, wai
     list.forEach((item) => {
         IO.observe(item)
     });
+
+    return {
+        intersectionObserver: IO,
+        disconnect: () => IO.disconnect(),
+        unobserve: (item: Element) => IO.unobserve(item),
+        takeRecords: () => IO.takeRecords()
+    }
 }
 
 /**
