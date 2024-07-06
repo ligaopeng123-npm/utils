@@ -69,6 +69,20 @@ ResponseMonad.of({
 ```typescript
 type Curry = (...args: Array<any>) => any;
 curry((args1)=> {return (args2)=> args1 + args2);
+// demo
+const add = (a: number, b: number) => {
+  return a + b;
+}
+
+expect(curry(add)(1)(2)).toEqual(3);
+```
+
+#### currySuper
+
+`将函数转为柯理化函数,参数的个数无需关注，支持任意个数`
+
+```typescript
+expect(currySuper(add, 0)(1)(3, 2, 15, 3).value).toEqual(24);
 ```
 
 #### partial
@@ -411,3 +425,4 @@ on(dom, 'click', onClick);
 ```typescript
 off(dom, 'click', onClick);
 ```
+

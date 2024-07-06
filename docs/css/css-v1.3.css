@@ -2,8 +2,16 @@
     margin-left: 20px;
 }
 
-.markdown-section {
-    padding: 30px 300px 40px 15px !important;
+@media screen and (max-width: 768px) {
+    .markdown-section {
+        padding: 30px 15px 40px 15px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .markdown-section {
+        padding: 30px 300px 40px 15px !important;
+    }
 }
 
 .sidebar .sidebar-nav {
@@ -16,6 +24,19 @@
     top: 100px;
     right: 100px;
     /*background: #fff;*/
+}
+
+@media screen and (max-width: 768px) {
+    .app-sub-sidebar {
+        display: none !important;
+    }
+
+    .sidebar-toggle {
+        padding: 10px !important;
+        border-radius: 50% !important;
+        background-color: var(--background) !important;
+        box-shadow: 2px 2px 5px var(--accent) !important;
+    }
 }
 
 #docsify-darklight-theme {
@@ -112,7 +133,7 @@
     box-shadow: inset -8px -4px 0px -4px var(--main-sidebar-box-shadow-color);
 }
 
-.sidebar ul li.parent-active>a {
+.sidebar ul li.parent-active > a {
     border-right: 2px solid;
     color: var(--accent);
     font-weight: 600;
