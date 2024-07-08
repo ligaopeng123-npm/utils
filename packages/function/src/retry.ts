@@ -47,3 +47,51 @@ const retry: RetryPromise = (fn, config) => {
 }
 
 export default retry;
+/**
+ * 并行执行promise 根据配置设置最大并行数，并将结果组装返回
+ * @param promises
+ * @param opts:{
+ *   concurrency: number,  // 最大并行数
+ *   callback?: (result: unknown, index: number) => unknown // 回调函数
+ * }
+ */
+export const promiseScheduler = (promises: Array<() => Promise<unknown>>, opts?: { concurrency: number, callback?: (result: unknown, index: number) => unknown }) => {
+    const newPromises = [...promises];
+    const results: Array<{ result: unknown, type: 'error' | 'success' }> = [];
+    return new Promise((resolve, reject) => {
+        let index = 0;
+        let resultIndex = 0; // 标记结果
+        let resultsHasValue = 0; // 标记结果是否有值，用于返回判断
+        const { callback: cb } = opts || {};
+        const { concurrency } = Object.assign({ concurrency: 5 }, opts);
+        const next = () => {
+            while (index < concurrency && newPromises.length) {
+                index++; // 循环判断
+                const currentPromise: any = newPromises.shift();
+                const callBack = ({
+                                      result,
+                                      type
+                                  }: { result: unknown, type: 'error' | 'success' }, currentIndex: number) => {
+                    results[currentIndex] = { result: cb ? cb(result, currentIndex) : result, type };
+                    resultsHasValue++;
+                    if (resultsHasValue === promises.length) {
+                        resolve(results);
+                    } else {
+                        index--;
+                        next();
+                    }
+                }
+
+                const currentPromiseFn = currentPromise();
+                currentPromiseFn.resultIndex = resultIndex;
+                currentPromiseFn.then((res: unknown) => {
+                    callBack({ result: res, type: 'success' }, currentPromiseFn.resultIndex);
+                }).catch((res: unknown) => {
+                    callBack({ result: res, type: 'error' }, currentPromiseFn.resultIndex);
+                });
+                resultIndex++;
+            }
+        }
+        next();
+    });
+}
