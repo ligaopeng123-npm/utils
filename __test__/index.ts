@@ -1,7 +1,8 @@
-import {initRouter} from "./router";
+import { initRouter } from "./router";
 import observeViewportTest from './src/observeViewport';
 import pageTurnerFixedLength from "./src/pageTurnerFixedLength";
 import copyTextTest from "./src/copyText";
+import getMouseEnterDirectionTest from "./src/getMouseEnterDirectionTest";
 
 
 const router = [{
@@ -13,6 +14,9 @@ const router = [{
 }, {
     path: '/copyText',
     component: copyTextTest
+}, {
+    path: '/getMouseEnterDirection',
+    component: getMouseEnterDirectionTest
 }]
 
 window.onload = () => {
