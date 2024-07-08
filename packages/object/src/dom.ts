@@ -197,3 +197,53 @@ export const validatesCssValue = (key: string, value: string) => {
     }
     return eleStyle[key];
 }
+
+/**
+ * 根据正切求角度 来获取鼠标进入的方向
+ * @param event
+ * @param element
+ */
+export const getMouseEnterAngle = (event: MouseEvent, element: HTMLElement): number => {
+    const rect = element.getBoundingClientRect();
+    const x = event.clientX - rect.left - rect.width / 2;
+    const y = event.clientY - rect.top - rect.height / 2;
+    const angle = Math.atan2(y, x) * (180 / Math.PI);
+    return angle;
+}
+type Direction = 'top' | 'right' | 'bottom' | 'left';
+/**
+ * 根据坐标系角度来判断进入的方向
+ * @param angle
+ */
+export const getDirectionByAngle = (angle: number): Direction => {
+    if (angle >= -45 && angle < 45) {
+        return 'right';
+    } else if (angle >= 45 && angle < 135) {
+        return 'bottom';
+    } else if (angle >= -135 && angle < -45) {
+        return 'top';
+    } else {
+        return 'left';
+    }
+}
+/**
+ * 获取鼠标进入的方向
+ * @param dom
+ * @param listener
+ */
+export const getMouseEnterDirection = (dom: HTMLElement, listener: (direction: Direction, event: MouseEvent) => void): () => void => {
+    const callBack = (event: MouseEvent) => {
+        const angle = getMouseEnterAngle(event, dom);
+        const direction = getDirectionByAngle(angle);
+        listener(direction, event);
+    }
+    if (dom && isElement(dom)) {
+        dom.addEventListener('mouseenter', callBack);
+    }
+
+    return () => {
+        if (dom && isElement(dom)) {
+            dom.removeEventListener('mouseenter', callBack);
+        }
+    }
+}

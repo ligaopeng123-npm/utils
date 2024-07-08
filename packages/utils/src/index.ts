@@ -142,6 +142,7 @@ export {
     clone, cloneAllItems, cloneAllArray, cloneAllObject,
     // 鼠标样式获取 样式获取 获取父级dom 直到Expected条件为true
     mousePosition, getStyle, parentByExpected, isVisibleInViewport, observeViewport, validatesCssValue,
+    getMouseEnterDirection, getMouseEnterAngle, getDirectionByAngle,
     // 复制文本 数组 对象 字符串长度
     copyText, length, levitatingBall,
     // 1、对象属性合并 数组默认覆盖 2、对象属性合并（数组是concat合并） 3、对象属性合并（数组不做处理）
