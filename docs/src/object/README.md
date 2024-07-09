@@ -197,6 +197,23 @@ scrollToTop = (el?: Element): void
 validatesCssValue('position', 'sticky');
 ```
 
+#### getMouseEnterDirection
+
+`获取鼠标移入的方向`
+
+```typescript
+type Direction = 'top' | 'right' | 'bottom' | 'left';
+getMouseEnterDirection(dom: HTMLElement, listener: (direction: Direction, event: MouseEvent) => void): () => void;
+```
+
+#### getMouseEnterAngle
+
+`获取鼠标移入的角度【正切】`
+
+```typescript
+getMouseEnterAngle(event: MouseEvent, element: HTMLElement): number;
+```
+
 #### levitatingBall
 
 `悬浮球`

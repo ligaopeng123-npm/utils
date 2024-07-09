@@ -317,7 +317,21 @@ retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
 });
 ```
 
+#### promiseScheduler
 
+`promise 调度器，管理并发`
+
+```
+/**
+ * 并行执行promise 根据配置设置最大并行数，并将结果组装返回
+ * @param promises
+ * @param opts:{
+ *   concurrency: number,  // 最大并行数
+ *   callback?: (result: unknown, index: number) => unknown // 回调函数
+ * }
+ */
+ promiseScheduler(promises: Array<() => Promise<unknown>>, opts?: { concurrency: number, callback?: (result: unknown, index: number) => unknown });
+```
 
 ## easing
 
