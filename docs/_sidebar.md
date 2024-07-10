@@ -66,3 +66,5 @@
     - [RegExp](md/notes/RegExp.md)
     - [changelog](md/notes/changelog.md)
     - [记录](md/notes/面试总结.md)
+    - [前端监控](md/notes/前端监控.md)
+    - [docker](md/notes/docker.md)

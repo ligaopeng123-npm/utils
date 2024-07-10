@@ -1,4 +1,30 @@
-### 常用镜像命令
+## 常用命令
+
+1、根据关键字查找到docker 
+
+  sudo docker ps -a | grep [关键字]
+
+  sudo docker ps -a 查看所有镜像 包含挂掉的
+
+  // 进入容器内部
+
+  docker exec -it breakfast-report-project-test bash 
+
+  // exit
+
+2、查看对应的日志  
+
+​    sudo docker logs -f --tail 10 84ab85db442b
+
+​    \# -f --tail 10 查看10条日志 84ab85db442b 镜像id
+
+3、查看实体日志
+
+​    tail -f 10 xxx.log
+
+docker logs -f --tail 10 f1ff71157283
+
+## 常用镜像命令
 
 ```shell
 docker run <image>               	# 执行docker镜像
@@ -14,7 +40,7 @@ docker rmi -f <imgage-id>           # 镜像删除 -f 强制删除
 docker rmi -f $(docker imgaes -aq)  # 删除所有镜像
 ```
 
-### 容器常用命令
+## 容器常用命令
 
 ```shell
 docker ps []                  		# 正在运行中的容器
