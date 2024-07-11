@@ -9,7 +9,7 @@
 ## loader
 
 - `从后往前执行,ts->js->bable  less->css->style scss->css->style`
-- `对于JavaScript无法表示的资源模块(图片等)，loader会将他们单独copy到输出目录下，并将文件的访问路径作为改模块的导出成员暴露出去`
+- `对于JavaScript无法表示的资源模块(图片等)，loader会将他们单独copy到输出目录下，并将文件的访问路径作为该模块的导出成员暴露出去`
 
 ```js
 const {getOptions} = require("loader-utils");
@@ -258,4 +258,31 @@ module.exports = {
 ###  动态导入特性
 
 `按需加载模块，在程序运行时，如果用到某个模块时，才去加载这个模块。遵循es module语法即可自动处理分包`
+
+## 问题
+
+loader一般是将某个语法统一处理为统一的语法
+plugin一般是在打包前或打包后对结果进行再次操作
+
+#### 运行流程
+
+**初始化**：读取配置文件，创建 Compiler 实例，加载插件。
+
+**编译**：从入口文件开始递归解析模块，应用加载器转换文件内容。
+
+**构建模块依赖图**：解析每个模块的依赖，构建模块依赖图。
+
+**生成代码块**：将模块分组生成 chunk。
+
+**输出资源**：将每个 chunk 转换成文件，并写入输出目录。
+
+**执行插件**：在构建过程中执行各种插件，扩展和定制构建流程。
+
+Plugins钩子：初始化、编译、生成、输出有很多，我常用的是输出阶段：**`beforeEmit`**、**`emit`**、**`afterEmit`**
+
+#### 如何处理不同版本依赖
+
+- 使用resolutions，peerDependencies指定版本
+- 使用alias、externals、ModuleFederationPlugin指定版本
+- 没有冲突就平铺依赖，如果有冲突则每个模块加载相应的版本
 
