@@ -1,3 +1,16 @@
+## [1.1.16](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.4...v1.1.16) (2024-07-12)
+
+
+### Features
+
+* add currySuper ([fc7e6fe](https://github.com/ligaopeng123-npm/utils/commit/fc7e6fe1e9d95877d3b86bf6722094bed5aba958))
+* add getMouseEnterDirection, getMouseEnterAngle, getDirectionByAngle ([49df9e4](https://github.com/ligaopeng123-npm/utils/commit/49df9e47a05634210a0925de58948def66a030e6))
+* add getMouseEnterDirectionTest ([94e3bcb](https://github.com/ligaopeng123-npm/utils/commit/94e3bcb11851893f1959fdb4391854df21d4b855))
+* add ObserveViewport ([3f1d552](https://github.com/ligaopeng123-npm/utils/commit/3f1d5529d3da6ccddadaee1030519f0b27baf02a))
+* add promiseScheduler ([d7ecdad](https://github.com/ligaopeng123-npm/utils/commit/d7ecdaddc477cdba3cbd0d623ddaf33192195dc6))
+
+
+
 ## [1.1.16-alpha.4](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16-alpha.3...v1.1.16-alpha.4) (2024-05-30)
 
 
