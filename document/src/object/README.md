@@ -197,7 +197,7 @@ scrollToTop = (el?: Element): void
 validatesCssValue('position', 'sticky');
 ```
 
-#### getMouseEnterDirection
+#### getMouseEnterDirection <span class="new">New 1.1.6+</span>
 
 `获取鼠标移入的方向`
 
@@ -206,7 +206,7 @@ type Direction = 'top' | 'right' | 'bottom' | 'left';
 getMouseEnterDirection(dom: HTMLElement, listener: (direction: Direction, event: MouseEvent) => void): () => void;
 ```
 
-#### getMouseEnterAngle
+#### getMouseEnterAngle <span class="new">New 1.1.6+</span>
 
 `获取鼠标移入的角度【正切】`
 

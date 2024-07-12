@@ -77,7 +77,7 @@ const add = (a: number, b: number) => {
 expect(curry(add)(1)(2)).toEqual(3);
 ```
 
-#### currySuper
+#### currySuper <span class="new">New 1.1.6+</span>
 
 `将函数转为柯理化函数,参数的个数无需关注，支持任意个数`
 
@@ -317,7 +317,7 @@ retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
 });
 ```
 
-#### promiseScheduler
+#### promiseScheduler <span class="new">New 1.1.6+</span>
 
 `promise 调度器，管理并发`
 
