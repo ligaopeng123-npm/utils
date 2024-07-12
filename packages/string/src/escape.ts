@@ -19,6 +19,7 @@ export const escape = (str: string) => {
             '>': '&gt;',
             '"': '&quot;',
             "'": '&#39;',
+            "/": '&#x2F;',
         };
         return htmlEscapes[match];
     });
