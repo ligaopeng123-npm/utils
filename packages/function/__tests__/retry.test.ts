@@ -11,7 +11,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { promiseScheduler } from "../src";
+import { promiseScheduler, promiseTasks } from "../src";
 
 // jest.setTimeout(100000); // 默认5秒
 
@@ -36,4 +36,37 @@ describe('retry', () => {
             expect(res.length).toEqual(100)
         });
     });
+
+    it('promiseTasks works', () => {
+        const task = new promiseTasks(5);
+        for (let i = 0; i < 10; i++) {
+            task.addTask(() => {
+                if (i % 3 === 0) {
+                    return 'fn +' + i;
+                }
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('success:' + Math.random() * 1000);
+                    }, Math.random() * 100 * (i + 1));
+                });
+            }).then(res => {
+            });
+        }
+        task.on('end', (res: Array<unknown>)=> {
+            expect(res.length).toEqual(10)
+        })
+    });
+
+    it('promiseScheduler works', () => {
+        const task = new promiseTasks(5);
+        task.on('end', (res: Array<unknown>)=> {
+            expect(res.length).toEqual(100)
+        })
+        task.all(testPromise);
+    });
 });
+
+
+const task = new promiseTasks(5);
+
+

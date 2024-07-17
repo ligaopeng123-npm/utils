@@ -321,3 +321,14 @@ expect(classnames({ abc: true, 'my-class-name': false })).toEqual(`abc`);
 expect(classnames(['abc', { 'my-class-name': true }])).toEqual(`abc my-class-name`);
 ```
 
+##### stylesComponents <span class="new">New 1.2.0+</span>
+
+```tsx
+const {styled} = stylesComponents();
+styled(div)`
+	color: red;
+  width: 100px;
+  backgroundColor: blue;
+`
+```
+

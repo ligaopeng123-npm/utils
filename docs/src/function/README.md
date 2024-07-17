@@ -333,6 +333,40 @@ retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
  promiseScheduler(promises: Array<() => Promise<unknown>>, opts?: { concurrency: number, callback?: (result: unknown, index: number) => unknown });
 ```
 
+#### promiseTasks <span class="new">1.2.0+</span>
+
+```typescript
+const test = () => {
+  if (i % 3 === 0) {
+    return 'fn +' + i;
+  }
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('success:' + Math.random() * 1000);
+    }, Math.random() * 100 * (i + 1));
+  });
+};
+
+const task = new promiseTasks(5);
+for (let i = 0; i < 10; i++) {
+  task.addTask(test).then(res => {
+  });
+}
+task.on('end', (res: Array<unknown>)=> {
+  expect(res.length).toEqual(10)
+});
+
+// 或者
+const task = new promiseTasks(5);
+task.on('end', (res: Array<unknown>)=> {
+  expect(res.length).toEqual(100)
+})
+task.all(new Array(100).fill(0).map(_=>test));
+
+```
+
+
+
 ## easing
 
 #### easingFuncs

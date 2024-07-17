@@ -51,11 +51,11 @@ export default retry;
  * 并行执行promise 根据配置设置最大并行数，并将结果组装返回
  * @param promises
  * @param opts:{
- *   concurrency: number,  // 最大并行数
+ *   taskCont: number,  // 最大并行数
  *   callback?: (result: unknown, index: number) => unknown // 回调函数
  * }
  */
-export const promiseScheduler = (promises: Array<() => Promise<unknown>>, opts?: { concurrency: number, callback?: (result: unknown, index: number) => unknown }) => {
+export const promiseScheduler = (promises: Array<() => Promise<unknown>>, opts?: { taskCont: number, callback?: (result: unknown, index: number) => unknown }) => {
     const newPromises = [...promises];
     const results: Array<{ result: unknown, type: 'error' | 'success' }> = [];
     return new Promise((resolve, reject) => {
@@ -63,9 +63,9 @@ export const promiseScheduler = (promises: Array<() => Promise<unknown>>, opts?:
         let resultIndex = 0; // 标记结果
         let resultsHasValue = 0; // 标记结果是否有值，用于返回判断
         const { callback: cb } = opts || {};
-        const { concurrency } = Object.assign({ concurrency: 5 }, opts);
+        const { taskCont } = Object.assign({ taskCont: 5 }, opts);
         const next = () => {
-            while (index < concurrency && newPromises.length) {
+            while (index < taskCont && newPromises.length) {
                 index++; // 循环判断
                 const currentPromise: any = newPromises.shift();
                 const callBack = ({
@@ -95,3 +95,116 @@ export const promiseScheduler = (promises: Array<() => Promise<unknown>>, opts?:
         next();
     });
 }
+
+/**
+ * 并发任务管理器
+ * 单个任务addTask
+ * 多个任务all
+ * 通过on('end', callBack) // 监听结束事件
+ */
+type Task = () => Promise<unknown> | unknown; //返回值可以是一个promise或者一个普通函数
+export class promiseTasks {
+    promises: Array<{ task: Task, callBack?: (val: unknown, index: number) => unknown, resolve: (value: unknown) => void, reject: (reason?: any) => void }>;
+    results: Array<{ result: unknown, type: 'error' | 'success' }> = [];
+    callBack: Array<{ event: 'end', callBack: Function }> = [];
+    taskCont: number;
+    index: number = 0; // 标记并行任务数
+    currentIndex: number = 0; // 当前正在执行的下标
+    hasResultsIndex: number = 0; // 已经返回了多少结果的下标
+
+    constructor(taskCont?: number) {
+        this.taskCont = taskCont || 5;
+        this.promises = [];
+    }
+
+    init() {
+        this.results = [];
+        this.index = 0;
+        this.currentIndex = 0;
+        this.hasResultsIndex = 0;
+        this.promises = [];
+    }
+
+    _createTask(task: Task, callBack?: <T>(val: T, index: number) => T, afterCreate?: Function) {
+        return new Promise((resolve, reject) => {
+            const currentIndex = this.currentIndex;
+            const _callBack = callBack ? callBack : <T>(value: T, index: number): T => {return value};
+            const checkTask = ()=> {
+                console.log(this.promises.length, this.hasResultsIndex, this.currentIndex)
+                if (this.promises.length === 0 && this.hasResultsIndex === this.currentIndex - 1) {
+                    this.end();
+                }
+            }
+            this.promises.push({
+                resolve: (val) => {
+                    this.results[currentIndex] = _callBack({ result: val, type: 'success' }, currentIndex);
+                    resolve(val);
+                    checkTask();
+                }, reject: (err) => {
+                    this.results[currentIndex] = _callBack({ result: err, type: 'error' }, currentIndex);
+                    reject(err);
+                    checkTask();
+                }, task
+            });
+            if (afterCreate) afterCreate();
+            this.currentIndex++;
+        });
+    }
+
+    addTask(task: Task, callBack?: <T>(val: T, index: number) => T) {
+        return this._createTask(task, callBack, () => this.run());
+    }
+
+    run() {
+        while (this.promises.length && this.index < this.taskCont) {
+            this.index++; // 循环判断
+            const { task, resolve, reject } = this.promises.shift();
+            const taskReturn = task();
+            const next = ()=> {
+                this.index--;
+                this.run();
+                this.hasResultsIndex++;
+            }
+            if (isPromise(taskReturn)) {
+                (taskReturn as Promise<unknown>).then(resolve, reject).finally(() => {
+                    next();
+                }).catch((err) => {
+                    console.log('err', err);
+                });
+            } else {
+                try {
+                    resolve(taskReturn);
+                } catch (e) {
+                    reject(e);
+                }
+                next();
+            }
+        }
+    }
+
+    all(tasks: Array<Task>, callBack?: <T>(val: T, index: number) => T) {
+        this.init();
+        tasks.forEach((task, index) => {
+            this.addTask(task, callBack).catch((err)=> {
+            }).then();
+        });
+        this.run();
+    }
+
+    on(event: 'end', callBack: Function) {
+        this.callBack.push({ event, callBack });
+    }
+
+    eventLoop(event: 'end') {
+        this.callBack.forEach(({ event: _event, callBack }) => {
+            if (_event === event) {
+                callBack(this.results);
+            }
+        });
+    }
+
+    end() {
+        this.eventLoop('end');
+    }
+}
+
