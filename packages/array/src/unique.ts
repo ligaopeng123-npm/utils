@@ -38,9 +38,9 @@ export const uniqueArrByKey = <T>(arr: Array<T>, key: string): Array<T> => uniqu
  * @param arr
  * @param callBack
  */
-export const delItem = <T>(v: T, callBack: (v: unknown) => boolean): T => {
+export const delItem = <T extends string | Array<any>>(v: T, callBack: (v: unknown) => boolean): T => {
     if (callBack) {
-        const fn = (arr: Array<unknown>) => {
+        const fn = (arr: Array<unknown>): Array<unknown> => {
             const _arr: Array<unknown> = [];
             arr.filter((item) => {
                 if (!callBack(item)) {
