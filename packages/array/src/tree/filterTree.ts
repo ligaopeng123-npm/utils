@@ -24,8 +24,8 @@ function isMatch(item: TreeNode, callBack: FilterFn, options?: FilterTreeOptions
     let flag2 = false;
     if (callBack(item)) {
         flag1 = true
-    } else if (item[options.childrenKey] && item[options.childrenKey].length) {
-        item[options.childrenKey].forEach((child: any[]) => {
+    } else if (item[options.childrenKey] && (item[options.childrenKey] as Array<TreeNode>).length) {
+        (item[options.childrenKey] as Array<TreeNode>).forEach((child: TreeNode) => {
             if (isMatch(child, callBack, options)) {
                 flag2 = true
             }
@@ -73,7 +73,7 @@ const hasDeepMatch = (treeData: TreeNode, childrenKey: string): boolean => {
  * @param options
  */
 export const filterByMatch = (treeData: Array<TreeNode>, callBack: FilterFn, options?: FilterTreeOptions) => {
-    const {deep, childrenKey} = options;
+    const { deep, childrenKey } = options;
     if (deep) {
         return treeData.filter((item: TreeNode, index) => {
             if (item && item[childrenKey] && item[childrenKey].length && item.__isMatch) {

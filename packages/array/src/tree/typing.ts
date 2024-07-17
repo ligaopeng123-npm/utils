@@ -36,7 +36,7 @@ export type TreeNode = {
 export type TraverseTreeProps = {
     list?: Array<TreeNode>;
     tree?: Array<TreeNode>;
-    rely?: RelyFn; // 暂停的凭据 一旦范围tree 则停止遍历
+    rely?: RelyFn; // 暂停的凭据 一旦返回TreeNode 则停止遍历
     callBack?: TraverseTreeCallBack; // 遍历每一项都会执行的处理函数
     options?: TreeOptions;
     parentNode?: any;

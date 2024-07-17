@@ -5,10 +5,9 @@
  */
 import { isUndefined } from "@gaopeng123/utils.types";
 
-type Arr2enumValue = {
-    [propsName: string]: any;
-}
-export const arr2enumBase = (arr: any[], callBack: (item: any) => Arr2enumValue) => {
+type Arr2enumValue = Record<string, unknown>;
+
+export const arr2enumBase = <T>(arr: Array<T>, callBack: (item: T) => Arr2enumValue) => {
     return arr.reduce(
         (pre: object, cur: any) => ({
             ...pre,
@@ -23,11 +22,13 @@ export const arr2enumBase = (arr: any[], callBack: (item: any) => Arr2enumValue)
  * @param valueKey
  * @param labelKey
  */
-export const arr2enum = (arr: any[], valueKey: string = 'id', labelKey: string = 'name'): Arr2enumValue => arr2enumBase(arr, (item) => {
+export const arr2enum = (arr: Array<Arr2enumValue>, valueKey: string = 'id', labelKey: string = 'name'): Arr2enumValue => arr2enumBase(arr, (item) => {
     return {
-        [item[valueKey]]: item[labelKey]
+        [item[valueKey] as string]: item[labelKey]
     }
 });
+
+
 /**
  * AntdTable枚举
  * @param arr
@@ -44,7 +45,7 @@ export const arr2AntdTableEnum = (arr: any[], valueKey: string = 'id', labelKey:
 /**
  * 枚举对象转换成数组
  */
-export const enum2arrBase = (val: Arr2enumValue, callBack: (key: string, item: any, rows: Arr2enumValue) => any) => {
+export const enum2arrBase = (val: Arr2enumValue, callBack: (key: string, item: unknown, rows: Arr2enumValue) => any) => {
     const arr = [];
     for (const valKey in val) {
         arr.push(callBack(valKey, val[valKey], val));
@@ -118,12 +119,12 @@ export const createAntdTableCell = (key: string) => {
     return {
         setTableData: setData,
         getTdCell: getCell,
-        getColSpanIndex: (record: Record<string, any>) => {
-            const currentCache = cache[record[key]];
+        getColSpanIndex: (record: Record<string, unknown>) => {
+            const currentCache = cache[record[key] as string];
             return currentCache?.__index;
         },
-        isLastRow: (record: Record<string, any>, index: number) => {
-            const currentCache = cache[record[key]];
+        isLastRow: (record: Record<string, unknown>, index: number) => {
+            const currentCache = cache[record[key] as string];
             if (currentCache) {
                 return (currentCache.index + currentCache.val - 1) === index;
             }

@@ -19,14 +19,14 @@ import { isArray, isString } from "@gaopeng123/utils.types";
 export const unique = <T>(arr: Array<T>, key?: string): Array<T> => {
     if (arr.length === 0) return
     const list: Array<T> = [];
-    const map: any = {}
+    const map: Record<string, boolean> = {};
     arr.forEach((item) => {
-        const itemKey: string = key ? (item as any)[key] : item;
+        const itemKey: string = key ? (item as any)[key as string] : item;
         if (!map[itemKey]) {
-            map[itemKey] = item;
+            map[itemKey] = true;
             list.push(item);
         }
-    })
+    });
     return list;
 }
 
@@ -38,21 +38,21 @@ export const uniqueArrByKey = <T>(arr: Array<T>, key: string): Array<T> => uniqu
  * @param arr
  * @param callBack
  */
-export const delItem = <T>(v: T, callBack: (v: any) => boolean): T => {
+export const delItem = <T>(v: T, callBack: (v: unknown) => boolean): T => {
     if (callBack) {
-        const fn = (arr: Array<any>)=> {
-            const _arr: any[] = [];
+        const fn = (arr: Array<unknown>) => {
+            const _arr: Array<unknown> = [];
             arr.filter((item) => {
                 if (!callBack(item)) {
                     _arr.push(item);
                 }
             })
-            return _arr as unknown;
+            return _arr;
         }
         if (isArray(v)) {
-            return fn(v as any) as T;
+            return fn(v as Array<unknown>) as T;
         } else if (isString(v)) {
-            return (fn(((v as any).split(''))) as any).join('') as T;
+            return (fn(((v as string).split(''))) as Array<unknown>).join('') as T;
         } else {
             console.warn(`${v}只能是数组或者字符串`);
             return v;

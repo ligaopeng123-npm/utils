@@ -5,9 +5,9 @@
  * @param start 开始下标, 默认为0
  * @param end 截止下标, 默认数组长度 - 1
  */
-type compareFn = (element: any) => number
-export const binarySearch = (
-    arr: any[],
+type compareFn = <T>(element: T) => number
+export const binarySearch = <T>(
+    arr: Array<T>,
     compare: compareFn,
     start: number = 0,
     end: number = arr.length - 1

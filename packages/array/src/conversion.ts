@@ -16,7 +16,7 @@ import { isArray, isNumber } from "@gaopeng123/utils.types";
  * @param arr
  * @param len
  */
-export const convertToTwodimensional = (arr: Array<any>, len: number) => {
+export const convertToTwoDimensional = (arr: Array<unknown>, len: number) => {
     if (!isArray(arr) || !isNumber(len) || len < 1) return arr;
     const newArr = [];
     for (let i = 0; i < arr.length; i = len + i) {
@@ -30,13 +30,13 @@ export const convertToTwodimensional = (arr: Array<any>, len: number) => {
  * @param arr
  * @param len
  */
-export type NextAndPreviousType = [any[], boolean, boolean];
-export type NextAndPreviousFn = () => NextAndPreviousType;
-export const pageTurnerFixedLength = (arr: any[], len = 5): [NextAndPreviousType, NextAndPreviousFn, NextAndPreviousFn] => {
+export type NextAndPreviousType<T> = [Array<T>, boolean, boolean];
+export type NextAndPreviousFn = <T>() => NextAndPreviousType<T>;
+export const pageTurnerFixedLength = <T>(arr: Array<T>, len = 5): [NextAndPreviousType<T>, NextAndPreviousFn, NextAndPreviousFn] => {
     // 当前页 默认为第一页
     let currentIndex = 1;
     let currentPages: any[] = [];
-    const fn: any = (pageIndex = 1) => {
+    const fn = (pageIndex = 1): Array<T> => {
         const currentList = arr.slice((pageIndex - 1) * len, len * pageIndex);
         if (currentList.length === len) return currentList;
         const beginLen = arr.length - len;
@@ -81,20 +81,20 @@ export const pageTurnerFixedLength = (arr: any[], len = 5): [NextAndPreviousType
     return [[fn(currentIndex), canNext(), canPrevious()], next, previous];
 }
 
-type GroupByCallBack = (item: any) => string;
+type GroupByCallBack = (item: unknown) => string;
 /**
  * 根据某个字段分组
  * @param arr
  * @param key
  */
-export const groupBy = (arr: Array<any>, key: string | GroupByCallBack) => {
+export const groupBy = (arr: Array<unknown>, key: string | GroupByCallBack) => {
     const result: any = {};
     if (!isArray(arr) || arr.length === 0) {
         console.error('groupBy arr is not array');
         return result
     }
     for (const item of arr) {
-        const groupKey = typeof key === 'function' ? key(item) : item[key];
+        const groupKey = typeof key === 'function' ? key(item) : String((item as Record<string, unknown>)[key]);
         if (!result[groupKey]) {
             result[groupKey] = [];
         }

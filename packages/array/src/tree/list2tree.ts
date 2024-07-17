@@ -3,7 +3,7 @@ import { defaultOptions, TraverseTreeProps, TreeNode } from "./typing";
 export const list2tree = (props: TraverseTreeProps): Array<TreeNode> => {
     const { list, options } = props;
     const { idKey, pidKey, childrenKey } = Object.assign({}, defaultOptions, options);
-    const treeMap: any = {};
+    const treeMap: Record<string, TreeNode> = {};
     const tree = [];
     // 将所有的数据缓存起来，方便后面去找
     for (const item of list) {
