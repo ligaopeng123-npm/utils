@@ -16,7 +16,7 @@ import { hump2hyphen, hyphen2hump } from "@gaopeng123/utils.string";
  * 将react obj style类型 转换成 css类型
  * @param obj
  */
-export const obj2css = (obj: any) => {
+export const obj2css = (obj: Record<string, string>) => {
     if (isObject(obj)) {
         let css = ``;
         for (let key in obj) {
@@ -89,3 +89,64 @@ export const classnames = (...args: Array<any>) => {
     }
     return classes.join(' ');
 }
+
+
+interface MyObjectFn {
+    (element: HTMLElement): (strings: TemplateStringsArray, ...values: any[]) => MyObject
+}
+
+type MyObjectAttr = 'styled' | 'attrs' | 'classes' | 'content';
+
+
+type MyObject = {
+    [key in MyObjectAttr]: MyObjectFn;
+}
+
+export function stylesComponents() {
+    const strToAttr = (str: string, callBack: (key: string, value: string) => void) => {
+        const cssArr = str.replaceAll('\n', '').split(';');
+        cssArr.forEach((item: string) => {
+            if (item.trim()) {
+                const [key, value] = item.split(':');
+                callBack(`${hump2hyphen(key.trim())}`, value.trim())
+            }
+        });
+    }
+
+    const myStyles: MyObject = {
+        styled: (a: HTMLElement) => {
+            return (strings: TemplateStringsArray, ...values: any[]) => {
+                let css = '';
+                strToAttr(strings[0], (key, value) => {
+                    css += `${key}: ${value};`
+                })
+                a.style.cssText = a.style.cssText + css;
+                return myStyles;
+            };
+        },
+        attrs: (a: HTMLElement) => {
+            return (strings: TemplateStringsArray, ...values: any[]) => {
+                strToAttr(strings[0], (key, value) => {
+                    a.setAttribute(key, value)
+                })
+                return myStyles;
+            }
+        },
+        classes: (a: HTMLElement) => {
+            return (strings: TemplateStringsArray, ...values: any[]) => {
+                a.classList.add(strings[0]);
+                return myStyles;
+            }
+        },
+        content: (a: HTMLElement) => {
+            return (strings: TemplateStringsArray, ...values: any[]) => {
+                a.innerText = strings[0];
+                return myStyles;
+            }
+        }
+    }
+    return myStyles;
+}
+
+
+export const { styled } = stylesComponents();

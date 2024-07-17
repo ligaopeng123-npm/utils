@@ -1,4 +1,5 @@
 import { css2obj, obj2css, makeCssText, classnames } from '../src';
+import { stylesComponents } from "../src";
 
 const testData = {
     backgroundColor: "red",
@@ -48,5 +49,28 @@ describe('classnames', () => {
         expect(classnames({ 'my-class-name': true })).toEqual(`my-class-name`);
         expect(classnames({ abc: true, 'my-class-name': false })).toEqual(`abc`);
         expect(classnames(['abc', { 'my-class-name': true }])).toEqual(`abc my-class-name`);
+    });
+});
+
+describe('createStyles', () => {
+    it('works', () => {
+        const div: any = {
+            style: { cssText: '' }, classList: {
+                add: function () {
+
+                }
+            }, setAttribute: function () {}
+        };
+
+        const { styled } = stylesComponents();
+
+        styled(div)`
+            color: red;
+            width: 100px;
+            backgroundColor: blue;
+        `.attrs(div)`
+            data-test: abc;
+        `;
+        expect(div.style.cssText).toEqual(`color: red;width: 100px;background-color: blue;`);
     });
 });

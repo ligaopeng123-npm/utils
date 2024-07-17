@@ -165,10 +165,8 @@ export const downloadScreenshotPicture = (dom: HTMLCanvasElement | HTMLVideoElem
     } else {
         videoDom = document.getElementById(dom as string);
     }
-    console.log('videoDom', videoDom)
     if (videoDom) {
         let canvas;
-        console.log('videoDom.tagName', videoDom.tagName)
         if (videoDom.tagName === 'VIDEO') {
             canvas = document.createElement('canvas');
             const width = options.width || videoDom.offsetWidth;

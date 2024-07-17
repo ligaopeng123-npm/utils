@@ -21,14 +21,14 @@ export const file2Blob = (file: File): Blob => {
  * file累着转blob 然后转url直接显示
  * @param file
  */
-export const file2Url = (file: File) => {
+export const file2Url = (file: File): string => {
     return URL.createObjectURL(file2Blob(file)); //转化
 };
 /**
  * base64 转blob
  * @param dataurl
  */
-export const base642Blob = (dataurl: string) => {
+export const base642Blob = (dataurl: string): Blob => {
     let arr: any = dataurl.split(","),
         mime = arr[0].match(/:(.*?);/)[1],
         bstr = atob(arr[1]),
@@ -37,7 +37,7 @@ export const base642Blob = (dataurl: string) => {
     while (n--) {
         u8arr[n] = bstr.charCodeAt(n);
     }
-    return new Blob([u8arr], {type: mime});
+    return new Blob([u8arr], { type: mime });
 };
 
 /**
@@ -45,10 +45,11 @@ export const base642Blob = (dataurl: string) => {
  * @param theBlob
  * @param fileName
  */
-export const blob2File = (theBlob: any, fileName: any) => {
-    theBlob.lastModifiedDate = new Date();
-    theBlob.name = fileName;
-    return theBlob;
+export const blob2File = (theBlob: Blob, fileName: string): File => {
+    const file: File = theBlob as File;
+    // @ts-ignore
+    file.lastModified = new Date(); file.lastModifiedDate = new Date();file.name = fileName;
+    return file;
 };
 
 /**
@@ -56,13 +57,13 @@ export const blob2File = (theBlob: any, fileName: any) => {
  * @param dataurl
  */
 export const base642File = (base64: string): File => {
-    return blob2File(base642Blob(base64), Date.now())
+    return blob2File(base642Blob(base64), Date.now().toString())
 };
 /**
  * 文件转base64
  * @param blob
  */
-export const blob2Base64 = (blob: Blob): Promise<any> => {
+export const blob2Base64 = (blob: Blob): Promise<string | ArrayBuffer> => {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         //将文件读取为 DataURL

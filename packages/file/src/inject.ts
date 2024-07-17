@@ -34,7 +34,7 @@ export const injectScript = (src: string): Promise<any> => {
  * 批量加载js文件
  * @param src
  */
-export const injectScripts = (src: any[string]): Promise<any> => {
+export const injectScripts = (src: Array<string>): Promise<boolean[]> => {
     return Promise.all(src.map((itemStr: string) => {
         return injectScript(itemStr);
     }));
