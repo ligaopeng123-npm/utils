@@ -1,9 +1,7 @@
 /****************************   基本类型判断    *****************************/
-import { promiseScheduler } from "@gaopeng123/utils.function";
-
 export {
     // 数据类型判断
-    isObject, isArray, isElement, isEmpty, isNumber, isEmptyObject, isNull, isBoolean, isTrue, isFalse,
+    isObject, isArray, isSparseArray, isElement, isEmpty, isNumber, isEmptyObject, isNull, isBoolean, isTrue, isFalse,
     isEqualByObj, isEqual, isFunction, isPromise, isString, isDate, isValidDate, isUTC, isUndefined,
     isJSON, isBuffer, isFormData, isFile, isBlob, isStream, isURLSearchParams,
     // 浏览器判断

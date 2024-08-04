@@ -41,6 +41,18 @@ export const isArray: typeFn = (val) => {
         : toString.call(val) === '[object Array]';
 };
 /**
+ * 判断是否是稀疏数组
+ * @param val
+ */
+export const isSparseArray: typeFn = (val) => {
+    if (!isArray(val)) return false;
+    const _val = val as Array<unknown>;
+    for (let i = 0; i < _val.length; i++) {
+        if (!(i in _val)) return true;
+    }
+    return false;
+}
+/**
  * 字符串判断
  * @param val
  */
@@ -316,7 +328,7 @@ export const isFocus: typeFn = (el) => {
  * 是否是个合法的url
  * @param url
  */
-export const isUrl: typeFn = (url)  =>{
+export const isUrl: typeFn = (url) => {
     try {
         new URL(url as string);
         return true;
