@@ -41,6 +41,7 @@
 
 #docsify-darklight-theme {
     right: 0px !important;
+    top：0px !important;
 }
 
 .app-sub-sidebar li:before {
@@ -116,10 +117,32 @@
     background: var(--background);
     z-index: 1;
     margin-right: -36px;
+    filter: contrast(1);
 }
 
 .app-name-link {
     pointer-events: none;
+}
+
+.app-name-text {
+    animation: nameExpand 1s ease-in-out 1 forwards;
+}
+
+.app-name-version {
+    font-size: 12px;
+    opacity: .6;
+    letter-spacing: 1px;
+}
+
+@keyframes nameExpand {
+    from {
+        letter-spacing: -20px;
+        filter: blur(5px);
+    }
+    to {
+        letter-spacing: 5px;
+        filter: blur(0px);
+    }
 }
 
 .markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section strong {
