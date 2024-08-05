@@ -145,6 +145,38 @@ class newPromise {
     catch(onRejected: Function) {
         this.then(null, onRejected);
     }
+
+    static all = (promises: Array<unknown>) => {
+        let _resolve: Function;
+        let _reject: Function;
+        const p = new Promise((resolve, reject) => {
+            _resolve = resolve;
+            _reject = reject;
+        });
+
+        if (promises.length === 0) {
+            _resolve([]);
+        }
+
+        let index = 0;
+        let count = 0;
+        const result: Array<unknown> = [];
+        for (const promise of promises) {
+            const currentIndex = index; // 避免循环改变index 导致顺序不对
+            index++;
+            Promise.resolve(promise).then((value) => {
+                result[currentIndex] = value;
+                count++;
+                if (count === promises.length) {
+                    _resolve(result);
+                }
+            }).catch((err) => {
+                _reject(err);
+            })
+        }
+
+        return p;
+    }
 }
 
 
@@ -163,4 +195,14 @@ new newPromise((resolve, reject) => {
     console.log(222, res)
 }).catch((err: any) => {
     console.log(333, err)
+})
+
+
+newPromise.all([1, ``, Promise.resolve(2),
+    new Promise((resolve, reject) => {setTimeout(() => resolve(3), 1000)}),
+    Promise.reject('error all')])
+    .then((res) => {
+    console.log(444, res)
+}).catch((err) => {
+    console.log(err)
 })
