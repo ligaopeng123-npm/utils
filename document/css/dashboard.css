@@ -36,27 +36,27 @@
 }
 
 .dashboard-card-image-utils {
-    background-image: url("../image/utils.png");
+    background-image: url("../image/utils.webp");
 }
 
 .dashboard-card-image-hooks {
-    background-image: url("../image/hooks.png");
+    background-image: url("../image/hooks.webp");
 }
 
 .dashboard-card-image-components {
-    background-image: url("../image/components.png");
+    background-image: url("../image/components.webp");
 }
 
 .dashboard-card-image-cli {
-    background-image: url("../image/cli.png");
+    background-image: url("../image/cli.webp");
 }
 
 .dashboard-card-image-screen {
-    background-image: url("../image/screen.png");
+    background-image: url("../image/screen.webp");
 }
 
 .dashboard-card-image-notes {
-    background-image: url("../image/notes.png");
+    background-image: url("../image/notes.webp");
     border-bottom: 1px solid rgba(153, 153, 153, 0.1);
 }
 
