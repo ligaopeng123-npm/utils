@@ -33,6 +33,7 @@
     - [useReloadAfterStationary](md/hooks/useReloadAfterStationary/README.md)
 - Web Components
     - [介绍](md/components/README.md)
+    - [card-flip <span class="new">New 1.3.7-</span>](md/components/card-flip/README.md)
     - [card-ellipsis](md/components/card-ellipsis/README.md)
     - [rc-card-ellipsis](md/components/rc-card-ellipsis/README.md)
     - [login-module](md/components/login-module/README.md)
