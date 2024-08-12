@@ -11,7 +11,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { isPromise } from "@gaopeng123/utils.types";
+import { isFunction, isPromise } from "@gaopeng123/utils.types";
 
 // RetryConfig
 export type RetryConfig = {
@@ -69,9 +69,9 @@ export const promiseScheduler = (promises: Array<() => Promise<unknown>>, opts?:
                 index++; // 循环判断
                 const currentPromise: any = newPromises.shift();
                 const callBack = ({
-                                      result,
-                                      type
-                                  }: { result: unknown, type: 'error' | 'success' }, currentIndex: number) => {
+                    result,
+                    type
+                }: { result: unknown, type: 'error' | 'success' }, currentIndex: number) => {
                     results[currentIndex] = { result: cb ? cb(result, currentIndex) : result, type };
                     resultsHasValue++;
                     if (resultsHasValue === promises.length) {
@@ -128,9 +128,8 @@ export class promiseTasks {
     _createTask(task: Task, callBack?: <T>(val: T, index: number) => T, afterCreate?: Function) {
         return new Promise((resolve, reject) => {
             const currentIndex = this.currentIndex;
-            const _callBack = callBack ? callBack : <T>(value: T, index: number): T => {return value};
-            const checkTask = ()=> {
-                console.log(this.promises.length, this.hasResultsIndex, this.currentIndex)
+            const _callBack = callBack ? callBack : <T>(value: T, index: number): T => { return value };
+            const checkTask = () => {
                 if (this.promises.length === 0 && this.hasResultsIndex === this.currentIndex - 1) {
                     this.end();
                 }
@@ -160,7 +159,7 @@ export class promiseTasks {
             this.index++; // 循环判断
             const { task, resolve, reject } = this.promises.shift();
             const taskReturn = task();
-            const next = ()=> {
+            const next = () => {
                 this.index--;
                 this.run();
                 this.hasResultsIndex++;
@@ -185,7 +184,7 @@ export class promiseTasks {
     all(tasks: Array<Task>, callBack?: <T>(val: T, index: number) => T) {
         this.init();
         tasks.forEach((task, index) => {
-            this.addTask(task, callBack).catch((err)=> {
+            this.addTask(task, callBack).catch((err) => {
             }).then();
         });
         this.run();
@@ -207,4 +206,33 @@ export class promiseTasks {
         this.eventLoop('end');
     }
 }
+/**
+ * 任务分片，将耗时任务拆解 在空闲时间执行 避免卡顿
+ */
+export class freeTasks {
+    tasks: Array<Function> = [];
+    constructor() {
+        this.tasks = [];
+    }
 
+    addTask(task: Function) {
+        this.tasks.push(task);
+        this.run();
+    }
+
+    run() {
+        if (this.tasks.length === 0) return;
+        requestIdleCallback((idle) => {
+            while (idle.timeRemaining() > 0 && this.tasks.length) {
+                const task: Function = this.tasks.shift();
+                if (isFunction(task)) {
+                    task();
+                }
+            }
+            // 下次接着处理
+            if (this.tasks.length && idle.timeRemaining() <= 0) {
+                this.run();
+            }
+        });
+    }
+}

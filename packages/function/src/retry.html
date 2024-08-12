@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<header></header>
+
+<body>
+    <div id="freeTasks">
+        <h1>
+            <button>freeTasks</button>
+        </h1>
+    </div>
+    <script>
+        class freeTasks {
+            tasks = [];
+            constructor() {
+                this.tasks = [];
+            }
+
+            addTask(task) {
+                this.tasks.push(task);
+                this.run();
+            }
+
+            index = 0;
+
+            run() {
+                if (this.tasks.length === 0) return;
+                requestIdleCallback((idle) => {
+                    let index = 0;
+                    while (idle.timeRemaining() > 0 && this.tasks.length) {
+                        const task = this.tasks.shift();
+                        task();
+                        index++;
+                    }
+                    // 下次接着处理
+                    if (this.tasks.length && idle.timeRemaining() <= 0) {
+                        this.run();
+                    }
+                });
+            }
+        }
+
+        const createDom = (v) => {
+            const div = document.createElement('div');
+            div.innerText = v;
+            document.body.appendChild(div);
+        }
+
+        const task = new freeTasks()
+
+        document.querySelector('#freeTasks').addEventListener('click', () => {
+            for (let index = 0; index < 100000; index++) {
+                const i = index;
+                task.addTask(() => createDom(index));
+            }
+        })
+    </script>
+</body>

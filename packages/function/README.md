@@ -333,7 +333,7 @@ retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
  promiseScheduler(promises: Array<() => Promise<unknown>>, opts?: { concurrency: number, callback?: (result: unknown, index: number) => unknown });
 ```
 
-#### promiseTasks <span class="new">1.2.0+</span>
+#### promiseTasks<span class="new"> New 1.1.16+</span> 
 
 ```typescript
 const test = () => {
@@ -363,6 +363,19 @@ task.on('end', (res: Array<unknown>)=> {
 })
 task.all(new Array(100).fill(0).map(_=>test));
 
+```
+
+#### freeTasks<span class="new"> New 1.1.16+</span>
+
+`空闲时间执行, 避免阻塞`
+
+```typescript
+const task = new freeTasks()
+
+for (let index = 0; index < 100000; index++) {
+  const i = index;
+  task.addTask(() => createDom(index));
+}
 ```
 
 
