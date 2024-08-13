@@ -2,9 +2,10 @@
 <header></header>
 
 <body>
-    <div id="freeTasks">
+    <div>
         <h1>
-            <button>freeTasks</button>
+            <button id="freeTasks">freeTasks</button>
+            <button id="promise">promise</button>
         </h1>
     </div>
     <script>
@@ -51,6 +52,77 @@
                 const i = index;
                 task.addTask(() => createDom(index));
             }
+        })
+
+        document.querySelector('#promise').addEventListener('click', () => {
+            const hooks = () => {
+                let promiseCache = [];
+                let index = 0;
+                let useUseIndex = 0;
+                const run = (fn) => {
+                    try {
+                        useUseIndex = 0;
+                        fn();
+                    } catch (error) {
+                        if (error instanceof Promise) {
+                            error.then((res) => {
+                                promiseCache[index] = error;
+                                index ++;
+                                run(fn)
+                            });
+                        }
+                    }
+                }
+                const use = (_promise) => {
+                    const promise =  promiseCache[useUseIndex] || _promise;
+                    useUseIndex ++;
+                    if (promise.status === 'fulfilled') {
+                        return promise.value;
+                    } else if (promise.status === 'rejected') {
+                        throw promise.reason;
+                    } else if (promise.status === 'pending') {
+                        throw promise;
+                    } else {
+                        promise.status = 'pending';
+                        promise.then(
+                            result => {
+                                promise.status = 'fulfilled';
+                                promise.value = result;
+                            },
+                            reason => {
+                                promise.status = 'rejected';
+                                promise.reason = reason;
+                            },
+                        );
+                        throw promise;
+                    }
+                }
+                return {
+                    use,
+                    run
+                }
+            }
+
+            const { run, use } = hooks();
+
+
+            const fetchData = (n) => {
+                const t = Math.random();
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve(n)
+                    }, n * 1000);
+                })
+            }
+
+            const test = () => {
+                const data = use(fetchData(3), 2);
+                const data2 = use(fetchData(1), 1);
+                const data3 = use(fetchData(2), 1);
+                console.log('data', data, data2, data3)
+            }
+
+            run(test);
         })
     </script>
 </body>

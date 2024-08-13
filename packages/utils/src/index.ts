@@ -162,7 +162,8 @@ export {
     // 窗口尺寸
     windowSize, pcZoom,
     // 去抖 节流
-    debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay, retry, promiseScheduler, sleep, addMethod, createOverload,
+    debounce, createDebounce, debounceOptions, throttle, createThrottle, throttleOptions, delay, asyncDelay,
+    retry, promiseScheduler, PromiseTasks, FreeTasks, AsyncToSync, sleep, addMethod, createOverload,
     hasOperate, off, on,
     easingFuncs, animate,
 } from "@gaopeng123/utils.function";

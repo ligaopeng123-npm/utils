@@ -11,7 +11,7 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { promiseScheduler, promiseTasks } from "../src";
+import { AsyncToSync, promiseScheduler, PromiseTasks } from "../src";
 
 // jest.setTimeout(100000); // 默认5秒
 
@@ -38,7 +38,7 @@ describe('retry', () => {
     });
 
     it('promiseTasks works', () => {
-        const task = new promiseTasks(5);
+        const task = new PromiseTasks(5);
         for (let i = 0; i < 10; i++) {
             task.addTask(() => {
                 if (i % 3 === 0) {
@@ -58,15 +58,35 @@ describe('retry', () => {
     });
 
     it('promiseScheduler works', () => {
-        const task = new promiseTasks(5);
+        const task = new PromiseTasks(5);
         task.on('end', (res: Array<unknown>)=> {
             expect(res.length).toEqual(100)
         })
         task.all(testPromise);
     });
+
+    it('AsyncToSync works', ()=> {
+        const asyncToSync = new AsyncToSync();
+
+        const fetchData = (n: number) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(n)
+                }, n * 100);
+            })
+        }
+
+        const test = () => {
+            const data = asyncToSync.use(fetchData(3));
+            const data2 = asyncToSync.use(fetchData(1));
+            const data3 = asyncToSync.use(fetchData(2));
+            expect(data).toEqual(3);
+            expect(data2).toEqual(1);
+            expect(data3).toEqual(2);
+        }
+
+        asyncToSync.run(test);
+    });
 });
-
-
-const task = new promiseTasks(5);
 
 

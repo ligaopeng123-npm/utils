@@ -53,7 +53,7 @@ export { on, off } from "./event";
 /**
  * 函数重试
  */
-export { default as retry, promiseScheduler, promiseTasks } from "./retry";
+export { default as retry, promiseScheduler, PromiseTasks, FreeTasks, AsyncToSync } from "./retry";
 export type { RetryConfig, RetryPromise } from "./retry";
 /**
  * 函数重栽
