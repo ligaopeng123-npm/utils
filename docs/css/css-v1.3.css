@@ -114,10 +114,11 @@
 .app-name {
     position: sticky;
     top: 0;
-    background: var(--background);
+    /* background: var(--background); */
     z-index: 1;
     margin-right: -36px;
     filter: contrast(1);
+    backdrop-filter: blur(6px);
 }
 
 .app-name-link {
