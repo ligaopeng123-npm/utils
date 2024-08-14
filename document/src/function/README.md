@@ -333,7 +333,7 @@ retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
  promiseScheduler(promises: Array<() => Promise<unknown>>, opts?: { concurrency: number, callback?: (result: unknown, index: number) => unknown });
 ```
 
-#### promiseTasks<span class="new"> New 1.1.16+</span> 
+#### PromiseTasks<span class="new"> New 1.1.16+</span> 
 
 ```typescript
 const test = () => {
@@ -365,7 +365,7 @@ task.all(new Array(100).fill(0).map(_=>test));
 
 ```
 
-#### freeTasks<span class="new"> New 1.1.16+</span>
+#### FreeTasks<span class="new"> New 1.1.16+</span>
 
 `空闲时间执行, 避免阻塞`
 
@@ -376,6 +376,33 @@ for (let index = 0; index < 100000; index++) {
   const i = index;
   task.addTask(() => createDom(index));
 }
+```
+
+#### AsyncToSync<span class="new"> New 1.1.16+</span>
+
+`消除异步传染性，异步代码同步写法`
+
+```typescript
+const asyncToSync = new AsyncToSync();
+
+const fetchData = (n: number) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(n)
+    }, n * 100);
+  })
+}
+
+const test = () => {
+  const data = asyncToSync.use(fetchData(3));
+  const data2 = asyncToSync.use(fetchData(1));
+  const data3 = asyncToSync.use(fetchData(2));
+  expect(data).toEqual(3);
+  expect(data2).toEqual(1);
+  expect(data3).toEqual(2);
+}
+
+asyncToSync.run(test);
 ```
 
 
