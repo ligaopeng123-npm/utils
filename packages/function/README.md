@@ -317,7 +317,9 @@ retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
 });
 ```
 
-#### promiseScheduler <span class="new">New 1.1.6+</span>
+## task
+
+#### promiseScheduler <span class="new">New 1.1.7+</span>
 
 `promise 调度器，管理并发`
 
@@ -333,7 +335,7 @@ retry(testFn, { timeout: 3000, max: 3 }).then((res) => {
  promiseScheduler(promises: Array<() => Promise<unknown>>, opts?: { concurrency: number, callback?: (result: unknown, index: number) => unknown });
 ```
 
-#### PromiseTasks<span class="new"> New 1.1.16+</span> 
+#### PromiseTasks<span class="new"> New 1.1.17+</span> 
 
 ```typescript
 const test = () => {
@@ -365,7 +367,7 @@ task.all(new Array(100).fill(0).map(_=>test));
 
 ```
 
-#### FreeTasks<span class="new"> New 1.1.16+</span>
+#### FreeTasks<span class="new"> New 1.1.17+</span>
 
 `空闲时间执行, 避免阻塞`
 
@@ -378,7 +380,7 @@ for (let index = 0; index < 100000; index++) {
 }
 ```
 
-#### AsyncToSync<span class="new"> New 1.1.16+</span>
+#### AsyncToSync<span class="new"> New 1.1.17+</span>
 
 `消除异步传染性，异步代码同步写法`
 
