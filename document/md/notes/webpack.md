@@ -286,3 +286,15 @@ Plugins钩子：初始化、编译、生成、输出有很多，我常用的是�
 - 使用alias、externals、ModuleFederationPlugin指定版本
 - 没有冲突就平铺依赖，如果有冲突则每个模块加载相应的版本
 
+#### 如何优化
+
+- 减少文件搜索范围
+  - 配置alias externals
+  - loader的include test exclude
+- 避免不必要的编译
+  - [DllPlugin 和 DllReferencePlugin ](https://www.jianshu.com/p/05c161269ff6) 【webpack5内置自动化缓存机制，作用很小了】
+  - noParse不需要解析文件
+- 开启多线程
+  - happyPack 【过时了】
+  - thread-loader 【webpack5可用】
+  - webpack-parallel-uglify-plugin 【webpack5 Terser内置压缩功能】

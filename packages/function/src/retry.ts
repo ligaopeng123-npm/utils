@@ -67,7 +67,6 @@ const retry: RetryPromise = (fn, config) => {
         }
         return Promise.reject(err);
     })
-
 }
 
 export default retry;
