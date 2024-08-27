@@ -1,3 +1,21 @@
+## [1.1.18-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.17...v1.1.18-alpha.0) (2024-08-27)
+
+
+
+## [1.1.17](https://github.com/ligaopeng123-npm/utils/compare/v1.1.17-alpha.0...v1.1.17) (2024-08-27)
+
+
+### Bug Fixes
+
+* 优化retry的实现，输出jest test ([7564db5](https://github.com/ligaopeng123-npm/utils/commit/7564db5df3282eddd83c9e28c31535fbd69d729a))
+
+
+### Features
+
+* add utils.ts-types ([865e9cf](https://github.com/ligaopeng123-npm/utils/commit/865e9cf5abd7c16973afef774440c36be1c839d2))
+
+
+
 ## [1.1.17-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.16...v1.1.17-alpha.0) (2024-08-14)
 
 
@@ -72,9 +90,9 @@
 
 ### Features
 
-* 新增函数整合到utils中 ([bb63bd5](https://github.com/ligaopeng123-npm/utils/commit/bb63bd501ad13708812f36fddffe09754f6a3d7d))
 * add isFocus ([ddccd4c](https://github.com/ligaopeng123-npm/utils/commit/ddccd4cf22a6554ee1c40de39b67feaf3a4c1778))
 * add isUrl checkVersion ([ba5753f](https://github.com/ligaopeng123-npm/utils/commit/ba5753f7f3f39c0f51fab49c376e13e82af6f251))
+* 新增函数整合到utils中 ([bb63bd5](https://github.com/ligaopeng123-npm/utils/commit/bb63bd501ad13708812f36fddffe09754f6a3d7d))
 
 
 
@@ -384,8 +402,8 @@
 
 ### Features
 
-* 脚本梳理 ([448b8aa](https://github.com/ligaopeng123-npm/utils/commit/448b8aa8c2bff750d178b31701697d7565d72102))
 * 添加toFixed方法 ([05ec54e](https://github.com/ligaopeng123-npm/utils/commit/05ec54ed02a9255dc56964bca28c0d876e078067))
+* 脚本梳理 ([448b8aa](https://github.com/ligaopeng123-npm/utils/commit/448b8aa8c2bff750d178b31701697d7565d72102))
 
 
 
@@ -418,9 +436,9 @@
 
 ### Features
 
-* 添加string方法replaceDomain ([8be3c19](https://github.com/ligaopeng123-npm/utils/commit/8be3c1972276d67a1427d01aa5db9788946f96d4))
-* 文档更新 ([6ea576c](https://github.com/ligaopeng123-npm/utils/commit/6ea576c328ed4a44ba3fad0e4e9e2b0d36282043))
 * scripts  changelog ([0c6b78b](https://github.com/ligaopeng123-npm/utils/commit/0c6b78b0bd6d5b0053ac00daee6011f9e77c7b81))
+* 文档更新 ([6ea576c](https://github.com/ligaopeng123-npm/utils/commit/6ea576c328ed4a44ba3fad0e4e9e2b0d36282043))
+* 添加string方法replaceDomain ([8be3c19](https://github.com/ligaopeng123-npm/utils/commit/8be3c1972276d67a1427d01aa5db9788946f96d4))
 
 
 
@@ -429,9 +447,9 @@
 
 ### Features
 
-* 文档scrollIntoView函数处理 ([d8a90c3](https://github.com/ligaopeng123-npm/utils/commit/d8a90c3e2a0fd97adcf8cef44f4433f223b9f070))
 * isEqual ([28d125a](https://github.com/ligaopeng123-npm/utils/commit/28d125aa7b54d96ce3cc4e2c167c430dcd45dc62))
 * makeEmptyValue ([2bbfabe](https://github.com/ligaopeng123-npm/utils/commit/2bbfabe5c0d776f95cba3273e3cddc177f396eab))
+* 文档scrollIntoView函数处理 ([d8a90c3](https://github.com/ligaopeng123-npm/utils/commit/d8a90c3e2a0fd97adcf8cef44f4433f223b9f070))
 
 
 
