@@ -1,11 +1,13 @@
 {
-    "name": "@gaopeng123/utils",
+    "name": "@gaopeng123/utils.ts-types",
+    "version": "0.1.0",
+    "description": "typescript types utils",
+    "keywords": ["types", "utils"],
     "author": "ligaopeng123",
-    "version": "1.1.17-alpha.0",
-    "description": "utils公共包",
+    "homepage": "https://github.com/ligaopeng123-npm/utils.git#readme",
     "license": "MIT",
-    "main": "dist/index.js",
-    "module": "dist/utils.esm.js",
+    "main": "",
+    "types": "dist/index.d.ts",
     "typings": "dist/index.d.ts",
     "private": false,
     "publishConfig": {
@@ -21,10 +23,9 @@
         "type": "git",
         "url": "https://github.com/ligaopeng123-npm/utils.git"
     },
-    "homepage": "https://ligaopeng123-npm.github.io/utils/",
     "scripts": {
         "start": "tsdx watch",
-        "build": "tsdx build",
+        "build": "tsdx build --format esm",
         "test": "tsdx test",
         "push": "pnpm publish --access public",
         "lint": "tsdx lint",
@@ -45,11 +46,11 @@
     },
     "size-limit": [
         {
-            "path": "dist/utils.cjs.production.min.js",
+            "path": "dist/utils.ts-ypes.cjs.production.min.js",
             "limit": "10 KB"
         },
         {
-            "path": "dist/utils.esm.js",
+            "path": "dist/utils.ts-types.esm.js",
             "limit": "10 KB"
         }
     ],
@@ -62,18 +63,5 @@
         "tsdx": "^0.14.1",
         "tslib": "^2.3.0",
         "typescript": "^4.3.5"
-    },
-    "dependencies": {
-        "@gaopeng123/utils.array": "^1.1.17-alpha.0",
-        "@gaopeng123/utils.date": "^1.1.17-alpha.0",
-        "@gaopeng123/utils.file": "^1.1.17-alpha.0",
-        "@gaopeng123/utils.function": "^1.1.17-alpha.0",
-        "@gaopeng123/utils.log": "workspace:^1.1.17-alpha.0",
-        "@gaopeng123/utils.number": "^1.1.17-alpha.0",
-        "@gaopeng123/utils.object": "^1.1.17-alpha.0",
-        "@gaopeng123/utils.string": "^1.1.17-alpha.0",
-        "@gaopeng123/utils.ts-types": "workspace:^0.1.0",
-        "@gaopeng123/utils.types": "^1.1.17-alpha.0"
-    },
-    "gitHead": "4c121a9fb741ac8d1bff4d28addba14e077fb6d4"
+    }
 }

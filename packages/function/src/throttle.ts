@@ -10,14 +10,16 @@
  *
  **********************************************************************/
 import { isFunction } from "@gaopeng123/utils.types";
+import type { FunctionCallback } from "@gaopeng123/utils.ts-types";
 
+type ThrottleFunction<T extends any[], R> = FunctionCallback<T, R>;
 /**
  * @desc 函数节流
  * @param fn 函数
  * @param timeout 延迟执行毫秒数
  * @param type 1 表时间戳版，2 表定时器版
  */
-export type ThrottleOptions = {
+export type ThrottleOptions<T extends any[]> = {
     /**
      * 1 时间戳记录 2 setTimeout版本
      * 时间戳版本第一次会执行 leading为true  setTimeout 尾部会执行一次 trailing为true
@@ -25,14 +27,14 @@ export type ThrottleOptions = {
     type?: 1 | 2;
     leading?: boolean; // 第一时间是否立即调用 后续在节流  type为1
     trailing?: boolean; // 为true时 表示停止后会触发一次回调，传递最后一次的参数  type为 2
-    notThrottle?: (...arg: any) => any; // 在去抖过程中 有一些非去抖处理 可以添加此参数
+    notThrottle?: (...arg: T) => void; // 在去抖过程中 有一些非去抖处理 可以添加此参数
     clearTimeout?: (val: any) => any; // 清理时间参数 为hooks预留接口
 }
 
-export const createThrottle = (fn: any, wait: number, options: ThrottleOptions, timeout: any) => {
+export const createThrottle = <T extends any[], R>(fn: ThrottleFunction<T, void>, wait: number, options: ThrottleOptions<T>, timeout: any): ThrottleFunction<T, void> => {
     let lastArgs: any;
     const _throttle = function (...args: any) {
-        const {type, notThrottle, leading, trailing} = options;
+        const { type, notThrottle, leading, trailing } = options;
         notThrottle && isFunction(notThrottle) && notThrottle(...args);
         // @ts-ignore
         const context: any = this;
@@ -68,13 +70,25 @@ export const createThrottle = (fn: any, wait: number, options: ThrottleOptions, 
  * 获取默认参数
  * @param options
  */
-export const throttleOptions = (options?: ThrottleOptions) => Object.assign({
+export const throttleOptions = <T extends any[]>(options?: ThrottleOptions<T>) => Object.assign({
     type: 1,
     leading: false
 }, options);
 
-export const throttle = (fn: any, wait?: number, options?: ThrottleOptions) => {
+export const throttle = <T extends any[], R>(fn: ThrottleFunction<T, R>, wait?: number, options?: ThrottleOptions<T>): ThrottleFunction<T, void> => {
     let _timeout: any = 0; // setTimeout 返回值timeoutID是一个正整数
-    return createThrottle(fn, wait || 200, throttleOptions(options), _timeout);
+    return createThrottle<T, R>(fn, wait || 200, throttleOptions<T>(options), _timeout);
 };
 
+// test ts code
+const t = (a: number, b: number) => {
+
+}
+
+const notThrottle = (a: number, b: number) => { }
+const fn = throttle(t, 200, {
+    notThrottle: (a, b) => {
+        console.log('notDebounce');
+    }
+}
+);

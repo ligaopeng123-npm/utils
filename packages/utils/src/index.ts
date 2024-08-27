@@ -190,6 +190,8 @@ export {
     randomInt, toThousands, unitUpgrade, bitUpgrade, bitRateUpgrade, toFixed,
     max, min
 } from "@gaopeng123/utils.number";
+/****************************  tsTypes    *****************************/
+export type {FunctionCallback, Optional, ObjectValues, ObjectKeys, ObjectKeyValue} from "@gaopeng123/utils.ts-types";
 /****************************  log美化打印    *****************************/
 export {
     // 日志美化打印

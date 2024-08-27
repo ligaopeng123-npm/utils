@@ -63,6 +63,7 @@
         "typescript": "^4.3.5"
     },
     "dependencies": {
+        "@gaopeng123/utils.ts-types": "workspace:^0.1.0",
         "@gaopeng123/utils.types": "^1.1.17-alpha.0"
     },
     "gitHead": "1dab6cba8d87c39fbf4ec49b987fa021c95405d9"

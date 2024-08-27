@@ -17,20 +17,23 @@
  * @param options
  */
 import { isFunction } from "@gaopeng123/utils.types";
+import type { FunctionCallback } from "@gaopeng123/utils.ts-types";
 
-export type DebounceOptions = {
+
+type DebounceFunction<T extends any[], R> = FunctionCallback<T, R>;
+
+export type DebounceOptions<T extends any[]> = {
     leading?: boolean; // 第一时间是否立即执行 后续再去抖
-    notDebounce?: (...arg: any) => any; // 在去抖过程中 有一些非去抖处理 可以添加此参数
+    notDebounce?: (...arg: T) => void; // 在去抖过程中 有一些非去抖处理 可以添加此参数
 }
 
-export const createDebounce = (fn: any, _wait: number, options: DebounceOptions, _timeout: any) => {
-    // @ts-ignore
-    const {leading, notDebounce} = options || {};
+
+export const createDebounce = <T extends any[], R>(fn: DebounceFunction<T, R>, _wait: number, options: DebounceOptions<T>, _timeout: any): DebounceFunction<T, void> => {
+    const { leading, notDebounce } = options || {};
     let callNow = true;
-    const _debounce = function (...arg: any) {
+    const _debounce = function (...arg: T) {
         notDebounce && isFunction(notDebounce) && notDebounce(...arg);
-        // @ts-ignore
-        let context: any = this;
+        let context = this;
         let args = arguments;
         if (_timeout) clearTimeout(_timeout);
         if (leading) {
@@ -50,11 +53,26 @@ export const createDebounce = (fn: any, _wait: number, options: DebounceOptions,
         }
         return _timeout;
     };
-    return _debounce
+    return _debounce;
 }
 
-export const debounceOptions = (options: DebounceOptions) => Object.assign({leading: false}, options)
-export const debounce = (fn: any, wait?: number, options?: DebounceOptions) => {
+export const debounceOptions = <T extends any[]>(options: DebounceOptions<T>) => Object.assign({ leading: false }, options)
+export const debounce = <T extends any[], R>(fn: DebounceFunction<T, R>, wait?: number, options?: DebounceOptions<T>): DebounceFunction<T, void> => {
     let _timeout: any;
-    return createDebounce(fn, wait || 200, debounceOptions(options), _timeout);
+    return createDebounce<T, R>(fn, wait || 200, debounceOptions(options), _timeout);
 };
+
+// test ts code
+// const t = (a: number, b: number) => {
+
+// }
+
+// const notDebounce = (a: number, b: number) => { }
+// const fn = debounce(t, 200, {
+//     notDebounce: (a, b) => {
+//         console.log('notDebounce');
+//     }
+// }
+// );
+
+// fn(1, 2);
