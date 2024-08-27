@@ -1,8 +1,11 @@
 {
     "name": "@gaopeng123/utils.ts-types",
-    "version": "0.1.0",
+    "version": "1.1.17",
     "description": "typescript types utils",
-    "keywords": ["types", "utils"],
+    "keywords": [
+        "types",
+        "utils"
+    ],
     "author": "ligaopeng123",
     "homepage": "https://github.com/ligaopeng123-npm/utils.git#readme",
     "license": "MIT",
