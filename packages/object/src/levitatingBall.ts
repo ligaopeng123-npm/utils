@@ -12,7 +12,7 @@
  *
  **********************************************************************/
 import { isJSON, isString } from "@gaopeng123/utils.types";
-import { debounce, } from "@gaopeng123/utils.function";
+import { debounce } from "@gaopeng123/utils.function";
 
 export type levitatingBallConfig = {
     el: any; // 可拖拽的dom 或者 selectors
@@ -116,7 +116,7 @@ export const levitatingBall = (config: levitatingBallConfig, onClick?: (e: Mouse
             }
         }
 
-        const moveFun = debounce(() => {
+        const moveFun = debounce((event: Event) => {
             /**
              * 定制数据存储
              */

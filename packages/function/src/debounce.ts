@@ -56,7 +56,7 @@ export const createDebounce = <T extends any[], R>(fn: DebounceFunction<T, R>, _
     return _debounce;
 }
 
-export const debounceOptions = <T extends any[]>(options: DebounceOptions<T>) => Object.assign({ leading: false }, options)
+export const debounceOptions = <T extends any[]>(options?: DebounceOptions<T>) => Object.assign({ leading: false }, options)
 export const debounce = <T extends any[], R>(fn: DebounceFunction<T, R>, wait?: number, options?: DebounceOptions<T>): DebounceFunction<T, void> => {
     let _timeout: any;
     return createDebounce<T, R>(fn, wait || 200, debounceOptions(options), _timeout);

@@ -116,7 +116,7 @@ type ObserveViewport = Pick<IntersectionObserver, "disconnect" | "unobserve" | '
     intersectionObserver: IntersectionObserver
 }
 
-export const observeViewport = (observeDomList: any[], observeCallBack: any, wait?: number, options?: DebounceOptions): ObserveViewport => {
+export const observeViewport = (observeDomList: any[], observeCallBack: any, wait?: number, options?: DebounceOptions<any>): ObserveViewport => {
     /**
      * 保存当前去抖范围内监听到的元素
      */
