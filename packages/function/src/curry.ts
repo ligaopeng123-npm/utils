@@ -9,9 +9,16 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-type Curry = (...args: Array<any>) => any;
+type Curry<T extends any[], R> = T extends []
+    ? () => R
+    : T extends [infer ARGMS]
+    ? (args: ARGMS) => R
+    : T extends [infer ARGMS, ...infer REST]
+    ? (args: ARGMS) => Curry<REST, R>
+    : never;
 
-export const curry = (fn: Curry) => {
+
+export const curry = <T extends any[], R>(fn: (...args: T) => R): Curry<T, R> => {
     if (typeof fn !== 'function') {
         throw new Error(`${fn} is not a function`);
     }
@@ -19,16 +26,21 @@ export const curry = (fn: Curry) => {
      * 拼接参数
      * @private
      */
-    const g = (...args1: Array<any>) => {
+    const g = (...args1: T) => {
         // 当g函数调用传递参数比fn本身参数少 则直接执行fn 并将结果返回
         if (args1.length >= fn.length) return fn(...args1);
         // 当g函数调用传递参数比fn本身参数多 则需要拼接缓存参数
         return (...args2: Array<any>) => {
-            return g(...args1, ...args2);
+            return g(...[...args1,...args2] as T);
         }
     };
-    return g;
+    return g as Curry<T, R>;
 };
+
+// ts test
+// const add = (a: number, b: number) => a + b;
+// const curriedAdd = curry(add);
+// console.log(curriedAdd(1)(2)); // 6
 
 interface CurrySuperFn {
     (...args: Array<unknown>): CurrySuperFn;
