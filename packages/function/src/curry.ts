@@ -39,9 +39,9 @@ export const curry = <T extends any[], R>(fn: (...args: T) => R): Curry<T, R> =>
 };
 
 // ts test
-const add = (a: number, b: number) => a + b;
-const curriedAdd = curry(add);
-console.log(curriedAdd(1)); // 6
+// const add = (a: number, b: number) => a + b;
+// const curriedAdd = curry(add);
+// console.log(curriedAdd(1)); // 6
 
 interface CurrySuperFn {
     (...args: Array<unknown>): CurrySuperFn;
