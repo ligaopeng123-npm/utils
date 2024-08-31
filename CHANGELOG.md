@@ -1,3 +1,12 @@
+## [1.1.18-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.18-alpha.0...v1.1.18-alpha.1) (2024-08-31)
+
+
+### Features
+
+* add FunctionCallbackReturnType ([6a2d22f](https://github.com/ligaopeng123-npm/utils/commit/6a2d22fbeae66819061ee668112ee65ccc17b488))
+
+
+
 ## [1.1.18-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.17...v1.1.18-alpha.0) (2024-08-27)
 
 
