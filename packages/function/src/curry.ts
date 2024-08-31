@@ -11,12 +11,13 @@
  **********************************************************************/
 type Curry<T extends any[], R> = T extends []
     ? () => R
-    : T extends [infer ARGMS]
-    ? (args: ARGMS) => R
-    : T extends [infer ARGMS, ...infer REST]
-    ? (args: ARGMS) => Curry<REST, R>
-    : never;
-
+    : T extends [infer ARGS]
+        ? (args: ARGS) => R
+            //@ts-ignore 如果是多个参数
+        : T extends [infer ARGS, ...infer REST]
+            // @ts-ignore
+            ? (args: ARGS) => Curry<REST, R>
+            : never;
 
 export const curry = <T extends any[], R>(fn: (...args: T) => R): Curry<T, R> => {
     if (typeof fn !== 'function') {
@@ -38,9 +39,9 @@ export const curry = <T extends any[], R>(fn: (...args: T) => R): Curry<T, R> =>
 };
 
 // ts test
-// const add = (a: number, b: number) => a + b;
-// const curriedAdd = curry(add);
-// console.log(curriedAdd(1)(2)); // 6
+const add = (a: number, b: number) => a + b;
+const curriedAdd = curry(add);
+console.log(curriedAdd(1)); // 6
 
 interface CurrySuperFn {
     (...args: Array<unknown>): CurrySuperFn;
