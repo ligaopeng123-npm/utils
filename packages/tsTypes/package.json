@@ -30,7 +30,7 @@
         "start": "tsdx watch",
         "build": "tsdx build --format esm",
         "test": "tsdx test",
-        "push": "pnpm publish --access public",
+        "push": "pnpm publish --access public --no-git-checks",
         "lint": "tsdx lint",
         "prepare": "tsdx build",
         "size": "size-limit",
