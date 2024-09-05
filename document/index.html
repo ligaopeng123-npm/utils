@@ -126,6 +126,30 @@
             }
         }
     }
+    /**
+     * 监听hashchange 记录当前页面位置 防止页面回退后位置丢失
+     * @type {{}}
+     */
+    var map = {};
+    var debounce = function (fn, delay) {
+        var timer = null;
+        var that = this;
+        return function () {
+            clearTimeout(timer);
+            var args = arguments;
+            timer = setTimeout(function () {
+                fn.apply(that, args);
+            }, delay);
+        }
+    }
+    window.addEventListener('hashchange', function (e) {
+        var top = map[e.newURL] || 0;
+        document.documentElement.scrollTo({top: top, behavior: "auto"})
+    });
+    window.addEventListener('scroll', debounce(function (e) {
+        var top = document.documentElement.scrollTop || document.body.scrollTop;
+        map[e.target.URL] = top;
+    }, 200));
 </script>
 <script src="js/docsify.js"></script>
 <!--代码预览 支持 js ts-->

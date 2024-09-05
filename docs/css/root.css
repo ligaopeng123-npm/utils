@@ -47,3 +47,14 @@
     max-height: 400px;
     overflow-y: auto;
 }
+.sidebar ul li a {
+    background: linear-gradient(to right, var(--sidebarSublink), var(--sidebarSublink)) no-repeat left bottom !important;
+    background-size: 0px 2px !important;
+    transition: .5s;
+    width: auto;
+    display:inline !important;
+}
+.sidebar ul li a:hover {
+    background-size: 100% 2px !important;
+    text-decoration: none !important;
+}

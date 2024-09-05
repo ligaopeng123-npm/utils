@@ -4,8 +4,8 @@
 
 ## Changelog
 
- [changelog](./CHANGELOG.md)
+ [changelog](https://github.com/ligaopeng123-npm/fetch/blob/master/CHANGELOG.md)
 
 ## Usage
 
- [usage](./packages/fetch/README.md)
+ [usage](https://github.com/ligaopeng123-npm/fetch/blob/master/packages/fetch/README.md)

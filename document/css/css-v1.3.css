@@ -158,9 +158,18 @@
 }
 
 .sidebar ul li.parent-active > a {
-    border-right: 2px solid;
     color: var(--accent);
     font-weight: 600;
+}
+
+.sidebar ul li.parent-active > a::after {
+    content: "";
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    width: 2px;
+    height: 20px;
+    background: var(--accent);
 }
 
 /*表格样式*/
