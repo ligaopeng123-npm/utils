@@ -1,3 +1,12 @@
+## [1.1.18-alpha.2](https://github.com/ligaopeng123-npm/utils/compare/v1.1.18-alpha.1...v1.1.18-alpha.2) (2024-08-31)
+
+
+### Bug Fixes
+
+* 清理冗余打印 ([56f10f9](https://github.com/ligaopeng123-npm/utils/commit/56f10f975a9cb20c3e3fa35c6c0ea013c5b63039))
+
+
+
 ## [1.1.18-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.18-alpha.0...v1.1.18-alpha.1) (2024-08-31)
 
 
