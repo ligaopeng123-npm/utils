@@ -298,3 +298,29 @@ Plugins钩子：初始化、编译、生成、输出有很多，我常用的是�
   - happyPack 【过时了】
   - thread-loader 【webpack5可用】
   - webpack-parallel-uglify-plugin 【webpack5 Terser内置压缩功能】
+
+##### cache 
+
+​	filesystem: 配置硬盘缓存
+
+##### resolve
+
+​	alias: 缩减相对路径的查找
+
+​	extensions: 定位文件查询类型
+
+##### externals
+
+react react-dom 等避免再次编译
+
+##### module
+
+​	noParse: 避免解析不需要解析的文件【不包含import, require, define等】
+
+##### esbuild 
+
+​	Js ts css 加快编译速度
+
+##### threed-loader cache-loader  
+
+​	Less sass ：缓存编译结果 存储到硬盘
