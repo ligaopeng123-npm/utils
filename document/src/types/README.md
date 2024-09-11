@@ -8,6 +8,7 @@
 | isArray                               | 判断数组                                                    |
 | isSparseArray | 是否是稀疏数组 |
 | isPromise                             | 判断Promise                                                 |
+| isAsync <span class="new">New 1.1.19+ </span> | 判断是否是async函数 |
 | isFunction                            | 判断函数                                                    |
 | isNumber                              | 判断数字                                                    |
 | isBoolean                             | 判断boolean                                                 |
@@ -33,8 +34,6 @@
 | isURLSearchParams                     | 判断是否是URLSearchParams类型                               |
 | isFocus <span class="new">New 1.1.15+</span>  | 判断是否聚焦                                                |
 | isUrl <span class="new">New 1.1.15+</span>    | 判断是否是合法url                                           |
-
-
 
 ## browser
 
