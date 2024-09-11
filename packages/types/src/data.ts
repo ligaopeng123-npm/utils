@@ -1,3 +1,5 @@
+import * as exp from "constants";
+
 /**********************************************************************
  *
  * @模块名称: index
@@ -121,6 +123,17 @@ export const isPromise: typeFn = (obj) => {
     // @ts-ignore
     return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 };
+
+/**
+ * 判断是否是个async函数
+ * @param val 
+ * @returns 
+ */
+export const isAsync: typeFn = (val) => {
+    return isFunction(val) 
+        // @ts-ignore
+        && val[Symbol.toStringTag] === 'AsyncFunction';
+}
 
 /**
  * 判断dom  nodeType 属性可返回节点的类型。
