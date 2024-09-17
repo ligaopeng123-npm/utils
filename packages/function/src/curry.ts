@@ -79,32 +79,34 @@ export const currySuper = (fn: Function, initialValue: unknown) => {
     // 保存初始值 记录每次调用的参数 每次调用将参数拼接
     let result = initialValue;
     let allArgs: Array<unknown> = [];
-    const f = (...args: Array<unknown>) => {
+    const f = new Proxy((...args: Array<unknown>) => {
         allArgs.push(...args);
-        // 也可以显式调用无参返回最后的结果
-        // if (args.length === 0) {
-        //     return getResult();
-        // }
         return f as CurrySuperFn;
-    };
-
+    }, {
+        get: function (target, prop, receiver) {
+            if (prop === 'value') {
+                return getResult();
+            } else if (prop === 'clear') {
+                return () => {
+                    result = initialValue;
+                    allArgs = [];
+                }
+            }
+        }
+    });
     /**
      * 重写toString和valueOf方法
      * 在参与计算、比较等涉及需要类型转换的时候（打印也会） 会调用toString或valueOf函数 输出结果
      */
-    // f.toString = f.valueOf = function () {
-    //     return getResult();
+    // @ts-ignore
+    // f.toString = f.valueOf = f[Symbol.toPrimitive] = function fn(hint?: any): any {
+    //     console.log('hint', hint)
+    //     return getResult() as any;
     // };
-
-    f.clear = () => {
-        result = initialValue;
-        allArgs = [];
-    }
-
-    Object.defineProperty(f, 'value', {
-        get: function () {
-            return getResult();
-        }
-    });
     return f;
 }
+
+// const add = (a: number, b: number) => a + b;
+// const curriedAdd = currySuper(add, 0)(1)(2);
+// console.log(curriedAdd.value === 3); // 3
+// console.log(curriedAdd.value)
