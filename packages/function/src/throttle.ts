@@ -81,14 +81,15 @@ export const throttle = <T extends any[], R>(fn: ThrottleFunction<T, R>, wait?: 
 };
 
 // test ts code
-const t = (a: number, b: number) => {
+// const t = (a: number, b: number) => {
+//
+// }
+//
+// const notThrottle = (a: number, b: number) => { }
+// const fn = throttle(t, 200, {
+//     notThrottle: (a, b) => {
+//         console.log('notDebounce');
+//     }
+// }
+// );
 
-}
-
-const notThrottle = (a: number, b: number) => { }
-const fn = throttle(t, 200, {
-    notThrottle: (a, b) => {
-        console.log('notDebounce');
-    }
-}
-);
