@@ -47,19 +47,20 @@ export const parentByExpected = (dom: any, expected: any): any => {
 
 /**
  * 点击文本复制
- * @param span
+ * @param value
  */
-export const copyText = (span: any): Promise<{ message: string, status: boolean, value: string }> => {
+export const copyText = (value: HTMLElement | string): Promise<{ message: string, status: boolean, value: string }> => {
     return new Promise((resolve, reject) => {
         let text: string;
-        if (isString(span)) {
-            text = span;
-        } else if (isElement(span)) {
-            text = span.value || span.innerText;
+        if (isString(value)) {
+            text = value as string;
+        } else if (isElement(value)) {
+            const { innerText, value: value1 } = value as HTMLElement;
+            text = value1 || innerText;
         } else {
             resolve({
                 status: false,
-                message: `请检查参数${span}`,
+                message: `请检查参数${value}`,
                 value: ''
             });
             return;
@@ -78,15 +79,15 @@ export const copyText = (span: any): Promise<{ message: string, status: boolean,
                     value: text,
                     message: `复制成功`
                 });
+                document.body.removeChild(input);
             }
-
-            const list = document.getElementsByTagName('textarea');
-            const inputList = Array.prototype.slice.call(list);
-            inputList.forEach((item: Element) => {
-                if (item.getAttribute('code')) {
-                    document.body.removeChild(item);
-                }
-            });
+            // const list = document.getElementsByTagName('textarea');
+            // const inputList = Array.prototype.slice.call(list);
+            // inputList.forEach((item: Element) => {
+            //     if (item.getAttribute('code')) {
+            //         document.body.removeChild(item);
+            //     }
+            // });
         }
     })
 };
