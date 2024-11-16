@@ -17,9 +17,9 @@ import { isEmpty } from "@gaopeng123/utils.types";
  * formatStr('hello {o}, I like {1}')('china', 'you');
  * @param str
  */
-export type FormatStrFn = (...args: any) => string;
+export type FormatStrFn = (...args: any[]) => string;
 export const formatStr = (str: string): FormatStrFn => {
-    return (...args: any) => {
+    return (...args: any[]) => {
         let result = str;
         for (let i = 0; i < args.length; i++) {
             if (args[i] != undefined) {

@@ -23,3 +23,26 @@ export const max = (...args: number[]): number => {
 export const min = (...args: number[]): number => {
 	return Math.min.apply(null, args);
 };
+/**
+ * 大数据相加
+ * @param str1
+ * @param str2
+ */
+export const sumMaxNumber = (str1: string, str2: string): string => {
+	const str1Arr = str1.split('').reverse();
+	const str2Arr = str2.split('').reverse();
+	const len = Math.max(str1Arr.length, str2Arr.length);
+	let arr = [];
+	for (let i = 0; i < len; i++) {
+		if (str2Arr[i] && str1Arr[i]) {
+			arr[i] = Number(str1Arr[i]) + Number(str2Arr[i]) + (arr[i] || 0);
+			if (arr[i] > 9) {
+				arr[i] = arr[i] - 10;
+				arr[i + 1] = 1;
+			}
+		} else {
+			arr[i] = Number((str1Arr[i] || 0) + (str2Arr[i] || 0));
+		}
+	}
+	return arr.reverse().join('');
+}
