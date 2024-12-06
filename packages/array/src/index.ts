@@ -9,8 +9,6 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { convertToTwoDimensional } from "array/src/conversion.js";
-
 export {
     convertToTwoDimensional as convertToTwodimensional, convertToTwoDimensional, pageTurnerFixedLength, groupBy
 } from './conversion';
@@ -21,3 +19,5 @@ export { uniqueArrByKey, unique, delItem } from './unique';
 export type {
     TreeOptions, TraverseTreeProps, TreeNode, RelyFn, TraverseTreeCallBack, FilterTreeOptions, FilterFn
 } from './tree';
+
+export { default as Pagination } from "./pagination"
