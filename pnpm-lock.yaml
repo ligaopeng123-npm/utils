@@ -49,7 +49,7 @@ importers:
 
   packages/array:
     specifiers:
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -72,7 +72,7 @@ importers:
 
   packages/date:
     specifiers:
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -95,9 +95,9 @@ importers:
 
   packages/file:
     specifiers:
-      '@gaopeng123/utils.object': ^1.1.18-alpha.2
-      '@gaopeng123/utils.string': ^1.1.18-alpha.2
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.object': ^1.1.18
+      '@gaopeng123/utils.string': ^1.1.18
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -123,7 +123,7 @@ importers:
   packages/function:
     specifiers:
       '@gaopeng123/utils.ts-types': workspace:^1.1.18-alpha.1
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -147,7 +147,7 @@ importers:
 
   packages/log:
     specifiers:
-      '@gaopeng123/utils.types': workspace:^1.1.18-alpha.1
+      '@gaopeng123/utils.types': workspace:^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -170,7 +170,7 @@ importers:
 
   packages/number:
     specifiers:
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -193,9 +193,9 @@ importers:
 
   packages/object:
     specifiers:
-      '@gaopeng123/utils.function': ^1.1.18-alpha.2
-      '@gaopeng123/utils.string': workspace:1.1.18-alpha.2
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.function': ^1.1.18
+      '@gaopeng123/utils.string': workspace:1.1.18
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -220,8 +220,8 @@ importers:
 
   packages/socket:
     specifiers:
-      '@gaopeng123/utils.log': workspace:1.1.18-alpha.1
-      '@gaopeng123/utils.string': workspace:^1.1.18-alpha.2
+      '@gaopeng123/utils.log': workspace:1.1.18
+      '@gaopeng123/utils.string': workspace:^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -245,8 +245,8 @@ importers:
 
   packages/string:
     specifiers:
-      '@gaopeng123/utils.function': ^1.1.18-alpha.2
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.function': ^1.1.18
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -310,16 +310,16 @@ importers:
 
   packages/utils:
     specifiers:
-      '@gaopeng123/utils.array': ^1.1.18-alpha.1
-      '@gaopeng123/utils.date': ^1.1.18-alpha.1
-      '@gaopeng123/utils.file': ^1.1.18-alpha.2
-      '@gaopeng123/utils.function': ^1.1.18-alpha.2
-      '@gaopeng123/utils.log': workspace:^1.1.18-alpha.1
-      '@gaopeng123/utils.number': ^1.1.18-alpha.1
-      '@gaopeng123/utils.object': ^1.1.18-alpha.2
-      '@gaopeng123/utils.string': ^1.1.18-alpha.2
+      '@gaopeng123/utils.array': ^1.1.18
+      '@gaopeng123/utils.date': ^1.1.18
+      '@gaopeng123/utils.file': ^1.1.18
+      '@gaopeng123/utils.function': ^1.1.18
+      '@gaopeng123/utils.log': workspace:^1.1.18
+      '@gaopeng123/utils.number': ^1.1.18
+      '@gaopeng123/utils.object': ^1.1.18
+      '@gaopeng123/utils.string': ^1.1.18
       '@gaopeng123/utils.ts-types': workspace:^1.1.18-alpha.1
-      '@gaopeng123/utils.types': ^1.1.18-alpha.1
+      '@gaopeng123/utils.types': ^1.1.18
       '@size-limit/preset-small-lib': ^5.0.1
       '@types/node': ^16.4.6
       husky: ^7.0.0
@@ -7348,7 +7348,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
