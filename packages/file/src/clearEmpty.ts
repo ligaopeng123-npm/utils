@@ -20,7 +20,7 @@ export const clearEmpty = <T extends Record<string, unknown> | any[]>(params: T,
     }
     if (Array.isArray(params)) return emptyKeys.filter(value => !checkEmpty(value)) as T extends any[] ? any[] : Partial<T>;
     return Object.keys(params).reduce((res: Partial<T>, key: string) => {
-        const value = params[key];
+        const value = (params as Record<string, unknown>)[key];
         if (checkEmpty(value)) return res;
         return {
             ...res,

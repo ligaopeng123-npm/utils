@@ -55,8 +55,8 @@ export const copyText = (value: HTMLElement | string): Promise<{ message: string
         if (isString(value)) {
             text = value as string;
         } else if (isElement(value)) {
-            const { innerText, value: value1 } = value as HTMLElement;
-            text = value1 || innerText;
+            // @ts-ignore
+            text = value.value || value.innerText;
         } else {
             resolve({
                 status: false,

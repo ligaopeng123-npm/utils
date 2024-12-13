@@ -32,7 +32,7 @@ export const sumMaxNumber = (str1: string, str2: string): string => {
 	const str1Arr = str1.split('').reverse();
 	const str2Arr = str2.split('').reverse();
 	const len = Math.max(str1Arr.length, str2Arr.length);
-	let arr = [];
+	let arr: any[] = [];
 	for (let i = 0; i < len; i++) {
 		if (str2Arr[i] && str1Arr[i]) {
 			arr[i] = Number(str1Arr[i]) + Number(str2Arr[i]) + (arr[i] || 0);
@@ -41,7 +41,7 @@ export const sumMaxNumber = (str1: string, str2: string): string => {
 				arr[i + 1] = 1;
 			}
 		} else {
-			arr[i] = Number((str1Arr[i] || 0) + (str2Arr[i] || 0));
+			arr[i] = Number((+str1Arr[i] || 0) + (+str2Arr[i] || 0));
 		}
 	}
 	return arr.reverse().join('');
