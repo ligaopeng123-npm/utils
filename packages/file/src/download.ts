@@ -9,8 +9,8 @@
  * @版权所有: pgli
  *
  **********************************************************************/
-import { isEmpty, isObject, isString } from "@gaopeng123/utils.types";
-import { mapObject, filterObject } from "@gaopeng123/utils.object";
+import { isObject } from "@gaopeng123/utils.types";
+import { clearEmpty } from "./clearEmpty";
 
 /**
  * @params  需要拼接的参数
@@ -179,24 +179,13 @@ export const queryParamsFromUrl = (url: string): Object => {
  * @param params
  */
 export const removeEmptyParams = (params: any) => {
-    const _params = Object.assign({}, params);
-    for (let key in _params) {
-        if (isEmpty(_params[key])) {
-            delete _params[key];
-        }
-    }
-    return _params;
+    return clearEmpty(Object.assign({}, params), {extensions: [{}, null, []]});
 };
 /**
  * 使参数合适 正确
  */
 export const makeParamsProper = (params: any) => {
-    if (isObject(params)) {
-        return mapObject(filterObject(params, (item) => !isEmpty(item)), (item: any) => {
-            return isString(item) ? item?.trimStart()?.trimEnd() : item
-        });
-    }
-    return params;
+    return removeEmptyParams(params);
 };
 
 /**

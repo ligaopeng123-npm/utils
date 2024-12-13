@@ -33,3 +33,4 @@ export { blob2Base64 } from './convert';
 // css 和 react style 相互转换
 
 export { obj2css, css2obj, makeCssText, classnames, stylesComponents } from "./css-obj";
+export { clearEmpty } from "./clearEmpty";

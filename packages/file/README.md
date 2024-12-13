@@ -19,9 +19,18 @@ removeUrlParams('https:/www.baidu.com/getBaseInfo?userId=xxx');
 // https:/www.baidu.com/getBaseInfo
 ```
 
+##### clearEmpty(data, config?:{ patterns?: any[], extensions?: any[] })
+
+`去掉数据中的空数据undefined  null '', 可以使用extensions添加,可以使用patterns覆盖`,
+
+```typescript
+clearEmpty(data, {patterns: [undefined,  null]});// 去除undefined  null
+clearEmpty(data, {extensions: [[],  {}]});// 去除undefined  null '' [] {}
+```
+
 ##### removeEmptyParams: (params): any;
 
-`去掉下发参数中的undefined  null '' []`
+`去掉下发参数中的undefined  null '' [] {}`
 
 ```typescript
 removeEmptyParams({a: null, b:undefined, c:'',d: [], e: 0}); // {e:0}

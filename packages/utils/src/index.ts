@@ -28,6 +28,7 @@ export {
     urlJoinParams,
     removeUrlParams,
     routeFromUri,
+    clearEmpty,
     removeEmptyParams,
     domainNameFromUri,
     //使参数合适 正确, 解析url，获取参数

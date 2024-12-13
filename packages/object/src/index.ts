@@ -41,7 +41,4 @@ export { filterObject, mapObject, forEachObject, getObjectAttr, setObjectAttr, s
  */
 export { length } from "./length";
 
-export { clearEmpty } from './clearEmpty'
-
-
 
