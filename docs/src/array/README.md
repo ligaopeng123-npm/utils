@@ -32,6 +32,23 @@ const [[pageData, canNext, canPrevious], next, previous] = pageTurnerFixedLength
 // previous 获取上一页数据的函数 范围值也是pageData, canNext, canPrevious
 ```
 
+#### pagination New 1.1.7+
+
+`处理分页器`
+
+```typescript
+type PaginationProps = {
+    total: number;
+    pageNum?: number;
+    pageSize?: number;
+    onMax?: (current: number) => void;
+    onMin?: (current: number) => void;
+}
+const pagination = new Pagination(props: PaginationProps);
+// 如果初始化的时候无法获取到total
+pagination.init({total: total});
+```
+
 #### groupBy <span class="new">New 1.1.6+</span>
 
 `数组分组`

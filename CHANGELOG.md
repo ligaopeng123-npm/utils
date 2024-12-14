@@ -1,3 +1,31 @@
+## [1.1.19-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.18...v1.1.19-alpha.0) (2024-12-14)
+
+
+### Bug Fixes
+
+* 处理ts报错 ([6b91d99](https://github.com/ligaopeng123-npm/utils/commit/6b91d99b00ad2b84216019ef6d01005315c96d24))
+
+
+
+## [1.1.18](https://github.com/ligaopeng123-npm/utils/compare/v1.1.18-alpha.2...v1.1.18) (2024-12-13)
+
+
+### Bug Fixes
+
+* ts 类型问题fix ([3445def](https://github.com/ligaopeng123-npm/utils/commit/3445def4e812bf86a28e5dd4c6c9b2cb84ac8127))
+* 优化copyText ([971fa02](https://github.com/ligaopeng123-npm/utils/commit/971fa02869d2578833ecded8335a8991092a2297))
+* 优化currySuper函数 ([d77de87](https://github.com/ligaopeng123-npm/utils/commit/d77de871dde58ea57e0dcb0ac431e63afd84789a))
+
+
+### Features
+
+* add clearEmpty ([9c1706a](https://github.com/ligaopeng123-npm/utils/commit/9c1706ad0edf6d5bcd5cc224138c7651dbf0b0bf))
+* add isAsync docs优化 ([792dfe5](https://github.com/ligaopeng123-npm/utils/commit/792dfe5f0ba911591a8ae6555aaeac14550b5a04))
+* add pagination pathJoin支持windows路径 ([4d36fc3](https://github.com/ligaopeng123-npm/utils/commit/4d36fc342fe4249db07b6a4efe9bd88c973ab24a))
+* add sumMaxNumber ([5e7cca1](https://github.com/ligaopeng123-npm/utils/commit/5e7cca1b8a9996d56ebc38dcda544986262e57a1))
+
+
+
 ## [1.1.18-alpha.2](https://github.com/ligaopeng123-npm/utils/compare/v1.1.18-alpha.1...v1.1.18-alpha.2) (2024-08-31)
 
 
