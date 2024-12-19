@@ -1,3 +1,5 @@
+import { getURLFormUri } from "file/src/download.js";
+
 export { downloadStream } from './download';
 export type { DownloadStreamParams } from './download';
 
@@ -10,7 +12,7 @@ export { injectScript, injectScripts, injectCSS, injectKeyframes, findKeyframesR
 
 export { urlJoinParams as urlJoinParmas, urlJoinParams } from './download';
 export { removeUrlParams } from './download';
-export { routeFromUri, domainNameFromUri } from './download';
+export { getURLFormUri, routeFromUri, domainNameFromUri } from './download';
 // 删除参数中的空数据
 export { removeEmptyParams } from './download';
 // 处理参数 使参数更合适下发给后端

@@ -179,7 +179,7 @@ export const queryParamsFromUrl = (url: string): Object => {
  * @param params
  */
 export const removeEmptyParams = (params: any) => {
-    return clearEmpty(Object.assign({}, params), {extensions: [{}, null, []]});
+    return clearEmpty(Object.assign({}, params), { extensions: [{}, null, []] });
 };
 /**
  * 使参数合适 正确
@@ -187,14 +187,45 @@ export const removeEmptyParams = (params: any) => {
 export const makeParamsProper = (params: any) => {
     return removeEmptyParams(params);
 };
+/**
+ * 通过Uri分解参数
+ * @param uri
+ */
+export const getURLFormUri = (uri: string): URL => {
+    if (uri.startsWith('http')) return new URL(uri);
+    const urlArr = uri?.split('/');
+    const protocol = urlArr[0];
+    const makeUrl = (current: URL, protocol: string, replaceStr = 'http:') => {
+        return {
+            hash: current.hash,
+            href: current.href?.replace(replaceStr, protocol),
+            origin: current?.origin?.replace(replaceStr, protocol),
+            protocol: protocol,
+            username: current.username,
+            host: current.host,
+            hostname: current.hostname,
+            port: current.port,
+            pathname: current.pathname,
+            search: current.search,
+            searchParams: queryParamsFromUrl(current.search)
+        } as URL;
+    }
+    // 私有协议
+    if (protocol?.endsWith(':')) {
+        const current = new URL(uri.replace(protocol, 'http:'))
+        return makeUrl(current, protocol);
+    } else {
+        const current = new URL('http://' + uri)
+        return makeUrl(current, '', 'http://');
+    }
+}
 
 /**
  * 从URI中获取域名或者ip地址
  * @param uri
  */
 export const domainNameFromUri = (uri: string): string => {
-    const urlArr = uri.split('/');
-    return urlArr[0].includes('http') ? `${urlArr[0]}//${urlArr[2]}` : urlArr[0];
+    return getURLFormUri(uri).origin;
 };
 
 /**
@@ -202,6 +233,9 @@ export const domainNameFromUri = (uri: string): string => {
  * @param uri
  */
 export const routeFromUri = (uri: string): string => {
-    const uriArr = uri?.split('?');
-    return uriArr[0].replace(domainNameFromUri(uriArr[0]), '')?.replace('/#', '');
+    const {hash, pathname} = getURLFormUri(uri);
+    if(hash) {
+        return hash.replace('#', '').split('?')[0]
+    }
+    return pathname;
 };

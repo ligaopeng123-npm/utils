@@ -56,6 +56,14 @@ makeParamsProper({a: null, b: undefined, c: '', d: [], e: 0, f: '   b d  f  ',})
 queryParamsFromUrl('https://www.baidu.com/getBaseInfo?userId=xxx'); // {userId:'xxx'}
 ```
 
+##### getURLFormUri <span class="new">1.1.19+</span>
+
+`从url中获取URL对象，主要是为了处理不兼容的url，例如缺少协议，私有协议等`
+
+```typescript
+getURLFormUri('www.baidu.com/test?id=test'); // URL
+```
+
 ##### domainNameFromUri
 
 `重uri中获取域名`
