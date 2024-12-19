@@ -12,7 +12,7 @@
 import { Monad } from "./monad";
 import {compose} from "../compose";
 
-type Fn = (...args: any) => any;
+type Fn = (...args: any[]) => any;
 
 export type TypeError = 0 | 1;
 
