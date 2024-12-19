@@ -1,3 +1,12 @@
+## [1.1.19-alpha.1](https://github.com/ligaopeng123-npm/utils/compare/v1.1.19-alpha.0...v1.1.19-alpha.1) (2024-12-19)
+
+
+### Features
+
+* add getURLFormUri edit domainNameFromUri and routeFromUri ([a45cba0](https://github.com/ligaopeng123-npm/utils/commit/a45cba0cf6f3168dcd93ee2048975d5c6bad95f6))
+
+
+
 ## [1.1.19-alpha.0](https://github.com/ligaopeng123-npm/utils/compare/v1.1.18...v1.1.19-alpha.0) (2024-12-14)
 
 
